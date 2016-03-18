@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Connection
+    xmlns:netex="http://www.netex.org.uk/netex"
+    xmlns:siri="http://www.siri.org.uk/siri"
+    xmlns:core="http://www.govtalk.gov.uk/core"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:ifopt="http://www.ifopt.org.uk/ifopt"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.netex.org.uk/netex file:../xsd/netex_part_1/part1_tacticalPlanning/netex_servicePattern_version-v1.0.xsd">
+    <Description>E</Description>
+    <Distance>140649487.043</Distance>
+    <TransferDuration>
+        <DefaultDuration>PT5M</DefaultDuration>
+        <FrequentTravellerDuration>PT2M</FrequentTravellerDuration>
+        <OccasionalTravellerDuration>PT5M</OccasionalTravellerDuration>
+        <MobilityRestrictedTravellerDuration>PT10M</MobilityRestrictedTravellerDuration>
+    </TransferDuration>
+    <From>
+        <TransportMode>all</TransportMode>
+        <ScheduledStopPointRef ref="Jlsy4"/>
+    </From>
+    <To>
+        <TransportMode>all</TransportMode>
+        <ScheduledStopPointRef ref="XTyJeh"/>
+    </To>
+</Connection>

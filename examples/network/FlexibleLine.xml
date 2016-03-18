@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexibleLine
+    xmlns:netex="http://www.netex.org.uk/netex"
+    xmlns:siri="http://www.siri.org.uk/siri"
+    xmlns:core="http://www.govtalk.gov.uk/core"
+    xmlns:ifopt="http://www.ifopt.org.uk/ifopt"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.netex.org.uk/netex file:../xsd/netex_part_1/part1_networkDescription/netex_flexibleNetwork_version-v1.0.xsd">
+    <Name>AiLmn6gCGUeRpKft_UivyOjhJ</Name>
+    <ShortName>nq</ShortName>
+    <Description>FFENolP4Ho2V4</Description>
+    <TransportMode>taxi</TransportMode>
+    <PublicCode>ZCqEVNNXj</PublicCode>
+    <FlexibleLineType>mixedFlexibleAndFixed</FlexibleLineType>
+    <BookingContact>
+        <ContactPerson>qUx-n6lX_afS_zQ5</ContactPerson>
+        <Email>gGqo1CTepTb5Pdtp7QilscccNNx1rA</Email>
+        <Phone>FM3rB6s-o4uEKzR5i4HWl</Phone>
+        <Url>http://VQhylqUt/</Url>
+    </BookingContact>
+    <BookingMethods>callOffice online</BookingMethods>
+    <BookingAccess>public</BookingAccess>
+    <BookWhen>advanceAndDayOfTravel</BookWhen>
+    <BuyWhen>onBoarding</BuyWhen>
+    <MinimumBookingPeriod>PT1H</MinimumBookingPeriod>
+    <BookingNote>DIGF5eHI5k.ph1f</BookingNote>
+</FlexibleLine>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Notice
+    xmlns:netex="http://www.netex.org.uk/netex"
+    xmlns:core="http://www.govtalk.gov.uk/core"
+    xmlns:siri="http://www.siri.org.uk/siri"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.netex.org.uk/netex file:../xsd/netex_framework/netex_reusableComponents/netex_notice_version-v1.0.xsd">
+    <Name lang="no">a general message</Name>
+    <Text lang="no">a notice</Text>
+    <PublicCode>NYQ9mzNvDMy3mesMwq.</PublicCode>
+    <TypeOfNoticeRef ref="PublicAvailableNoticeType"/>
+    <variants>
+        <DeliveryVariant>
+            <DeliveryVariantMediaType>mobile</DeliveryVariantMediaType>
+            <VariantText lang="no">another variant of message suited for mobile</VariantText>
+        </DeliveryVariant>
+        <DeliveryVariant>
+            <DeliveryVariantMediaType>web</DeliveryVariantMediaType>
+            <VariantText lang="no">yet another variant for a website</VariantText>
+        </DeliveryVariant>
+    </variants>
+</Notice>

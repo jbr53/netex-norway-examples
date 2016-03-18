@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Branding version="any" id="Ruter">
+    <Name>Ruter AS</Name>
+    <ShortName>Ruter</ShortName>
+    <Description>Operator that runs public transport in Oslo region</Description>
+    <Image>http://url.to.ruter.logo/</Image>
+    <Url>http://ruter.no/</Url>
+</Branding>

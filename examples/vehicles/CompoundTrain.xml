@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompoundTrain xmlns="http://www.netex.org.uk/netex"
+ xmlns:siri="http://www.siri.org.uk/siri"
+ xmlns:core="http://www.govtalk.gov.uk/core"
+ xmlns:ifopt="http://www.ifopt.org.uk/ifopt"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.netex.org.uk/netex file:../xsd/netex_framework/netex_reusableComponents/netex_trainElement_version-v1.0.xsd">
+    <components>
+        <TrainInCompoundTrain>
+            <TrainRef ref="vHR0rz"/>
+            <Label>rwQghSCyAL4x3P_yC</Label>
+        </TrainInCompoundTrain>
+        <TrainInCompoundTrain>
+            <TrainRef ref="Ci1ydLGkggSafndC6u2iL-Uwf"/>
+            <Label>L-0IMcVmf.o-tcEZsFKfJvIDsm</Label>
+        </TrainInCompoundTrain>
+    </components>
+</CompoundTrain>

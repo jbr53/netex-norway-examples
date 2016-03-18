@@ -1,3 +1,3 @@
 # netex_norway
 
-Norsk NeTEx profil eksempler
+Examples for norwegian NeTEx profile

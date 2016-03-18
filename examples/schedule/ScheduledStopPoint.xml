@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScheduledStopPoint
+    xmlns="http://www.netex.org.uk/netex"
+    xmlns:core="http://www.govtalk.gov.uk/core"
+    xmlns:siri="http://www.siri.org.uk/siri"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:ifopt="http://www.ifopt.org.uk/ifopt"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.netex.org.uk/netex file:../xsd/netex_part_1/part1_tacticalPlanning/netex_servicePattern_version-v1.0.xsd">
+    <tariffZones>
+        <TariffZoneRef ref="d"/>
+        <TariffZoneRef ref="f6cZi22NtHsgNCHR4dc"/>
+    </tariffZones>
+    <ShortName>ZFjLH-NQ</ShortName>
+    <Description>AWKfBPs4RtE4f9W</Description>
+    <StopType>busStation</StopType>
+</ScheduledStopPoint>

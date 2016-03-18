@@ -1,0 +1,46 @@
+<!--
+Journey Pattern describes an ordered list of points on a route (it can be scheduled stop points or timing points). The route may not neccessarily contain rides with passengers.
+
+Service Journey Pattern describes a pattern a service journey (i.e. with passengers)
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<ServiceJourneyPattern
+    xmlns="http://www.netex.org.uk/netex"
+    xmlns:siri="http://www.siri.org.uk/siri"
+    xmlns:core="http://www.govtalk.gov.uk/core"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:ifopt="http://www.ifopt.org.uk/ifopt"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.netex.org.uk/netex file:../xsd/netex_part_1/part1_tacticalPlanning/netex_servicePattern_version-v1.0.xsd">
+    <RouteRef ref="tf_Du8xZj6Kr9ADS.l1k7ztN3rLT-"/>
+    <DestinationDisplayRef ref="uMSoymtYott6YWUY8WuQPB_0aZ"/>
+    <pointsInSequence>
+        <PointInJourneyPattern>
+            <RoutePointRef ref="aqu4ytUxuzD8JqZl_fU50XBlvd"/>
+            <DestinationDisplayRef ref="CaJFTvJA7."/>
+            <FlexiblePointProperties>
+                <MayBeSkipped>false</MayBeSkipped>
+                <OnMainRoute>true</OnMainRoute>
+            </FlexiblePointProperties>
+            <ChangeOfDestinationDisplay>false</ChangeOfDestinationDisplay>
+        </PointInJourneyPattern>
+        <TimingPointInJourneyPattern>
+            <TimingPointRef ref="s00uD.d"/>
+        </TimingPointInJourneyPattern>
+        <StopPointInJourneyPattern>
+            <ScheduledStopPointRef ref="oUOqsT-7ZBSq6uD"/>
+            <ForAlighting>true</ForAlighting>
+            <ForBoarding>true</ForBoarding>
+            <DestinationDisplayRef ref="JGdnRxoU3f0-awRLWvzSWMGeY9FaJW"/>
+            <FlexiblePointProperties>
+                <MayBeSkipped>true</MayBeSkipped>
+                <OnMainRoute>true</OnMainRoute>
+            </FlexiblePointProperties>
+            <ChangeOfDestinationDisplay>true</ChangeOfDestinationDisplay>
+            <RequestStop>false</RequestStop>
+            <StopUse>access</StopUse>
+        </StopPointInJourneyPattern>
+    </pointsInSequence>
+    <ServiceJourneyPatternType>passenger</ServiceJourneyPatternType>
+</ServiceJourneyPattern>

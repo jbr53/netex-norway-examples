@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServiceCalendar
+    xmlns:core="http://www.govtalk.gov.uk/core"
+    xmlns="http://www.netex.org.uk/netex"
+    xmlns:siri="http://www.siri.org.uk/siri"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.netex.org.uk/netex file:../xsd/netex_framework/netex_reusableComponents/netex_serviceCalendar_version-v1.0.xsd">
+    <Name>v2</Name>
+    <FromDate>2017-08-30</FromDate>
+    <ToDate>2016-09-16</ToDate>
+    <dayTypes>
+        <DayTypeRef ref="Gx8mLwkiM"/>
+    </dayTypes>
+    <operatingDays>
+        <OperatingDayRef ref="Nd_1IucOvEU8BV"/>
+        <OperatingDayRef ref="rLyOtBe"/>
+    </operatingDays>
+    <dayTypeAssignments>
+        <DayTypeAssignment>
+            <Date>2017-02-19Z</Date>
+            <DayTypeRef ref="Gx8mLwkiM"/>
+            <isAvailable>false</isAvailable>
+        </DayTypeAssignment>
+        <DayTypeAssignment>
+            <OperatingDayRef ref="rLyOtBe"/>
+            <DayTypeRef ref="Gx8mLwkiM"/>
+            <isAvailable>true</isAvailable>
+        </DayTypeAssignment>
+    </dayTypeAssignments>
+</ServiceCalendar>

@@ -1,0 +1,62 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Line xmlns="http://www.netex.org.uk/netex"
+ xmlns:siri="http://www.siri.org.uk/siri"
+ xmlns:core="http://www.govtalk.gov.uk/core"
+ xmlns:ifopt="http://www.ifopt.org.uk/ifopt"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.netex.org.uk/netex file:../xsd/netex_part_1/part1_networkDescription/netex_line_version-v1.0.xsd">
+    <validityConditions>
+        <ValidBetween>
+            <FromDate>2017-10-31T11:03:07Z</FromDate>
+            <ToDate>2016-06-06T11:03:07</ToDate>
+        </ValidBetween>
+    </validityConditions>
+
+    <BrandingRef ref="KqiZ-oa3pT_kMH2"/>
+    <Name>OODlwrC5pD</Name>
+    <ShortName>Yyz3U</ShortName>
+    <Description>GF3tIcdvXN4v3dbbwOb.Pyy24T50TV</Description>
+    <TransportMode>metro</TransportMode>
+    <TransportSubmode>
+        <MetroSubmode>metro</MetroSubmode>
+    </TransportSubmode>
+    <Url>http://kJVUqMwu/</Url>
+    <PublicCode>tLIBiF5_iEFMTEtVxhaC5</PublicCode>
+    <PrivateCode>RqJCl1ZoqACa8eA</PrivateCode>
+    <OperatorRef ref="D55tNQL"/>
+    <otherModes>
+        <ModeRef mode="tram" ref="mYBxj3dNSlgdVOfGS5aj6RYosJc"/>
+    </otherModes>
+    <Monitored>true</Monitored>
+    <routes>
+        <RouteRef ref="Rin31ZzKNXzframp3d858hL3AjkcZ2"/>
+        <RouteRef ref="SB73n5jb"/>
+    </routes>
+    <Presentation>
+        <Colour>68667658</Colour>
+        <ColourName>KWEZ2j</ColourName>
+        <TextColour>5A77</TextColour>
+        <TextColourName>BS6IS</TextColourName>
+        <TextFont>q_CbORY-z8w_RFZcj.w-O_o3</TextFont>
+        <TextFontName>KEtIutAKR3JRuhpYyFJ5</TextFontName>
+        <TextLanguage>en-US</TextLanguage>
+    </Presentation>
+
+    <AccessibilityAssessment>
+        <MobilityImpairedAccess>true</MobilityImpairedAccess>
+        <limitations>
+            <AccessibilityLimitation>
+                <WheelchairAccess>true</WheelchairAccess>
+                <StepFreeAccess>true</StepFreeAccess>
+            </AccessibilityLimitation>
+        </limitations>
+    </AccessibilityAssessment>
+    <noticeAssignments>
+        <NoticeAssignmentView>
+            <PublicityChannel>all</PublicityChannel>
+            <Advertised>true</Advertised>
+            <Text>Notice message</Text>
+        </NoticeAssignmentView>
+    </noticeAssignments>
+</Line>

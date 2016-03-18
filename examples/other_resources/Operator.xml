@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Operator xmlns:core="http://www.govtalk.gov.uk/core"
+ xmlns="http://www.netex.org.uk/netex"
+ xmlns:siri="http://www.siri.org.uk/siri"
+ xmlns:gml="http://www.opengis.net/gml/3.2"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.netex.org.uk/netex file:../xsd/netex_framework/netex_reusableComponents/netex_transportOrganisation_version-v1.0.xsd">
+    <BrandingRef ref="q"/>
+    <PublicCode>La.ZWvkcuJZXE6H9uZdMm</PublicCode>
+    <CompanyNumber>DnMubFmiRrlTC</CompanyNumber>
+    <Name>Ih6HvsTqdTuqo</Name>
+    <ShortName>Fxf5.WsdSw</ShortName>
+    <LegalName>vGn3PjRVhk-heuZmygEcJZQ3JS9Nu</LegalName>
+    <Description>o2sKL4bR</Description>
+    <ContactDetails>
+        <ContactPerson>nJWDZf_x1zDq._3U</ContactPerson>
+        <Email>_aAy</Email>
+        <Phone>RJBnmr6i</Phone>
+        <Url>http://qmdwIEgU/</Url>
+    </ContactDetails>
+    <OrganisationType>operator authority</OrganisationType>
+    <Status>true</Status>
+    <PrimaryMode> bus </PrimaryMode>
+    <OperatorActivities> passenger </OperatorActivities>
+    <CustomerServiceContactDetails>
+        <ContactPerson>yCnbB0UyH2942m</ContactPerson>
+        <Email>oPlRp_gB3n7</Email>
+        <Phone>sRztTC4X.ElKvSl2WKvsm69wXoUr7</Phone>
+        <Fax>gR6f-YOhv-YTe</Fax>
+        <Url>http://fjydZWkl/</Url>
+        <FurtherDetails>h2MlXJyWd_2cMz</FurtherDetails>
+    </CustomerServiceContactDetails>
+    <departments>
+        <Department>
+            <Name>Main department</Name>
+            <Description>Main department that gathers data from all other departments and destributes it to third parties</Description>
+            <ContactDetails>
+                <ContactPerson>JvB.wO</ContactPerson>
+                <Email>chRPeAy9zYBXmwerWCZ-03TG</Email>
+                <Phone>cPNPbSoXO9sbeLPOWWP8Qml2</Phone>
+                <Url>http://OGmKZuTG/</Url>
+            </ContactDetails>
+            <administrativeZones>
+                <AdministrativeZone>
+                    <responsibilities>
+                        <ResponsibilitySet>
+                            <roles>
+                                <ResponsibilityRoleAssignment>
+                                    <DataRoleType> aggregates distributes</DataRoleType>
+                                    <StakeholderRoleType>EntityLegalOwnership</StakeholderRoleType>
+                                </ResponsibilityRoleAssignment>
+                            </roles>
+                        </ResponsibilitySet>
+                    </responsibilities>
+                </AdministrativeZone>
+            </administrativeZones>
+        </Department>
+        <Department>
+            <Name>OperationalDepratment</Name>
+            <Description>Department that manages all operations and reports to main department</Description>
+            <ContactDetails>
+                <ContactPerson>SUXQF-G-78</ContactPerson>
+                <Email>kA3ulx7VFbLOm</Email>
+                <Phone>i</Phone>
+                <Url>http://PVGGBUOk/</Url>
+            </ContactDetails>
+            <administrativeZones>
+                <AdministrativeZone>
+                    <responsibilities>
+                        <ResponsibilitySet>
+                            <roles>
+                                <ResponsibilityRoleAssignment>
+                                    <DataRoleType>creates</DataRoleType>
+                                    <StakeholderRoleType>Operation</StakeholderRoleType>
+                                </ResponsibilityRoleAssignment>
+                            </roles>
+                        </ResponsibilitySet>
+                    </responsibilities>
+                </AdministrativeZone>
+            </administrativeZones>
+        </Department>
+    </departments>
+</Operator>
