@@ -1,0 +1,1099 @@
+<!--
+    This example describes Oslo bus line 23 Simensbråten - Lysaker in a bit reduced state - only 11 stops (out of 36) are modelled.
+    The actual timetable is described here: https://ruter.no/globalassets/rutetabeller/oslo/buss-oslo-nord-rutetabell-13122015-v2.pdf
+    The physical stop places are not modelled and are just mocked.
+
+    The line looks like this:
+    1. Simensbråten
+    2. Ryen T
+    3. Brynseng T
+    4. Økern T
+    5. Storo
+    6. Nydalen statsjon
+    7. Tåsen senter
+    8. Ullevål stadion
+    9. Radiumhospitalet
+    10. Lilleaker
+    11. Lysakerlokket
+
+    Some random TimingPoints are used in order to demonstrate them. Coordinates for points are only example values.
+
+    This example contains the following objects:
+    - ResourceFrame
+        - dataSources
+        - Branding
+        - Authority
+        - Operator
+    - SiteFrame
+        - StopPlace stubs
+    - TimetableFrame
+        - TemplateServiceJourney
+        - ServiceJourney
+        - HeadwayFrequencyGroup
+    - ServiceFrame
+        - Network
+        - Line
+        - Route
+        - ServiceJourneyPattern
+        - RoutePoint
+        - ScheduledStopPoint
+        - TariffZone
+        - PassengerStopAssignment
+        - TimingPoint
+        - TimingLink
+    - ServiceCalendarFrame
+        - DayType
+
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicationDelivery>
+    <dataObjects>
+        <CompositeFrame created="2015-11-21T11:50:51" dataSourceRef="ds:ruterdb" version="1.0">
+            <Description>Composite frame that unites ResourceFrame and SiteFrame in order to spesify some shared values like version, creation date and codespaces</Description>
+            <ValidityConditions>
+                <AvailabilityCondition version="any">
+                    <FromDate>2016-01-01T00:00:00</FromDate>
+                    <ToDate>2016-03-31T23:59:59</ToDate>
+                </AvailabilityCondition>
+            </ValidityConditions>
+            <codespaces>
+                <Codespace id="ruter">
+                    <Xmlns>ruter</Xmlns>
+					<XmlnsUrl>http://ruter.no/</XmlnsUrl>
+					<Description>Ruter data</Description>
+                </Codespace>
+            </codespaces>
+            <FrameDefaults>
+                <DefaultLocale>
+                    <TimeZoneOffset>+1</TimeZoneOffset>
+                    <TimeZone>Oslo</TimeZone>
+                    <SummerTimeZoneOffset>+1</SummerTimeZoneOffset>
+                    <SummerTimeZone>Oslo</SummerTimeZone>
+                    <DefaultLanguage>no-NO</DefaultLanguage>
+                    <languages>
+                        <LanguageUsage>
+                            <Language>en-US</Language>
+                            <LanguageUse>understood</LanguageUse>
+                        </LanguageUsage>
+                    </languages>
+                </DefaultLocale>
+            </FrameDefaults>
+            <frames>
+                <ResourceFrame>
+                    <dataSources>
+                        <DataSource id="ds:ruterdb">
+                            <Name>RDB</Name>
+                            <Description>Ruter Database</Description>
+                            <Email>admin@ruter.no</Email>
+                        </DataSource>
+                    </dataSources>
+                    <typesOfValue>
+                        <Branding>
+                            <Name>Rutebanken</Name>
+                            <ShortName>RB</ShortName>
+                            <Description>Rutebanken brand</Description>
+                            <Url>http://rutebanken.no</Url>
+                        </Branding>
+                    </typesOfValue>
+                    <organisations>
+                        <Authority id="org:auth:ruter">
+                            <PublicCode>Ruter</PublicCode>
+                            <CompanyNumber>991609407</CompanyNumber>
+                            <Name>Ruter AS</Name>
+                            <ShortName>Ruter</ShortName>
+                            <LegalName>Ruter AS</LegalName>
+                            <Description>Main operator for Oslo and Akershus</Description>
+                            <ContactDetails>
+                                <Email>kundesenter@ruter.no</Email>
+                                <Phone>04712345678</Phone>
+                                <Url>http://ruter.no</Url>
+                            </ContactDetails>
+                            <OrganisationType>authority operator</OrganisationType>
+                            <PostalAddress>
+                                <AddressLine1>Postboks 1030 Sentrum</AddressLine1>
+                                <Town>Oslo</Town>
+                                <PostCode>0104</PostCode>
+                            </PostalAddress>
+                        </Authority>
+                        <Operator id="org:oper:unibuss">
+                            <PublicCode>Unibuss AS</PublicCode>
+                            <CompanyNumber>985615616</CompanyNumber>
+                            <Name>Unibuss AS</Name>
+                            <ShortName>Unibuss</ShortName>
+                            <LegalName>UNIBUSS AS</LegalName>
+                            <Description>Persontransport med buss.</Description>
+                            <ContactDetails>
+                                <Email>post@unibuss.no</Email>
+                                <Phone>04722084300</Phone>
+                                <Url>http://www.unibuss.no</Url>
+                            </ContactDetails>
+                            <OrganisationType>authority operator</OrganisationType>
+                            <PostalAddress>
+                                <AddressLine1>Postboks 210 Alnabru</AddressLine1>
+                                <Town>Oslo</Town>
+                                <PostCode>0614</PostCode>
+                            </PostalAddress>
+                            <PrimaryMode>bus</PrimaryMode>
+                            <OperatorActivities>passenger infrastructure</OperatorActivities>
+                        </Operator>
+                    </organisations>
+                </ResourceFrame>
+                <SiteFrame>
+                    <stopPlaces>
+                        <StopPlace id="sp:osl:1">Simensbråten</StopPlace>
+                        <StopPlace id="sp:osl:2">Ryen T</StopPlace>
+                        <StopPlace id="sp:osl:3">Brynseng T</StopPlace>
+                        <StopPlace id="sp:osl:4">Økern T</StopPlace>
+                        <StopPlace id="sp:osl:5">Storo</StopPlace>
+                        <StopPlace id="sp:osl:6">Nydalen stasjon</StopPlace>
+                        <StopPlace id="sp:osl:7">Tåsen senter</StopPlace>
+                        <StopPlace id="sp:osl:8">Ullevål stadion</StopPlace>
+                        <StopPlace id="sp:osl:9">Radiomhospitalet</StopPlace>
+                        <StopPlace id="sp:osl:10">Lilleaker</StopPlace>
+                        <StopPlace id="sp:osl:11">Lysakerlokket</StopPlace>
+                    </stopPlaces>
+                </SiteFrame>
+                <TimetableFrame>
+                    <vehicleJourneys>
+                        <!-- Template for journey with low trafic (takes only 37 minutes in total) -->
+                        <TemplateServiceJourney id="tsj:23:full:lowtraffic">
+                            <Name>Full line 23 template</Name>
+                            <Distance>12345</Distance>
+                            <TransportMode>bus</TransportMode>
+                            <TransportSubmode>localBus</TransportSubmode>
+                            <Monitored>true</Monitored>
+                            <ServiceAlteration>planned</ServiceAlteration>
+                            <JourneyDuration>PT37M</JourneyDuration>
+                            <dayTypes>
+                                <DayTypeRef ref="dt:4:all"/>
+                            </dayTypes>
+                            <JourneyPatternRef ref="sjp:23SL:full"/>
+                            <OperatorRef ref="org:oper:unibuss"/>
+                            <LineRef ref="osl:line:23"/>
+                            <Origin>
+                                <ScheduledStopPointRef ref="ssp:1"/>
+                            </Origin>
+                            <Destination>
+                                <ScheduledStopPointRef ref="ssp:11"/>
+                            </Destination>
+                            <calls>
+                                <Call order="1">
+                                    <ScheduledStopPointRef ref="ssp:1"/>
+                                    <Arrival>
+                                        <ForAligting>false</ForAligting>
+                                    </Arrival>
+                                    <Departure>
+                                        <Time>05:10:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="2">
+                                    <ScheduledStopPointRef ref="ssp:2"/>
+                                    <Departure>
+                                        <Time>05:13:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="3">
+                                    <ScheduledStopPointRef ref="ssp:3"/>
+                                    <Departure>
+                                        <Time>05:17:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="4">
+                                    <ScheduledStopPointRef ref="ssp:4"/>
+                                    <Departure>
+                                        <Time>05:23:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="5">
+                                    <ScheduledStopPointRef ref="ssp:5"/>
+                                    <Departure>
+                                        <Time>05:28:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="6">
+                                    <ScheduledStopPointRef ref="ssp:6"/>
+                                    <Departure>
+                                        <Time>05:30:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="7">
+                                    <ScheduledStopPointRef ref="ssp:7"/>
+                                    <Departure>
+                                        <Time>05:32:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="8">
+                                    <ScheduledStopPointRef ref="ssp:8"/>
+                                    <Departure>
+                                        <Time>05:34:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="9">
+                                    <ScheduledStopPointRef ref="ssp:9"/>
+                                    <Departure>
+                                        <Time>05:40:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="10">
+                                    <ScheduledStopPointRef ref="ssp:10"/>
+                                    <Departure>
+                                        <Time>05:43:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="11">
+                                    <ScheduledStopPointRef ref="ssp:11"/>
+                                    <Arrival>
+                                        <Time>05:47:00.0Z</Time>
+                                    </Arrival>
+                                    <Departure>
+                                        <ForBoarding>false</ForBoarding>
+                                    </Departure>
+                                </Call>
+                            </calls>
+                            <frequencyGroups>
+                                <HeadwayJourneyGroupRef ref="hjg:weekdays:morning"/>
+                                <HeadwayJourneyGroupRef ref="hjg:weekdays:night"/>
+                                <HeadwayJourneyGroupRef ref="hjg:sat:morning"/>
+                                <HeadwayJourneyGroupRef ref="hjg:sat:evening"/>
+                                <HeadwayJourneyGroupRef ref="hjg:sun:morning"/>
+                                <HeadwayJourneyGroupRef ref="hjg:sun:evening"/>
+                            </frequencyGroups>
+                        </TemplateServiceJourney>
+                        <!-- Template for journey with normal traffic (takes 46 minutes in total) -->
+                        <TemplateServiceJourney id="tsj:23:full:normtraffic">
+                            <Name>Full line 23 template</Name>
+                            <Distance>12345</Distance>
+                            <TransportMode>bus</TransportMode>
+                            <TransportSubmode>localBus</TransportSubmode>
+                            <Monitored>true</Monitored>
+                            <ServiceAlteration>planned</ServiceAlteration>
+                            <JourneyDuration>PT46M</JourneyDuration>
+                            <dayTypes>
+                                <DayTypeRef ref="dt:4:all"/>
+                            </dayTypes>
+                            <JourneyPatternRef ref="sjp:23SL:full"/>
+                            <OperatorRef ref="org:oper:unibuss"/>
+                            <LineRef ref="osl:line:23"/>
+                            <Origin>
+                                <ScheduledStopPointRef ref="ssp:1"/>
+                            </Origin>
+                            <Destination>
+                                <ScheduledStopPointRef ref="ssp:11"/>
+                            </Destination>
+                            <calls>
+                                <Call order="1">
+                                    <ScheduledStopPointRef ref="ssp:1"/>
+                                    <Arrival>
+                                        <ForAligting>false</ForAligting>
+                                    </Arrival>
+                                    <Departure>
+                                        <Time>06:10:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="2">
+                                    <ScheduledStopPointRef ref="ssp:2"/>
+                                    <Departure>
+                                        <Time>06:14:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="3">
+                                    <ScheduledStopPointRef ref="ssp:3"/>
+                                    <Departure>
+                                        <Time>06:18:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="4">
+                                    <ScheduledStopPointRef ref="ssp:4"/>
+                                    <Departure>
+                                        <Time>06:24:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="5">
+                                    <ScheduledStopPointRef ref="ssp:5"/>
+                                    <Departure>
+                                        <Time>06:30:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="6">
+                                    <ScheduledStopPointRef ref="ssp:6"/>
+                                    <Departure>
+                                        <Time>06:32:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="7">
+                                    <ScheduledStopPointRef ref="ssp:7"/>
+                                    <Departure>
+                                        <Time>06:34:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="8">
+                                    <ScheduledStopPointRef ref="ssp:8"/>
+                                    <Departure>
+                                        <Time>06:37:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="9">
+                                    <ScheduledStopPointRef ref="ssp:9"/>
+                                    <Departure>
+                                        <Time>06:46:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="10">
+                                    <ScheduledStopPointRef ref="ssp:10"/>
+                                    <Departure>
+                                        <Time>06:50:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="11">
+                                    <ScheduledStopPointRef ref="ssp:11"/>
+                                    <Arrival>
+                                        <Time>06:56:00.0Z</Time>
+                                    </Arrival>
+                                    <Departure>
+                                        <ForBoarding>false</ForBoarding>
+                                    </Departure>
+                                </Call>
+                            </calls>
+                            <frequencyGroups>
+                                <HeadwayJourneyGroupRef ref="hjg:weekdays:day"/>
+                                <HeadwayJourneyGroupRef ref="hjg:weekdays:evening"/>
+                                <HeadwayJourneyGroupRef ref="hjg:sat:day"/>
+                                <HeadwayJourneyGroupRef ref="hjg:sun:day"/>
+                            </frequencyGroups>
+                        </TemplateServiceJourney>
+                        <!-- Spesial departure that goes from Ryen T instead of Simensbråten. Only once a day -->
+                        <ServiceJourney id="sj:23:extra">
+                            <Name>Full line 23 template</Name>
+                            <Distance>12345</Distance>
+                            <TransportMode>bus</TransportMode>
+                            <TransportSubmode>localBus</TransportSubmode>
+                            <Monitored>true</Monitored>
+                            <ServiceAlteration>extraJourney</ServiceAlteration>
+                            <JourneyDuration>PT42M</JourneyDuration>
+                            <dayTypes>
+                                <DayTypeRef ref="dt:1:mtwtf"/>
+                            </dayTypes>
+                            <JourneyPatternRef ref="sjp:23SL:full"/>
+                            <OperatorRef ref="org:oper:unibuss"/>
+                            <LineRef ref="osl:line:23"/>
+                            <Origin>
+                                <ScheduledStopPointRef ref="ssp:1"/>
+                            </Origin>
+                            <Destination>
+                                <ScheduledStopPointRef ref="ssp:11"/>
+                            </Destination>
+                            <calls>
+                                <Call order="1">
+                                    <ScheduledStopPointRef ref="ssp:2"/>
+                                    <Departure>
+                                        <Time>06:04:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="2">
+                                    <ScheduledStopPointRef ref="ssp:3"/>
+                                    <Departure>
+                                        <Time>06:08:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="3">
+                                    <ScheduledStopPointRef ref="ssp:4"/>
+                                    <Departure>
+                                        <Time>06:14:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="4">
+                                    <ScheduledStopPointRef ref="ssp:5"/>
+                                    <Departure>
+                                        <Time>06:20:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="5">
+                                    <ScheduledStopPointRef ref="ssp:6"/>
+                                    <Departure>
+                                        <Time>06:22:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="6">
+                                    <ScheduledStopPointRef ref="ssp:7"/>
+                                    <Departure>
+                                        <Time>06:24:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="7">
+                                    <ScheduledStopPointRef ref="ssp:8"/>
+                                    <Departure>
+                                        <Time>06:27:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="8">
+                                    <ScheduledStopPointRef ref="ssp:9"/>
+                                    <Departure>
+                                        <Time>06:36:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="9">
+                                    <ScheduledStopPointRef ref="ssp:10"/>
+                                    <Departure>
+                                        <Time>06:40:00.0Z</Time>
+                                    </Departure>
+                                </Call>
+                                <Call order="10">
+                                    <ScheduledStopPointRef ref="ssp:11"/>
+                                    <Arrival>
+                                        <Time>06:46:00.0Z</Time>
+                                    </Arrival>
+                                    <Departure>
+                                        <ForBoarding>false</ForBoarding>
+                                    </Departure>
+                                </Call>
+                            </calls>
+                        </ServiceJourney>
+                    </vehicleJourneys>
+                    <frequencyGroups>
+                        <HeadwayJourneyGroup version="any" id="hjg:weekdays:morning">
+                            <Name>Interval between departures in the morning on weekdays</Name>
+                            <Description>About 20 minutes</Description>
+                            <FirstDepartureTime>05:10:00.0Z</FirstDepartureTime>
+                            <LastDepartureTime>05:50:00.0Z</LastDepartureTime>
+                            <ScheduledHeadwayInterval>PT20M</ScheduledHeadwayInterval>
+                        </HeadwayJourneyGroup>
+                        <HeadwayJourneyGroup version="any" id="hjg:weekdays:evening">
+                            <Name>Interval between departures in the evening on weekdays</Name>
+                            <Description>About 20 minutes</Description>
+                            <FirstDepartureTime>17:50:00.0Z</FirstDepartureTime>
+                            <LastDepartureTime>19:50:00.0Z</LastDepartureTime>
+                            <ScheduledHeadwayInterval>PT20M</ScheduledHeadwayInterval>
+                        </HeadwayJourneyGroup>
+                        <HeadwayJourneyGroup version="any" id="hjg:weekdays:night">
+                            <Name>Interval between departures late on weekdays</Name>
+                            <Description>About 20 minutes</Description>
+                            <FirstDepartureTime>20:10:00.0Z</FirstDepartureTime>
+                            <LastDepartureTime>23:50:00.0Z</LastDepartureTime>
+                            <ScheduledHeadwayInterval>PT20M</ScheduledHeadwayInterval>
+                        </HeadwayJourneyGroup>
+                        <HeadwayJourneyGroup version="any" id="hjg:weekdays:day">
+                            <Name>Interval between departures in the middle of the day on weekdays</Name>
+                            <Description>About 10 minutes</Description>
+                            <FirstDepartureTime>06:10:00.0Z</FirstDepartureTime>
+                            <LastDepartureTime>17:30:00.0Z</LastDepartureTime>
+                            <ScheduledHeadwayInterval>PT10M</ScheduledHeadwayInterval>
+                        </HeadwayJourneyGroup>
+                        <HeadwayJourneyGroup version="any" id="hjg:sat:morning">
+                            <Name>Interval between departures in the morning on saturdays</Name>
+                            <Description>About 30 minutes</Description>
+                            <FirstDepartureTime>06:40:00.0Z</FirstDepartureTime>
+                            <LastDepartureTime>09:10:00.0Z</LastDepartureTime>
+                            <ScheduledHeadwayInterval>PT30M</ScheduledHeadwayInterval>
+                        </HeadwayJourneyGroup>
+                        <HeadwayJourneyGroup version="any" id="hjg:sat:day">
+                            <Name>Interval between departures in the middle of the day on saturdays</Name>
+                            <Description>About 20 minutes</Description>
+                            <FirstDepartureTime>09:30:00.0Z</FirstDepartureTime>
+                            <LastDepartureTime>17:50:00.0Z</LastDepartureTime>
+                            <ScheduledHeadwayInterval>PT20M</ScheduledHeadwayInterval>
+                        </HeadwayJourneyGroup>
+                        <HeadwayJourneyGroup version="any" id="hjg:sat:evening">
+                            <Name>Interval between departures in the evening on saturdays</Name>
+                            <Description>About 20 minutes</Description>
+                            <FirstDepartureTime>18:10:00.0Z</FirstDepartureTime>
+                            <LastDepartureTime>23:50:00.0Z</LastDepartureTime>
+                            <ScheduledHeadwayInterval>PT20M</ScheduledHeadwayInterval>
+                        </HeadwayJourneyGroup>
+                        <HeadwayJourneyGroup version="any" id="hjg:sun:morning">
+                            <Name>Interval between departures in the morning on sundays</Name>
+                            <Description>About 30 minutes</Description>
+                            <FirstDepartureTime>07:10:00.0Z</FirstDepartureTime>
+                            <LastDepartureTime>10:10:00.0Z</LastDepartureTime>
+                            <ScheduledHeadwayInterval>PT30M</ScheduledHeadwayInterval>
+                        </HeadwayJourneyGroup>
+                        <HeadwayJourneyGroup version="any" id="hjg:sun:day">
+                            <Name>Interval between departures in the middle of the day on sundays</Name>
+                            <Description>About 20 minutes</Description>
+                            <FirstDepartureTime>10:30:00.0Z</FirstDepartureTime>
+                            <LastDepartureTime>17:50:00.0Z</LastDepartureTime>
+                            <ScheduledHeadwayInterval>PT20M</ScheduledHeadwayInterval>
+                        </HeadwayJourneyGroup>
+                        <HeadwayJourneyGroup version="any" id="hjg:sun:evening">
+                            <Name>Interval between departures in the evening on sundays</Name>
+                            <Description>About 20 minutes</Description>
+                            <FirstDepartureTime>18:10:00.0Z</FirstDepartureTime>
+                            <LastDepartureTime>23:50:00.0Z</LastDepartureTime>
+                            <ScheduledHeadwayInterval>PT20M</ScheduledHeadwayInterval>
+                        </HeadwayJourneyGroup>
+                    </frequencyGroups>
+                </TimetableFrame>
+                <ServiceFrame>
+                    <Network version="any" id="network:osl:bus">
+                        <Name>Oslo transport network</Name>
+                        <TransportOrganisationRef ref="org:auth:ruter"/>
+                        <groupsOfLines>
+                            <Name>Oslo nord bus lines</Name>
+                            <members>
+                                <LineRef ref="osl:line:23" />
+                            </members>
+                            <TransportMode>bus</TransportMode>
+                        </groupsOfLines>
+                        <tariffZones>
+                            <TariffZoneRef ref="tz:osl:1" />
+                        </tariffZones>
+                    </Network>
+                    <routePoints>
+                        <RoutePoint id="23:rp:1">
+                            <Name>RoutePoint 1 for line 23</Name>
+                            <Location>
+                                <Longitude>20</Longitude>
+                                <Latitude>10</Latitude>
+                                <Altitude>0</Altitude>
+                            </Location>
+                        </RoutePoint>
+                        <RoutePoint id="23:rp:2">
+                            <Name>RoutePoint 2 for line 23</Name>
+                            <Location>
+                                <Longitude>20</Longitude>
+                                <Latitude>10</Latitude>
+                                <Altitude>0</Altitude>
+                            </Location>
+                        </RoutePoint>
+                        <RoutePoint id="23:rp:3">
+                            <Name>RoutePoint 3 for line 23</Name>
+                            <Location>
+                                <Longitude>20</Longitude>
+                                <Latitude>10</Latitude>
+                                <Altitude>0</Altitude>
+                            </Location>
+                        </RoutePoint>
+                        <RoutePoint id="23:rp:4">
+                            <Name>RoutePoint 4 for line 23</Name>
+                            <Location>
+                                <Longitude>20</Longitude>
+                                <Latitude>10</Latitude>
+                                <Altitude>0</Altitude>
+                            </Location>
+                        </RoutePoint>
+                    </routePoints>
+                    <routes>
+                        <Route version="any" id="route:23:out">
+                            <Name>Shape for line 23</Name>
+                            <Distance>12345</Distance>
+                            <LineRef ref="osl:line:23"/>
+                            <DirectionType>outbound</DirectionType>
+                            <pointsInSequence>
+                                <PointOnRoute id="por:1">
+                                    <RoutePointRef ref="23:rp:1"/>
+                                </PointOnRoute>
+                                <PointOnRoute id="por:2">
+                                    <RoutePointRef ref="23:rp:2"/>
+                                </PointOnRoute>
+                                <PointOnRoute id="por:3">
+                                    <RoutePointRef ref="23:rp:3"/>
+                                </PointOnRoute>
+                                <PointOnRoute id="por:4">
+                                    <RoutePointRef ref="23:rp:4"/>
+                                </PointOnRoute>
+                            </pointsInSequence>
+                        </Route>
+                    </routes>
+                    <lines>
+                        <Line version="any" id="osl:line:23">
+                            <Name>Line 23 Simensbråten Lysaker</Name>
+                            <TransportMode>bus</TransportMode>
+                            <TransportSubmode>localBus</TransportSubmode>
+                            <Url>https://ruter.no/globalassets/rutetabeller/oslo/buss-oslo-nord-rutetabell-13122015-v2.pdf</Url>
+                            <PublicCode>23</PublicCode>
+                            <OperatorRef ref="org:oper:unibuss"/>
+                            <Monitored>true</Monitored>
+                            <routes>
+                                <RouteRef ref="route:23:out"/>
+                            </routes>
+                            <AccessibilityAssessment>
+                                <MobilityImpairedAccess>true</MobilityImpairedAccess>
+                                <limitations>
+                                    <AccessibilityLimitation>
+                                        <WheelchairAccess>true</WheelchairAccess>
+                                        <StepFreeAccess>true</StepFreeAccess>
+                                    </AccessibilityLimitation>
+                                </limitations>
+                            </AccessibilityAssessment>
+                        </Line>
+                    </lines>
+                    <scheduledStopPoints>
+                        <ScheduledStopPoint id="ssp:1">
+                            <Name>Simensbråten</Name>
+                            <Location>
+                                <Longitude>20</Longitude>
+                                <Latitude>10</Latitude>
+                                <Altitude>0</Altitude>
+                            </Location>
+                            <tariffZones>
+                                <TariffZoneRef ref="tz:osl:1" />
+                            </tariffZones>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="ssp:2">
+                            <Name>Ryen T</Name>
+                            <Location>
+                                <Longitude>20</Longitude>
+                                <Latitude>10</Latitude>
+                                <Altitude>0</Altitude>
+                            </Location>
+                            <tariffZones>
+                                <TariffZoneRef ref="tz:osl:1" />
+                            </tariffZones>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="ssp:3">
+                            <Name>Brynseng T</Name>
+                            <Location>
+                                <Longitude>20</Longitude>
+                                <Latitude>10</Latitude>
+                                <Altitude>0</Altitude>
+                            </Location>
+                            <tariffZones>
+                                <TariffZoneRef ref="tz:osl:1" />
+                            </tariffZones>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="ssp:4">
+                            <Name>Økern T</Name>
+                            <Location>
+                                <Longitude>20</Longitude>
+                                <Latitude>10</Latitude>
+                                <Altitude>0</Altitude>
+                            </Location>
+                            <tariffZones>
+                                <TariffZoneRef ref="tz:osl:1" />
+                            </tariffZones>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="ssp:5">
+                            <Name>Storo</Name>
+                            <Location>
+                                <Longitude>20</Longitude>
+                                <Latitude>10</Latitude>
+                                <Altitude>0</Altitude>
+                            </Location>
+                            <tariffZones>
+                                <TariffZoneRef ref="tz:osl:1" />
+                            </tariffZones>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="ssp:6">
+                            <Name>Nydalen stasjon</Name>
+                            <Location>
+                                <Longitude>20</Longitude>
+                                <Latitude>10</Latitude>
+                                <Altitude>0</Altitude>
+                            </Location>
+                            <tariffZones>
+                                <TariffZoneRef ref="tz:osl:1" />
+                            </tariffZones>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="ssp:7">
+                            <Name>Tåsen senter</Name>
+                            <Location>
+                                <Longitude>20</Longitude>
+                                <Latitude>10</Latitude>
+                                <Altitude>0</Altitude>
+                            </Location>
+                            <tariffZones>
+                                <TariffZoneRef ref="tz:osl:1" />
+                            </tariffZones>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="ssp:8">
+                            <Name>Ullevål stadion</Name>
+                            <Location>
+                                <Longitude>20</Longitude>
+                                <Latitude>10</Latitude>
+                                <Altitude>0</Altitude>
+                            </Location>
+                            <tariffZones>
+                                <TariffZoneRef ref="tz:osl:1" />
+                            </tariffZones>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="ssp:9">
+                            <Name>Radiumhospitalet</Name>
+                            <Location>
+                                <Longitude>20</Longitude>
+                                <Latitude>10</Latitude>
+                                <Altitude>0</Altitude>
+                            </Location>
+                            <tariffZones>
+                                <TariffZoneRef ref="tz:osl:1" />
+                            </tariffZones>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="ssp:10">
+                            <Name>Lilleaker</Name>
+                            <Location>
+                                <Longitude>20</Longitude>
+                                <Latitude>10</Latitude>
+                                <Altitude>0</Altitude>
+                            </Location>
+                            <tariffZones>
+                                <TariffZoneRef ref="tz:osl:1" />
+                            </tariffZones>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint id="ssp:11">
+                            <Name>Lysakerlokket</Name>
+                            <Location>
+                                <Longitude>20</Longitude>
+                                <Latitude>10</Latitude>
+                                <Altitude>0</Altitude>
+                            </Location>
+                            <tariffZones>
+                                <TariffZoneRef ref="tz:osl:1" />
+                            </tariffZones>
+                        </ScheduledStopPoint>
+                    </scheduledStopPoints>
+                    <tariffZones>
+                        <TariffZone id="tz:osl:1">
+                            <Name>Tariff zone 1</Name>
+                            <Centroid>
+        						<Location srsName="WGS84">
+        							<Longitude>-180</Longitude>
+        							<Latitude>-90</Latitude>
+        						</Location>
+        					</Centroid>
+                            <gml:Polygon gml:id="ID_1" srsName="WGS84" srsDimension="2">
+        						<gml:exterior>
+        							<gml:LinearRing>
+        								<gml:pos>3.14159265358979E0 3.14159265358979E0</gml:pos>
+        								<gml:pos>3.14159265358979E0 3.14159265358979E0</gml:pos>
+        								<gml:pos>3.14159265358979E0 3.14159265358979E0</gml:pos>
+        								<gml:pos>3.14159265358979E0 3.14159265358979E0</gml:pos>
+        							</gml:LinearRing>
+        						</gml:exterior>
+        						<gml:interior>
+        							<gml:LinearRing>
+        								<gml:pos>3.14159265358979E0 3.14159265358979E0</gml:pos>
+        								<gml:pos>3.14159265358979E0 3.14159265358979E0</gml:pos>
+        								<gml:pos>3.14159265358979E0 3.14159265358979E0</gml:pos>
+        								<gml:pos>3.14159265358979E0 3.14159265358979E0</gml:pos>
+        							</gml:LinearRing>
+        						</gml:interior>
+        					</gml:Polygon>
+                        </TariffZone>
+                    </tariffZones>
+                    <stopAssignments>
+                        <PassengerStopAssignment id="psa:1">
+                            <ScheduledStopPointRef ref="ssp:1"/>
+                            <StopPlaceRef ref="sp:1">
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="psa:2">
+                            <ScheduledStopPointRef ref="ssp:2"/>
+                            <StopPlaceRef ref="sp:2">
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="psa:3">
+                            <ScheduledStopPointRef ref="ssp:3"/>
+                            <StopPlaceRef ref="sp:3">
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="psa:4">
+                            <ScheduledStopPointRef ref="ssp:4"/>
+                            <StopPlaceRef ref="sp:4">
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="psa:5">
+                            <ScheduledStopPointRef ref="ssp:5"/>
+                            <StopPlaceRef ref="sp:5">
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="psa:6">
+                            <ScheduledStopPointRef ref="ssp:6"/>
+                            <StopPlaceRef ref="sp:6">
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="psa:7">
+                            <ScheduledStopPointRef ref="ssp:7"/>
+                            <StopPlaceRef ref="sp:7">
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="psa:8">
+                            <ScheduledStopPointRef ref="ssp:8"/>
+                            <StopPlaceRef ref="sp:8">
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="psa:9">
+                            <ScheduledStopPointRef ref="ssp:9"/>
+                            <StopPlaceRef ref="sp:9">
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="psa:10">
+                            <ScheduledStopPointRef ref="ssp:10"/>
+                            <StopPlaceRef ref="sp:10">
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment id="psa:11">
+                            <ScheduledStopPointRef ref="ssp:11"/>
+                            <StopPlaceRef ref="sp:11">
+                        </PassengerStopAssignment>
+                    </stopAssignments>
+                    <timingPoints>
+                        <TimingPoint id="tp:1">
+                            <Name>TimingPoint between Simensbråten and Ryen T</Name>
+                            <Location>
+                                <Longitude>20</Longitude>
+                                <Latitude>10</Latitude>
+                                <Altitude>0</Altitude>
+                            </Location>
+                        </TimingPoint>
+                        <TimingPoint id="tp:2">
+                            <Name>TimingPoint between Storo and Nydalen</Name>
+                            <Location>
+                                <Longitude>20</Longitude>
+                                <Latitude>10</Latitude>
+                                <Altitude>0</Altitude>
+                            </Location>
+                        </TimingPoint>
+                        <TimingPoint id="tp:3">
+                            <Name>TimingPoint between Ullevål stadion and Radium hospitalet</Name>
+                            <Location>
+                                <Longitude>20</Longitude>
+                                <Latitude>10</Latitude>
+                                <Altitude>0</Altitude>
+                            </Location>
+                        </TimingPoint>
+                    </timingPoints>
+                    <timingLinks>
+                        <TimingLink id="tl:ssp1_ssp2">
+                            <Name>Simensbråten - Ryen T</Name>
+                            <Distance>1</Distance>
+                            <FromPointRef ref="ssp:1"/>
+                            <ToPointRef ref="ssp:2"/>
+                        </TimingLink>
+                        <TimingLink id="tl:ssp2_ssp3">
+                            <Name>Ryen T - Brynseng T</Name>
+                            <Distance>1</Distance>
+                            <FromPointRef ref="ssp:2"/>
+                            <ToPointRef ref="ssp:3"/>
+                        </TimingLink>
+                        <TimingLink id="tl:ssp3_ssp4">
+                            <Name>Brynseng T - Økern T</Name>
+                            <Distance>1</Distance>
+                            <FromPointRef ref="ssp:3"/>
+                            <ToPointRef ref="ssp:4"/>
+                        </TimingLink>
+                        <TimingLink id="tl:ssp4_ssp5">
+                            <Name>Økern T - Storo</Name>
+                            <Distance>1</Distance>
+                            <FromPointRef ref="ssp:4"/>
+                            <ToPointRef ref="ssp:5"/>
+                        </TimingLink>
+                        <TimingLink id="tl:ssp5_ssp6">
+                            <Name>Storo - Nydalen stasjon</Name>
+                            <Distance>1</Distance>
+                            <FromPointRef ref="ssp:5"/>
+                            <ToPointRef ref="ssp:6"/>
+                        </TimingLink>
+                        <TimingLink id="tl:ssp6_ssp7">
+                            <Name>Nydalen stasjon - Tåsen senter</Name>
+                            <Distance>1</Distance>
+                            <FromPointRef ref="ssp:6"/>
+                            <ToPointRef ref="ssp:7"/>
+                        </TimingLink>
+                        <TimingLink id="tl:ssp7_ssp8">
+                            <Name>Tåsen senter - Ullevål stadion</Name>
+                            <Distance>1</Distance>
+                            <FromPointRef ref="ssp:7"/>
+                            <ToPointRef ref="ssp:8"/>
+                        </TimingLink>
+                        <TimingLink id="tl:ssp8_ssp9">
+                            <Name>Ullevål stadion - Radium hospitalet</Name>
+                            <Distance>1</Distance>
+                            <FromPointRef ref="ssp:8"/>
+                            <ToPointRef ref="ssp:9"/>
+                        </TimingLink>
+                        <TimingLink id="tl:ssp9_ssp10">
+                            <Name>Radium hospitalet - Lilleaker</Name>
+                            <Distance>1</Distance>
+                            <FromPointRef ref="ssp:9"/>
+                            <ToPointRef ref="ssp:10"/>
+                        </TimingLink>
+                        <TimingLink id="tl:ssp10_ssp11">
+                            <Name>Lilleaker - Lysakerlokket</Name>
+                            <Distance>1</Distance>
+                            <FromPointRef ref="ssp:10"/>
+                            <ToPointRef ref="ssp:11"/>
+                        </TimingLink>
+
+                    </timingLinks>
+                    <journeyPatterns>
+                        <!-- Pattern for line 23 from Simensbråten to Lysaker -->
+                        <ServiceJourneyPattern version="any" id="sjp:23SL:full">
+                            <Name>Line 23 usual</Name>
+                            <Distance>12345</Distance>
+                            <RouteRef ref="route:23:out"/>
+                            <runTimes>
+                                <JourneyPatternRunTime>
+                                    <TimingLinkRef ref="tl:ssp1_ssp2"/>
+                                    <RunTime>PT3M</RunTime>
+                                </JourneyPatternRunTime>
+                                <JourneyPatternRunTime>
+                                    <TimingLinkRef ref="tl:ssp2_ssp3"/>
+                                    <RunTime>PT4M</RunTime>
+                                </JourneyPatternRunTime>
+                                <JourneyPatternRunTime>
+                                    <TimingLinkRef ref="tl:ssp3_ssp4"/>
+                                    <RunTime>PT6M</RunTime>
+                                </JourneyPatternRunTime>
+                                <JourneyPatternRunTime>
+                                    <TimingLinkRef ref="tl:ssp4_ssp5"/>
+                                    <RunTime>PT5M</RunTime>
+                                </JourneyPatternRunTime>
+                                <JourneyPatternRunTime>
+                                    <TimingLinkRef ref="tl:ssp5_ssp6"/>
+                                    <RunTime>PT2M</RunTime>
+                                </JourneyPatternRunTime>
+                                <JourneyPatternRunTime>
+                                    <TimingLinkRef ref="tl:ssp6_ssp7"/>
+                                    <RunTime>PT2M</RunTime>
+                                </JourneyPatternRunTime>
+                                <JourneyPatternRunTime>
+                                    <TimingLinkRef ref="tl:ssp7_ssp8"/>
+                                    <RunTime>PT2M</RunTime>
+                                </JourneyPatternRunTime>
+                                <JourneyPatternRunTime>
+                                    <TimingLinkRef ref="tl:ssp8_ssp9"/>
+                                    <RunTime>PT6M</RunTime>
+                                </JourneyPatternRunTime>
+                                <JourneyPatternRunTime>
+                                    <TimingLinkRef ref="tl:ssp9_ssp10"/>
+                                    <RunTime>PT3M</RunTime>
+                                </JourneyPatternRunTime>
+                                <JourneyPatternRunTime>
+                                    <TimingLinkRef ref="tl:ssp10_ssp11"/>
+                                    <RunTime>PT4M</RunTime>
+                                </JourneyPatternRunTime>
+                            </runTimes>
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="spijp:23:norm:1">
+                                    <ScheduledStopPointRef ref="ssp:1" />
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="spijp:23:norm:2">
+                                    <ScheduledStopPointRef ref="ssp:2"/>
+                                </StopPointInJourneyPattern>
+                                <TimingPointInJourneyPattern id="tpijp:23:norm:1">
+                                    <TimingPointRef ref="tp:1" />
+                                    <WaitTime>PT1M</WaitTime>
+                                </TimingPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="spijp:23:norm:3">
+                                    <ScheduledStopPointRef ref="ssp:3"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="spijp:23:norm:4">
+                                    <ScheduledStopPointRef ref="ssp:4"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="spijp:23:norm:5">
+                                    <ScheduledStopPointRef ref="ssp:5"/>
+                                </StopPointInJourneyPattern>
+                                <TimingPointInJourneyPattern id="tpijp:23:norm:2">
+                                    <TimingPointRef ref="tp:2" />
+                                </TimingPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="spijp:23:norm:6">
+                                    <ScheduledStopPointRef ref="ssp:6"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="spijp:23:norm:7">
+                                    <ScheduledStopPointRef ref="ssp:7"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="spijp:23:norm:8">
+                                    <ScheduledStopPointRef ref="ssp:8"/>
+                                </StopPointInJourneyPattern>
+                                <TimingPointInJourneyPattern id="tpijp:23:norm:3">
+                                    <TimingPointRef ref="tp:3" />
+                                </TimingPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="spijp:23:norm:9">
+                                    <ScheduledStopPointRef ref="ssp:9"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="spijp:23:norm:10">
+                                    <ScheduledStopPointRef ref="ssp:10"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="spijp:23:norm:11">
+                                    <ScheduledStopPointRef ref="ssp:11"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                            <ServiceJourneyPatternType>passenger</ServiceJourneyPatternType>
+                        </ServiceJourneyPattern>
+                        <!-- Pattern for line 23 extra departure from Ryen T to Lysaker -->
+                        <ServiceJourneyPattern version="any" id="sjp:23SL:extra">
+                            <Name>Line 23 extra</Name>
+                            <Distance>12000</Distance>
+                            <RouteRef ref="route:23:out"/>
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern id="spijp:23:extra:2">
+                                    <ScheduledStopPointRef ref="ssp:2"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <ForBoarding>true</ForBoarding>
+                                </StopPointInJourneyPattern>
+                                <TimingPointInJourneyPattern id="tpijp:23:extra:1">
+                                    <TimingPointRef ref="tp:1" />
+                                    <WaitTime>PT1M</WaitTime>
+                                </TimingPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="spijp:23:extra:3">
+                                    <ScheduledStopPointRef ref="ssp:3"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="spijp:23:extra:4">
+                                    <ScheduledStopPointRef ref="ssp:4"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="spijp:23:extra:5">
+                                    <ScheduledStopPointRef ref="ssp:5"/>
+                                </StopPointInJourneyPattern>
+                                <TimingPointInJourneyPattern id="tpijp:23:extra:2">
+                                    <TimingPointRef ref="tp:2" />
+                                </TimingPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="spijp:23:extra:6">
+                                    <ScheduledStopPointRef ref="ssp:6"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="spijp:23:extra:7">
+                                    <ScheduledStopPointRef ref="ssp:7"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="spijp:23:extra:8">
+                                    <ScheduledStopPointRef ref="ssp:8"/>
+                                </StopPointInJourneyPattern>
+                                <TimingPointInJourneyPattern id="tpijp:23:extra:3">
+                                    <TimingPointRef ref="tp:3" />
+                                </TimingPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="spijp:23:extra:9">
+                                    <ScheduledStopPointRef ref="ssp:9"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="spijp:23:extra:10">
+                                    <ScheduledStopPointRef ref="ssp:10"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="spijp:23:extra:11">
+                                    <ScheduledStopPointRef ref="ssp:11"/>
+                                    <ForAlighting>true</ForAlighting>
+                                    <ForBoarding>false</ForBoarding>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                            <ServiceJourneyPatternType>passenger</ServiceJourneyPatternType>
+                        </ServiceJourneyPattern>
+                    </journeyPatterns>
+
+                </ServiceFrame>
+                <ServiceCalendarFrame>
+                    <dayTypes>
+                        <DayType id="dt:1:mtwtf">
+                            <Name>Weekdays</Name>
+                            <properties>
+                                <PropertyOfDay>
+                                    <DaysOfWeek>Monday Tuesday Wednesday Thursday Friday</DaysOfWeek>
+                                </PropertyOfDay>
+                            </properties>
+                        </DayType>
+                        <DayType id="dt:2:sat">
+                            <Name>Saturday</Name>
+                            <properties>
+                                <PropertyOfDay>
+                                    <DaysOfWeek>Saturday</DaysOfWeek>
+                                </PropertyOfDay>
+                            </properties>
+                        </DayType>
+                        <DayType id="dt:3:sun">
+                            <Name>Sunday</Name>
+                            <properties>
+                                <PropertyOfDay>
+                                    <DaysOfWeek>Sunday</DaysOfWeek>
+                                </PropertyOfDay>
+                            </properties>
+                        </DayType>
+                        <DayType id="dt:4:all">
+                            <Name>All week</Name>
+                            <properties>
+                                <PropertyOfDay>
+                                    <DaysOfWeek>Monday Tuesday Wednesday Thursday Friday Saturday Sunday</DaysOfWeek>
+                                </PropertyOfDay>
+                            </properties>
+                        </DayType>
+                    </dayTypes>
+                </ServiceCalendarFrame>
+        </CompositeFrame>
+    </dataObjects>
+</PublicationDelivery>
