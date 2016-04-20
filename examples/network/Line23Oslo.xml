@@ -54,14 +54,14 @@
  xmlns:xlink="http://www.w3.org/1999/xlink"
  xmlns:ifopt="http://www.ifopt.org.uk/ifopt"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.netex.org.uk/netex https://raw.githubusercontent.com/nick-knowles/NeTEx-XML/master/schema/1.03/xsd/NeTEx_publication.xsd">
+ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd">
     <PublicationTimestamp>2017-06-18T14:22:14Z</PublicationTimestamp>
     <ParticipantRef>Rutebanken</ParticipantRef>
     <!--PublicationRequest>
         PublicationRequest acts like a filter to spesify what information is requested from the database.
     </PublicationRequest-->
     <PublicationRefreshInterval>P5Y0M9DT1H10M0S</PublicationRefreshInterval>
-    <Description>s</Description>
+    <Description>-</Description>
     <dataObjects>
         <CompositeFrame id="cf:ruter" created="2015-11-21T11:50:51" dataSourceRef="ds:ruterdb" version="1.0">
             <Description>Composite frame that unites ResourceFrame and SiteFrame in order to spesify some shared values like version, creation date and codespaces</Description>
@@ -103,7 +103,7 @@
                         </DataSource>
                     </dataSources>
                     <typesOfValue>
-                        <Branding id="rb:ruter" version="any">
+                        <Branding id="b:ruter" version="any">
                             <Name>Rutebanken</Name>
                             <ShortName>RB</ShortName>
                             <Description>Rutebanken brand</Description>
