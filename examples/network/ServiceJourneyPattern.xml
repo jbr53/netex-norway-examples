@@ -1,9 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 Journey Pattern describes an ordered list of points on a route (it can be scheduled stop points or timing points). The route may not neccessarily contain rides with passengers.
-
 Service Journey Pattern describes a pattern a service journey (i.e. with passengers)
 -->
-<?xml version="1.0" encoding="UTF-8"?>
 <ServiceJourneyPattern
     xmlns="http://www.netex.org.uk/netex"
     xmlns:siri="http://www.siri.org.uk/siri"

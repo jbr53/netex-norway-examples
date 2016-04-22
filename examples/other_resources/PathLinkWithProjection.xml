@@ -1,7 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 PathLink inherits from Link
 -->
-<?xml version="1.0" encoding="UTF-8"?>
 <PathLink
     xmlns="http://www.netex.org.uk/netex"
     xmlns:siri="http://www.siri.org.uk/siri"

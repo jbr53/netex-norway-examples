@@ -1,7 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 This example describes a station with two levels, an access space and some local equipment, both localized and general.
 -->
-<?xml version="1.0" encoding="UTF-8"?>
 <StopPlace
     xmlns="http://www.netex.org.uk/netex"
     xmlns:siri="http://www.siri.org.uk/siri"

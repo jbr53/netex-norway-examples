@@ -1,7 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 DestinationDisplay is used to specify text that is advertized to public, both on the screens on vehicle sides and on some other media
 -->
-<?xml version="1.0" encoding="UTF-8"?>
 <DestinationDisplay xmlns="http://www.netex.org.uk/netex"
  xmlns:siri="http://www.siri.org.uk/siri"
  xmlns:core="http://www.govtalk.gov.uk/core"

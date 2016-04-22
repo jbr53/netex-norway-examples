@@ -1,7 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 This example desceribes a simple on-street stop place with quays, but without spesified boarding positions within quays. It also presents some additional information, like accessibility and an alternative name.
  -->
-<?xml version="1.0" encoding="UTF-8"?>
 <StopPlace xmlns="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri"
     xmlns:core="http://www.govtalk.gov.uk/core" xmlns:gml="http://www.opengis.net/gml/3.2"
     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ifopt="http://www.ifopt.org.uk/ifopt"

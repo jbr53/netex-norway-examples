@@ -1,9 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 Two examples of AvailabilityCondition:
 - using operatingDays
 - using dayTypes
 -->
-<?xml version="1.0" encoding="UTF-8"?>
 <AvailabilityCondition
     xmlns:siri="http://www.siri.org.uk/siri"
     xmlns="http://www.netex.org.uk/netex"
