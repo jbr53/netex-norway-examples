@@ -6,7 +6,7 @@
  xmlns:siri="http://www.siri.org.uk/siri"
  xmlns:ifopt="http://www.ifopt.org.uk/ifopt"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.netex.org.uk/netex file:../xsd/netex_part_1/part1_networkDescription/netex_flexibleNetwork_version-v1.0.xsd">
+ xsi:schemaLocation="http://www.netex.org.uk/netex file:../../xsd/netex_part_1/part1_networkDescription/netex_flexibleNetwork_version-v1.0.xsd">
     <Name>tjq4358</Name>
     <ShortName>EDP.QV.wC0pIqDp3WnTIB.</ShortName>
     <FlexibleLineRef ref="VpptC"/>

@@ -7,7 +7,7 @@
     xmlns:gml="http://www.opengis.net/gml/3.2"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.netex.org.uk/netex file:../xsd/netex_part_1/part1_networkDescription/netex_flexibleNetwork_version-v1.0.xsd">
+    xsi:schemaLocation="http://www.netex.org.uk/netex file:../../xsd/netex_part_1/part1_networkDescription/netex_flexibleNetwork_version-v1.0.xsd">
     <Name>AiLmn6gCGUeRpKft_UivyOjhJ</Name>
     <ShortName>nq</ShortName>
     <Description>FFENolP4Ho2V4</Description>

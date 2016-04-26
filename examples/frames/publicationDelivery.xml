@@ -6,7 +6,7 @@
  xmlns:xlink="http://www.w3.org/1999/xlink"
  xmlns:ifopt="http://www.ifopt.org.uk/ifopt"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.netex.org.uk/netex file:../xsd/NeTEx_publication.xsd">
+ xsi:schemaLocation="http://www.netex.org.uk/netex file:../../xsd/NeTEx_publication.xsd">
     <PublicationTimestamp>2017-06-18T14:22:14Z</PublicationTimestamp>
     <ParticipantRef>Rutebanken</ParticipantRef>
     <PublicationRequest>
