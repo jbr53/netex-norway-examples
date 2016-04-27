@@ -6,45 +6,47 @@
  xmlns:xlink="http://www.w3.org/1999/xlink"
  xmlns:ifopt="http://www.ifopt.org.uk/ifopt"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.netex.org.uk/netex file:../../xsd/NeTEx_publication.xsd">
-    <PublicationTimestamp>2017-06-18T14:22:14Z</PublicationTimestamp>
+ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd">
+    <PublicationTimestamp>2016-04-27T09:00:00Z</PublicationTimestamp>
     <ParticipantRef>Rutebanken</ParticipantRef>
     <PublicationRequest>
+        <RequestTimestamp>2016-04-27T08:59:56Z</RequestTimestamp>
         <!-- PublicationRequest acts like a filter to spesify what information is requested from the database. -->
     </PublicationRequest>
     <PublicationRefreshInterval>P5Y0M9DT1H10M0S</PublicationRefreshInterval>
     <Description>s</Description>
     <dataObjects>
         <!-- It is possible to combine any number of frames under dataObjects, using them in any order as many times as possible. The main purpose of a frame is to provide shared information like validity conditions, codespaces and so on -->
-        <CompositeFrame>
+        <CompositeFrame id="cf:ruter" created="2016-04-27T09:09:09" dataSourceRef="ds:ruterbankendb" version="1.0">
             <!-- CompositeFrame is used to combine several other frames in one object. It is possible to list any number of other frames, even several times each. For instance it is possible to use several ServiceFrames together with a SiteFrame and TimetableFrame -->
             <frames>
-                <FareFrame>
+                <FareFrame id="ff:rutebanken" version="any">
                     <!-- FareFrame contains information about prices, ticket types, etc. -->
                 </FareFrame>
-                <ServiceCalendarFrame>
+                <ServiceCalendarFrame id="scf:rutebanken" version="any">
                     <!-- ServiceCalendarFrame describes a calendar by defining operating days, day types and other related consepts-->
                 </ServiceCalendarFrame>
-                <ServiceFrame>
+                <ServiceFrame id="sf:rutebanken" version="any">
                     <!-- ServiceFrame contains information about a service, like list of networks, lines and routes, scheduled stop points -->
                 </ServiceFrame>
-                <TimetableFrame>
+                <TimetableFrame id="tf:rutebanken" version="any">
                     <!-- Timetable frame frame describes service journey - a planned vehicle journey on a particular day -->
                 </TimetableFrame>
-                <SiteFrame>
+                <SiteFrame id="sitef:rutebanken" version="any">
                     <!-- SiteFrame allows to exchange information about stops, quays, points of interest of other geographical locations -->
                 </SiteFrame>
-                <InfrastructureFrame>
+                <InfrastructureFrame id="if:rutebanken" version="any">
                     <!-- InfrastructureFrame describes road elements, crossroads, junktions, manoeuvre restrictions, vehicles, etc. -->
                 </InfrastructureFrame>
-                <GeneralFrame>
+                <GeneralFrame id="gf:rutebanken" version="any">
                     <!-- GeneralFrame allows to exchange any NeTEx element without imposing any predefined structure -->
                 </GeneralFrame>
-                <ResourceFrame>
+                <ResourceFrame id="rf:rutebanken" version="any">
                     <!-- ResourceFrame define common resources that are reused by other frames, like organisation definitions, responsibility sets, etc. -->
                 </ResourceFrame>
             </frames>
         </CompositeFrame>
+        <!--
         <FareFrame>...</FareFrame>
         <ServiceCalendarFrame>...</ServiceCalendarFrame>
         <ServiceFrame>...</ServiceFrame>
@@ -53,5 +55,6 @@
         <InfrastructureFrame>...</InfrastructureFrame>
         <GeneralFrame>...</GeneralFrame>
         <ResourceFrame>...</ResourceFrame>
+        -->
     </dataObjects>
 </PublicationDelivery>

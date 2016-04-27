@@ -5,7 +5,7 @@
  xmlns:xlink="http://www.w3.org/1999/xlink"
  xmlns:siri="http://www.siri.org.uk/siri"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.netex.org.uk/netex file:../xsd/netex_framework/netex_genericFramework/netex_zone_version-v1.0.xsd">
+ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/netex_framework/netex_genericFramework/netex_zone_version-v1.0.xsd">
     <Centroid>
         <Location>
             <gml:pos>12345.67</gml:pos>

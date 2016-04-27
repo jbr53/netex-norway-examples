@@ -3,7 +3,7 @@
     xmlns="http://www.netex.org.uk/netex"
     xmlns:core="http://www.govtalk.gov.uk/core"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.netex.org.uk/netex file:../xsd/netex_framework/netex_utility/netex_utility_types-v1.0.xsd">
+    xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/netex_framework/netex_utility/netex_utility_types-v1.0.xsd">
     <TimeZoneOffset>+2</TimeZoneOffset>
     <TimeZone>Moscow</TimeZone>
     <SummerTimeZoneOffset>+2</SummerTimeZoneOffset>

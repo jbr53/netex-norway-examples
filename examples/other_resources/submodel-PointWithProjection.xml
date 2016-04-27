@@ -6,9 +6,8 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:core="http://www.govtalk.gov.uk/core"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.netex.org.uk/netex file:../xsd/netex_framework/netex_genericFramework/netex_pointAndLink_version-v1.0.xsd">
-
-    <Name>d6FLc</Name>
+    xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/netex_framework/netex_genericFramework/netex_pointAndLink_version-v1.0.xsd">
+    <Name>example</Name>
     <Location>
         <gml:pos>-606731799.854 -1297377369.241</gml:pos>
         <Precision>434009368.11</Precision>
@@ -22,5 +21,4 @@
             <Distance>-1681111194.552</Distance>
         </PointProjection>
     </projections>
-
 </Point>

@@ -3,10 +3,10 @@
  xmlns:siri="http://www.siri.org.uk/siri"
  xmlns:core="http://www.govtalk.gov.uk/core"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.netex.org.uk/netex file:../xsd/netex_framework/netex_reusableComponents/netex_serviceCalendar_version-v1.0.xsd">
+ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/netex_framework/netex_reusableComponents/netex_serviceCalendar_version-v1.0.xsd">
     <CalendarDate>2017-03-05</CalendarDate>
-    <ServiceCalendarRef ref="ECNz.3pQoF83CfRihyj8a"/>
-    <Name>ygodEhA.Ka_3wg9oo4CAkZNA</Name>
+    <ServiceCalendarRef ref="scr:v2"/>
+    <Name>Andre juledag</Name>
     <EarliestTime>11:03:07.453Z</EarliestTime>
     <DayLength>PT23H</DayLength>
 </OperatingDay>
