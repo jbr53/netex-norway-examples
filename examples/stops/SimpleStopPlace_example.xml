@@ -2,38 +2,25 @@
 <!-- ==== Simple Stop Example ====== 
 This Example is based on official NeTEx-XML examples and provides an example of a pair of stops on a street, as a general delivery 
     It comprises
-       (i)  A  STOP PLACE  mybus:SSP_0751A   : -  Museumstrasse
-       (ii) A  QUAY           mybus:Q_SSP_0751A_1  - East side
-       (iii) A  QUAY           mybus:Q_SSP_0751A_1  - West side
+       (i)   STOP PLACE		ruter:sp:1			Bryn skole (i Ole Deviks vei)
+       (ii)  QUAY			ruter:sp:1:q:1		Bryn skole northbound (from city center)
+       (iii) QUAY			ruter:sp:1:q:1		Bryn skole southbound (to city center)
 
-In Addition we provide elements to handle the assignment where the timetable stop reference is different from syop id in the the stop database
-       
-      (i) A SCHEDULED STOP POINT  - jqx:SSP0042A Museum
-      (ii) STOP ASSIGNMENTs 
-            jqx:PassengerStopAssignment:PSA_20012_A    maps  jqx:SSA0021 - jqx:SSP0042A  ==> mybus:SSP0751A      - STOP PLACE 
-            jqx:PassengerStopAssignment:PSA_20012_A1  maps  jqx:SSA0021 - jqx:SSP0042A  ==> mybus:Q_SSP_0751A - Quay 1 
-            jqx:PassengerStopAssignment:PSA_20012_A2  maps  jqx:SSA0021 - jqx:SSP0042A  ==> mybus:Q_SSP_0751A_2  - Quay 2
+RESPONSIBILITY SETs do not need to be declared in the file, but are included to clarify relation to TIMETABLE data
+    ruter:rs:rs66        Timetable data
 
-Two different RESPONSIBILITY SETs are assumed (These do not have to be declared in this file but are include for clarity)
-    myBus:RS_10,    Physical stop data
-    jqx:ResponsibilitySet:RS_22          Timetable stop datea
+TOPOGRAPHIC PLACE is defined within the file, this would normally refer to externally defined place
 
-A single TOPOGRAPHIC PLACE is defined - normally this would be referenceded externally 
-
-B. Frames and grouping
-    A RESOURCE FRAME is used to hold the RESPONSIBILITY SETs.
-	A SITE FRAME is used to hold the STOP PLACEs.
-	A SERVICE FRAME is used to hold the SCHEDULED STOP POINTs and STOP ASSIGNMENTs .
-	A COMPOSITE FRAME is used to hold the other FRAMEs as a coherent version.
-
-(C) CEN Copyright 2010
+Frames and grouping:
+    RESOURCE FRAME is used to hold the RESPONSIBILITY SETs.
+	SITE FRAME is used to hold the STOP PLACEs.
+	SERVICE FRAME is used to hold the SCHEDULED STOP POINTs and STOP ASSIGNMENTs 
+	COMPOSITE FRAME is used to hold the other FRAMEs as a coherent version.
 -->
-<PublicationDelivery version="1.0" 
-  xmlns:gml="http://www.opengis.net/gml/3.2" 
-  xmlns="http://www.netex.org.uk/netex" 
-  xmlns:siri="http://www.siri.org.uk/siri" 
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-  xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd">
+<PublicationDelivery version="1.0" xmlns:gml="http://www.opengis.net/gml/3.2"
+	xmlns="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd">
 	<PublicationTimestamp>2016-04-29T12:30:00.0Z</PublicationTimestamp>
 	<ParticipantRef>PROVIDER_ID</ParticipantRef>
 	<!--- ======WHAT WAS REQUESTED ========== -->
@@ -46,10 +33,10 @@ B. Frames and grouping
 				<Current/>
 				<NetworkFilterByValue>
 					<objectReferences>
-						<TopographicPlaceRef ref="detop:TopographicPlace:TP_0032A"/>
+						<TopographicPlaceRef ref="ruter:tp:brynhelsfyr"/>
 					</objectReferences>
 					<places>
-						<TopographicPlaceRef version="any" ref="detop:TopographicPlace:TP_0032A"/>
+						<TopographicPlaceRef version="any" ref="ruter:tp:brynhelsfyr"/>
 					</places>
 				</NetworkFilterByValue>
 			</NetworkFrameTopic>
@@ -59,70 +46,57 @@ B. Frames and grouping
 	<Description>Simple Stop with Quay pair on example street</Description>
 	<!--- =============== RESULTS =========== -->
 	<dataObjects>
-		<CompositeFrame version="1" id="mybus:CompositeFrame:CF002">
+		<CompositeFrame version="1" id="ruter:cf:cf01">
 			<validityConditions>
-				<AvailabilityCondition version="any" id="jqx:AvailabilityCondition:CF002">
+				<AvailabilityCondition version="any" id="ruter:ac:cf01">
 					<FromDate>2016-04-29T12:12:00.0Z</FromDate>
 					<ToDate>2016-08-31T23:59:59.0Z</ToDate>
 				</AvailabilityCondition>
 			</validityConditions>
-			<!--- ======= CODESPACEs======== -->
+			<!--- ======= CODESPACE======== -->
 			<codespaces>
-				<Codespace id="jqx">
-					<Xmlns>jqx</Xmlns>
-					<XmlnsUrl>http://www.VKWzn.de/</XmlnsUrl>
-					<Description>Bus data  namesapce</Description>
-				</Codespace>
-				<Codespace id="detop">
-					<Xmlns>detop</Xmlns>
-					<XmlnsUrl>http://www.pttopog.de</XmlnsUrl>
-					<Description>German locality data</Description>
-				</Codespace>
-				<Codespace id="mybus">
-					<Xmlns>mybus</Xmlns>
-					<XmlnsUrl>http://www.busfahrt.de</XmlnsUrl>
-					<Description>German locality data</Description>
+				<Codespace id="ruter">
+					<Xmlns>ruter</Xmlns>
+					<XmlnsUrl>http://www.ruter.no/</XmlnsUrl>
+					<Description>Namespace for #Ruter</Description>
 				</Codespace>
 			</codespaces>
 			<!--- =======FRAME DEFAULTS======== -->
 			<FrameDefaults>
-				<DefaultCodespaceRef ref="jqx"/>
+				<DefaultCodespaceRef ref="ruter"/>
 			</FrameDefaults>
 			<frames>
-				<SiteFrame version="any" id="detop:SiteFrame:SF00121">
+				<SiteFrame version="any" id="ruter:sf:1">
 					<FrameDefaults>
-						<DefaultResponsibilitySetRef ref="detop:ResponsibilitySet:RS_24">EXTERNAL</DefaultResponsibilitySetRef>
+						<DefaultResponsibilitySetRef ref="ruter:drs:01">EXTERNAL</DefaultResponsibilitySetRef>
 					</FrameDefaults>
 					<topographicPlaces>
-						<TopographicPlace version="any" id="detop:TopographicPlace:TP_0032A">
-							<Name lang="no-NO">Keinstadt</Name>
+						<TopographicPlace version="any" id="ruter:tp:brynhelsfyr">
+							<Name lang="no-NO">Bryn_Helsfyr_Oslo</Name>
 							<Descriptor>
-								<Name lang="no-NO">Keinstadt auf dem Fluss</Name>
-								<ShortName lang="no-NO">Keinstadt</ShortName>
+								<Name lang="no-NO">Område Bryn-Helsfyr i Oslo</Name>
+								<ShortName lang="no-NO">Bryn-Helsfyr</ShortName>
 								<Qualify>
-									<QualifierName lang="no-NO">Mittleland</QualifierName>
-									<TopographicPlaceRef version="any" ref="detop:TopographicPlace:TP_0100"/>
+									<!-- TODO: Definere hvordan QualifierName bør brukes for å skille likelydende stedsnavn -->
+									<QualifierName lang="no-NO">Bryn Skole</QualifierName>
+									<TopographicPlaceRef version="any" ref="ruter:tp:brynhelsfyr"/>
 								</Qualify>
-							</Descriptor>
-						</TopographicPlace>
-						<TopographicPlace version="any" id="detop:TopographicPlace:TP_0100">
-							<Name lang="no-NO">Mittleland</Name>
-							<Descriptor>
-								<Name lang="no-NO">Mittleland</Name>
 							</Descriptor>
 						</TopographicPlace>
 					</topographicPlaces>
 					<stopPlaces>
-						<!--- =====Stops=========== -->
-						<StopPlace version="01" created="2016-04-21T09:00:00.0Z" responsibilitySetRef="mybus:ResponsibilitySet:RS_10" id="mybus:StopPlace:SP_0751A">
+						<!--- ===Stop=== Merk: Holdeplass-ID vil komme fra Holdeplassregisteret -->
+						<StopPlace version="01" created="2016-04-21T09:00:00.0Z"
+							responsibilitySetRef="ruter:rs:1" id="ruter:sp:1">
 							<Name lang="no-NO">Bryn skole (i Ole Deviks vei)</Name>
 							<ShortName lang="no-NO">Bryn skole</ShortName>
 							<Centroid>
 								<Location>
-									<gml:pos srsName="WGS84" srsDimension="2">3.14159265358979E0 3.14159265358979E0</gml:pos>
+									<gml:pos srsName="WGS84" srsDimension="2"
+										>3.14159265358979E0 3.14159265358979E0</gml:pos>
 								</Location>
 							</Centroid>
-							<AccessibilityAssessment version="any" id="mybus:AccessibilityAssessment:SP_0751A">
+							<AccessibilityAssessment version="any" id="ruter:aa:1">
 								<MobilityImpairedAccess>true</MobilityImpairedAccess>
 								<limitations>
 									<AccessibilityLimitation>
@@ -132,12 +106,13 @@ B. Frames and grouping
 								</limitations>
 							</AccessibilityAssessment>
 							<TopographicPlaceView>
-								<TopographicPlaceRef version="any" ref="detop:TopographicPlace:TP_0032A"/>
+								<TopographicPlaceRef version="any" ref="ruter:tp:brynhelsfyr"/>
 							</TopographicPlaceView>
 							<TransportMode>bus</TransportMode>
 							<StopPlaceType>onstreetBus</StopPlaceType>
 							<quays>
-								<Quay version="01" created="2016-04-21T09:01:00.0Z" id="mybus:Quay:Q_SP_0751A_1">
+								<Quay version="01" created="2016-04-21T09:01:00.0Z"
+									id="ruter:sp:1:q:1">
 									<Name lang="no-NO">Bryn skole nord</Name>
 									<Description lang="no-NO">Bryn skole (i Ole Deviks vei) retning nord (fra sentrum).</Description>
 									<Centroid>
@@ -146,26 +121,28 @@ B. Frames and grouping
 											<Latitude>51.4217482061</Latitude>
 										</Location>
 									</Centroid>
-									<RoadAddress version="any" id="mybus:RoadAddress:Rad_SP001A_01">
+									<RoadAddress version="any" id="ruter:ra:oledeviksvei2">
 										<RoadName>Ole Deviks vei</RoadName>
 									</RoadAddress>
-									<CrossRoad lang="no-NO">Teisenvein</CrossRoad>
+									<CrossRoad lang="no-NO">Teisenveien</CrossRoad>
 									<Landmark lang="no-NO">Bryn skole</Landmark>
 									<Covered>outdoors</Covered>
 									<Lighting>wellLit</Lighting>
 									<placeEquipments>
-										<PassengerInformationEquipment version="any" id="mybus:PassengerInformationEquipment:Rad_SP001A_01">
+										<PassengerInformationEquipment version="any"
+											id="ruter:pie:bus:01">
 											<AccessibilityInfoFacilityList>audioForHearingImpaired visualDisplays</AccessibilityInfoFacilityList>
 										</PassengerInformationEquipment>
 									</placeEquipments>
 									<BoardingUse>true</BoardingUse>
 									<AlightingUse>true</AlightingUse>
 									<Label lang="no-NO">A</Label>
-									<PublicCode>1-3454 </PublicCode>
-									<CompassOctant>S</CompassOctant>
+									<PublicCode>XX</PublicCode>
+									<CompassOctant>NE</CompassOctant>
 									<QuayType>busStop</QuayType>
 								</Quay>
-								<Quay version="01" created="2016-04-21T09:02:00.0Z" id="mybus:Quay:Q_SP_0751A_2">
+								<Quay version="01" created="2016-04-21T09:02:00.0Z"
+									id="ruter:sp:1:q:2">
 									<Name lang="no-NO">Bryn skole syd</Name>
 									<Description lang="no-NO">Bryn skole (i Ole Deviks vei) retning syd (mot sentrum).</Description>
 									<Centroid>
@@ -174,57 +151,59 @@ B. Frames and grouping
 											<Latitude>51.4217482063</Latitude>
 										</Location>
 									</Centroid>
-									<RoadAddress version="any" id="mybus:RoadAddress:Rad_Q_SP_0751A_2"> <!-- TODO: denne er ulik Quay 1 -->
+									<RoadAddress version="any" id="ruter:ra:oledeviksvei3">
 										<RoadName>Ole Deviks vei</RoadName>
 									</RoadAddress>
-									<CrossRoad lang="no-NO">Teisenvein</CrossRoad>
+									<CrossRoad lang="no-NO">Teisenveien</CrossRoad>
 									<Landmark lang="no-NO">Bryn skole</Landmark>
 									<Covered>outdoors</Covered>
 									<Lighting>wellLit</Lighting>
 									<placeEquipments>
-										<PassengerInformationEquipment version="any" id="mybus:PassengerInformationEquipment:Q_SP_0751A_2">
+										<PassengerInformationEquipment version="any"
+											id="ruter:pie:bus:02">
 											<AccessibilityInfoFacilityList>audioForHearingImpaired visualDisplays</AccessibilityInfoFacilityList>
 										</PassengerInformationEquipment>
 									</placeEquipments>
 									<BoardingUse>true</BoardingUse>
 									<AlightingUse>true</AlightingUse>
 									<Label lang="no-NO">B</Label>
-									<PublicCode>1-3455 </PublicCode>
-									<CompassOctant>N</CompassOctant>
+									<PublicCode>XY</PublicCode>
+									<CompassOctant>SW</CompassOctant>
 									<QuayType>busStop</QuayType>
 								</Quay>
 							</quays>
 						</StopPlace>
 					</stopPlaces>
 				</SiteFrame>
-				<ServiceFrame version="any" id="jqx:ServiceFrame:SV0021">
+				<ServiceFrame version="any" id="ruter:sf:buss66">
 					<FrameDefaults>
-						<DefaultResponsibilitySetRef ref="jqx:ResponsibilitySet:RS_22">EXTERNAL</DefaultResponsibilitySetRef>
+						<DefaultResponsibilitySetRef ref="ruter:rs:rs66">EXTERNAL</DefaultResponsibilitySetRef>
 					</FrameDefaults>
 					<scheduledStopPoints>
 						<!--- =====SCHEDULED STOP POINT ====== -->
-						<ScheduledStopPoint version="032" created="2000-12-17T09:30:47.0Z" changed="2002-12-17T09:30:47.0Z" id="jqx:ScheduledStopPoint:SSP0021A">
-							<Name>Stadtmuseum</Name>
-							<Label>Stadmuseum Zum Bahnhof</Label>
+						<ScheduledStopPoint version="001" created="2016-04-20T07:50:00.0Z"
+							changed="2016-04-20T08:45:00.0Z" id="ruter:ssp:brynskole">
+							<Name>Bryn skole</Name>
+							<Label>Bryn skole (i Ole Deviks vei)</Label>
 						</ScheduledStopPoint>
 					</scheduledStopPoints>
 					<stopAssignments>
-						<PassengerStopAssignment order="1" version="any" id="jqx:PassengerStopAssignment:PSA_20012_A">
-							<Description lang="en">Assigns Museum timetable ref to physical stop - regardless of quay </Description>
-							<ScheduledStopPointRef version="032" ref="jqx:ScheduledStopPoint:SSP0021A"/>
-							<StopPlaceRef version="01" ref="mybus:StopPlace:SP_0751A"/>
+						<PassengerStopAssignment order="1" version="any" id="ruter:psa:brynskole:01">
+							<Description lang="no-NO">Bryn skole rutetabell uavhengig av Quay</Description>
+							<ScheduledStopPointRef version="001" ref="ruter:ssp:brynskole"/>
+							<StopPlaceRef version="01" ref="ruter:sp:1"/>
 						</PassengerStopAssignment>
-						<PassengerStopAssignment order="2" version="any" id="jqx:PassengerStopAssignment:PSA_20012_A1">
-							<Description lang="en">Assigns Eastbound Museum timetable ref to physical stop</Description>
-							<ScheduledStopPointRef version="032" ref="jqx:ScheduledStopPoint:SSP0021A"/>
-							<StopPlaceRef version="01" ref="mybus:StopPlace:SP_0751A"/>
-							<QuayRef version="01" ref="mybus:Quay:Q_SP_0751A_1"/>
+						<PassengerStopAssignment order="2" version="any" id="ruter:psa:brynskole:01">
+							<Description lang="en">Bryn skole rutetabell nordgående Quay</Description>
+							<ScheduledStopPointRef version="001" ref="ruter:ssp:brynskole"/>
+							<StopPlaceRef version="01" ref="ruter:sp:1"/>
+							<QuayRef version="01" ref="ruter:sp:1:q:1"/>
 						</PassengerStopAssignment>
-						<PassengerStopAssignment order="3" version="any" id="jqx:PassengerStopAssignment:PSA_20012_A2">
-							<Description lang="en">Assigns Westbound Museum timetable ref to physical stop</Description>
-							<ScheduledStopPointRef version="032" ref="jqx:ScheduledStopPoint:SSP0021A"/>
-							<StopPlaceRef version="01" ref="mybus:StopPlace:SP_0751A"/>
-							<QuayRef version="01" ref="mybus:Quay:Q_SP_0751A_2"/>
+						<PassengerStopAssignment order="3" version="any" id="ruter:psa:brynskole:01">
+							<Description lang="en">Bryn skole rutetabell sørgående Quay</Description>
+							<ScheduledStopPointRef version="001" ref="ruter:ssp:brynskole"/>
+							<StopPlaceRef version="01" ref="ruter:sp:1"/>
+							<QuayRef version="01" ref="ruter:sp:1:q:2"/>
 						</PassengerStopAssignment>
 					</stopAssignments>
 				</ServiceFrame>
