@@ -23,7 +23,7 @@ Frames and grouping:
 	xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd">
 	<PublicationTimestamp>2016-04-29T12:30:00.0Z</PublicationTimestamp>
 	<ParticipantRef>PROVIDER_ID</ParticipantRef>
-	<!--- ======WHAT WAS REQUESTED ========== -->
+	<!--===REQUEST===-->
 	<PublicationRequest version="1.0">
 		<RequestTimestamp>2016-04-29T12:30:00.0Z</RequestTimestamp>
 		<ParticipantRef>REQUESTOR_ID</ParticipantRef>
@@ -44,7 +44,7 @@ Frames and grouping:
 	</PublicationRequest>
 	<PublicationRefreshInterval>P15M</PublicationRefreshInterval>
 	<Description>Simple Stop with Quay pair on example street</Description>
-	<!--- =============== RESULTS =========== -->
+	<!--===RESPONSE===-->
 	<dataObjects>
 		<CompositeFrame version="1" id="ruter:cf:cf01">
 			<validityConditions>
@@ -53,7 +53,7 @@ Frames and grouping:
 					<ToDate>2016-08-31T23:59:59.0Z</ToDate>
 				</AvailabilityCondition>
 			</validityConditions>
-			<!--- ======= CODESPACE======== -->
+			<!--===CODESPACE===-->
 			<codespaces>
 				<Codespace id="ruter">
 					<Xmlns>ruter</Xmlns>
@@ -61,7 +61,7 @@ Frames and grouping:
 					<Description>Namespace for #Ruter</Description>
 				</Codespace>
 			</codespaces>
-			<!--- =======FRAME DEFAULTS======== -->
+			<!--===FRAME DEFAULTS===-->
 			<FrameDefaults>
 				<DefaultCodespaceRef ref="ruter"/>
 			</FrameDefaults>
@@ -85,7 +85,7 @@ Frames and grouping:
 						</TopographicPlace>
 					</topographicPlaces>
 					<stopPlaces>
-						<!--- ===Stop=== Merk: Holdeplass-ID vil komme fra Holdeplassregisteret -->
+						<!--===Stop=== Merk: Holdeplass-ID vil komme fra Holdeplassregisteret -->
 						<StopPlace version="01" created="2016-04-21T09:00:00.0Z"
 							responsibilitySetRef="ruter:rs:1" id="ruter:sp:1">
 							<Name lang="no-NO">Bryn skole (i Ole Deviks vei)</Name>
@@ -180,7 +180,7 @@ Frames and grouping:
 						<DefaultResponsibilitySetRef ref="ruter:rs:rs66">EXTERNAL</DefaultResponsibilitySetRef>
 					</FrameDefaults>
 					<scheduledStopPoints>
-						<!--- =====SCHEDULED STOP POINT ====== -->
+						<!--===SCHEDULED STOP POINT===-->
 						<ScheduledStopPoint version="001" created="2016-04-20T07:50:00.0Z"
 							changed="2016-04-20T08:45:00.0Z" id="ruter:ssp:brynskole">
 							<Name>Bryn skole</Name>
