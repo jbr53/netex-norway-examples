@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- ==== Simple Stop Example ====== 
 This Example is based on official NeTEx-XML examples and provides an example of a pair of stops on a street, as a general delivery 
     It comprises
@@ -17,9 +17,12 @@ Frames and grouping:
 	SERVICE FRAME is used to hold the SCHEDULED STOP POINTs and STOP ASSIGNMENTs 
 	COMPOSITE FRAME is used to hold the other FRAMEs as a coherent version.
 -->
-<PublicationDelivery version="1.0" xmlns:gml="http://www.opengis.net/gml/3.2"
-	xmlns="http://www.netex.org.uk/netex" xmlns:siri="http://www.siri.org.uk/siri"
+<PublicationDelivery 
+	version="1.0"
+	xmlns="http://www.netex.org.uk/netex" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:gml="http://www.opengis.net/gml/3.2"
+	xmlns:siri="http://www.siri.org.uk/siri"
 	xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd">
 	<PublicationTimestamp>2016-04-29T12:30:00.0Z</PublicationTimestamp>
 	<ParticipantRef>PROVIDER_ID</ParticipantRef>
@@ -74,10 +77,10 @@ Frames and grouping:
 						<TopographicPlace version="any" id="ruter:tp:brynhelsfyr">
 							<Name lang="no-NO">Bryn_Helsfyr_Oslo</Name>
 							<Descriptor>
-								<Name lang="no-NO">Område Bryn-Helsfyr i Oslo</Name>
+								<Name lang="no-NO">OmrÃ¥de Bryn-Helsfyr i Oslo</Name>
 								<ShortName lang="no-NO">Bryn-Helsfyr</ShortName>
 								<Qualify>
-									<!-- TODO: Definere hvordan QualifierName bør brukes for å skille likelydende stedsnavn -->
+									<!-- TODO: Definere hvordan QualifierName bÃ¸r brukes for Ã¥ skille likelydende stedsnavn -->
 									<QualifierName lang="no-NO">Bryn Skole</QualifierName>
 									<TopographicPlaceRef version="any" ref="ruter:tp:brynhelsfyr"/>
 								</Qualify>
@@ -194,13 +197,13 @@ Frames and grouping:
 							<StopPlaceRef version="01" ref="ruter:sp:1"/>
 						</PassengerStopAssignment>
 						<PassengerStopAssignment order="2" version="any" id="ruter:psa:brynskole:01">
-							<Description lang="en">Bryn skole rutetabell nordgående Quay</Description>
+							<Description lang="en">Bryn skole rutetabell nordgÃ¥ende Quay</Description>
 							<ScheduledStopPointRef version="001" ref="ruter:ssp:brynskole"/>
 							<StopPlaceRef version="01" ref="ruter:sp:1"/>
 							<QuayRef version="01" ref="ruter:sp:1:q:1"/>
 						</PassengerStopAssignment>
 						<PassengerStopAssignment order="3" version="any" id="ruter:psa:brynskole:01">
-							<Description lang="en">Bryn skole rutetabell sørgående Quay</Description>
+							<Description lang="en">Bryn skole rutetabell sÃ¸rgÃ¥ende Quay</Description>
 							<ScheduledStopPointRef version="001" ref="ruter:ssp:brynskole"/>
 							<StopPlaceRef version="01" ref="ruter:sp:1"/>
 							<QuayRef version="01" ref="ruter:sp:1:q:2"/>

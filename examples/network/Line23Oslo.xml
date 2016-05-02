@@ -839,7 +839,7 @@
                             </Location>
                         </TimingPoint>
                         <TimingPoint id="tp:2" version="any">
-                            <Name>TimingPoint between Storo and Nydalen</Name>
+                            <Name>TimingPoint between Ryen T and Brynseng T</Name>
                             <Location>
                                 <Longitude>20</Longitude>
                                 <Latitude>10</Latitude>
@@ -847,6 +847,14 @@
                             </Location>
                         </TimingPoint>
                         <TimingPoint id="tp:3" version="any">
+                            <Name>TimingPoint between Storo and Nydalen</Name>
+                            <Location>
+                                <Longitude>20</Longitude>
+                                <Latitude>10</Latitude>
+                                <Altitude>0</Altitude>
+                            </Location>
+                        </TimingPoint>
+                        <TimingPoint id="tp:4" version="any">
                             <Name>TimingPoint between Ullevål stadion and Radiumhospitalet</Name>
                             <Location>
                                 <Longitude>20</Longitude>
@@ -972,12 +980,25 @@
                                     <ForAlighting>false</ForAlighting>
                                     <ForBoarding>true</ForBoarding>
                                 </StopPointInJourneyPattern>
-                                <StopPointInJourneyPattern id="spijp:23:norm:2" version="any" order="2">
-                                    <ScheduledStopPointRef ref="ssp:2"/>
-                                </StopPointInJourneyPattern>
                                 <TimingPointInJourneyPattern id="tpijp:23:norm:1" version="any" order="1">
                                     <TimingPointRef ref="tp:1" />
-                                    <WaitTime>PT1M</WaitTime>
+									<noticeAssignments>
+										<NoticeAssignment version="any" id="ruter:na:tpijp:23_01" order="1">
+											<NoticeRef ref="ruter:notice:ryent"/>
+										</NoticeAssignment>
+									</noticeAssignments>
+                                </TimingPointInJourneyPattern>
+                                <StopPointInJourneyPattern id="spijp:23:norm:2" version="any" order="2">
+                                    <ScheduledStopPointRef ref="ssp:2"/>
+                                    <noticeAssignments>
+										<NoticeAssignment version="any" id="ruter:na:tpijp:23_02" order="2">
+											<NoticeRef ref="ruter:notice:brynsengt"/>
+										</NoticeAssignment>
+									</noticeAssignments>
+                                </StopPointInJourneyPattern>
+                                <TimingPointInJourneyPattern id="tpijp:23:norm:1" version="any" order="2">
+                                    <TimingPointRef ref="tp:1" />
+                                    <WaitTime>PT1M</WaitTime>                                    
                                 </TimingPointInJourneyPattern>
                                 <StopPointInJourneyPattern id="spijp:23:norm:3" version="any" order="3">
                                     <ScheduledStopPointRef ref="ssp:3"/>
@@ -988,8 +1009,9 @@
                                 <StopPointInJourneyPattern id="spijp:23:norm:5" version="any" order="5">
                                     <ScheduledStopPointRef ref="ssp:5"/>
                                 </StopPointInJourneyPattern>
-                                <TimingPointInJourneyPattern id="tpijp:23:norm:2" version="any" order="2">
-                                    <TimingPointRef ref="tp:2" />
+                                <TimingPointInJourneyPattern id="tpijp:23:norm:2" version="any" order="3">
+                                    <TimingPointRef ref="tp:3" />
+                                    <WaitTime>PT1M</WaitTime>
                                 </TimingPointInJourneyPattern>
                                 <StopPointInJourneyPattern id="spijp:23:norm:6" version="any" order="6">
                                     <ScheduledStopPointRef ref="ssp:6"/>
@@ -1000,8 +1022,9 @@
                                 <StopPointInJourneyPattern id="spijp:23:norm:8" version="any" order="8">
                                     <ScheduledStopPointRef ref="ssp:8"/>
                                 </StopPointInJourneyPattern>
-                                <TimingPointInJourneyPattern id="tpijp:23:norm:3" version="any" order="3">
-                                    <TimingPointRef ref="tp:3" />
+                                <TimingPointInJourneyPattern id="tpijp:23:norm:3" version="any" order="4">
+                                    <TimingPointRef ref="tp:4" />
+                                    <WaitTime>PT30S</WaitTime>
                                 </TimingPointInJourneyPattern>
                                 <StopPointInJourneyPattern id="spijp:23:norm:9" version="any" order="9">
                                     <ScheduledStopPointRef ref="ssp:9"/>
@@ -1042,7 +1065,7 @@
                                     <ScheduledStopPointRef ref="ssp:5"/>
                                 </StopPointInJourneyPattern>
                                 <TimingPointInJourneyPattern id="tpijp:23:extra:+1" version="any" order="2">
-                                    <TimingPointRef ref="tp:2" />
+                                    <TimingPointRef ref="tp:3" />
                                 </TimingPointInJourneyPattern>
                                 <StopPointInJourneyPattern id="spijp:23:extra:6" version="any" order="6">
                                     <ScheduledStopPointRef ref="ssp:6"/>
@@ -1054,7 +1077,7 @@
                                     <ScheduledStopPointRef ref="ssp:8"/>
                                 </StopPointInJourneyPattern>
                                 <TimingPointInJourneyPattern id="tpijp:23:extra:+1" version="any" order="3">
-                                    <TimingPointRef ref="tp:3" />
+                                    <TimingPointRef ref="tp:4" />
                                 </TimingPointInJourneyPattern>
                                 <StopPointInJourneyPattern id="spijp:23:extra:9" version="any" order="9">
                                     <ScheduledStopPointRef ref="ssp:9"/>
@@ -1071,6 +1094,17 @@
                             <ServiceJourneyPatternType>passenger</ServiceJourneyPatternType>
                         </ServiceJourneyPattern>
                     </journeyPatterns>
+					<notices>
+						<Notice version="any" id="ruter:notice:stopp:ryent">
+							<Name>neste-stopp-ryen-t</Name>
+							<Text lang="no-NO">Neste stopp: Ryen T</Text>
+						</Notice>
+							<Notice version="any" id="ruter:notice:brynsengt">
+							<Name>neste-stopp-brynseng-t</Name>
+							<Text lang="no-NO">Neste stopp: Brynseng T</Text>
+						</Notice>
+						<!-- ... -->
+					</notices>
                 </ServiceFrame>
                 <ServiceCalendarFrame id="scf:ruter" version="any">
                     <dayTypes>
