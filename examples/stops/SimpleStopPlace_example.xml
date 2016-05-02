@@ -18,8 +18,8 @@ Frames and grouping:
 	COMPOSITE FRAME is used to hold the other FRAMEs as a coherent version.
 -->
 <PublicationDelivery 
-	version="1.0"
-	xmlns="http://www.netex.org.uk/netex" 
+	version="1.0" 
+	xmlns="http://www.netex.org.uk/netex"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:gml="http://www.opengis.net/gml/3.2"
 	xmlns:siri="http://www.siri.org.uk/siri"
@@ -159,7 +159,7 @@ Frames and grouping:
 									</RoadAddress>
 									<CrossRoad lang="no-NO">Teisenveien</CrossRoad>
 									<Landmark lang="no-NO">Bryn skole</Landmark>
-									<Covered>outdoors</Covered>
+									<Covered>covered</Covered>
 									<Lighting>wellLit</Lighting>
 									<placeEquipments>
 										<PassengerInformationEquipment version="any"

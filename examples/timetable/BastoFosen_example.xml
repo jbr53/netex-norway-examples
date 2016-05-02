@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--===Simple Timetable  Example===-->
 <!-- This example show parts of a days operation of the ferry between Horten and Moss. -->
-<PublicationDelivery	version="1.0"
-	xmlns="http://www.netex.org.uk/netex" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:gml="http://www.opengis.net/gml/3.2"
-	xmlns:siri="http://www.siri.org.uk/siri"
-	xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd">
+<PublicationDelivery
+version="1.0"
+xmlns="http://www.netex.org.uk/netex"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:gml="http://www.opengis.net/gml/3.2"
+xmlns:siri="http://www.siri.org.uk/siri"
+xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd">
 	<PublicationTimestamp>2016-04-29T12:30:00.0Z</PublicationTimestamp>
 	<ParticipantRef>PROVIDER_ID</ParticipantRef>
 	<!--===REQUEST===-->
@@ -28,9 +29,7 @@
 	</PublicationRequest>
 	<PublicationRefreshInterval>P15M</PublicationRefreshInterval>
 	<Description>Simple timetable section "Dagrute" for boat () with two stops</Description>
-
 	<!-- TODO: Beskrivse hvor mange Journey samt Service Calendar med tidspunkter -->
-	
 	<!--===RESULT===-->
 	<dataObjects>
 		<CompositeFrame version="1" id="bastofosen:cf:cf01">
@@ -112,7 +111,7 @@
 							<Name>Ferge Horten Moss</Name>
 							<ShortName>Mossefergen</ShortName>
 							<TransportMode>water</TransportMode>
-							<PublicCode></PublicCode>
+							<PublicCode/>
 							<routes>
 								<RouteRef ref="bastofosen:rt:horten_to_moss"/>
 								<RouteRef ref="bastofosen:rt:moss_to_horten"/>
@@ -229,7 +228,7 @@
 							<runTimes>
 								<JourneyPatternRunTime version="any" id="bastofosen:jprt:horten_to_moss">
 									<!--TimingLinkRef version="any" ref="bastofosen:tl:fylkesgrense_to_ssp_moss"/-->
-									<RunTime>PT30M</RunTime>									
+									<RunTime>PT30M</RunTime>
 								</JourneyPatternRunTime>
 							</runTimes>
 							<pointsInSequence>
@@ -375,8 +374,8 @@
 					<Name>Tabell julaften og første juledag (KUN MORGEN) for Bastø Fosen</Name>
 					<VehicleModes>ferry</VehicleModes>
 					<vehicleJourneys>
-						<ServiceJourney version="any" id="bastofosen:sj:horten_to_moss">
-							<DepartureTime>22:00:00.0Z</DepartureTime>
+						<ServiceJourney version="any" id="bastofosen:sj:horten_to_moss_0645">
+							<DepartureTime>06:45:00.0Z</DepartureTime>
 							<dayTypes>
 								<DayTypeRef version="any" ref="bastofosen:dt:julaften"/>
 								<DayTypeRef version="any" ref="bastofosen:dt:juledag"/>
@@ -429,6 +428,742 @@
 									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:moss"/>
 									<Arrival>
 										<Time>07:15:00.0Z</Time>
+									</Arrival>
+									<Note>Arrival</Note>
+								</Call>
+							</calls>
+							<facilities>
+								<ServiceFacilitySetRef version="any" ref="bastofosen:sfs:01"/>
+							</facilities>
+						</ServiceJourney>
+						<ServiceJourney version="any" id="bastofosen:sj:horten_to_moss_0730">
+							<DepartureTime>07:30:00.0Z</DepartureTime>
+							<dayTypes>
+								<DayTypeRef version="any" ref="bastofosen:dt:julaften"/>
+								<DayTypeRef version="any" ref="bastofosen:dt:juledag"/>
+							</dayTypes>
+							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
+							<LineRef version="any" ref="bastofosen:line"/>
+							<JourneyPatternView>
+								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
+								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
+							</JourneyPatternView>
+							<runTimes>
+								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
+									<Name>Horten - Moss Leg 1</Name>
+									<TimingLinkRef version="any" ref="bastofosen:tl:ssp_horten_to_fylkesgrense"/>
+									<RunTime>PT15M</RunTime>
+								</VehicleJourneyRunTime>
+								<VehicleJourneyRunTime id="bastofosen:vjrt:fylkesgrense_to_moss">
+									<Name>Horten - Moss Leg 2</Name>
+									<TimingLinkRef version="any" ref="bastofosen:tl:fylkesgrense_to_ssp_moss"/>
+									<RunTime>PT15M</RunTime>
+								</VehicleJourneyRunTime>
+							</runTimes>
+							<passingTimes>
+								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
+									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
+									<DepartureTime>07:30:00.0Z</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
+									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
+									<DepartureTime>07:45:00.0Z</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
+									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
+									<ArrivalTime>08:00:00.0Z</ArrivalTime>
+								</TimetabledPassingTime>
+							</passingTimes>
+							<calls>
+								<Call id="bastofosen:call:horten_to_moss:01" order="1">
+									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:horten"/>
+									<OnwardTimingLinkView>
+										<TimingLinkRef version="any" ref="bastofosen:tl:ssp_horten_to_fylkesgrense"/>
+										<ToPointRef version="any" ref="bastofosen:tp:ytreoslofjord"/>
+									</OnwardTimingLinkView>
+									<Departure>
+										<Time>07:30:00.0Z</Time>
+									</Departure>
+									<Note>Departure</Note>
+								</Call>
+								<Call id="bastofosen:call:horten_to_moss:01" order="2">
+									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:moss"/>
+									<Arrival>
+										<Time>08:00:00.0Z</Time>
+									</Arrival>
+									<Note>Arrival</Note>
+								</Call>
+							</calls>
+							<facilities>
+								<ServiceFacilitySetRef version="any" ref="bastofosen:sfs:01"/>
+							</facilities>
+						</ServiceJourney>
+						<ServiceJourney version="any" id="bastofosen:sj:horten_to_moss_0815">
+							<DepartureTime>08:15:00.0Z</DepartureTime>
+							<dayTypes>
+								<DayTypeRef version="any" ref="bastofosen:dt:julaften"/>
+								<DayTypeRef version="any" ref="bastofosen:dt:juledag"/>
+							</dayTypes>
+							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
+							<LineRef version="any" ref="bastofosen:line"/>
+							<JourneyPatternView>
+								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
+								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
+							</JourneyPatternView>
+							<runTimes>
+								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
+									<Name>Horten - Moss Leg 1</Name>
+									<TimingLinkRef version="any" ref="bastofosen:tl:ssp_horten_to_fylkesgrense"/>
+									<RunTime>PT15M</RunTime>
+								</VehicleJourneyRunTime>
+								<VehicleJourneyRunTime id="bastofosen:vjrt:fylkesgrense_to_moss">
+									<Name>Horten - Moss Leg 2</Name>
+									<TimingLinkRef version="any" ref="bastofosen:tl:fylkesgrense_to_ssp_moss"/>
+									<RunTime>PT15M</RunTime>
+								</VehicleJourneyRunTime>
+							</runTimes>
+							<passingTimes>
+								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
+									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
+									<DepartureTime>08:15:00.0Z</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
+									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
+									<DepartureTime>08:30:00.0Z</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
+									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
+									<ArrivalTime>08:45:00.0Z</ArrivalTime>
+								</TimetabledPassingTime>
+							</passingTimes>
+							<calls>
+								<Call id="bastofosen:call:horten_to_moss:01" order="1">
+									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:horten"/>
+									<OnwardTimingLinkView>
+										<TimingLinkRef version="any" ref="bastofosen:tl:ssp_horten_to_fylkesgrense"/>
+										<ToPointRef version="any" ref="bastofosen:tp:ytreoslofjord"/>
+									</OnwardTimingLinkView>
+									<Departure>
+										<Time>08:15:00.0Z</Time>
+									</Departure>
+									<Note>Departure</Note>
+								</Call>
+								<Call id="bastofosen:call:horten_to_moss:01" order="2">
+									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:moss"/>
+									<Arrival>
+										<Time>08:45:00.0Z</Time>
+									</Arrival>
+									<Note>Arrival</Note>
+								</Call>
+							</calls>
+							<facilities>
+								<ServiceFacilitySetRef version="any" ref="bastofosen:sfs:01"/>
+							</facilities>
+						</ServiceJourney>
+						<ServiceJourney version="any" id="bastofosen:sj:horten_to_moss_0845">
+							<DepartureTime>08:45:00.0Z</DepartureTime>
+							<dayTypes>
+								<DayTypeRef version="any" ref="bastofosen:dt:julaften"/>
+							</dayTypes>
+							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
+							<LineRef version="any" ref="bastofosen:line"/>
+							<JourneyPatternView>
+								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
+								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
+							</JourneyPatternView>
+							<runTimes>
+								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
+									<Name>Horten - Moss Leg 1</Name>
+									<TimingLinkRef version="any" ref="bastofosen:tl:ssp_horten_to_fylkesgrense"/>
+									<RunTime>PT15M</RunTime>
+								</VehicleJourneyRunTime>
+								<VehicleJourneyRunTime id="bastofosen:vjrt:fylkesgrense_to_moss">
+									<Name>Horten - Moss Leg 2</Name>
+									<TimingLinkRef version="any" ref="bastofosen:tl:fylkesgrense_to_ssp_moss"/>
+									<RunTime>PT15M</RunTime>
+								</VehicleJourneyRunTime>
+							</runTimes>
+							<passingTimes>
+								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
+									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
+									<DepartureTime>08:45:00.0Z</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
+									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
+									<DepartureTime>09:00:00.0Z</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
+									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
+									<ArrivalTime>09:15:00.0Z</ArrivalTime>
+								</TimetabledPassingTime>
+							</passingTimes>
+							<calls>
+								<Call id="bastofosen:call:horten_to_moss:01" order="1">
+									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:horten"/>
+									<OnwardTimingLinkView>
+										<TimingLinkRef version="any" ref="bastofosen:tl:ssp_horten_to_fylkesgrense"/>
+										<ToPointRef version="any" ref="bastofosen:tp:ytreoslofjord"/>
+									</OnwardTimingLinkView>
+									<Departure>
+										<Time>08:45:00.0Z</Time>
+									</Departure>
+									<Note>Departure</Note>
+								</Call>
+								<Call id="bastofosen:call:horten_to_moss:01" order="2">
+									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:moss"/>
+									<Arrival>
+										<Time>09:15:00.0Z</Time>
+									</Arrival>
+									<Note>Arrival</Note>
+								</Call>
+							</calls>
+							<facilities>
+								<ServiceFacilitySetRef version="any" ref="bastofosen:sfs:01"/>
+							</facilities>
+						</ServiceJourney>
+						<ServiceJourney version="any" id="bastofosen:sj:horten_to_moss_0900">
+							<DepartureTime>09:00:00.0Z</DepartureTime>
+							<dayTypes>
+								<DayTypeRef version="any" ref="bastofosen:dt:juledag"/>
+							</dayTypes>
+							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
+							<LineRef version="any" ref="bastofosen:line"/>
+							<JourneyPatternView>
+								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
+								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
+							</JourneyPatternView>
+							<runTimes>
+								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
+									<Name>Horten - Moss Leg 1</Name>
+									<TimingLinkRef version="any" ref="bastofosen:tl:ssp_horten_to_fylkesgrense"/>
+									<RunTime>PT15M</RunTime>
+								</VehicleJourneyRunTime>
+								<VehicleJourneyRunTime id="bastofosen:vjrt:fylkesgrense_to_moss">
+									<Name>Horten - Moss Leg 2</Name>
+									<TimingLinkRef version="any" ref="bastofosen:tl:fylkesgrense_to_ssp_moss"/>
+									<RunTime>PT15M</RunTime>
+								</VehicleJourneyRunTime>
+							</runTimes>
+							<passingTimes>
+								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
+									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
+									<DepartureTime>09:00:00.0Z</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
+									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
+									<DepartureTime>09:15:00.0Z</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
+									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
+									<ArrivalTime>09:30:00.0Z</ArrivalTime>
+								</TimetabledPassingTime>
+							</passingTimes>
+							<calls>
+								<Call id="bastofosen:call:horten_to_moss:01" order="1">
+									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:horten"/>
+									<OnwardTimingLinkView>
+										<TimingLinkRef version="any" ref="bastofosen:tl:ssp_horten_to_fylkesgrense"/>
+										<ToPointRef version="any" ref="bastofosen:tp:ytreoslofjord"/>
+									</OnwardTimingLinkView>
+									<Departure>
+										<Time>09:00:00.0Z</Time>
+									</Departure>
+									<Note>Departure</Note>
+								</Call>
+								<Call id="bastofosen:call:horten_to_moss:01" order="2">
+									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:moss"/>
+									<Arrival>
+										<Time>09:15:00.0Z</Time>
+									</Arrival>
+									<Note>Arrival</Note>
+								</Call>
+							</calls>
+							<facilities>
+								<ServiceFacilitySetRef version="any" ref="bastofosen:sfs:01"/>
+							</facilities>
+						</ServiceJourney>
+						<ServiceJourney version="any" id="bastofosen:sj:horten_to_moss_0915">
+							<DepartureTime>09:15:00.0Z</DepartureTime>
+							<dayTypes>
+								<DayTypeRef version="any" ref="bastofosen:dt:julaften"/>
+							</dayTypes>
+							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
+							<LineRef version="any" ref="bastofosen:line"/>
+							<JourneyPatternView>
+								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
+								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
+							</JourneyPatternView>
+							<runTimes>
+								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
+									<Name>Horten - Moss Leg 1</Name>
+									<TimingLinkRef version="any" ref="bastofosen:tl:ssp_horten_to_fylkesgrense"/>
+									<RunTime>PT15M</RunTime>
+								</VehicleJourneyRunTime>
+								<VehicleJourneyRunTime id="bastofosen:vjrt:fylkesgrense_to_moss">
+									<Name>Horten - Moss Leg 2</Name>
+									<TimingLinkRef version="any" ref="bastofosen:tl:fylkesgrense_to_ssp_moss"/>
+									<RunTime>PT15M</RunTime>
+								</VehicleJourneyRunTime>
+							</runTimes>
+							<passingTimes>
+								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
+									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
+									<DepartureTime>09:15:00.0Z</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
+									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
+									<DepartureTime>09:30:00.0Z</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
+									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
+									<ArrivalTime>09:45:00.0Z</ArrivalTime>
+								</TimetabledPassingTime>
+							</passingTimes>
+							<calls>
+								<Call id="bastofosen:call:horten_to_moss:01" order="1">
+									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:horten"/>
+									<OnwardTimingLinkView>
+										<TimingLinkRef version="any" ref="bastofosen:tl:ssp_horten_to_fylkesgrense"/>
+										<ToPointRef version="any" ref="bastofosen:tp:ytreoslofjord"/>
+									</OnwardTimingLinkView>
+									<Departure>
+										<Time>09:15:00.0Z</Time>
+									</Departure>
+									<Note>Departure</Note>
+								</Call>
+								<Call id="bastofosen:call:horten_to_moss:01" order="2">
+									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:moss"/>
+									<Arrival>
+										<Time>09:45:00.0Z</Time>
+									</Arrival>
+									<Note>Arrival</Note>
+								</Call>
+							</calls>
+							<facilities>
+								<ServiceFacilitySetRef version="any" ref="bastofosen:sfs:01"/>
+							</facilities>
+						</ServiceJourney>
+						<ServiceJourney version="any" id="bastofosen:sj:horten_to_moss_0945">
+							<DepartureTime>09:45:00.0Z</DepartureTime>
+							<dayTypes>
+								<DayTypeRef version="any" ref="bastofosen:dt:julaften"/>
+								<DayTypeRef version="any" ref="bastofosen:dt:juledag"/>
+							</dayTypes>
+							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
+							<LineRef version="any" ref="bastofosen:line"/>
+							<JourneyPatternView>
+								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
+								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
+							</JourneyPatternView>
+							<runTimes>
+								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
+									<Name>Horten - Moss Leg 1</Name>
+									<TimingLinkRef version="any" ref="bastofosen:tl:ssp_horten_to_fylkesgrense"/>
+									<RunTime>PT15M</RunTime>
+								</VehicleJourneyRunTime>
+								<VehicleJourneyRunTime id="bastofosen:vjrt:fylkesgrense_to_moss">
+									<Name>Horten - Moss Leg 2</Name>
+									<TimingLinkRef version="any" ref="bastofosen:tl:fylkesgrense_to_ssp_moss"/>
+									<RunTime>PT15M</RunTime>
+								</VehicleJourneyRunTime>
+							</runTimes>
+							<passingTimes>
+								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
+									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
+									<DepartureTime>09:45:00.0Z</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
+									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
+									<DepartureTime>10:00:00.0Z</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
+									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
+									<ArrivalTime>10:15:00.0Z</ArrivalTime>
+								</TimetabledPassingTime>
+							</passingTimes>
+							<calls>
+								<Call id="bastofosen:call:horten_to_moss:01" order="1">
+									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:horten"/>
+									<OnwardTimingLinkView>
+										<TimingLinkRef version="any" ref="bastofosen:tl:ssp_horten_to_fylkesgrense"/>
+										<ToPointRef version="any" ref="bastofosen:tp:ytreoslofjord"/>
+									</OnwardTimingLinkView>
+									<Departure>
+										<Time>09:45:00.0Z</Time>
+									</Departure>
+									<Note>Departure</Note>
+								</Call>
+								<Call id="bastofosen:call:horten_to_moss:01" order="2">
+									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:moss"/>
+									<Arrival>
+										<Time>10:15:00.0Z</Time>
+									</Arrival>
+									<Note>Arrival</Note>
+								</Call>
+							</calls>
+							<facilities>
+								<ServiceFacilitySetRef version="any" ref="bastofosen:sfs:01"/>
+							</facilities>
+						</ServiceJourney>
+						<ServiceJourney version="any" id="bastofosen:sj:horten_to_moss_1015">
+							<DepartureTime>10:15:00.0Z</DepartureTime>
+							<dayTypes>
+								<DayTypeRef version="any" ref="bastofosen:dt:julaften"/>
+							</dayTypes>
+							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
+							<LineRef version="any" ref="bastofosen:line"/>
+							<JourneyPatternView>
+								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
+								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
+							</JourneyPatternView>
+							<runTimes>
+								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
+									<Name>Horten - Moss Leg 1</Name>
+									<TimingLinkRef version="any" ref="bastofosen:tl:ssp_horten_to_fylkesgrense"/>
+									<RunTime>PT15M</RunTime>
+								</VehicleJourneyRunTime>
+								<VehicleJourneyRunTime id="bastofosen:vjrt:fylkesgrense_to_moss">
+									<Name>Horten - Moss Leg 2</Name>
+									<TimingLinkRef version="any" ref="bastofosen:tl:fylkesgrense_to_ssp_moss"/>
+									<RunTime>PT15M</RunTime>
+								</VehicleJourneyRunTime>
+							</runTimes>
+							<passingTimes>
+								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
+									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
+									<DepartureTime>10:15:00.0Z</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
+									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
+									<DepartureTime>10:30:00.0Z</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
+									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
+									<ArrivalTime>10:45:00.0Z</ArrivalTime>
+								</TimetabledPassingTime>
+							</passingTimes>
+							<calls>
+								<Call id="bastofosen:call:horten_to_moss:01" order="1">
+									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:horten"/>
+									<OnwardTimingLinkView>
+										<TimingLinkRef version="any" ref="bastofosen:tl:ssp_horten_to_fylkesgrense"/>
+										<ToPointRef version="any" ref="bastofosen:tp:ytreoslofjord"/>
+									</OnwardTimingLinkView>
+									<Departure>
+										<Time>10:15:00.0Z</Time>
+									</Departure>
+									<Note>Departure</Note>
+								</Call>
+								<Call id="bastofosen:call:horten_to_moss:01" order="2">
+									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:moss"/>
+									<Arrival>
+										<Time>10:45:00.0Z</Time>
+									</Arrival>
+									<Note>Arrival</Note>
+								</Call>
+							</calls>
+							<facilities>
+								<ServiceFacilitySetRef version="any" ref="bastofosen:sfs:01"/>
+							</facilities>
+						</ServiceJourney>
+						<ServiceJourney version="any" id="bastofosen:sj:horten_to_moss_1030">
+							<DepartureTime>10:30:00.0Z</DepartureTime>
+							<dayTypes>
+								<DayTypeRef version="any" ref="bastofosen:dt:juledag"/>
+							</dayTypes>
+							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
+							<LineRef version="any" ref="bastofosen:line"/>
+							<JourneyPatternView>
+								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
+								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
+							</JourneyPatternView>
+							<runTimes>
+								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
+									<Name>Horten - Moss Leg 1</Name>
+									<TimingLinkRef version="any" ref="bastofosen:tl:ssp_horten_to_fylkesgrense"/>
+									<RunTime>PT15M</RunTime>
+								</VehicleJourneyRunTime>
+								<VehicleJourneyRunTime id="bastofosen:vjrt:fylkesgrense_to_moss">
+									<Name>Horten - Moss Leg 2</Name>
+									<TimingLinkRef version="any" ref="bastofosen:tl:fylkesgrense_to_ssp_moss"/>
+									<RunTime>PT15M</RunTime>
+								</VehicleJourneyRunTime>
+							</runTimes>
+							<passingTimes>
+								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
+									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
+									<DepartureTime>10:30:00.0Z</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
+									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
+									<DepartureTime>10:45:00.0Z</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
+									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
+									<ArrivalTime>11:00:00.0Z</ArrivalTime>
+								</TimetabledPassingTime>
+							</passingTimes>
+							<calls>
+								<Call id="bastofosen:call:horten_to_moss:01" order="1">
+									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:horten"/>
+									<OnwardTimingLinkView>
+										<TimingLinkRef version="any" ref="bastofosen:tl:ssp_horten_to_fylkesgrense"/>
+										<ToPointRef version="any" ref="bastofosen:tp:ytreoslofjord"/>
+									</OnwardTimingLinkView>
+									<Departure>
+										<Time>10:30:00.0Z</Time>
+									</Departure>
+									<Note>Departure</Note>
+								</Call>
+								<Call id="bastofosen:call:horten_to_moss:01" order="2">
+									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:moss"/>
+									<Arrival>
+										<Time>11:00:00.0Z</Time>
+									</Arrival>
+									<Note>Arrival</Note>
+								</Call>
+							</calls>
+							<facilities>
+								<ServiceFacilitySetRef version="any" ref="bastofosen:sfs:01"/>
+							</facilities>
+						</ServiceJourney>
+						<ServiceJourney version="any" id="bastofosen:sj:horten_to_moss_1045">
+							<DepartureTime>10:45:00.0Z</DepartureTime>
+							<dayTypes>
+								<DayTypeRef version="any" ref="bastofosen:dt:julaften"/>
+							</dayTypes>
+							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
+							<LineRef version="any" ref="bastofosen:line"/>
+							<JourneyPatternView>
+								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
+								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
+							</JourneyPatternView>
+							<runTimes>
+								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
+									<Name>Horten - Moss Leg 1</Name>
+									<TimingLinkRef version="any" ref="bastofosen:tl:ssp_horten_to_fylkesgrense"/>
+									<RunTime>PT15M</RunTime>
+								</VehicleJourneyRunTime>
+								<VehicleJourneyRunTime id="bastofosen:vjrt:fylkesgrense_to_moss">
+									<Name>Horten - Moss Leg 2</Name>
+									<TimingLinkRef version="any" ref="bastofosen:tl:fylkesgrense_to_ssp_moss"/>
+									<RunTime>PT15M</RunTime>
+								</VehicleJourneyRunTime>
+							</runTimes>
+							<passingTimes>
+								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
+									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
+									<DepartureTime>10:45:00.0Z</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
+									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
+									<DepartureTime>11:00:00.0Z</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
+									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
+									<ArrivalTime>11:15:00.0Z</ArrivalTime>
+								</TimetabledPassingTime>
+							</passingTimes>
+							<calls>
+								<Call id="bastofosen:call:horten_to_moss:01" order="1">
+									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:horten"/>
+									<OnwardTimingLinkView>
+										<TimingLinkRef version="any" ref="bastofosen:tl:ssp_horten_to_fylkesgrense"/>
+										<ToPointRef version="any" ref="bastofosen:tp:ytreoslofjord"/>
+									</OnwardTimingLinkView>
+									<Departure>
+										<Time>10:45:00.0Z</Time>
+									</Departure>
+									<Note>Departure</Note>
+								</Call>
+								<Call id="bastofosen:call:horten_to_moss:01" order="2">
+									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:moss"/>
+									<Arrival>
+										<Time>11:15:00.0Z</Time>
+									</Arrival>
+									<Note>Arrival</Note>
+								</Call>
+							</calls>
+							<facilities>
+								<ServiceFacilitySetRef version="any" ref="bastofosen:sfs:01"/>
+							</facilities>
+						</ServiceJourney>
+						<ServiceJourney version="any" id="bastofosen:sj:horten_to_moss_1100">
+							<DepartureTime>11:00:00.0Z</DepartureTime>
+							<dayTypes>
+								<DayTypeRef version="any" ref="bastofosen:dt:juledag"/>
+							</dayTypes>
+							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
+							<LineRef version="any" ref="bastofosen:line"/>
+							<JourneyPatternView>
+								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
+								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
+							</JourneyPatternView>
+							<runTimes>
+								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
+									<Name>Horten - Moss Leg 1</Name>
+									<TimingLinkRef version="any" ref="bastofosen:tl:ssp_horten_to_fylkesgrense"/>
+									<RunTime>PT15M</RunTime>
+								</VehicleJourneyRunTime>
+								<VehicleJourneyRunTime id="bastofosen:vjrt:fylkesgrense_to_moss">
+									<Name>Horten - Moss Leg 2</Name>
+									<TimingLinkRef version="any" ref="bastofosen:tl:fylkesgrense_to_ssp_moss"/>
+									<RunTime>PT15M</RunTime>
+								</VehicleJourneyRunTime>
+							</runTimes>
+							<passingTimes>
+								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
+									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
+									<DepartureTime>11:00:00.0Z</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
+									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
+									<DepartureTime>11:15:00.0Z</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
+									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
+									<ArrivalTime>11:30:00.0Z</ArrivalTime>
+								</TimetabledPassingTime>
+							</passingTimes>
+							<calls>
+								<Call id="bastofosen:call:horten_to_moss:01" order="1">
+									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:horten"/>
+									<OnwardTimingLinkView>
+										<TimingLinkRef version="any" ref="bastofosen:tl:ssp_horten_to_fylkesgrense"/>
+										<ToPointRef version="any" ref="bastofosen:tp:ytreoslofjord"/>
+									</OnwardTimingLinkView>
+									<Departure>
+										<Time>11:00:00.0Z</Time>
+									</Departure>
+									<Note>Departure</Note>
+								</Call>
+								<Call id="bastofosen:call:horten_to_moss:01" order="2">
+									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:moss"/>
+									<Arrival>
+										<Time>11:15:00.0Z</Time>
+									</Arrival>
+									<Note>Arrival</Note>
+								</Call>
+							</calls>
+							<facilities>
+								<ServiceFacilitySetRef version="any" ref="bastofosen:sfs:01"/>
+							</facilities>
+						</ServiceJourney>
+						<ServiceJourney version="any" id="bastofosen:sj:horten_to_moss_1115">
+							<DepartureTime>11:15:00.0Z</DepartureTime>
+							<dayTypes>
+								<DayTypeRef version="any" ref="bastofosen:dt:julaften"/>
+								<DayTypeRef version="any" ref="bastofosen:dt:juledag"/>
+							</dayTypes>
+							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
+							<LineRef version="any" ref="bastofosen:line"/>
+							<JourneyPatternView>
+								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
+								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
+							</JourneyPatternView>
+							<runTimes>
+								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
+									<Name>Horten - Moss Leg 1</Name>
+									<TimingLinkRef version="any" ref="bastofosen:tl:ssp_horten_to_fylkesgrense"/>
+									<RunTime>PT15M</RunTime>
+								</VehicleJourneyRunTime>
+								<VehicleJourneyRunTime id="bastofosen:vjrt:fylkesgrense_to_moss">
+									<Name>Horten - Moss Leg 2</Name>
+									<TimingLinkRef version="any" ref="bastofosen:tl:fylkesgrense_to_ssp_moss"/>
+									<RunTime>PT15M</RunTime>
+								</VehicleJourneyRunTime>
+							</runTimes>
+							<passingTimes>
+								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
+									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
+									<DepartureTime>11:15:00.0Z</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
+									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
+									<DepartureTime>11:30:00.0Z</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
+									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
+									<ArrivalTime>11:45:00.0Z</ArrivalTime>
+								</TimetabledPassingTime>
+							</passingTimes>
+							<calls>
+								<Call id="bastofosen:call:horten_to_moss:01" order="1">
+									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:horten"/>
+									<OnwardTimingLinkView>
+										<TimingLinkRef version="any" ref="bastofosen:tl:ssp_horten_to_fylkesgrense"/>
+										<ToPointRef version="any" ref="bastofosen:tp:ytreoslofjord"/>
+									</OnwardTimingLinkView>
+									<Departure>
+										<Time>11:15:00.0Z</Time>
+									</Departure>
+									<Note>Departure</Note>
+								</Call>
+								<Call id="bastofosen:call:horten_to_moss:01" order="2">
+									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:moss"/>
+									<Arrival>
+										<Time>11:45:00.0Z</Time>
+									</Arrival>
+									<Note>Arrival</Note>
+								</Call>
+							</calls>
+							<facilities>
+								<ServiceFacilitySetRef version="any" ref="bastofosen:sfs:01"/>
+							</facilities>
+						</ServiceJourney>
+						<ServiceJourney version="any" id="bastofosen:sj:horten_to_moss_1145">
+							<DepartureTime>11:45:00.0Z</DepartureTime>
+							<dayTypes>
+								<DayTypeRef version="any" ref="bastofosen:dt:julaften"/>
+							</dayTypes>
+							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
+							<LineRef version="any" ref="bastofosen:line"/>
+							<JourneyPatternView>
+								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
+								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
+							</JourneyPatternView>
+							<runTimes>
+								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
+									<Name>Horten - Moss Leg 1</Name>
+									<TimingLinkRef version="any" ref="bastofosen:tl:ssp_horten_to_fylkesgrense"/>
+									<RunTime>PT15M</RunTime>
+								</VehicleJourneyRunTime>
+								<VehicleJourneyRunTime id="bastofosen:vjrt:fylkesgrense_to_moss">
+									<Name>Horten - Moss Leg 2</Name>
+									<TimingLinkRef version="any" ref="bastofosen:tl:fylkesgrense_to_ssp_moss"/>
+									<RunTime>PT15M</RunTime>
+								</VehicleJourneyRunTime>
+							</runTimes>
+							<passingTimes>
+								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
+									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
+									<DepartureTime>11:45:00.0Z</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
+									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
+									<DepartureTime>12:00:00.0Z</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
+									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
+									<ArrivalTime>12:15:00.0Z</ArrivalTime>
+								</TimetabledPassingTime>
+							</passingTimes>
+							<calls>
+								<Call id="bastofosen:call:horten_to_moss:01" order="1">
+									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:horten"/>
+									<OnwardTimingLinkView>
+										<TimingLinkRef version="any" ref="bastofosen:tl:ssp_horten_to_fylkesgrense"/>
+										<ToPointRef version="any" ref="bastofosen:tp:ytreoslofjord"/>
+									</OnwardTimingLinkView>
+									<Departure>
+										<Time>11:45:00.0Z</Time>
+									</Departure>
+									<Note>Departure</Note>
+								</Call>
+								<Call id="bastofosen:call:horten_to_moss:01" order="2">
+									<ScheduledStopPointRef version="any" ref="bastofosen:ssp:moss"/>
+									<Arrival>
+										<Time>12:15:00.0Z</Time>
 									</Arrival>
 									<Note>Arrival</Note>
 								</Call>

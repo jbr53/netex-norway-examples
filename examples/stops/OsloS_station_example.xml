@@ -7,7 +7,8 @@
     - StopPlace for TBane
     - StopPlace for train with several platforms, assigned to trains and airport express trains (not all platforms are included in this example)
 -->
-<PublicationDelivery xmlns="http://www.netex.org.uk/netex"
+<PublicationDelivery
+ xmlns="http://www.netex.org.uk/netex"
  xmlns:siri="http://www.siri.org.uk/siri"
  xmlns:gml="http://www.opengis.net/gml/3.2"
  xmlns:core="http://www.govtalk.gov.uk/core"
