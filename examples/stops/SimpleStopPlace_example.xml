@@ -79,24 +79,22 @@ Frames and grouping:
 							<Descriptor>
 								<Name lang="no-NO">Område Bryn-Helsfyr i Oslo</Name>
 								<ShortName lang="no-NO">Bryn-Helsfyr</ShortName>
-								<Qualify>
-									<!-- TODO: Definere hvordan QualifierName bør brukes for å skille likelydende stedsnavn -->
+								<!-- TODO: Definere hvordan QualifierName bør brukes for opprettholde unik qualifier for likelydende stedsnavn -->
+								<!--Qualify>
 									<QualifierName lang="no-NO">Bryn Skole</QualifierName>
 									<TopographicPlaceRef version="any" ref="ruter:tp:brynhelsfyr"/>
-								</Qualify>
+								</Qualify-->
 							</Descriptor>
 						</TopographicPlace>
 					</topographicPlaces>
 					<stopPlaces>
 						<!--===Stop=== Merk: Holdeplass-ID vil komme fra Holdeplassregisteret -->
-						<StopPlace version="01" created="2016-04-21T09:00:00.0Z"
-							responsibilitySetRef="ruter:rs:1" id="ruter:sp:1">
+						<StopPlace version="01" created="2016-04-21T09:00:00.0Z" responsibilitySetRef="ruter:rs:1" id="ruter:sp:1">
 							<Name lang="no-NO">Bryn skole (i Ole Deviks vei)</Name>
 							<ShortName lang="no-NO">Bryn skole</ShortName>
 							<Centroid>
 								<Location>
-									<gml:pos srsName="WGS84" srsDimension="2"
-										>3.14159265358979E0 3.14159265358979E0</gml:pos>
+									<gml:pos srsName="WGS84" srsDimension="2">59.54503 10.49289</gml:pos>
 								</Location>
 							</Centroid>
 							<AccessibilityAssessment version="any" id="ruter:aa:1">
@@ -114,14 +112,13 @@ Frames and grouping:
 							<TransportMode>bus</TransportMode>
 							<StopPlaceType>onstreetBus</StopPlaceType>
 							<quays>
-								<Quay version="01" created="2016-04-21T09:01:00.0Z"
-									id="ruter:sp:1:q:1">
+								<Quay version="01" created="2016-04-21T09:01:00.0Z" id="ruter:sp:1:q:1">
 									<Name lang="no-NO">Bryn skole nord</Name>
 									<Description lang="no-NO">Bryn skole (i Ole Deviks vei) retning nord (fra sentrum).</Description>
 									<Centroid>
 										<Location>
-											<Longitude>-0.2071397147</Longitude>
-											<Latitude>51.4217482061</Latitude>
+											<Longitude>59.54504</Longitude>
+											<Latitude>10.49295</Latitude>
 										</Location>
 									</Centroid>
 									<RoadAddress version="any" id="ruter:ra:oledeviksvei2">
@@ -132,9 +129,8 @@ Frames and grouping:
 									<Covered>outdoors</Covered>
 									<Lighting>wellLit</Lighting>
 									<placeEquipments>
-										<PassengerInformationEquipment version="any"
-											id="ruter:pie:bus:01">
-											<AccessibilityInfoFacilityList>audioForHearingImpaired visualDisplays</AccessibilityInfoFacilityList>
+										<PassengerInformationEquipment version="any" id="ruter:pie:bus:01">
+											<Note>Info</Note>
 										</PassengerInformationEquipment>
 									</placeEquipments>
 									<BoardingUse>true</BoardingUse>
@@ -144,14 +140,13 @@ Frames and grouping:
 									<CompassOctant>NE</CompassOctant>
 									<QuayType>busStop</QuayType>
 								</Quay>
-								<Quay version="01" created="2016-04-21T09:02:00.0Z"
-									id="ruter:sp:1:q:2">
+								<Quay version="01" created="2016-04-21T09:02:00.0Z" id="ruter:sp:1:q:2">
 									<Name lang="no-NO">Bryn skole syd</Name>
 									<Description lang="no-NO">Bryn skole (i Ole Deviks vei) retning syd (mot sentrum).</Description>
 									<Centroid>
 										<Location>
-											<Longitude>-0.2071397148</Longitude>
-											<Latitude>51.4217482063</Latitude>
+											<Longitude>59.54503</Longitude>
+											<Latitude>10.49283</Latitude>
 										</Location>
 									</Centroid>
 									<RoadAddress version="any" id="ruter:ra:oledeviksvei3">
@@ -162,9 +157,8 @@ Frames and grouping:
 									<Covered>covered</Covered>
 									<Lighting>wellLit</Lighting>
 									<placeEquipments>
-										<PassengerInformationEquipment version="any"
-											id="ruter:pie:bus:02">
-											<AccessibilityInfoFacilityList>audioForHearingImpaired visualDisplays</AccessibilityInfoFacilityList>
+										<PassengerInformationEquipment version="any" id="ruter:pie:bus:02">
+											<Note>Info</Note>
 										</PassengerInformationEquipment>
 									</placeEquipments>
 									<BoardingUse>true</BoardingUse>
@@ -182,8 +176,8 @@ Frames and grouping:
 					<FrameDefaults>
 						<DefaultResponsibilitySetRef ref="ruter:rs:rs66">EXTERNAL</DefaultResponsibilitySetRef>
 					</FrameDefaults>
+					<!--===SCHEDULED STOP POINT===-->
 					<scheduledStopPoints>
-						<!--===SCHEDULED STOP POINT===-->
 						<ScheduledStopPoint version="001" created="2016-04-20T07:50:00.0Z"
 							changed="2016-04-20T08:45:00.0Z" id="ruter:ssp:brynskole">
 							<Name>Bryn skole</Name>

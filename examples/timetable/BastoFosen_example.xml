@@ -11,7 +11,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 	<PublicationTimestamp>2016-04-29T12:30:00.0Z</PublicationTimestamp>
 	<ParticipantRef>PROVIDER_ID</ParticipantRef>
 	<!--===REQUEST===-->
-	<PublicationRequest version="1.0">
+	<PublicationRequest version="1.0"> 
 		<RequestTimestamp>2016-04-30T12:30:00.0Z</RequestTimestamp>
 		<ParticipantRef>REQUESTOR_ID</ParticipantRef>
 		<Description>Request object for time table example</Description>
@@ -34,8 +34,8 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 		<CompositeFrame version="1" id="bastofosen:cf:cf01">
 			<validityConditions>
 				<AvailabilityCondition version="any" id="bastofosen:ac:cf01">
-					<FromDate>2016-12-24T12:15:00.0Z</FromDate>
-					<ToDate>2016-12-24T17:45:00.0Z</ToDate>
+					<FromDate>2016-12-24T06:45:00.0Z</FromDate>
+					<ToDate>2016-12-25T24:00:00.0Z</ToDate>
 				</AvailabilityCondition>
 			</validityConditions>
 			<!--===CODESPACE===-->
@@ -81,26 +81,15 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 					</stopPlaces>
 				</SiteFrame>
 				<ServiceFrame version="1" id="bastofosen:sf:v1">
-					<Name>Stops for Christmas day daytime (Dagtid) route</Name>
-					<!--===DIRECTIONs===-->
-					<directions>
-						<Direction version="any" id="bastofosen:direction:east">
-							<Name>Øst</Name>
-						</Direction>
-						<Direction version="any" id="bastofosen:direction:west">
-							<Name>Vest</Name>
-						</Direction>
-					</directions>
+					<Name>Stops for Christmas morning route</Name>
 					<!--===ROUTE===-->
 					<routes>
 						<Route version="any" id="bastofosen:rt:horten_to_moss">
 							<Name>Båt fra Horten til Moss</Name>
-							<DirectionRef version="any" ref="bastofosen:direction:east"/>
 							<InverseRouteRef ref="bastofosen:rt:moss_to_horten"/>
 						</Route>
 						<Route version="any" id="bastofosen:rt:moss_to_horten">
 							<Name>Båt fra Moss til Horten</Name>
-							<DirectionRef version="any" ref="bastofosen:direction:west"/>
 							<InverseRouteRef ref="bastofosen:rt:moss_to_horten"/>
 						</Route>
 					</routes>
@@ -135,20 +124,20 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 					</destinationDisplays>
 					<!--- =========STOP POINTs============ -->
 					<scheduledStopPoints>
-						<ScheduledStopPoint version="any" id="bastofosen:ssp:horten">
-							<Name>Hortenkaia</Name>
-							<Location>
-								<Longitude>59.24438</Longitude>
-								<Latitude>10.29211</Latitude>
-							</Location>
-							<TimingPointStatus>timingPoint</TimingPointStatus>
-							<ShortName>Horten</ShortName>
-						</ScheduledStopPoint>
 						<ScheduledStopPoint version="any" id="bastofosen:ssp:moss">
 							<Name>Mossekaia</Name>
 							<Location>
 								<Longitude>59.25491</Longitude>
 								<Latitude>10.39146</Latitude>
+							</Location>
+							<TimingPointStatus>timingPoint</TimingPointStatus>
+							<ShortName>Horten</ShortName>
+						</ScheduledStopPoint>
+						<ScheduledStopPoint version="any" id="bastofosen:ssp:horten">
+							<Name>Hortenkaia</Name>
+							<Location>
+								<Longitude>59.24438</Longitude>
+								<Latitude>10.29211</Latitude>
 							</Location>
 							<TimingPointStatus>timingPoint</TimingPointStatus>
 							<ShortName>Horten</ShortName>
@@ -184,6 +173,19 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 							</journeyPatterns>
 						</ServicePattern>
 					</servicePatterns>
+					<!--===STOP ASSIGNMENTs===-->
+					<stopAssignments>
+						<PassengerStopAssignment order="1" version="any" id="bastofosen:psa:horten">
+							<Description lang="no-NO">Knytting av rutens stopp (SchedulesStopPoint) til fysisk beskrivelse av stoppested (StopPlace)</Description>
+							<ScheduledStopPointRef version="any" ref="bastofosen:ssp:horten"/>
+							<StopPlaceRef version="any" ref="bastofosen:sp:horten"/>
+						</PassengerStopAssignment>
+						<PassengerStopAssignment order="2" version="any" id="bastofosen:psa:moss">
+							<Description lang="no-NO">Knytting av rutens stopp (SchedulesStopPoint) til fysisk beskrivelse av stoppested (StopPlace)</Description>
+							<ScheduledStopPointRef version="any" ref="bastofosen:ssp:moss"/>
+							<StopPlaceRef version="any" ref="bastofosen:sp:moss"/>
+						</PassengerStopAssignment>
+					</stopAssignments>
 					<!--===TIMING POINT===-->
 					<timingPoints>
 						<!-- Timing is done at the SCHEDULED STOP POINTs as well as at a intermediate TIMING POINTs at sea. -->
@@ -1174,10 +1176,10 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 					</vehicleJourneys>
 					<serviceFacilitySets>
 						<ServiceFacilitySet version="any" id="bastofosen:sfs:01">
-							<ProvidedByRef ref="bastofosen">EXTERNAL</ProvidedByRef>
+							<!--ProvidedByRef ref="bastofosen">EXTERNAL</ProvidedByRef-->
 							<AssistanceFacilityList>boardingAssistance conductor wheechairAssistance</AssistanceFacilityList>
 							<FareClasses>standardClass</FareClasses>
-							<MobilityFacilityList> stepFreeAccess suitableForWheelchairs</MobilityFacilityList>
+							<MobilityFacilityList>stepFreeAccess suitableForWheelchairs</MobilityFacilityList>
 							<NuisanceFacilityList>noSmoking</NuisanceFacilityList>
 							<PassengerInformationFacilityList>passengerInformationDisplay</PassengerInformationFacilityList>
 							<TicketingServiceFacilityList>purchase purchase excessFares</TicketingServiceFacilityList>
