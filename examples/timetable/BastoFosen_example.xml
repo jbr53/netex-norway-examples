@@ -29,7 +29,6 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 	</PublicationRequest>
 	<PublicationRefreshInterval>P15M</PublicationRefreshInterval>
 	<Description>Simple timetable section "Dagrute" for boat () with two stops</Description>
-	<!-- TODO: Beskrivse hvor mange Journey samt Service Calendar med tidspunkter -->
 	<!--===RESULT===-->
 	<dataObjects>
 		<CompositeFrame version="1" id="bastofosen:cf:cf01">
