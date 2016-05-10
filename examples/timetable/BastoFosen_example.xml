@@ -383,10 +383,6 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 							</dayTypes>
 							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
 							<LineRef version="any" ref="bastofosen:line"/>
-							<JourneyPatternView>
-								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
-								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
-							</JourneyPatternView>
 							<runTimes>
 								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
 									<Name>Horten - Moss Leg 1</Name>
@@ -423,6 +419,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Departure>
 										<Time>06:45:00.0Z</Time>
 									</Departure>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Departure</Note>
 								</Call>
 								<Call id="bastofosen:call:horten_to_moss:01" order="2">
@@ -430,6 +427,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Arrival>
 										<Time>07:15:00.0Z</Time>
 									</Arrival>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Arrival</Note>
 								</Call>
 							</calls>
@@ -445,10 +443,6 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 							</dayTypes>
 							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
 							<LineRef version="any" ref="bastofosen:line"/>
-							<JourneyPatternView>
-								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
-								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
-							</JourneyPatternView>
 							<runTimes>
 								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
 									<Name>Horten - Moss Leg 1</Name>
@@ -485,6 +479,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Departure>
 										<Time>07:30:00.0Z</Time>
 									</Departure>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Departure</Note>
 								</Call>
 								<Call id="bastofosen:call:horten_to_moss:01" order="2">
@@ -492,6 +487,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Arrival>
 										<Time>08:00:00.0Z</Time>
 									</Arrival>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Arrival</Note>
 								</Call>
 							</calls>
@@ -507,10 +503,6 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 							</dayTypes>
 							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
 							<LineRef version="any" ref="bastofosen:line"/>
-							<JourneyPatternView>
-								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
-								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
-							</JourneyPatternView>
 							<runTimes>
 								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
 									<Name>Horten - Moss Leg 1</Name>
@@ -547,6 +539,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Departure>
 										<Time>08:15:00.0Z</Time>
 									</Departure>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Departure</Note>
 								</Call>
 								<Call id="bastofosen:call:horten_to_moss:01" order="2">
@@ -554,6 +547,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Arrival>
 										<Time>08:45:00.0Z</Time>
 									</Arrival>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Arrival</Note>
 								</Call>
 							</calls>
@@ -568,10 +562,6 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 							</dayTypes>
 							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
 							<LineRef version="any" ref="bastofosen:line"/>
-							<JourneyPatternView>
-								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
-								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
-							</JourneyPatternView>
 							<runTimes>
 								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
 									<Name>Horten - Moss Leg 1</Name>
@@ -608,6 +598,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Departure>
 										<Time>08:45:00.0Z</Time>
 									</Departure>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Departure</Note>
 								</Call>
 								<Call id="bastofosen:call:horten_to_moss:01" order="2">
@@ -615,6 +606,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Arrival>
 										<Time>09:15:00.0Z</Time>
 									</Arrival>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Arrival</Note>
 								</Call>
 							</calls>
@@ -629,10 +621,6 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 							</dayTypes>
 							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
 							<LineRef version="any" ref="bastofosen:line"/>
-							<JourneyPatternView>
-								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
-								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
-							</JourneyPatternView>
 							<runTimes>
 								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
 									<Name>Horten - Moss Leg 1</Name>
@@ -669,6 +657,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Departure>
 										<Time>09:00:00.0Z</Time>
 									</Departure>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Departure</Note>
 								</Call>
 								<Call id="bastofosen:call:horten_to_moss:01" order="2">
@@ -676,6 +665,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Arrival>
 										<Time>09:15:00.0Z</Time>
 									</Arrival>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Arrival</Note>
 								</Call>
 							</calls>
@@ -690,10 +680,6 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 							</dayTypes>
 							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
 							<LineRef version="any" ref="bastofosen:line"/>
-							<JourneyPatternView>
-								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
-								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
-							</JourneyPatternView>
 							<runTimes>
 								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
 									<Name>Horten - Moss Leg 1</Name>
@@ -730,6 +716,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Departure>
 										<Time>09:15:00.0Z</Time>
 									</Departure>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Departure</Note>
 								</Call>
 								<Call id="bastofosen:call:horten_to_moss:01" order="2">
@@ -737,6 +724,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Arrival>
 										<Time>09:45:00.0Z</Time>
 									</Arrival>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Arrival</Note>
 								</Call>
 							</calls>
@@ -752,10 +740,6 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 							</dayTypes>
 							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
 							<LineRef version="any" ref="bastofosen:line"/>
-							<JourneyPatternView>
-								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
-								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
-							</JourneyPatternView>
 							<runTimes>
 								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
 									<Name>Horten - Moss Leg 1</Name>
@@ -792,6 +776,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Departure>
 										<Time>09:45:00.0Z</Time>
 									</Departure>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Departure</Note>
 								</Call>
 								<Call id="bastofosen:call:horten_to_moss:01" order="2">
@@ -799,6 +784,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Arrival>
 										<Time>10:15:00.0Z</Time>
 									</Arrival>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Arrival</Note>
 								</Call>
 							</calls>
@@ -813,10 +799,6 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 							</dayTypes>
 							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
 							<LineRef version="any" ref="bastofosen:line"/>
-							<JourneyPatternView>
-								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
-								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
-							</JourneyPatternView>
 							<runTimes>
 								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
 									<Name>Horten - Moss Leg 1</Name>
@@ -853,6 +835,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Departure>
 										<Time>10:15:00.0Z</Time>
 									</Departure>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Departure</Note>
 								</Call>
 								<Call id="bastofosen:call:horten_to_moss:01" order="2">
@@ -860,6 +843,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Arrival>
 										<Time>10:45:00.0Z</Time>
 									</Arrival>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Arrival</Note>
 								</Call>
 							</calls>
@@ -874,10 +858,6 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 							</dayTypes>
 							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
 							<LineRef version="any" ref="bastofosen:line"/>
-							<JourneyPatternView>
-								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
-								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
-							</JourneyPatternView>
 							<runTimes>
 								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
 									<Name>Horten - Moss Leg 1</Name>
@@ -914,6 +894,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Departure>
 										<Time>10:30:00.0Z</Time>
 									</Departure>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Departure</Note>
 								</Call>
 								<Call id="bastofosen:call:horten_to_moss:01" order="2">
@@ -921,6 +902,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Arrival>
 										<Time>11:00:00.0Z</Time>
 									</Arrival>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Arrival</Note>
 								</Call>
 							</calls>
@@ -935,10 +917,6 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 							</dayTypes>
 							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
 							<LineRef version="any" ref="bastofosen:line"/>
-							<JourneyPatternView>
-								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
-								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
-							</JourneyPatternView>
 							<runTimes>
 								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
 									<Name>Horten - Moss Leg 1</Name>
@@ -975,6 +953,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Departure>
 										<Time>10:45:00.0Z</Time>
 									</Departure>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Departure</Note>
 								</Call>
 								<Call id="bastofosen:call:horten_to_moss:01" order="2">
@@ -982,6 +961,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Arrival>
 										<Time>11:15:00.0Z</Time>
 									</Arrival>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Arrival</Note>
 								</Call>
 							</calls>
@@ -996,10 +976,6 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 							</dayTypes>
 							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
 							<LineRef version="any" ref="bastofosen:line"/>
-							<JourneyPatternView>
-								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
-								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
-							</JourneyPatternView>
 							<runTimes>
 								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
 									<Name>Horten - Moss Leg 1</Name>
@@ -1036,6 +1012,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Departure>
 										<Time>11:00:00.0Z</Time>
 									</Departure>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Departure</Note>
 								</Call>
 								<Call id="bastofosen:call:horten_to_moss:01" order="2">
@@ -1043,6 +1020,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Arrival>
 										<Time>11:15:00.0Z</Time>
 									</Arrival>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Arrival</Note>
 								</Call>
 							</calls>
@@ -1058,10 +1036,6 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 							</dayTypes>
 							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
 							<LineRef version="any" ref="bastofosen:line"/>
-							<JourneyPatternView>
-								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
-								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
-							</JourneyPatternView>
 							<runTimes>
 								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
 									<Name>Horten - Moss Leg 1</Name>
@@ -1098,6 +1072,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Departure>
 										<Time>11:15:00.0Z</Time>
 									</Departure>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Departure</Note>
 								</Call>
 								<Call id="bastofosen:call:horten_to_moss:01" order="2">
@@ -1105,6 +1080,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Arrival>
 										<Time>11:45:00.0Z</Time>
 									</Arrival>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Arrival</Note>
 								</Call>
 							</calls>
@@ -1119,10 +1095,6 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 							</dayTypes>
 							<ServicePatternRef version="any" ref="bastofosen:sp:horten_to_moss"/>
 							<LineRef version="any" ref="bastofosen:line"/>
-							<JourneyPatternView>
-								<RouteRef version="any" ref="bastofosen:rt:horten_to_moss"/>
-								<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
-							</JourneyPatternView>
 							<runTimes>
 								<VehicleJourneyRunTime id="bastofosen:vjrt:horten_to_fylkesgrense">
 									<Name>Horten - Moss Leg 1</Name>
@@ -1159,6 +1131,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Departure>
 										<Time>11:45:00.0Z</Time>
 									</Departure>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Departure</Note>
 								</Call>
 								<Call id="bastofosen:call:horten_to_moss:01" order="2">
@@ -1166,6 +1139,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									<Arrival>
 										<Time>12:15:00.0Z</Time>
 									</Arrival>
+									<DestinationDisplayRef version="any" ref="bastofosen:dd:moss"/>
 									<Note>Arrival</Note>
 								</Call>
 							</calls>
