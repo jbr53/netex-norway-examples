@@ -199,6 +199,10 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 						</TimingPoint>
 					</timingPoints>
 					<!--===TIMING LINKS===-->
+					<!-- ##### -->
+					<!-- TODO : Vurdere om vi vil spesifisere/tidfeste ruter vha. timing links eller om dette er overflødig ift behovet -->
+					<!-- (per spec: TIMING LINK = An ordered pair of TIMING POINTs for which run times may be recorded.") -->
+					<!-- ##### -->
 					<timingLinks>
 						<TimingLink version="any" id="bastofosen:tl:ssp_horten_to_fylkesgrense">
 							<Name>Etter avgang Horten til passering av fylkesgrense</Name>
@@ -396,17 +400,9 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 								</VehicleJourneyRunTime>
 							</runTimes>
 							<passingTimes>
-								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
-									<DepartureTime>06:45:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
 								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
 									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
 									<DepartureTime>07:00:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
-								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
-									<ArrivalTime>07:15:00.0Z</ArrivalTime>
 								</TimetabledPassingTime>
 							</passingTimes>
 							<calls>
@@ -456,17 +452,9 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 								</VehicleJourneyRunTime>
 							</runTimes>
 							<passingTimes>
-								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
-									<DepartureTime>07:30:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
 								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
 									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
 									<DepartureTime>07:45:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
-								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
-									<ArrivalTime>08:00:00.0Z</ArrivalTime>
 								</TimetabledPassingTime>
 							</passingTimes>
 							<calls>
@@ -516,17 +504,9 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 								</VehicleJourneyRunTime>
 							</runTimes>
 							<passingTimes>
-								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
-									<DepartureTime>08:15:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
 								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
 									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
 									<DepartureTime>08:30:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
-								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
-									<ArrivalTime>08:45:00.0Z</ArrivalTime>
 								</TimetabledPassingTime>
 							</passingTimes>
 							<calls>
@@ -575,17 +555,9 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 								</VehicleJourneyRunTime>
 							</runTimes>
 							<passingTimes>
-								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
-									<DepartureTime>08:45:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
 								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
 									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
 									<DepartureTime>09:00:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
-								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
-									<ArrivalTime>09:15:00.0Z</ArrivalTime>
 								</TimetabledPassingTime>
 							</passingTimes>
 							<calls>
@@ -634,17 +606,9 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 								</VehicleJourneyRunTime>
 							</runTimes>
 							<passingTimes>
-								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
-									<DepartureTime>09:00:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
 								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
 									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
 									<DepartureTime>09:15:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
-								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
-									<ArrivalTime>09:30:00.0Z</ArrivalTime>
 								</TimetabledPassingTime>
 							</passingTimes>
 							<calls>
@@ -693,17 +657,9 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 								</VehicleJourneyRunTime>
 							</runTimes>
 							<passingTimes>
-								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
-									<DepartureTime>09:15:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
 								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
 									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
 									<DepartureTime>09:30:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
-								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
-									<ArrivalTime>09:45:00.0Z</ArrivalTime>
 								</TimetabledPassingTime>
 							</passingTimes>
 							<calls>
@@ -753,17 +709,9 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 								</VehicleJourneyRunTime>
 							</runTimes>
 							<passingTimes>
-								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
-									<DepartureTime>09:45:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
 								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
 									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
 									<DepartureTime>10:00:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
-								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
-									<ArrivalTime>10:15:00.0Z</ArrivalTime>
 								</TimetabledPassingTime>
 							</passingTimes>
 							<calls>
@@ -812,17 +760,9 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 								</VehicleJourneyRunTime>
 							</runTimes>
 							<passingTimes>
-								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
-									<DepartureTime>10:15:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
 								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
 									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
 									<DepartureTime>10:30:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
-								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
-									<ArrivalTime>10:45:00.0Z</ArrivalTime>
 								</TimetabledPassingTime>
 							</passingTimes>
 							<calls>
@@ -871,17 +811,9 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 								</VehicleJourneyRunTime>
 							</runTimes>
 							<passingTimes>
-								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
-									<DepartureTime>10:30:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
 								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
 									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
 									<DepartureTime>10:45:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
-								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
-									<ArrivalTime>11:00:00.0Z</ArrivalTime>
 								</TimetabledPassingTime>
 							</passingTimes>
 							<calls>
@@ -930,17 +862,9 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 								</VehicleJourneyRunTime>
 							</runTimes>
 							<passingTimes>
-								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
-									<DepartureTime>10:45:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
 								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
 									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
 									<DepartureTime>11:00:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
-								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
-									<ArrivalTime>11:15:00.0Z</ArrivalTime>
 								</TimetabledPassingTime>
 							</passingTimes>
 							<calls>
@@ -989,17 +913,9 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 								</VehicleJourneyRunTime>
 							</runTimes>
 							<passingTimes>
-								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
-									<DepartureTime>11:00:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
 								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
 									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
 									<DepartureTime>11:15:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
-								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
-									<ArrivalTime>11:30:00.0Z</ArrivalTime>
 								</TimetabledPassingTime>
 							</passingTimes>
 							<calls>
@@ -1049,17 +965,9 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 								</VehicleJourneyRunTime>
 							</runTimes>
 							<passingTimes>
-								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
-									<DepartureTime>11:15:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
 								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
 									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
 									<DepartureTime>11:30:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
-								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
-									<ArrivalTime>11:45:00.0Z</ArrivalTime>
 								</TimetabledPassingTime>
 							</passingTimes>
 							<calls>
@@ -1108,17 +1016,9 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 								</VehicleJourneyRunTime>
 							</runTimes>
 							<passingTimes>
-								<TimetabledPassingTime version="any" id="bastofosen:tpt:01">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:start"/>
-									<DepartureTime>11:45:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
 								<TimetabledPassingTime version="any" id="bastofosen:tpij:horten_to_moss:fylkesgrense">
 									<TimingPointInJourneyPatternRef version="any" ref="bastofosen:tpij:horten_to_moss:01"/>
 									<DepartureTime>12:00:00.0Z</DepartureTime>
-								</TimetabledPassingTime>
-								<TimetabledPassingTime version="any" id="bastofosen:spij:horten_to_moss:stop">
-									<StopPointInJourneyPatternRef version="any" ref="bastofosen:spij:horten_to_moss:stop"/>
-									<ArrivalTime>12:15:00.0Z</ArrivalTime>
 								</TimetabledPassingTime>
 							</passingTimes>
 							<calls>

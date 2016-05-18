@@ -3,8 +3,8 @@
 This Example is based on official NeTEx-XML examples and provides an example of a pair of stops on a street, as a general delivery 
     It comprises
        (i)   STOP PLACE		ruter:sp:1			Bryn skole (i Ole Deviks vei)
-       (ii)  QUAY			ruter:sp:1:q:1		Bryn skole northbound (from city center)
-       (iii) QUAY			ruter:sp:1:q:1		Bryn skole southbound (to city center)
+       (ii)  QUAY					ruter:sp:1:q:1		Bryn skole northbound (from city center)
+       (iii) QUAY					ruter:sp:1:q:1		Bryn skole southbound (to city center)
 
 RESPONSIBILITY SETs do not need to be declared in the file, but are included to clarify relation to TIMETABLE data
     ruter:rs:rs66        Timetable data
@@ -79,11 +79,6 @@ Frames and grouping:
 							<Descriptor>
 								<Name lang="no-NO">Område Bryn-Helsfyr i Oslo</Name>
 								<ShortName lang="no-NO">Bryn-Helsfyr</ShortName>
-								<!-- TODO: Definere hvordan QualifierName bør brukes for opprettholde unik qualifier for likelydende stedsnavn -->
-								<!--Qualify>
-									<QualifierName lang="no-NO">Bryn Skole</QualifierName>
-									<TopographicPlaceRef version="any" ref="ruter:tp:brynhelsfyr"/>
-								</Qualify-->
 							</Descriptor>
 						</TopographicPlace>
 					</topographicPlaces>

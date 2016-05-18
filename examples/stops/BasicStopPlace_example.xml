@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ==== Bare minimum Stop Example ====== 
+This Example is based on official NeTEx-XML examples and provides an example of a pair of stops on a street, as a general delivery 
+    It comprises
+       (i)   STOP PLACE	ruter:sp:1			Krokstien
+       (ii)  QUAY				ruter:sp:1:q:1		Krokstien (northbound - one way street)
+
+Frames and grouping:
+	- a SITE FRAME is used to hold the STOP PLACE and QUAY.
+-->
+<PublicationDelivery
+	version="1.0" 
+	xmlns="http://www.netex.org.uk/netex"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:gml="http://www.opengis.net/gml/3.2"
+	xmlns:siri="http://www.siri.org.uk/siri"
+	xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd">
+	<PublicationTimestamp>2016-04-29T12:30:00.0Z</PublicationTimestamp>
+	<ParticipantRef>PROVIDER_ID</ParticipantRef>
+	<dataObjects>
+		<SiteFrame version="any" id="ruter:sf:1">
+			<FrameDefaults>
+				<!-- TODO: Skrelle vekk fra eksempelet? -->
+				<DefaultResponsibilitySetRef ref="ruter:drs:01">EXTERNAL</DefaultResponsibilitySetRef>
+			</FrameDefaults>
+			<stopPlaces>
+				<!--===Stop=== Merk: Holdeplass-ID vil komme fra Holdeplassregisteret -->
+				<StopPlace version="01" created="2016-05-18T15:00:00.0Z" responsibilitySetRef="ruter:rs:1" id="ruter:sp:1">
+					<Name lang="no-NO">Krokstien</Name>
+					<ShortName lang="no-NO">Krokstien</ShortName>
+					<Centroid>
+						<Location>
+							<gml:pos srsName="WGS84" srsDimension="2">59.54384 10.51364</gml:pos>
+						</Location>
+					</Centroid>
+					<!-- TODO: Fjerne fra bare minimum eksempel? -->
+					<AccessibilityAssessment version="any" id="ruter:aa:1">
+						<MobilityImpairedAccess>true</MobilityImpairedAccess>
+						<limitations>
+							<AccessibilityLimitation>
+								<WheelchairAccess>true</WheelchairAccess>
+								<StepFreeAccess>true</StepFreeAccess>
+							</AccessibilityLimitation>
+						</limitations>
+					</AccessibilityAssessment>
+					<TransportMode>bus</TransportMode>
+					<StopPlaceType>onstreetBus</StopPlaceType>
+					<quays>
+						<Quay version="01" created="2016-04-21T09:01:00.0Z" id="ruter:sp:1:q:1">
+							<Name lang="no-NO">Krokstien</Name>
+							<Description lang="no-NO">Krokstien i Ringtjernveien (enveiskjørt)</Description>
+							<Centroid>
+								<Location>
+									<Longitude>59.54384</Longitude>
+									<Latitude>10.51364</Latitude>
+								</Location>
+							</Centroid>
+							<!-- TODO: Nødvendig i bare minimum eksempel? -->
+							<RoadAddress version="any" id="ruter:ra:ringtjernveien">
+								<RoadName>Ringtjernveien</RoadName>
+							</RoadAddress>
+							<Covered>outdoors</Covered>
+							<Lighting>wellLit</Lighting>
+							<placeEquipments>
+								<!-- TODO: Avklare om dette skal være med i det hele tatt i modellene -->
+								<RubbishDisposalEquipment version="any" id="ruter:rde:bus:01">
+									<Description>General waste</Description>
+								</RubbishDisposalEquipment>
+								<!-- TODO: Se over... -->
+								<PassengerInformationEquipment version="any" id="ruter:pie:bus:01">
+									<Note>Info</Note>
+								</PassengerInformationEquipment>
+							</placeEquipments>
+							<BoardingUse>true</BoardingUse>
+							<AlightingUse>true</AlightingUse>
+							<QuayType>busStop</QuayType>
+						</Quay>
+					</quays>
+				</StopPlace>
+			</stopPlaces>
+		</SiteFrame>
+	</dataObjects>
+</PublicationDelivery>
