@@ -96,8 +96,8 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 					<!--===LINEs===-->
 					<lines>
 						<Line version="any" id="bastofosen:line">
-							<Name>Ferge Horten Moss</Name>
-							<ShortName>Mossefergen</ShortName>
+							<Name>Ferje Horten Moss</Name>
+							<ShortName>Mosseferjen</ShortName>
 							<TransportMode>water</TransportMode>
 							<PublicCode/>
 							<routes>
@@ -112,12 +112,12 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 					<!--===DESTINATION DISPLAYs===-->
 					<destinationDisplays>
 						<DestinationDisplay version="any" id="bastofosen:dd:moss">
-							<Name>Moss fergekai</Name>
+							<Name>Moss ferjekai</Name>
 							<ShortName>Moss</ShortName>
 							<PublicCode>Moss kai</PublicCode>
 						</DestinationDisplay>
 						<DestinationDisplay version="any" id="bastofosen:dd:horten">
-							<Name>Horten fergekai</Name>
+							<Name>Horten ferjekai</Name>
 							<ShortName>Horten</ShortName>
 							<PublicCode>Horten kai</PublicCode>
 						</DestinationDisplay>

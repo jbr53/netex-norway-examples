@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- ==== Bare minimum Stop Example ====== 
-This Example is based on official NeTEx-XML examples and provides an example of a pair of stops on a street, as a general delivery 
-    It comprises
-       (i)   STOP PLACE	ruter:sp:1			Krokstien
-       (ii)  QUAY				ruter:sp:1:q:1		Krokstien (northbound - one way street)
-
-Frames and grouping:
-	- a SITE FRAME is used to hold the STOP PLACE and QUAY.
+Eksempelet tar utgangspunkt i offisielle NeTEx-XML eksempler og viser et enkleste type stoppested for buss, uten fasiliteter, i en enveiskjørt gate i Oslo.
+    Denne består av:
+    - STOP PLACE	ruter:sp:1			Krokstien
+	- QUAY			ruter:sp:1:q:1		Krokstien (northbound - one way street)
+	Frames / gruppering:
+	- SITE FRAME inneholder STOP PLACE og QUAY
 -->
 <PublicationDelivery
 	version="1.0" 
@@ -15,7 +14,7 @@ Frames and grouping:
 	xmlns:gml="http://www.opengis.net/gml/3.2"
 	xmlns:siri="http://www.siri.org.uk/siri"
 	xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd">
-	<PublicationTimestamp>2016-04-29T12:30:00.0Z</PublicationTimestamp>
+	<PublicationTimestamp>2016-05-18T15:00:00.0Z</PublicationTimestamp>
 	<ParticipantRef>PROVIDER_ID</ParticipantRef>
 	<dataObjects>
 		<SiteFrame version="any" id="ruter:sf:1">
@@ -33,7 +32,7 @@ Frames and grouping:
 							<gml:pos srsName="WGS84" srsDimension="2">59.54384 10.51364</gml:pos>
 						</Location>
 					</Centroid>
-					<!-- TODO: Fjerne fra bare minimum eksempel? -->
+					<!-- TODO: Fjerne fra minimumseksempelet? -->
 					<AccessibilityAssessment version="any" id="ruter:aa:1">
 						<MobilityImpairedAccess>true</MobilityImpairedAccess>
 						<limitations>
