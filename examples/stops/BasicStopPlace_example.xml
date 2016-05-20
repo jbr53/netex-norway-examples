@@ -2,8 +2,8 @@
 <!-- ==== Bare minimum Stop Example ====== 
 Eksempelet tar utgangspunkt i offisielle NeTEx-XML eksempler og viser et enkleste type stoppested for buss, uten fasiliteter, i en enveiskjørt gate i Oslo.
     Denne består av:
-    - STOP PLACE	ruter:sp:1			Krokstien
-	- QUAY			ruter:sp:1:q:1		Krokstien (northbound - one way street)
+    - STOP PLACE	nhr:sp:1			Krokstien
+	- QUAY			nhr:sp:1:q:1		(uten navn)
 	Frames / gruppering:
 	- SITE FRAME inneholder STOP PLACE og QUAY
 -->
@@ -12,51 +12,47 @@ Eksempelet tar utgangspunkt i offisielle NeTEx-XML eksempler og viser et enklest
 	xmlns="http://www.netex.org.uk/netex"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:gml="http://www.opengis.net/gml/3.2"
-	xmlns:siri="http://www.siri.org.uk/siri"
 	xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd">
+	
+	<!-- Når denne dataleveransen ble generert -->
 	<PublicationTimestamp>2016-05-18T15:00:00.0Z</PublicationTimestamp>
-	<ParticipantRef>PROVIDER_ID</ParticipantRef>
+	<ParticipantRef>NHR</ParticipantRef>
 	<dataObjects>
-		<SiteFrame version="any" id="ruter:sf:1">
+		<SiteFrame version="any" id="nhr:sf:1">
 			<stopPlaces>
 				<!--===Stop=== -->
 				<!-- Merk: Holdeplass-ID vil komme fra Holdeplassregisteret -->
-				<StopPlace version="01" created="2016-05-18T15:00:00.0Z" id="ruter:sp:1">
+				<StopPlace version="01" created="2016-04-18T15:00:00.0Z" id="nhr:sp:1">
 					<Name lang="no-NO">Krokstien</Name>
-					<ShortName lang="no-NO">Krokstien</ShortName>
-					<Description lang="no-NO">Krokstien i Ringtjernveien (enveiskjørt)</Description>
-					<Centroid>
-						<Location>
-							<gml:pos srsName="WGS84" srsDimension="2">59.54384 10.51364</gml:pos>
-						</Location>
-					</Centroid>
-					<RoadAddress version="any" id="ruter:ra:ringtjernveien">
-						<RoadName>Ringtjernveien</RoadName>
-					</RoadAddress>
-					<AccessibilityAssessment version="any" id="ruter:aa:1">
+					
+					<!-- Generelt tilgjengelig med rullestol -->
+					<AccessibilityAssessment version="any" id="nhr:aa:1">
 						<MobilityImpairedAccess>true</MobilityImpairedAccess>
 					</AccessibilityAssessment>
+					<!-- Comment: Foreløpig uavklart på hvilket detaljnivå dette skal modelleres i Holdeplassregisteret. -->
+					<facilities>
+						<SiteFacilitySet version="01" id="nhr:sfs:1">
+							<PassengerInformationEquipmentList>stopTimetable</PassengerInformationEquipmentList>
+						</SiteFacilitySet>
+					</facilities>
 					<TransportMode>bus</TransportMode>
 					<StopPlaceType>onstreetBus</StopPlaceType>
 					<quays>
-						<Quay version="01" created="2016-04-21T09:01:00.0Z" id="ruter:sp:1:q:1">
-							<Name lang="no-NO">Krokstien</Name>
-							<Description lang="no-NO">Krokstien nordgående</Description>
+						<Quay version="01" created="2016-04-21T09:01:00.0Z" id="nhr:sp:1:q:1">
+							<Centroid>
+								<!-- Vil alltid være WGS84 -->
+								<Location srsName="WGS84">
+									<Longitude>59.910579</Longitude>
+									<Latitude>10.8577903</Latitude>
+								</Location>
+							</Centroid>
+							<!-- Gateadresse. Ikke postadresse -->
+							<RoadAddress version="any" id="ruter:ra:ringtjernveien">
+								<RoadNumber>50</RoadNumber>
+								<RoadName>Rundtjernveien</RoadName>
+							</RoadAddress>
 							<Covered>outdoors</Covered>
 							<Lighting>wellLit</Lighting>
-							<!-- start REMOVED section --> 
-							<!-- Comment: Foreløpig uavklart på hvilket detaljnivå dette skal modelleres i Holdeplassregisteret. Men hvis relevant på sikt skal det legges inn som PLACE EQUIPMENTS -->
-							<!--
-							<placeEquipments>
-								<RubbishDisposalEquipment version="any" id="ruter:rde:bus:01">
-									<Description>General waste</Description>
-								</RubbishDisposalEquipment>
-								<PassengerInformationEquipment version="any" id="ruter:pie:bus:01">
-									<Note>Info</Note>
-								</PassengerInformationEquipment>
-							</placeEquipments>
-							-->
-							<!-- end REMOVED section -->
 							<QuayType>busStop</QuayType>
 						</Quay>
 					</quays>
