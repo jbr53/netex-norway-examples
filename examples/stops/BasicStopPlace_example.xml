@@ -11,7 +11,6 @@ Eksempelet tar utgangspunkt i offisielle NeTEx-XML eksempler og viser et enklest
 	version="1.0" 
 	xmlns="http://www.netex.org.uk/netex"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:gml="http://www.opengis.net/gml/3.2"
 	xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd">
 	
 	<!-- Når denne dataleveransen ble generert -->
@@ -47,8 +46,8 @@ Eksempelet tar utgangspunkt i offisielle NeTEx-XML eksempler og viser et enklest
 								</Location>
 							</Centroid>
 							<!-- Gateadresse. Ikke postadresse -->
-							<RoadAddress version="any" id="ruter:ra:ringtjernveien">
-								<RoadNumber>50</RoadNumber>
+							<RoadAddress version="any" id="nhr:ra:rundtjernveien68">
+								<RoadNumber>68</RoadNumber>
 								<RoadName>Rundtjernveien</RoadName>
 							</RoadAddress>
 							<Covered>outdoors</Covered>
