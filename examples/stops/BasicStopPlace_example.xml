@@ -42,8 +42,8 @@ Eksempelet tar utgangspunkt i offisielle NeTEx-XML eksempler og viser et enklest
 							<Centroid>
 								<!-- Vil alltid være WGS84 -->
 								<Location srsName="WGS84">
-									<Longitude>59.910579</Longitude>
-									<Latitude>10.8577903</Latitude>
+									<Longitude>10.8577903</Longitude>
+									<Latitude>59.910579</Latitude>
 								</Location>
 							</Centroid>
 							<!-- Gateadresse. Ikke postadresse -->
