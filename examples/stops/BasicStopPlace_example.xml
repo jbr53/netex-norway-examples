@@ -18,60 +18,45 @@ Eksempelet tar utgangspunkt i offisielle NeTEx-XML eksempler og viser et enklest
 	<ParticipantRef>PROVIDER_ID</ParticipantRef>
 	<dataObjects>
 		<SiteFrame version="any" id="ruter:sf:1">
-			<FrameDefaults>
-				<!-- TODO: Skrelle vekk fra eksempelet? -->
-				<DefaultResponsibilitySetRef ref="ruter:drs:01">EXTERNAL</DefaultResponsibilitySetRef>
-			</FrameDefaults>
 			<stopPlaces>
-				<!--===Stop=== Merk: Holdeplass-ID vil komme fra Holdeplassregisteret -->
-				<StopPlace version="01" created="2016-05-18T15:00:00.0Z" responsibilitySetRef="ruter:rs:1" id="ruter:sp:1">
+				<!--===Stop=== -->
+				<!-- Merk: Holdeplass-ID vil komme fra Holdeplassregisteret -->
+				<StopPlace version="01" created="2016-05-18T15:00:00.0Z" id="ruter:sp:1">
 					<Name lang="no-NO">Krokstien</Name>
 					<ShortName lang="no-NO">Krokstien</ShortName>
+					<Description lang="no-NO">Krokstien i Ringtjernveien (enveiskjørt)</Description>
 					<Centroid>
 						<Location>
 							<gml:pos srsName="WGS84" srsDimension="2">59.54384 10.51364</gml:pos>
 						</Location>
 					</Centroid>
-					<!-- TODO: Fjerne fra minimumseksempelet? -->
+					<RoadAddress version="any" id="ruter:ra:ringtjernveien">
+						<RoadName>Ringtjernveien</RoadName>
+					</RoadAddress>
 					<AccessibilityAssessment version="any" id="ruter:aa:1">
 						<MobilityImpairedAccess>true</MobilityImpairedAccess>
-						<limitations>
-							<AccessibilityLimitation>
-								<WheelchairAccess>true</WheelchairAccess>
-								<StepFreeAccess>true</StepFreeAccess>
-							</AccessibilityLimitation>
-						</limitations>
 					</AccessibilityAssessment>
 					<TransportMode>bus</TransportMode>
 					<StopPlaceType>onstreetBus</StopPlaceType>
 					<quays>
 						<Quay version="01" created="2016-04-21T09:01:00.0Z" id="ruter:sp:1:q:1">
 							<Name lang="no-NO">Krokstien</Name>
-							<Description lang="no-NO">Krokstien i Ringtjernveien (enveiskjørt)</Description>
-							<Centroid>
-								<Location>
-									<Longitude>59.54384</Longitude>
-									<Latitude>10.51364</Latitude>
-								</Location>
-							</Centroid>
-							<!-- TODO: Nødvendig i bare minimum eksempel? -->
-							<RoadAddress version="any" id="ruter:ra:ringtjernveien">
-								<RoadName>Ringtjernveien</RoadName>
-							</RoadAddress>
+							<Description lang="no-NO">Krokstien nordgående</Description>
 							<Covered>outdoors</Covered>
 							<Lighting>wellLit</Lighting>
+							<!-- start REMOVED section --> 
+							<!-- Comment: Foreløpig uavklart på hvilket detaljnivå dette skal modelleres i Holdeplassregisteret. Men hvis relevant på sikt skal det legges inn som PLACE EQUIPMENTS -->
+							<!--
 							<placeEquipments>
-								<!-- TODO: Avklare om dette skal være med i det hele tatt i modellene -->
 								<RubbishDisposalEquipment version="any" id="ruter:rde:bus:01">
 									<Description>General waste</Description>
 								</RubbishDisposalEquipment>
-								<!-- TODO: Se over... -->
 								<PassengerInformationEquipment version="any" id="ruter:pie:bus:01">
 									<Note>Info</Note>
 								</PassengerInformationEquipment>
 							</placeEquipments>
-							<BoardingUse>true</BoardingUse>
-							<AlightingUse>true</AlightingUse>
+							-->
+							<!-- end REMOVED section -->
 							<QuayType>busStop</QuayType>
 						</Quay>
 					</quays>
