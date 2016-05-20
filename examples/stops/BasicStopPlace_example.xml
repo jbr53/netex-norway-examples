@@ -12,18 +12,16 @@ Eksempelet tar utgangspunkt i offisielle NeTEx-XML eksempler og viser et enklest
 	xmlns="http://www.netex.org.uk/netex"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd">
-	
 	<!-- Når denne dataleveransen ble generert -->
 	<PublicationTimestamp>2016-05-18T15:00:00.0Z</PublicationTimestamp>
 	<ParticipantRef>NHR</ParticipantRef>
 	<dataObjects>
-		<SiteFrame version="any" id="nhr:sf:1">
+		<SiteFrame version="01" id="nhr:sf:1">
 			<stopPlaces>
 				<!--===Stop=== -->
 				<!-- Merk: Holdeplass-ID vil komme fra Holdeplassregisteret -->
-				<StopPlace version="01" created="2016-04-18T15:00:00.0Z" id="nhr:sp:1">
+				<StopPlace version="01" created="2016-04-21T09:00:00.0Z" id="nhr:sp:1">
 					<Name lang="no-NO">Krokstien</Name>
-					
 					<!-- Generelt tilgjengelig med rullestol -->
 					<AccessibilityAssessment version="any" id="nhr:aa:1">
 						<MobilityImpairedAccess>true</MobilityImpairedAccess>
