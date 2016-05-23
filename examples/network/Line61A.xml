@@ -7,16 +7,16 @@
     xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd">
     <PublicationTimestamp>2016-05-20T15:03:03Z</PublicationTimestamp>
     <ParticipantRef>RUT</ParticipantRef>
-    
+
     <!-- Description er frivillig -->
     <Description>Ruter linje 61A: Tveita Solfjellet</Description>
 
     <dataObjects>
         <!-- =========================================== -->
         <CompositeFrame version="1" created="2015-12-13T00:00:00Z" id="RUT:Norway:CompositeFrame:0061">
-           
+
             <codespaces>
-               <!-- Codespace for Ruter -->
+                <!-- Codespace for Ruter -->
                 <Codespace id="ruter">
                     <Xmlns>RUT</Xmlns>
                     <XmlnsUrl>http://www.ruter.no/</XmlnsUrl>
@@ -35,6 +35,9 @@
                         <!-- Alle elementer med id-attributt blir prefixet med dette codespacet (dvs RUT:) -->
                         <DefaultCodespaceRef ref="ruter"/>
                         <DefaultLocale>
+                            <TimeZone>CET</TimeZone>
+                            <SummerTimeZone>CEST</SummerTimeZone>
+                            <!-- Alle tekster er på norsk om ikke eksplisitt spesifisert -->
                             <DefaultLanguage>no</DefaultLanguage>
                         </DefaultLocale>
                         <!-- Alle koordinater leveres i henhold til WGS84 -->
@@ -43,13 +46,14 @@
                     <organisations>
                         <!-- TODO her er ting kun splittet i authority og operator. Normalt er strukturen mer kompleks, og informasjon rundt f.eks hittegods må modelleres korrekt -->
                         <Authority version="1" id="RUT:Company:0">
-                            <CompanyNumber>991609407</CompanyNumber> <!-- Organisasjonsnummer -->
+                            <CompanyNumber>991609407</CompanyNumber>
+                            <!-- Organisasjonsnummer -->
                             <Name>Ruter#</Name>
                             <LegalName>RUTER AS</LegalName>
                             <OrganisationType>authority</OrganisationType>
                         </Authority>
-                      
-                      <!-- Antar her at Unibuss er selskapet som kjører turen. Ikke nødvendigvis korrekt, men fremgår ikke av rutetabellen -->
+
+                        <!-- Antar her at Unibuss er selskapet som kjører turen. Ikke nødvendigvis korrekt, men fremgår ikke av rutetabellen -->
                         <Operator version="1" id="RUT:Company:1">
                             <CompanyNumber>985615616</CompanyNumber>
                             <Name>Unibuss</Name>
@@ -105,7 +109,7 @@
                 <ServiceFrame version="any" id="RUT:ServiceFrame:0061">
                     <!-- Nettverk er bare en gruppering av Lines under en felles "paraply". En Line igjen er en gruppe av ruter under samme markedsføringsnavn, eks Rute 2 -->
                     <Network version="1" changed="2015-12-13T00:00:00Z" id="RUT:GroupOfLine:RuterBuss">
-                        <Name>Ruter</Name>
+                        <Name>Ruter#</Name>
                     </Network>
                     <!-- Definisjon av hvilken retning dette er. Her brukt en rundtur som kjører med klokken -->
                     <directions>
@@ -210,7 +214,10 @@
                             </routes>
                         </Line>
                     </lines>
-                    
+
+                    <!-- Det antas her at det er to tekster som vises på bussen, "Solfjellet" ved start og frem til Solfjellet stopp, deretter "Tveita T" tilbake til Tveita T-banestasjon.
+                    Disse tekstene er referert til i Calls-seksjonen lenger nede
+                    -->
                     <destinationDisplays>
                         <DestinationDisplay version="any" id="RUT:DestinationDisplay:DST_Solfjellet">
                             <Name>Solfjellet</Name>
@@ -220,8 +227,8 @@
                             <Name>Tveita T</Name>
                             <FrontText>Tveita T</FrontText>
                         </DestinationDisplay>
-                    </destinationDisplays>    
-                        
+                    </destinationDisplays>
+
                     <!-- Dette er alle stoppene Linje 61A stopper på -->
                     <scheduledStopPoints>
                         <ScheduledStopPoint version="1" id="RUT:StopPoint:0061101001">
@@ -246,7 +253,7 @@
                             <Name>Tveita T</Name>
                         </ScheduledStopPoint>
                     </scheduledStopPoints>
-                    
+
                     <!-- Dette er alle ServicePatterns linje 61A kjører. Akkurat for denne linjen finnes det bare ett slikt "kjøremønster" -->
                     <servicePatterns>
                         <ServicePattern version="1" id="RUT:JourneyPattern:0061101">
@@ -333,12 +340,12 @@
                 </ServiceFrame>
 
                 <ServiceCalendarFrame version="any" id="RUT:ServiceCalendarFrame:SCF01">
-                    <Name>Ukedager inkludert lørdag, hver hele time kvart over</Name>
                     <ServiceCalendar version="any" id="RUT:ServiceCalendar:1">
+                        <Name>Ukedager inkludert lørdag, hver hele time kvart over</Name>
                         <dayTypes>
                             <!-- Denne kalenderen gjelder alle ukedager inkludert lørdager -->
                             <DayType version="any" id="RUT:DayType:MonSat">
-                                <Name>Weekdays and Saturday</Name>
+                                <Name>Ukedager og lørdager</Name>
                                 <properties>
                                     <PropertyOfDay>
                                         <DaysOfWeek>Monday Tuesday Wednesday Thursday Friday Saturday</DaysOfWeek>
@@ -359,17 +366,18 @@
                 <TimetableFrame version="any" id="RUT:TimetableFrame:TF02">
                     <validityConditions>
                         <AvailabilityCondition version="any" id="RUT:AvailabilityCondition:1">
-                            <Description>Sept  to April</Description>
+                            <Description>Januar til desember 2016</Description>
                             <FromDate>2016-01-10T00:00:00</FromDate>
                             <ToDate>2016-12-20T00:00:00</ToDate>
                         </AvailabilityCondition>
                     </validityConditions>
-                    <Name>Winter timetable for route 66 outbound</Name>
-                    <VehicleModes>bus</VehicleModes>
+                    <Name>Rute for 2016</Name>
+                    <!-- Kjøres buss om ikke noe annet er spesifisert -->
+                    <DefaultMode>bus</DefaultMode>
                     <vehicleJourneys>
                         <!-- Her defineres en TemplateServiceJourney. Den sier at avgangstidene er de samme, men i dette tilfellet med et rytmisk mønster (hvert. 15 minutt over hel) -->
                         <TemplateServiceJourney version="any" id="RUT:TemplateServiceJourney:0061">
-                            <ShortName>61A</ShortName>
+
 
                             <!-- Første avgang -->
                             <DepartureTime>09:15:00</DepartureTime>
