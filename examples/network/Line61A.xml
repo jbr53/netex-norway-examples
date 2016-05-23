@@ -21,16 +21,15 @@ This mapping involves :
 	
 	TimetableFrame
 	* vehicleJourneys
-	
-
 -->
-<PublicationDelivery version="1.0" xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.netex.org.uk/netex NeTEx_publication.xsd" xmlns:acsb="http://www.ifopt.org.uk/acsb"
-    xmlns:ifopt="http://www.ifopt.org.uk/ifopt" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:siri="http://www.siri.org.uk/siri">
+<PublicationDelivery version="1.0" xmlns="http://www.netex.org.uk/netex"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd"
+    xmlns:acsb="http://www.ifopt.org.uk/acsb" xmlns:ifopt="http://www.ifopt.org.uk/ifopt"
+    xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:siri="http://www.siri.org.uk/siri">
     <PublicationTimestamp>2016-05-20T15:03:03Z</PublicationTimestamp>
     <ParticipantRef>RUT</ParticipantRef>
     <Description>Ruter linje 61A: Tveita T</Description>
-    <!--   -->
     <!--- =============== RESULTS =========== -->
     <dataObjects>
         <!-- =========================================== -->
@@ -45,7 +44,7 @@ This mapping involves :
             </codespaces>
             <frames>
                 <!-- =========================================== -->
-                <!-- Resourceframe to map the Company NEPTUNE Object -->
+                <!-- TODO : === -->
                 <ResourceFrame version="any" id="Neptune:ResourceFrame:FrameProfile01">
                     <Name>RUT--Neptune-Line Profile </Name>
                     <codespaces>
@@ -123,14 +122,14 @@ This mapping involves :
                     <Network version="1" changed="2015-12-13T00:00:00Z" id="RUT:GroupOfLine:RuterBuss">
                         <Name>Ruter buss</Name>
                     </Network>
-                    <!-- NEPTUNE Route Mapping (part 1 : directions ) =========================================== -->
+                    <!-- TODO : === -->
                     <directions>
                         <Direction version="any" id="RUT:Route:0061101:Direction">
                             <Name>Rundtur</Name>
                             <DirectionType>clockwise</DirectionType>
                         </Direction>
                     </directions>
-                    <!-- NEPTUNE StopPoint (RoutePoint)  mapping=========================================== -->
+                    <!-- TODO : === -->
                     <routePoints>
                         <RoutePoint version="1" id="RUT:RoutePoint:0061101A0A0061101001">
                             <projections>
@@ -182,7 +181,7 @@ This mapping involves :
                             </projections>
                         </RoutePoint>
                     </routePoints>
-                    <!-- NEPTUNE Route Mapping (part 2 : routes ) =========================================== -->
+                    
                     <routes>
                         <Route version="1" id="RUT:Route:0061101">
                             <Name>Tveita T</Name>
@@ -212,7 +211,7 @@ This mapping involves :
                             </pointsInSequence>
                         </Route>
                     </routes>
-                    <!-- NEPTUNE Line Mapping =========================================== -->
+                    <!-- TODO : === -->
                     <lines>
                         <Line version="any" id="RUT:Line:0061">
                             <Name>Tveita T</Name>
@@ -223,7 +222,7 @@ This mapping involves :
                             </routes>
                         </Line>
                     </lines>
-                    <!-- NEPTUNE Stop Area with "Quay" or "BoardingPosition" type  =========================================== -->
+                    <!-- TODO : === -->
                     <scheduledStopPoints>
                         <ScheduledStopPoint version="1" id="RUT:StopPoint:0061101001">
                             <Name>Tveita T</Name>
@@ -254,7 +253,6 @@ This mapping involves :
                             <TimingPointStatus>timingPoint</TimingPointStatus>
                         </ScheduledStopPoint>
                     </scheduledStopPoints>
-
                     <servicePatterns>
                         <ServicePattern version="1" id="RUT:JourneyPattern:0061101">
                             <Name>Tveita T</Name>
@@ -286,7 +284,6 @@ This mapping involves :
                             </pointsInSequence>
                         </ServicePattern>
                     </servicePatterns>
-
                     <!-- Assignments of Schedules Stop Points to Stop Places -->
                     <stopAssignments>
                         <PassengerStopAssignment version="any" order="1" id="RUT:PassengerStopAssignment:0061101001">
@@ -329,10 +326,9 @@ This mapping involves :
                         </PassengerStopAssignment>
                     </stopAssignments>
                 </ServiceFrame>
-                <!--   -->
-                <!-- Calendars : NeTEx Day Types and Day Type Assignment mapped to NEPTUNE timetable -->
+
                 <ServiceCalendarFrame version="any" id="RUT:ServiceCalendarFrame:SCF01">
-                    <Name/>
+                    <Name>Ukedager inkludert lørdag, hver hele time kvart over</Name>
                     <ServiceCalendar version="any" id="RUT:ServiceCalendar:1">
                         <dayTypes>
                             <!-- Denne kalenderen gjelder alle ukedager inkludert lørdager -->
@@ -353,23 +349,16 @@ This mapping involves :
                             </Timeband>
                         </timebands>
                     </ServiceCalendar>
-
                 </ServiceCalendarFrame>
                 <!-- =========================================== -->
                 <TimetableFrame version="any" id="RUT:TimetableFrame:TF02">
                     <vehicleJourneys>
                         <TemplateServiceJourney version="any" id="RUT:TemplateServiceJourney:0061">
                             <ShortName>61A</ShortName>
-                            <!--
-      <netex:TransportSubmode>
-        <netex:RailSubmode>unknown</netex:RailSubmode>
-      </netex:TransportSubmode>
-      -->
                             <DepartureTime>09:15:00</DepartureTime>
                             <dayTypes>
                                 <DayTypeRef version="any" ref="RUT:DayType:MonSat"/>
                             </dayTypes>
-
                             <ServicePatternRef ref="RUT:JourneyPattern:0061101"/>
                             <LineRef version="any" ref="RUT:Line:0061"/>
                             <calls>
