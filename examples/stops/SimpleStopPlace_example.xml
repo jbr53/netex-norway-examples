@@ -128,8 +128,6 @@ Frames and grouping:
 											<Note>Info</Note>
 										</PassengerInformationEquipment>
 									</placeEquipments>
-									<BoardingUse>true</BoardingUse>
-									<AlightingUse>true</AlightingUse>
 									<Label lang="no-NO">A</Label>
 									<PublicCode>XX</PublicCode>
 									<CompassOctant>NE</CompassOctant>
@@ -156,8 +154,6 @@ Frames and grouping:
 											<Note>Info</Note>
 										</PassengerInformationEquipment>
 									</placeEquipments>
-									<BoardingUse>true</BoardingUse>
-									<AlightingUse>true</AlightingUse>
 									<Label lang="no-NO">B</Label>
 									<PublicCode>XY</PublicCode>
 									<CompassOctant>SW</CompassOctant>

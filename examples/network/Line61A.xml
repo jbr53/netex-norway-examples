@@ -21,18 +21,15 @@ This mapping involves :
 	
 	TimetableFrame
 	* vehicleJourneys
-	
-
 -->
 <PublicationDelivery version="1.0" xmlns="http://www.netex.org.uk/netex"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.netex.org.uk/netex NeTEx_publication.xsd"
+    xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd"
     xmlns:acsb="http://www.ifopt.org.uk/acsb" xmlns:ifopt="http://www.ifopt.org.uk/ifopt"
     xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:siri="http://www.siri.org.uk/siri">
     <PublicationTimestamp>2016-05-20T15:03:03Z</PublicationTimestamp>
     <ParticipantRef>RUT</ParticipantRef>
     <Description>Ruter linje 61A: Tveita T</Description>
-    <!--   -->
     <!--- =============== RESULTS =========== -->
     <dataObjects>
         <!-- =========================================== -->
@@ -48,7 +45,7 @@ This mapping involves :
             </codespaces>
             <frames>
                 <!-- =========================================== -->
-                <!-- Resourceframe to map the Company NEPTUNE Object -->
+                <!-- Resourceframe to map the Company TODO : === -->
                 <ResourceFrame version="any" id="Neptune:ResourceFrame:FrameProfile01">
                     <Name>RUT--Neptune-Line Profile </Name>
                     <codespaces>
@@ -82,7 +79,6 @@ This mapping involves :
                         </Operator>
                     </organisations>
                 </ResourceFrame>
-               
                 <SiteFrame version="any" id="RUT:SiteFrame:SF01"> 
                     <stopPlaces>
                         <StopPlace version="1" id="RUT:StopArea:03011537">
@@ -119,22 +115,21 @@ This mapping involves :
                         </StopPlace>
                     </stopPlaces>
                 </SiteFrame>
-                
-                <!-- ServiceFrame to map the PTNetwork  NEPTUNE Object -->
+                <!-- ServiceFrame to map the PTNetwork  TODO : === -->
                 <ServiceFrame version="any" id="RUT:ServiceFrame:0061">
-                    <!-- NEPTUNE PTNetwork Mappling =========================================== -->
+                    <!-- TODO : === -->
                     <Network version="1" changed="2015-12-13T00:00:00Z" id="RUT:GroupOfLine:320">
                         <Name>320</Name>
                         <PrivateCode>320</PrivateCode>
                     </Network>
-                    <!-- NEPTUNE Route Mapping (part 1 : directions ) =========================================== -->
+                    <!-- TODO : === -->
                     <directions>
                         <Direction version="any" id="RUT:Route:0061101:Direction">
                             <Name>A</Name>
                             <DirectionType>clockwise</DirectionType>
                         </Direction>
                     </directions>
-                    <!-- NEPTUNE StopPoint (RoutePoint)  mapping=========================================== -->
+                    <!-- TODO : === -->
                     <routePoints>
                         <RoutePoint version="1" id="RUT:RoutePoint:0061101A0A0061101001">
                             <projections>
@@ -193,7 +188,7 @@ This mapping involves :
                             </projections>
                         </RoutePoint>
                     </routePoints>
-                    <!-- NEPTUNE Route Mapping (part 2 : routes ) =========================================== -->
+                    <!-- TODO : === -->
                     <routes>
                         <Route version="1" id="RUT:Route:0061101">
                             <keyList>
@@ -204,7 +199,7 @@ This mapping involves :
                             </keyList>
                             <Name>Tveita T</Name>
                             <ShortName>Tveita T</ShortName>
-                            <!-- NEPTUNE [mapping:variable] : Route->DirectionRef reference of Direction object mapping to NEPTUNE Route->publishedName and Route->RouteExtension->wayBack -->
+                            <!-- TODO : === -->
                             <DirectionRef version="any" ref="RUT:Route:0061101:Direction"/>
                             <pointsInSequence>
                                 <PointOnRoute version="any" id="RUT:PointOnRoute:0061101001-0"
@@ -238,7 +233,7 @@ This mapping involves :
                             </pointsInSequence>
                         </Route>
                     </routes>
-                    <!-- NEPTUNE Line Mapping =========================================== -->
+                    <!-- TODO : === -->
                     <lines>
                         <Line version="any" id="RUT:Line:0061">
                             <Name>Tveita T</Name>
@@ -249,7 +244,7 @@ This mapping involves :
                             </routes>
                         </Line>
                     </lines>
-                    <!-- NEPTUNE Stop Area with "Quay" or "BoardingPosition" type  =========================================== -->
+                    <!-- TODO : === -->
                     <scheduledStopPoints>
                         <ScheduledStopPoint version="1" id="RUT:StopPoint:0061101001">
                             <Name>Tveita T</Name>
@@ -280,11 +275,9 @@ This mapping involves :
                             <TimingPointStatus>timingPoint</TimingPointStatus>
                         </ScheduledStopPoint>
                     </scheduledStopPoints>
-
                     <servicePatterns>
                         <ServicePattern version="1" id="RUT:JourneyPattern:0061101">
                             <Name>Tveita T</Name>
-
                             <RouteRef version="1" ref="RUT:Route:0061101"/>
                             <pointsInSequence>
                                 <StopPointInJourneyPattern version="1"
@@ -318,7 +311,6 @@ This mapping involves :
                             </pointsInSequence>
                         </ServicePattern>
                     </servicePatterns>
-
                     <!-- Assignments of Schedules Stop Points to Stop Places -->
                     <stopAssignments>
                         <PassengerStopAssignment version="any" order="1"
@@ -365,8 +357,7 @@ This mapping involves :
                         </PassengerStopAssignment>
                     </stopAssignments>
                 </ServiceFrame>
-                <!--   -->
-                <!-- Calendars : NeTEx Day Types and Day Type Assignment mapped to NEPTUNE timetable -->
+                <!-- Calendars : NeTEx Day Types and Day Type Assignment mapped to TODO : === -->
                 <ServiceCalendarFrame version="any" id="hde:ServiceCalendarFrame:SCF01">
                     <Name/>
                     <ServiceCalendar version="any" id="RUT:ServiceCalendar:1">
@@ -389,23 +380,16 @@ This mapping involves :
                             </Timeband>
                         </timebands>
                     </ServiceCalendar>
-
                 </ServiceCalendarFrame>
                 <!-- =========================================== -->
                 <TimetableFrame version="any" id="RUT:TimetableFrame:TF02">
                     <vehicleJourneys>
                         <TemplateServiceJourney version="any" id="RUT:TemplateServiceJourney:0061">
                             <ShortName>61A</ShortName>
-                            <!--
-      <netex:TransportSubmode>
-        <netex:RailSubmode>unknown</netex:RailSubmode>
-      </netex:TransportSubmode>
-      -->
                             <DepartureTime>09:15:00</DepartureTime>
                             <dayTypes>
                                 <DayTypeRef version="any" ref="RUT:DayType:MonSat"/>
                             </dayTypes>
-                     
                             <ServicePatternRef ref="RUT:JourneyPattern:0061101"></ServicePatternRef>
                             <LineRef version="any" ref="RUT:Line:0061"/>
                             <calls>
