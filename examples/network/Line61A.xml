@@ -325,6 +325,11 @@ This mapping involves :
                             <QuayRef version="1" ref="RUT:StopArea:0301152102"/>
                         </PassengerStopAssignment>
                     </stopAssignments>
+                    <notices>
+						<Notice version="any" id="RUT:notice">
+							<Text>I boligveiene kan buss 61A ogs&#229; stoppe utenom de faste holdeplassene. Husk &#229; gi stoppsignal!</Text>
+						</Notice>
+					</notices>
                 </ServiceFrame>
 
                 <ServiceCalendarFrame version="any" id="RUT:ServiceCalendarFrame:SCF01">
@@ -343,7 +348,7 @@ This mapping involves :
                         </dayTypes>
                         <timebands>
                             <Timeband version="any" id="RUT:Timeband:TM15">
-                                <Name>15 minutes past the hour</Name>
+                                <!--Name>15 minutes past the hour</Name-->
                                 <StartTime>00:15:00</StartTime>
                                 <EndTime>00:15:00</EndTime>
                             </Timeband>
