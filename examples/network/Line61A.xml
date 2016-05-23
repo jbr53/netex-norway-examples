@@ -22,15 +22,12 @@ This mapping involves :
 	TimetableFrame
 	* vehicleJourneys
 -->
-<PublicationDelivery version="1.0" xmlns="http://www.netex.org.uk/netex"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd"
-    xmlns:acsb="http://www.ifopt.org.uk/acsb" xmlns:ifopt="http://www.ifopt.org.uk/ifopt"
-    xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:siri="http://www.siri.org.uk/siri">
+<PublicationDelivery version="1.0" xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd">
     <PublicationTimestamp>2016-05-20T15:03:03Z</PublicationTimestamp>
     <ParticipantRef>RUT</ParticipantRef>
     <Description>Ruter linje 61A: Tveita T</Description>
-    <!--- =============== RESULTS =========== -->
+
     <dataObjects>
         <!-- =========================================== -->
         <CompositeFrame version="1" created="2015-12-13T00:00:00Z" id="RUT:Norway:CompositeFrame:0061">
@@ -118,18 +115,19 @@ This mapping involves :
 
                 <!-- ServiceFrame to map the PTNetwork  NEPTUNE Object -->
                 <ServiceFrame version="any" id="RUT:ServiceFrame:0061">
-                    <!-- NEPTUNE PTNetwork Mappling =========================================== -->
+                    <!-- Nettverk er bare en gruppering av Lines under en felles "paraply". En Line igjen er en gruppe av ruter under samme markedsføringsnavn, eks Rute 2 -->
                     <Network version="1" changed="2015-12-13T00:00:00Z" id="RUT:GroupOfLine:RuterBuss">
-                        <Name>Ruter buss</Name>
+                        <Name>Ruter</Name>
                     </Network>
-                    <!-- TODO : === -->
+                    <!-- Definisjon av hvilken retning dette er. Her brukt en rundtur som kjører med klokken -->
                     <directions>
                         <Direction version="any" id="RUT:Route:0061101:Direction">
                             <Name>Rundtur</Name>
                             <DirectionType>clockwise</DirectionType>
                         </Direction>
                     </directions>
-                    <!-- TODO : === -->
+                    <!-- Her listes alle rutepunktene. I eksemplet under er det kun referanser til StopPoints, men det kan også være andre typer punkter, eks TimingPoint.
+                         Hvis man har flere ruter skal alle rutepunkter defineres her. For hver rute under lister man opp de som faktisk benyttes i gitt rute (eks tur/retur der mange av punktene er de samme, men ikke nødvendigvis alle -->
                     <routePoints>
                         <RoutePoint version="1" id="RUT:RoutePoint:0061101A0A0061101001">
                             <projections>
@@ -181,7 +179,7 @@ This mapping involves :
                             </projections>
                         </RoutePoint>
                     </routePoints>
-                    
+
                     <routes>
                         <Route version="1" id="RUT:Route:0061101">
                             <Name>Tveita T</Name>
@@ -211,13 +209,15 @@ This mapping involves :
                             </pointsInSequence>
                         </Route>
                     </routes>
-                    <!-- TODO : === -->
+                    
                     <lines>
+                        <!-- Kun 1 linje definert; 61A -->
                         <Line version="any" id="RUT:Line:0061">
                             <Name>Tveita T</Name>
                             <TransportMode>bus</TransportMode>
                             <PublicCode>61A</PublicCode>
                             <routes>
+                                <!-- Denne linjen kjøres bare på 1 måte -->
                                 <RouteRef version="1" ref="RUT:Route:0061101"/>
                             </routes>
                         </Line>
@@ -263,7 +263,7 @@ This mapping involves :
                                     <!-- Referanse til hvilket ScheduledStopPoint -->
                                     <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101001"/>
                                 </StopPointInJourneyPattern>
-                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101002" order="2" >
+                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101002" order="2">
                                     <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101002"/>
                                 </StopPointInJourneyPattern>
                                 <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101003" order="3">
@@ -272,7 +272,7 @@ This mapping involves :
                                 <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101004" order="4">
                                     <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101004"/>
                                 </StopPointInJourneyPattern>
-                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101005" order="5" >
+                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101005" order="5">
                                     <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101005"/>
                                 </StopPointInJourneyPattern>
                                 <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101006" order="6">
@@ -350,22 +350,30 @@ This mapping involves :
                         </timebands>
                     </ServiceCalendar>
                 </ServiceCalendarFrame>
-                <!-- =========================================== -->
+                <!-- Tidtabellen, dvs avgangstider -->
                 <TimetableFrame version="any" id="RUT:TimetableFrame:TF02">
                     <vehicleJourneys>
+                        <!-- Her defineres en TemplateServiceJourney. Den sier at avgangstidene er de samme, men i dette tilfellet med et rytmisk mønster (hvert. 15 minutt over hel) -->
                         <TemplateServiceJourney version="any" id="RUT:TemplateServiceJourney:0061">
                             <ShortName>61A</ShortName>
+                            
+                            <!-- Første avgang -->
                             <DepartureTime>09:15:00</DepartureTime>
                             <dayTypes>
+                                <!-- Refererer til 1 daytype som inneholder alle dager mandag-lørdag. Kunne vært separate dagtyper, men da måtte alle listes her -->
                                 <DayTypeRef version="any" ref="RUT:DayType:MonSat"/>
                             </dayTypes>
+                            <!-- Hvilket kjøremønster som benyttes med passasjerer ombord -->
                             <ServicePatternRef ref="RUT:JourneyPattern:0061101"/>
+                            
+                            <!-- Hvilken linje det gjelder -->
                             <LineRef version="any" ref="RUT:Line:0061"/>
                             <calls>
                                 <Call>
                                     <!-- Tveita T -->
                                     <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101001"/>
                                     <Arrival>
+                                        <!-- Kun påstigning -->
                                         <ForAlighting>false</ForAlighting>
                                     </Arrival>
                                     <Departure>
@@ -429,16 +437,21 @@ This mapping involves :
                                         <Time>09:31:00</Time>
                                     </Arrival>
                                     <Departure>
+                                        <!-- Kun avstigning -->
                                         <ForBoarding>false</ForBoarding>
                                     </Departure>
                                 </Call>
                             </calls>
                             <frequencyGroups>
-                                <RhythmicalJourneyGroup version="any" id="hde:rjg_24o_01">
+                                <RhythmicalJourneyGroup version="any" id="RUT:RhythmicalJourneyGroup:1">
                                     <Name>Every hour 15 minutes past</Name>
+                                    <!-- Denne grupperingen starter kl 09 på dagen -->
                                     <FirstDepartureTime>09:00:00</FirstDepartureTime>
+                                    
+                                    <!-- Kjøres til 15:00 (ikke inkludert, dvs siste avgang er kl 14:15) -->
                                     <LastDepartureTime>15:00:00</LastDepartureTime>
                                     <timebands>
+                                        <!-- Hvert 15 minutt over -->
                                         <TimebandRef version="any" ref="RUT:Timeband:TM15"/>
                                     </timebands>
                                 </RhythmicalJourneyGroup>
