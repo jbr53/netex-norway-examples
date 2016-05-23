@@ -82,6 +82,44 @@ This mapping involves :
                         </Operator>
                     </organisations>
                 </ResourceFrame>
+               
+                <SiteFrame version="any" id="RUT:SiteFrame:SF01"> 
+                    <stopPlaces>
+                        <StopPlace version="1" id="RUT:StopArea:03011537">
+                            <Name>Larsbr&#229;ten</Name>
+                            <quays>
+                                <Quay version="1" id="RUT:StopArea:0301153701"/>
+                            </quays>
+                        </StopPlace>
+                        <StopPlace version="1" id="RUT:StopArea:03011525">
+                            <Name>Tveita bedriftsomr&#229;de</Name>
+                            <quays>
+                                <Quay version="1" id="RUT:StopArea:0301152501"/>
+                                <Quay version="1" id="RUT:StopArea:0301152502"/>
+                            </quays>
+                        </StopPlace>
+                        <StopPlace version="1" id="RUT:StopArea:03011536">
+                            <Name>Solfjellet</Name>
+                            <quays>
+                                <Quay version="1" id="RUT:StopArea:0301153601"/>
+                            </quays>
+                        </StopPlace>
+                        <StopPlace version="1" id="RUT:StopArea:03011522">
+                            <Name>Tveita</Name>
+                            <quays>
+                                <Quay version="1" id="RUT:StopArea:0301152202"/>
+                            </quays>
+                        </StopPlace>
+                        <StopPlace version="1" id="RUT:StopArea:03011521">
+                            <Name>Tveita T</Name>
+                            <quays>
+                                <Quay version="1" id="RUT:StopArea:0301152101"/>
+                                <Quay version="1" id="RUT:StopArea:0301152102"/>
+                            </quays>
+                        </StopPlace>
+                    </stopPlaces>
+                </SiteFrame>
+                
                 <!-- ServiceFrame to map the PTNetwork  NEPTUNE Object -->
                 <ServiceFrame version="any" id="RUT:ServiceFrame:0061">
                     <!-- NEPTUNE PTNetwork Mappling =========================================== -->
@@ -202,7 +240,7 @@ This mapping involves :
                     </routes>
                     <!-- NEPTUNE Line Mapping =========================================== -->
                     <lines>
-                        <Line version="1" id="RUT:Line:0061">
+                        <Line version="any" id="RUT:Line:0061">
                             <Name>Tveita T</Name>
                             <TransportMode>bus</TransportMode>
                             <PublicCode>61A</PublicCode>
@@ -367,11 +405,9 @@ This mapping involves :
                             <dayTypes>
                                 <DayTypeRef version="any" ref="RUT:DayType:MonSat"/>
                             </dayTypes>
-                            <!-- TODO update -->
-                            <ServicePatternRef ref="hde:ServicePattern:jp_24o">EXTERNAL</ServicePatternRef>
-                            <!-- TODO -->
-                            <TimeDemandTypeRef version="any" ref="hde:TimeDemandType:TDT_45"/>
-                            <LineRef version="any" ref="mybus:Line:LN_234"/>
+                     
+                            <ServicePatternRef ref="RUT:JourneyPattern:0061101"></ServicePatternRef>
+                            <LineRef version="any" ref="RUT:Line:0061"/>
                             <calls>
                                 <Call>
                                     <!-- Tveita T -->
@@ -447,7 +483,6 @@ This mapping involves :
                             <frequencyGroups>
                                 <RhythmicalJourneyGroup version="any" id="hde:rjg_24o_01">
                                     <Name>Every hour 15 minutes past</Name>
-
                                     <FirstDepartureTime>09:00:00</FirstDepartureTime>
                                     <LastDepartureTime>15:00:00</LastDepartureTime>
                                     <timebands>
