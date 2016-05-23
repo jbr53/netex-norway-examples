@@ -45,7 +45,7 @@ This mapping involves :
             </codespaces>
             <frames>
                 <!-- =========================================== -->
-                <!-- Resourceframe to map the Company TODO : === -->
+                <!-- TODO : === -->
                 <ResourceFrame version="any" id="Neptune:ResourceFrame:FrameProfile01">
                     <Name>RUT--Neptune-Line Profile </Name>
                     <codespaces>
@@ -115,7 +115,7 @@ This mapping involves :
                         </StopPlace>
                     </stopPlaces>
                 </SiteFrame>
-                <!-- ServiceFrame to map the PTNetwork  TODO : === -->
+                <!-- TODO : === -->
                 <ServiceFrame version="any" id="RUT:ServiceFrame:0061">
                     <!-- TODO : === -->
                     <Network version="1" changed="2015-12-13T00:00:00Z" id="RUT:GroupOfLine:320">
