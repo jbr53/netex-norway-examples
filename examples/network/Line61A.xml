@@ -76,6 +76,7 @@ This mapping involves :
                     </organisations>
                 </ResourceFrame>
 
+                <!-- Alt her vil verifiseres mot det som ligger i holdeplassregisteret. Finnes det ikke der blir hele denne filen avvist -->
                 <SiteFrame version="any" id="RUT:SiteFrame:SF01">
                     <stopPlaces>
                         <StopPlace version="1" id="RUT:StopArea:03011537">
@@ -113,7 +114,6 @@ This mapping involves :
                     </stopPlaces>
                 </SiteFrame>
 
-                <!-- ServiceFrame to map the PTNetwork  NEPTUNE Object -->
                 <ServiceFrame version="any" id="RUT:ServiceFrame:0061">
                     <!-- Nettverk er bare en gruppering av Lines under en felles "paraply". En Line igjen er en gruppe av ruter under samme markedsføringsnavn, eks Rute 2 -->
                     <Network version="1" changed="2015-12-13T00:00:00Z" id="RUT:GroupOfLine:RuterBuss">
