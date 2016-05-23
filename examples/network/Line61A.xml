@@ -1,77 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
-This mapping involves :
-    ResourceFrame
-	* organisations
-	
-	ServiceFrame
-	* Network
-	* directions
-	* routePoints
-	* routeLinks
-	* routes
-	* lines
-	* scheduledStopPoints
-	* servicePatterns
-	* stopAssignments
-	
-	ServiceCalendarFrame
-	* dayTypes
-	* dayTypeAssignments
-	
-	TimetableFrame
-	* vehicleJourneys
+    Dette eksempelet er basert på linje 61A Tveita Solfjellet funnet her: 
+    https://ruter.no/globalassets/rutetabeller/oslo/oslo_syd_web_april2016.pdf
 -->
 <PublicationDelivery version="1.0" xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd">
     <PublicationTimestamp>2016-05-20T15:03:03Z</PublicationTimestamp>
     <ParticipantRef>RUT</ParticipantRef>
-    <Description>Ruter linje 61A: Tveita T</Description>
+    
+    <!-- Description er frivillig -->
+    <Description>Ruter linje 61A: Tveita Solfjellet</Description>
 
     <dataObjects>
         <!-- =========================================== -->
         <CompositeFrame version="1" created="2015-12-13T00:00:00Z" id="RUT:Norway:CompositeFrame:0061">
-            <!-- TODO sjekke hvordan dette faktisk effektureres -->
+           
             <codespaces>
+               <!-- Codespace for Ruter -->
                 <Codespace id="ruter">
-                    <Xmlns>ruter</Xmlns>
+                    <Xmlns>RUT</Xmlns>
                     <XmlnsUrl>http://www.ruter.no/</XmlnsUrl>
-                    <Description>Ruter data</Description>
+                </Codespace>
+                <!-- Codespace for nasjonalt holdeplassregister -->
+                <Codespace id="nhr">
+                    <Xmlns>NHR</Xmlns>
+                    <XmlnsUrl>http://www.rutebanken.no/nasjonltholdeplassregister</XmlnsUrl>
                 </Codespace>
             </codespaces>
             <frames>
                 <!-- =========================================== -->
-                <!-- TODO : === -->
-                <ResourceFrame version="any" id="Neptune:ResourceFrame:FrameProfile01">
-                    <Name>RUT--Neptune-Line Profile </Name>
-                    <codespaces>
-                        <Codespace id="Neptune">
-                            <Xmlns>Neptune</Xmlns>
-                            <XmlnsUrl>http://www.Neptune.fr/Neptune</XmlnsUrl>
-                            <Description>Neptune data </Description>
-                        </Codespace>
-                    </codespaces>
+                <!-- TODO :  === -->
+                <ResourceFrame version="any" id="RUT:ResourceFrame:RF1">
                     <FrameDefaults>
-                        <DefaultCodespaceRef ref="Neptune"/>
+                        <!-- Alle elementer med id-attributt blir prefixet med dette codespacet (dvs RUT:) -->
+                        <DefaultCodespaceRef ref="ruter"/>
+                        <DefaultLocale>
+                            <DefaultLanguage>no</DefaultLanguage>
+                        </DefaultLocale>
+                        <!-- Alle koordinater leveres i henhold til WGS84 -->
+                        <DefaultLocationSystem>EPSG:4326</DefaultLocationSystem>
                     </FrameDefaults>
-                    <dataSources>
-                        <DataSource id="Regtopp" version="1">
-                            <Description/>
-                        </DataSource>
-                    </dataSources>
-                    <typesOfValue>
-                        <TypeOfValidity version="01" id="Neptune:TypeOfValidity:WeeklyPlanned">
-                            <Name>Weekly export of Neptune  Planned data</Name>
-                            <Periodicity>P7D</Periodicity>
-                            <Nature>planned</Nature>
-                        </TypeOfValidity>
-                    </typesOfValue>
                     <organisations>
-                        <!-- TODO : Fylle inn selskap -->
-                        <Operator version="1" id="RUT:Company:320">
-                            <PublicCode>320</PublicCode>
-                            <CompanyNumber>320</CompanyNumber>
-                            <Name>Authority 320</Name>
+                        <!-- TODO her er ting kun splittet i authority og operator. Normalt er strukturen mer kompleks, og informasjon rundt f.eks hittegods må modelleres korrekt -->
+                        <Authority version="1" id="RUT:Company:0">
+                            <CompanyNumber>991609407</CompanyNumber> <!-- Organisasjonsnummer -->
+                            <Name>Ruter#</Name>
+                            <LegalName>RUTER AS</LegalName>
+                            <OrganisationType>authority</OrganisationType>
+                        </Authority>
+                      
+                      <!-- Antar her at Unibuss er selskapet som kjører turen. Ikke nødvendigvis korrekt, men fremgår ikke av rutetabellen -->
+                        <Operator version="1" id="RUT:Company:1">
+                            <CompanyNumber>985615616</CompanyNumber>
+                            <Name>Unibuss</Name>
+                            <LegalName>UNIBUSS AS</LegalName>
+                            <CustomerServiceContactDetails>
+                                <Phone>0047 177</Phone>
+                                <Url>http://www.ruter.no</Url>
+                                <FurtherDetails>Kontaktskjema på websider</FurtherDetails>
+                            </CustomerServiceContactDetails>
                         </Operator>
                     </organisations>
                 </ResourceFrame>
@@ -79,36 +66,37 @@ This mapping involves :
                 <!-- Alt her vil verifiseres mot det som ligger i holdeplassregisteret. Finnes det ikke der blir hele denne filen avvist -->
                 <SiteFrame version="any" id="RUT:SiteFrame:SF01">
                     <stopPlaces>
-                        <StopPlace version="1" id="RUT:StopArea:03011537">
+                        <!-- Merk at her brukes det codespace NHR som viser at disse elementene eies av NasjonaltHoldeplassRegister -->
+                        <StopPlace version="1" id="NHR:StopArea:03011537">
                             <Name>Larsbr&#229;ten</Name>
                             <quays>
-                                <Quay version="1" id="RUT:StopArea:0301153701"/>
+                                <Quay version="1" id="NHR:StopArea:0301153701"/>
                             </quays>
                         </StopPlace>
-                        <StopPlace version="1" id="RUT:StopArea:03011525">
+                        <StopPlace version="1" id="NHR:StopArea:03011525">
                             <Name>Tveita bedriftsomr&#229;de</Name>
                             <quays>
-                                <Quay version="1" id="RUT:StopArea:0301152501"/>
-                                <Quay version="1" id="RUT:StopArea:0301152502"/>
+                                <Quay version="1" id="NHR:StopArea:0301152501"/>
+                                <Quay version="1" id="NHR:StopArea:0301152502"/>
                             </quays>
                         </StopPlace>
-                        <StopPlace version="1" id="RUT:StopArea:03011536">
+                        <StopPlace version="1" id="NHR:StopArea:03011536">
                             <Name>Solfjellet</Name>
                             <quays>
-                                <Quay version="1" id="RUT:StopArea:0301153601"/>
+                                <Quay version="1" id="NHR:StopArea:0301153601"/>
                             </quays>
                         </StopPlace>
-                        <StopPlace version="1" id="RUT:StopArea:03011522">
+                        <StopPlace version="1" id="NHR:StopArea:03011522">
                             <Name>Tveita</Name>
                             <quays>
-                                <Quay version="1" id="RUT:StopArea:0301152202"/>
+                                <Quay version="1" id="NHR:StopArea:0301152202"/>
                             </quays>
                         </StopPlace>
-                        <StopPlace version="1" id="RUT:StopArea:03011521">
+                        <StopPlace version="1" id="NHR:StopArea:03011521">
                             <Name>Tveita T</Name>
                             <quays>
-                                <Quay version="1" id="RUT:StopArea:0301152101"/>
-                                <Quay version="1" id="RUT:StopArea:0301152102"/>
+                                <Quay version="1" id="NHR:StopArea:0301152101"/>
+                                <Quay version="1" id="NHR:StopArea:0301152102"/>
                             </quays>
                         </StopPlace>
                     </stopPlaces>
@@ -209,11 +197,11 @@ This mapping involves :
                             </pointsInSequence>
                         </Route>
                     </routes>
-                    
+
                     <lines>
                         <!-- Kun 1 linje definert; 61A -->
                         <Line version="any" id="RUT:Line:0061">
-                            <Name>Tveita T</Name>
+                            <Name>Tveita Solfjellet</Name>
                             <TransportMode>bus</TransportMode>
                             <PublicCode>61A</PublicCode>
                             <routes>
@@ -222,52 +210,63 @@ This mapping involves :
                             </routes>
                         </Line>
                     </lines>
-                    <!-- TODO : === -->
+                    
+                    <destinationDisplays>
+                        <DestinationDisplay version="any" id="RUT:DestinationDisplay:DST_Solfjellet">
+                            <Name>Solfjellet</Name>
+                            <FrontText>Solfjellet</FrontText>
+                        </DestinationDisplay>
+                        <DestinationDisplay version="any" id="RUT:DestinationDisplay:DST_TveitaT">
+                            <Name>Tveita T</Name>
+                            <FrontText>Tveita T</FrontText>
+                        </DestinationDisplay>
+                    </destinationDisplays>    
+                        
+                    <!-- Dette er alle stoppene Linje 61A stopper på -->
                     <scheduledStopPoints>
                         <ScheduledStopPoint version="1" id="RUT:StopPoint:0061101001">
                             <Name>Tveita T</Name>
-                            <TimingPointStatus>timingPoint</TimingPointStatus>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint version="1" id="RUT:StopPoint:0061101002">
                             <Name>Tveita bedriftsomr&#229;de</Name>
-                            <TimingPointStatus>timingPoint</TimingPointStatus>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint version="1" id="RUT:StopPoint:0061101003">
                             <Name>Solfjellet</Name>
-                            <TimingPointStatus>timingPoint</TimingPointStatus>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint version="1" id="RUT:StopPoint:0061101004">
                             <Name>Larsbr&#229;ten</Name>
-                            <TimingPointStatus>timingPoint</TimingPointStatus>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint version="1" id="RUT:StopPoint:0061101005">
                             <Name>Tveita bedriftsomr&#229;de</Name>
-                            <TimingPointStatus>timingPoint</TimingPointStatus>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint version="1" id="RUT:StopPoint:0061101006">
                             <Name>Tveita</Name>
-                            <TimingPointStatus>timingPoint</TimingPointStatus>
                         </ScheduledStopPoint>
                         <ScheduledStopPoint version="1" id="RUT:StopPoint:0061101007">
                             <Name>Tveita T</Name>
-                            <TimingPointStatus>timingPoint</TimingPointStatus>
                         </ScheduledStopPoint>
                     </scheduledStopPoints>
+                    
+                    <!-- Dette er alle ServicePatterns linje 61A kjører. Akkurat for denne linjen finnes det bare ett slikt "kjøremønster" -->
                     <servicePatterns>
                         <ServicePattern version="1" id="RUT:JourneyPattern:0061101">
                             <Name>Tveita T</Name>
                             <RouteRef version="1" ref="RUT:Route:0061101"/>
+                            <!-- Rekkefølge på stopp -->
                             <pointsInSequence>
-                                <!-- Rekkefølge på stopp -->
                                 <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101001" order="1">
                                     <!-- Referanse til hvilket ScheduledStopPoint -->
                                     <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101001"/>
+                                    <!-- Destinasjonstekst som vises på bussen -->
+                                    <DestinationDisplayRef ref="RUT:DestinationDisplay:DST_Solfjellet"/>
                                 </StopPointInJourneyPattern>
                                 <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101002" order="2">
                                     <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101002"/>
                                 </StopPointInJourneyPattern>
                                 <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101003" order="3">
                                     <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101003"/>
+                                    <!-- Her endrer teksten på bussen seg fra Solfjellet til Tveita T -->
+                                    <DestinationDisplayRef ref="RUT:DestinationDisplay:DST_TveitaT"/>
                                 </StopPointInJourneyPattern>
                                 <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101004" order="4">
                                     <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101004"/>
@@ -284,52 +283,53 @@ This mapping involves :
                             </pointsInSequence>
                         </ServicePattern>
                     </servicePatterns>
-                    <!-- Assignments of Schedules Stop Points to Stop Places -->
+                    <!-- Kobling fra ScheduledStopPoint til StopPlace/Quay. Legg merke til at StopPlace og Quay hører til i NHR-codespace mens ScheduleStopPoint hører til i RUT-codespacet -->
                     <stopAssignments>
                         <PassengerStopAssignment version="any" order="1" id="RUT:PassengerStopAssignment:0061101001">
                             <!-- Hvilket ScheduledStopPoint som mappes til ... -->
                             <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101001"/>
                             <!-- .. hvilket stopPlace ... og hvis mulig -->
-                            <StopPlaceRef version="1" ref="RUT:StopArea:03011521"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:03011521"/>
                             <!-- hvilken quay kjøretøyet stopper ved -->
-                            <QuayRef version="1" ref="RUT:StopArea:0301152101"/>
+                            <QuayRef version="1" ref="NHR:StopArea:0301152101"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment version="any" order="2" id="RUT:PassengerStopAssignment:0061101002">
                             <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101002"/>
-                            <StopPlaceRef version="1" ref="RUT:StopArea:03011525"/>
-                            <QuayRef version="1" ref="RUT:StopArea:0301152501"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:03011525"/>
+                            <QuayRef version="1" ref="NHR:StopArea:0301152501"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment version="any" order="3" id="RUT:PassengerStopAssignment:0061101003">
                             <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101003"/>
-                            <StopPlaceRef version="1" ref="RUT:StopArea:03011536"/>
-                            <QuayRef version="1" ref="RUT:StopArea:0301153601"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:03011536"/>
+                            <QuayRef version="1" ref="NHR:StopArea:0301153601"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment version="any" order="4" id="RUT:PassengerStopAssignment:0061101004">
                             <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101004"/>
-                            <StopPlaceRef version="1" ref="RUT:StopArea:03011537"/>
-                            <QuayRef version="1" ref="RUT:StopArea:0301153701"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:03011537"/>
+                            <QuayRef version="1" ref="NHR:StopArea:0301153701"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment version="any" order="5" id="RUT:PassengerStopAssignment:0061101005">
                             <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101005"/>
-                            <StopPlaceRef version="1" ref="RUT:StopArea:03011525"/>
-                            <QuayRef version="1" ref="RUT:StopArea:0301152502"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:03011525"/>
+                            <QuayRef version="1" ref="NHR:StopArea:0301152502"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment version="any" order="6" id="RUT:PassengerStopAssignment:0061101006">
                             <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101006"/>
-                            <StopPlaceRef version="1" ref="RUT:StopArea:03011522"/>
-                            <QuayRef version="1" ref="RUT:StopArea:0301152202"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:03011522"/>
+                            <QuayRef version="1" ref="NHR:StopArea:0301152202"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment version="any" order="7" id="RUT:PassengerStopAssignment:0061101007">
                             <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101007"/>
-                            <StopPlaceRef version="1" ref="RUT:StopArea:03011521"/>
-                            <QuayRef version="1" ref="RUT:StopArea:0301152102"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:03011521"/>
+                            <QuayRef version="1" ref="NHR:StopArea:0301152102"/>
                         </PassengerStopAssignment>
                     </stopAssignments>
                     <notices>
-						<Notice version="any" id="RUT:notice">
-							<Text>I boligveiene kan buss 61A ogs&#229; stoppe utenom de faste holdeplassene. Husk &#229; gi stoppsignal!</Text>
-						</Notice>
-					</notices>
+                        <!-- Denne fotnoten er modellert for hele linjen, ikke relatert spesifikt til noe stopp eller turer -->
+                        <Notice version="any" id="RUT:Notice:1">
+                            <Text>I boligveiene kan buss 61A ogs&#229; stoppe utenom de faste holdeplassene. Husk &#229; gi stoppsignal!</Text>
+                        </Notice>
+                    </notices>
                 </ServiceFrame>
 
                 <ServiceCalendarFrame version="any" id="RUT:ServiceCalendarFrame:SCF01">
@@ -357,11 +357,20 @@ This mapping involves :
                 </ServiceCalendarFrame>
                 <!-- Tidtabellen, dvs avgangstider -->
                 <TimetableFrame version="any" id="RUT:TimetableFrame:TF02">
+                    <validityConditions>
+                        <AvailabilityCondition version="any" id="RUT:AvailabilityCondition:1">
+                            <Description>Sept  to April</Description>
+                            <FromDate>2016-01-10T00:00:00</FromDate>
+                            <ToDate>2016-12-20T00:00:00</ToDate>
+                        </AvailabilityCondition>
+                    </validityConditions>
+                    <Name>Winter timetable for route 66 outbound</Name>
+                    <VehicleModes>bus</VehicleModes>
                     <vehicleJourneys>
                         <!-- Her defineres en TemplateServiceJourney. Den sier at avgangstidene er de samme, men i dette tilfellet med et rytmisk mønster (hvert. 15 minutt over hel) -->
                         <TemplateServiceJourney version="any" id="RUT:TemplateServiceJourney:0061">
                             <ShortName>61A</ShortName>
-                            
+
                             <!-- Første avgang -->
                             <DepartureTime>09:15:00</DepartureTime>
                             <dayTypes>
@@ -370,7 +379,7 @@ This mapping involves :
                             </dayTypes>
                             <!-- Hvilket kjøremønster som benyttes med passasjerer ombord -->
                             <ServicePatternRef ref="RUT:JourneyPattern:0061101"/>
-                            
+
                             <!-- Hvilken linje det gjelder -->
                             <LineRef version="any" ref="RUT:Line:0061"/>
                             <calls>
@@ -452,7 +461,7 @@ This mapping involves :
                                     <Name>Every hour 15 minutes past</Name>
                                     <!-- Denne grupperingen starter kl 09 på dagen -->
                                     <FirstDepartureTime>09:00:00</FirstDepartureTime>
-                                    
+
                                     <!-- Kjøres til 15:00 (ikke inkludert, dvs siste avgang er kl 14:15) -->
                                     <LastDepartureTime>15:00:00</LastDepartureTime>
                                     <timebands>
