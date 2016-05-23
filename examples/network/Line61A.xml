@@ -24,11 +24,9 @@ This mapping involves :
 	
 
 -->
-<PublicationDelivery version="1.0" xmlns="http://www.netex.org.uk/netex"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.netex.org.uk/netex NeTEx_publication.xsd"
-    xmlns:acsb="http://www.ifopt.org.uk/acsb" xmlns:ifopt="http://www.ifopt.org.uk/ifopt"
-    xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:siri="http://www.siri.org.uk/siri">
+<PublicationDelivery version="1.0" xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.netex.org.uk/netex NeTEx_publication.xsd" xmlns:acsb="http://www.ifopt.org.uk/acsb"
+    xmlns:ifopt="http://www.ifopt.org.uk/ifopt" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:siri="http://www.siri.org.uk/siri">
     <PublicationTimestamp>2016-05-20T15:03:03Z</PublicationTimestamp>
     <ParticipantRef>RUT</ParticipantRef>
     <Description>Ruter linje 61A: Tveita T</Description>
@@ -36,8 +34,7 @@ This mapping involves :
     <!--- =============== RESULTS =========== -->
     <dataObjects>
         <!-- =========================================== -->
-        <CompositeFrame version="1" created="2015-12-13T00:00:00Z"
-            id="RUT:Norway:CompositeFrame:0061">
+        <CompositeFrame version="1" created="2015-12-13T00:00:00Z" id="RUT:Norway:CompositeFrame:0061">
             <!-- TODO sjekke hvordan dette faktisk effektureres -->
             <codespaces>
                 <Codespace id="ruter">
@@ -82,8 +79,8 @@ This mapping involves :
                         </Operator>
                     </organisations>
                 </ResourceFrame>
-               
-                <SiteFrame version="any" id="RUT:SiteFrame:SF01"> 
+
+                <SiteFrame version="any" id="RUT:SiteFrame:SF01">
                     <stopPlaces>
                         <StopPlace version="1" id="RUT:StopArea:03011537">
                             <Name>Larsbr&#229;ten</Name>
@@ -119,18 +116,17 @@ This mapping involves :
                         </StopPlace>
                     </stopPlaces>
                 </SiteFrame>
-                
+
                 <!-- ServiceFrame to map the PTNetwork  NEPTUNE Object -->
                 <ServiceFrame version="any" id="RUT:ServiceFrame:0061">
                     <!-- NEPTUNE PTNetwork Mappling =========================================== -->
-                    <Network version="1" changed="2015-12-13T00:00:00Z" id="RUT:GroupOfLine:320">
-                        <Name>320</Name>
-                        <PrivateCode>320</PrivateCode>
+                    <Network version="1" changed="2015-12-13T00:00:00Z" id="RUT:GroupOfLine:RuterBuss">
+                        <Name>Ruter buss</Name>
                     </Network>
                     <!-- NEPTUNE Route Mapping (part 1 : directions ) =========================================== -->
                     <directions>
                         <Direction version="any" id="RUT:Route:0061101:Direction">
-                            <Name>A</Name>
+                            <Name>Rundtur</Name>
                             <DirectionType>clockwise</DirectionType>
                         </Direction>
                     </directions>
@@ -138,56 +134,49 @@ This mapping involves :
                     <routePoints>
                         <RoutePoint version="1" id="RUT:RoutePoint:0061101A0A0061101001">
                             <projections>
-                                <PointProjection version="any"
-                                    id="RUT:PointProjection:0061101A0A0061101001">
+                                <PointProjection version="any" id="RUT:PointProjection:0061101A0A0061101001">
                                     <ProjectedPointRef version="1" ref="RUT:StopPoint:0061101001"/>
                                 </PointProjection>
                             </projections>
                         </RoutePoint>
                         <RoutePoint version="1" id="RUT:RoutePoint:0061101A1A0061101002">
                             <projections>
-                                <PointProjection version="any"
-                                    id="RUT:PointProjection:0061101A1A0061101002">
+                                <PointProjection version="any" id="RUT:PointProjection:0061101A1A0061101002">
                                     <ProjectedPointRef version="1" ref="RUT:StopPoint:0061101002"/>
                                 </PointProjection>
                             </projections>
                         </RoutePoint>
                         <RoutePoint version="1" id="RUT:RoutePoint:0061101A2A0061101003">
                             <projections>
-                                <PointProjection version="any"
-                                    id="RUT:PointProjection:0061101A2A0061101003">
+                                <PointProjection version="any" id="RUT:PointProjection:0061101A2A0061101003">
                                     <ProjectedPointRef version="1" ref="RUT:StopPoint:0061101003"/>
                                 </PointProjection>
                             </projections>
                         </RoutePoint>
                         <RoutePoint version="1" id="RUT:RoutePoint:0061101A3A0061101004">
                             <projections>
-                                <PointProjection version="any"
-                                    id="RUT:PointProjection:0061101A3A0061101004">
+                                <PointProjection version="any" id="RUT:PointProjection:0061101A3A0061101004">
                                     <ProjectedPointRef version="1" ref="RUT:StopPoint:0061101004"/>
                                 </PointProjection>
                             </projections>
                         </RoutePoint>
                         <RoutePoint version="1" id="RUT:RoutePoint:0061101A4A0061101005">
                             <projections>
-                                <PointProjection version="any"
-                                    id="RUT:PointProjection:0061101A4A0061101005">
+                                <PointProjection version="any" id="RUT:PointProjection:0061101A4A0061101005">
                                     <ProjectedPointRef version="1" ref="RUT:StopPoint:0061101005"/>
                                 </PointProjection>
                             </projections>
                         </RoutePoint>
                         <RoutePoint version="1" id="RUT:RoutePoint:0061101A5A0061101006">
                             <projections>
-                                <PointProjection version="any"
-                                    id="RUT:PointProjection:0061101A5A0061101006">
+                                <PointProjection version="any" id="RUT:PointProjection:0061101A5A0061101006">
                                     <ProjectedPointRef version="1" ref="RUT:StopPoint:0061101006"/>
                                 </PointProjection>
                             </projections>
                         </RoutePoint>
                         <RoutePoint version="1" id="RUT:RoutePoint:0061101A6A0061101007">
                             <projections>
-                                <PointProjection version="any"
-                                    id="RUT:PointProjection:0061101A6A0061101007">
+                                <PointProjection version="any" id="RUT:PointProjection:0061101A6A0061101007">
                                     <ProjectedPointRef version="1" ref="RUT:StopPoint:0061101007"/>
                                 </PointProjection>
                             </projections>
@@ -196,43 +185,28 @@ This mapping involves :
                     <!-- NEPTUNE Route Mapping (part 2 : routes ) =========================================== -->
                     <routes>
                         <Route version="1" id="RUT:Route:0061101">
-                            <keyList>
-                                <KeyValue>
-                                    <Key>Number</Key>
-                                    <Value>01</Value>
-                                </KeyValue>
-                            </keyList>
                             <Name>Tveita T</Name>
-                            <ShortName>Tveita T</ShortName>
-                            <!-- NEPTUNE [mapping:variable] : Route->DirectionRef reference of Direction object mapping to NEPTUNE Route->publishedName and Route->RouteExtension->wayBack -->
                             <DirectionRef version="any" ref="RUT:Route:0061101:Direction"/>
                             <pointsInSequence>
-                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101001-0"
-                                    order="1">
+                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101001-0" order="1">
                                     <RoutePointRef version="1" ref="RUT:RoutePoint:0061101A0A0061101001"/>
                                 </PointOnRoute>
-                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101002-1"
-                                    order="2">
+                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101002-1" order="2">
                                     <RoutePointRef version="1" ref="RUT:RoutePoint:0061101A1A0061101002"/>
                                 </PointOnRoute>
-                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101003-2"
-                                    order="3">
+                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101003-2" order="3">
                                     <RoutePointRef version="1" ref="RUT:RoutePoint:0061101A2A0061101003"/>
                                 </PointOnRoute>
-                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101004-3"
-                                    order="4">
+                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101004-3" order="4">
                                     <RoutePointRef version="1" ref="RUT:RoutePoint:0061101A3A0061101004"/>
                                 </PointOnRoute>
-                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101005-4"
-                                    order="5">
+                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101005-4" order="5">
                                     <RoutePointRef version="1" ref="RUT:RoutePoint:0061101A4A0061101005"/>
                                 </PointOnRoute>
-                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101006-5"
-                                    order="6">
+                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101006-5" order="6">
                                     <RoutePointRef version="1" ref="RUT:RoutePoint:0061101A5A0061101006"/>
                                 </PointOnRoute>
-                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101007-6"
-                                    order="7">
+                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101007-6" order="7">
                                     <RoutePointRef version="1" ref="RUT:RoutePoint:0061101A6A0061101007"/>
                                 </PointOnRoute>
                             </pointsInSequence>
@@ -284,35 +258,28 @@ This mapping involves :
                     <servicePatterns>
                         <ServicePattern version="1" id="RUT:JourneyPattern:0061101">
                             <Name>Tveita T</Name>
-
                             <RouteRef version="1" ref="RUT:Route:0061101"/>
                             <pointsInSequence>
-                                <StopPointInJourneyPattern version="1"
-                                    id="RUT:StopPointInJourneyPattern:0061101001" order="1">
+                                <!-- Rekkefølge på stopp -->
+                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101001" order="1">
                                     <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101001"/>
                                 </StopPointInJourneyPattern>
-                                <StopPointInJourneyPattern version="1" order="2"
-                                    id="RUT:StopPointInJourneyPattern:0061101002">
+                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101002" order="2" >
                                     <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101002"/>
                                 </StopPointInJourneyPattern>
-                                <StopPointInJourneyPattern version="1"
-                                    id="RUT:StopPointInJourneyPattern:0061101003" order="3">
+                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101003" order="3">
                                     <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101003"/>
                                 </StopPointInJourneyPattern>
-                                <StopPointInJourneyPattern version="1"
-                                    id="RUT:StopPointInJourneyPattern:0061101004" order="4">
+                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101004" order="4">
                                     <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101004"/>
                                 </StopPointInJourneyPattern>
-                                <StopPointInJourneyPattern version="1" order="5"
-                                    id="RUT:StopPointInJourneyPattern:0061101005">
+                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101005" order="5" >
                                     <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101005"/>
                                 </StopPointInJourneyPattern>
-                                <StopPointInJourneyPattern version="1" order="6"
-                                    id="RUT:StopPointInJourneyPattern:0061101006">
+                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101006" order="6">
                                     <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101006"/>
                                 </StopPointInJourneyPattern>
-                                <StopPointInJourneyPattern version="1" order="7"
-                                    id="RUT:StopPointInJourneyPattern:0061101007">
+                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101007" order="7">
                                     <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101007"/>
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
@@ -321,44 +288,37 @@ This mapping involves :
 
                     <!-- Assignments of Schedules Stop Points to Stop Places -->
                     <stopAssignments>
-                        <PassengerStopAssignment version="any" order="1"
-                            id="RUT:PassengerStopAssignment:0061101001">
+                        <PassengerStopAssignment version="any" order="1" id="RUT:PassengerStopAssignment:0061101001">
                             <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101001"/>
                             <StopPlaceRef version="1" ref="RUT:StopArea:03011521"/>
                             <QuayRef version="1" ref="RUT:StopArea:0301152101"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment version="any" order="2"
-                            id="RUT:PassengerStopAssignment:0061101002">
+                        <PassengerStopAssignment version="any" order="2" id="RUT:PassengerStopAssignment:0061101002">
                             <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101002"/>
                             <StopPlaceRef version="1" ref="RUT:StopArea:03011525"/>
                             <QuayRef version="1" ref="RUT:StopArea:0301152501"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment version="any" order="3"
-                            id="RUT:PassengerStopAssignment:0061101003">
+                        <PassengerStopAssignment version="any" order="3" id="RUT:PassengerStopAssignment:0061101003">
                             <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101003"/>
                             <StopPlaceRef version="1" ref="RUT:StopArea:03011536"/>
                             <QuayRef version="1" ref="RUT:StopArea:0301153601"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment version="any" order="4"
-                            id="RUT:PassengerStopAssignment:0061101004">
+                        <PassengerStopAssignment version="any" order="4" id="RUT:PassengerStopAssignment:0061101004">
                             <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101004"/>
                             <StopPlaceRef version="1" ref="RUT:StopArea:03011537"/>
                             <QuayRef version="1" ref="RUT:StopArea:0301153701"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment version="any" order="5"
-                            id="RUT:PassengerStopAssignment:0061101005">
+                        <PassengerStopAssignment version="any" order="5" id="RUT:PassengerStopAssignment:0061101005">
                             <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101005"/>
                             <StopPlaceRef version="1" ref="RUT:StopArea:03011525"/>
                             <QuayRef version="1" ref="RUT:StopArea:0301152502"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment version="any" order="6"
-                            id="RUT:PassengerStopAssignment:0061101006">
+                        <PassengerStopAssignment version="any" order="6" id="RUT:PassengerStopAssignment:0061101006">
                             <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101006"/>
                             <StopPlaceRef version="1" ref="RUT:StopArea:03011522"/>
                             <QuayRef version="1" ref="RUT:StopArea:0301152202"/>
                         </PassengerStopAssignment>
-                        <PassengerStopAssignment version="any" order="7"
-                            id="RUT:PassengerStopAssignment:0061101007">
+                        <PassengerStopAssignment version="any" order="7" id="RUT:PassengerStopAssignment:0061101007">
                             <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101007"/>
                             <StopPlaceRef version="1" ref="RUT:StopArea:03011521"/>
                             <QuayRef version="1" ref="RUT:StopArea:0301152102"/>
@@ -375,8 +335,7 @@ This mapping involves :
                                 <Name>Weekdays and Saturday</Name>
                                 <properties>
                                     <PropertyOfDay>
-                                        <DaysOfWeek>Monday Tuesday Wednesday Thursday Friday
-                                            Saturday</DaysOfWeek>
+                                        <DaysOfWeek>Monday Tuesday Wednesday Thursday Friday Saturday</DaysOfWeek>
                                     </PropertyOfDay>
                                 </properties>
                             </DayType>
@@ -405,8 +364,8 @@ This mapping involves :
                             <dayTypes>
                                 <DayTypeRef version="any" ref="RUT:DayType:MonSat"/>
                             </dayTypes>
-                     
-                            <ServicePatternRef ref="RUT:JourneyPattern:0061101"></ServicePatternRef>
+
+                            <ServicePatternRef ref="RUT:JourneyPattern:0061101"/>
                             <LineRef version="any" ref="RUT:Line:0061"/>
                             <calls>
                                 <Call>
