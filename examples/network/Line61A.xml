@@ -242,11 +242,11 @@ This mapping involves :
                             <TimingPointStatus>timingPoint</TimingPointStatus>
                         </ScheduledStopPoint>
                     </scheduledStopPoints>
-                   
+
                     <servicePatterns>
                         <ServicePattern version="1" id="RUT:JourneyPattern:0061101">
                             <Name>Tveita T</Name>
-                           
+
                             <RouteRef version="1" ref="RUT:Route:0061101"/>
                             <pointsInSequence>
                                 <StopPointInJourneyPattern version="1"
@@ -329,36 +329,41 @@ This mapping involves :
                 </ServiceFrame>
                 <!--   -->
                 <!-- Calendars : NeTEx Day Types and Day Type Assignment mapped to NEPTUNE timetable -->
-                <CommonFrame /> <!-- TODO -->
-                <ServiceCalendar version="any" id="RUT:ServiceCalendar:1">
-                    <dayTypes>
-                        <DayType version="any" id="RUT:DayType:MonSat">
-                            <Name>Weekdays and Saturday</Name>
-                            <properties>
-                                <PropertyOfDay>
-                                    <DaysOfWeek>Monday Tuesday Wednesday Thursday Friday Saturday</DaysOfWeek>
-                                </PropertyOfDay>
-                            </properties>
-                        </DayType>
-                    </dayTypes>
-                    <timebands>
-                        <Timeband version="any" id="RUT:Timeband:TM15">
-                            <Name>15 minutes past the hour</Name>
-                            <StartTime>00:15:00</StartTime>
-                            <EndTime>00:15:00</EndTime>
-                        </Timeband>
-                    </timebands>
-                </ServiceCalendar>
+                <ServiceCalendarFrame version="any" id="hde:ServiceCalendarFrame:SCF01">
+                    <Name/>
+                    <ServiceCalendar version="any" id="RUT:ServiceCalendar:1">
+                        <dayTypes>
+                            <DayType version="any" id="RUT:DayType:MonSat">
+                                <Name>Weekdays and Saturday</Name>
+                                <properties>
+                                    <PropertyOfDay>
+                                        <DaysOfWeek>Monday Tuesday Wednesday Thursday Friday
+                                            Saturday</DaysOfWeek>
+                                    </PropertyOfDay>
+                                </properties>
+                            </DayType>
+                        </dayTypes>
+                        <timebands>
+                            <Timeband version="any" id="RUT:Timeband:TM15">
+                                <Name>15 minutes past the hour</Name>
+                                <StartTime>00:15:00</StartTime>
+                                <EndTime>00:15:00</EndTime>
+                            </Timeband>
+                        </timebands>
+                    </ServiceCalendar>
+
+                </ServiceCalendarFrame>
                 <!-- =========================================== -->
                 <TimetableFrame version="any" id="RUT:TimetableFrame:TF02">
                     <vehicleJourneys>
-                        <TemplateServiceJourney version="any" id="hde:TemplateServiceJourney:tvj_24o_02">
+                        <TemplateServiceJourney version="any" id="RUT:TemplateServiceJourney:0061">
                             <ShortName>61A</ShortName>
                             <!--
       <netex:TransportSubmode>
         <netex:RailSubmode>unknown</netex:RailSubmode>
       </netex:TransportSubmode>
-      -->                            <DepartureTime>09:15:00</DepartureTime>
+      -->
+                            <DepartureTime>09:15:00</DepartureTime>
                             <dayTypes>
                                 <DayTypeRef version="any" ref="RUT:DayType:MonSat"/>
                             </dayTypes>
@@ -442,7 +447,7 @@ This mapping involves :
                             <frequencyGroups>
                                 <RhythmicalJourneyGroup version="any" id="hde:rjg_24o_01">
                                     <Name>Every hour 15 minutes past</Name>
-                                   
+
                                     <FirstDepartureTime>09:00:00</FirstDepartureTime>
                                     <LastDepartureTime>15:00:00</LastDepartureTime>
                                     <timebands>
@@ -451,7 +456,7 @@ This mapping involves :
                                 </RhythmicalJourneyGroup>
                             </frequencyGroups>
                         </TemplateServiceJourney>
-                      </vehicleJourneys>
+                    </vehicleJourneys>
                 </TimetableFrame>
             </frames>
         </CompositeFrame>
