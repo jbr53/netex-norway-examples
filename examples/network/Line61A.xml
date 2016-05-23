@@ -262,6 +262,7 @@ This mapping involves :
                             <pointsInSequence>
                                 <!-- Rekkefølge på stopp -->
                                 <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101001" order="1">
+                                    <!-- Referanse til hvilket ScheduledStopPoint -->
                                     <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101001"/>
                                 </StopPointInJourneyPattern>
                                 <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101002" order="2" >
@@ -289,8 +290,11 @@ This mapping involves :
                     <!-- Assignments of Schedules Stop Points to Stop Places -->
                     <stopAssignments>
                         <PassengerStopAssignment version="any" order="1" id="RUT:PassengerStopAssignment:0061101001">
+                            <!-- Hvilket ScheduledStopPoint som mappes til ... -->
                             <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101001"/>
+                            <!-- .. hvilket stopPlace ... og hvis mulig -->
                             <StopPlaceRef version="1" ref="RUT:StopArea:03011521"/>
+                            <!-- hvilken quay kjøretøyet stopper ved -->
                             <QuayRef version="1" ref="RUT:StopArea:0301152101"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment version="any" order="2" id="RUT:PassengerStopAssignment:0061101002">
@@ -327,10 +331,11 @@ This mapping involves :
                 </ServiceFrame>
                 <!--   -->
                 <!-- Calendars : NeTEx Day Types and Day Type Assignment mapped to NEPTUNE timetable -->
-                <ServiceCalendarFrame version="any" id="hde:ServiceCalendarFrame:SCF01">
+                <ServiceCalendarFrame version="any" id="RUT:ServiceCalendarFrame:SCF01">
                     <Name/>
                     <ServiceCalendar version="any" id="RUT:ServiceCalendar:1">
                         <dayTypes>
+                            <!-- Denne kalenderen gjelder alle ukedager inkludert lørdager -->
                             <DayType version="any" id="RUT:DayType:MonSat">
                                 <Name>Weekdays and Saturday</Name>
                                 <properties>
