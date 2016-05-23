@@ -29,7 +29,6 @@
             </codespaces>
             <frames>
                 <!-- =========================================== -->
-                <!-- TODO :  === -->
                 <ResourceFrame version="any" id="RUT:ResourceFrame:RF1">
                     <FrameDefaults>
                         <!-- Alle elementer med id-attributt blir prefixet med dette codespacet (dvs RUT:) -->
@@ -119,7 +118,8 @@
                         </Direction>
                     </directions>
                     <!-- Her listes alle rutepunktene. I eksemplet under er det kun referanser til StopPoints, men det kan også være andre typer punkter, eks TimingPoint.
-                         Hvis man har flere ruter skal alle rutepunkter defineres her. For hver rute under lister man opp de som faktisk benyttes i gitt rute (eks tur/retur der mange av punktene er de samme, men ikke nødvendigvis alle -->
+                         Hvis man har flere ruter skal alle rutepunkter defineres her. For hver rute under lister man opp de som faktisk benyttes i gitt rute 
+                         (eks tur/retur der mange av punktene er de samme, men ikke nødvendigvis alle -->
                     <routePoints>
                         <RoutePoint version="1" id="RUT:RoutePoint:0061101A0A0061101001">
                             <projections>
