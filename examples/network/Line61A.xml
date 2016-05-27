@@ -40,7 +40,8 @@
                             <DefaultLanguage>no</DefaultLanguage>
                         </DefaultLocale>
                         <!-- Alle koordinater leveres i henhold til WGS84 -->
-                        <DefaultLocationSystem>EPSG:4326</DefaultLocationSystem>
+                        <!-- TODO: rett opp, skal kanskje ikke med i det hele tatt gitt implisitt krav WGS84 --> 
+                        <!--DefaultLocationSystem>EPSG:4326</DefaultLocationSystem-->
                     </FrameDefaults>
                     <organisations>
                         <!-- TODO her er ting kun splittet i authority og operator. Normalt er strukturen mer kompleks, og informasjon rundt f.eks hittegods må modelleres korrekt -->
@@ -220,11 +221,9 @@
                     -->
                     <destinationDisplays>
                         <DestinationDisplay version="any" id="RUT:DestinationDisplay:DST_Solfjellet">
-                            <Name>Solfjellet</Name>
                             <FrontText>Solfjellet</FrontText>
                         </DestinationDisplay>
                         <DestinationDisplay version="any" id="RUT:DestinationDisplay:DST_TveitaT">
-                            <Name>Tveita T</Name>
                             <FrontText>Tveita T</FrontText>
                         </DestinationDisplay>
                     </destinationDisplays>
@@ -385,6 +384,7 @@
                                 <!-- Refererer til 1 daytype som inneholder alle dager mandag-lørdag. Kunne vært separate dagtyper, men da måtte alle listes her -->
                                 <DayTypeRef version="any" ref="RUT:DayType:MonSat"/>
                             </dayTypes>
+                            
                             <!-- Hvilket kjøremønster som benyttes med passasjerer ombord -->
                             <ServicePatternRef ref="RUT:JourneyPattern:0061101"/>
 
