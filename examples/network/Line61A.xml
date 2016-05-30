@@ -361,6 +361,7 @@
                         </timebands>
                     </ServiceCalendar>
                 </ServiceCalendarFrame>
+                
                 <!-- Tidtabellen, dvs avgangstider -->
                 <TimetableFrame version="any" id="RUT:TimetableFrame:TF02">
                     <validityConditions>
