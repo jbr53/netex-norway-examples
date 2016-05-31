@@ -25,7 +25,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 					<XmlnsUrl>www.unibuss.no</XmlnsUrl>
 				</Codespace>
 			</codespaces>
-			<!-- ===FRAME DEFAULTS=== -->
+<!-- ===FRAME DEFAULTS=== -->
 			<FrameDefaults>
 				<!-- Alle elementer med id-attributt blir prefixet med dette codespacet (dvs "unibuss") -->
 				<DefaultCodespaceRef ref="unibuss"/>
@@ -58,15 +58,14 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 					</organisations>
 				</ResourceFrame>
 
-<!-- SITE FRAME -->
+<!-- ===SITE FRAME=== -->
 				<SiteFrame version="any" id="unibuss:sf:1">
 					<FrameDefaults>
 						<DefaultResponsibilitySetRef ref="unibuss:drs"/>
 					</FrameDefaults>
 					<stopPlaces>
 						<!-- MERK: For enklere eksempel er _kun_ brukt quay definert i eksempelet -->
-						<!-- TODO: Add Quay(s) for all stops, though only eastern direction relevant -->
-						<!-- TODO: Implement corret stop place and quay IDs -->
+						<!-- TODO: Implement correct stop place and quay IDs -->
 						<StopPlace version="any" responsibilitySetRef="unibuss:drs" id="unibuss:sp:helsfyr_t">
 							<Name>Helsfyr T</Name>
 							<TransportMode>bus</TransportMode>
@@ -75,8 +74,8 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 								<Quay version="any" id="unibuss:q:helsfyr_t:QUAYID">
 								<Centroid>
 									<Location srsName="WGS84">
-										<Longitude>00.00</Longitude>
-										<Latitude>00.00</Latitude>
+										<Longitude>10.800792</Longitude>
+										<Latitude>59.912494</Latitude>
 									</Location>
 								</Centroid>
 								</Quay>
@@ -90,8 +89,8 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 								<Quay version="any" id="unibuss:q:brynseng_t:QUAYID">
 								<Centroid>
 									<Location srsName="WGS84">
-										<Longitude>00.00</Longitude>
-										<Latitude>00.00</Latitude>
+										<Longitude>10.814013</Longitude>
+										<Latitude>59.909351</Latitude>
 									</Location>
 								</Centroid>
 								</Quay>
@@ -101,8 +100,8 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 							<Name>Høyenhall T</Name>
 							<Centroid>
 								<Location srsName="WGS84">
-									<Longitude>00.00</Longitude>
-									<Latitude>00.00</Latitude>
+									<Longitude>10.819156</Longitude>
+									<Latitude>59.907023</Latitude>
 								</Location>
 							</Centroid>
 							<TransportMode>bus</TransportMode>
@@ -112,8 +111,8 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 							<Name>Manglerud T</Name>
 							<Centroid>
 								<Location srsName="WGS84">
-									<Longitude>00.00</Longitude>
-									<Latitude>00.00</Latitude>
+									<Longitude>10.813655</Longitude>
+									<Latitude>59.898316</Latitude>
 								</Location>
 							</Centroid>
 							<TransportMode>bus</TransportMode>
@@ -123,8 +122,8 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 							<Name>Ryen T</Name>
 							<Centroid>
 								<Location srsName="WGS84">
-									<Longitude>00.00</Longitude>
-									<Latitude>00.00</Latitude>
+									<Longitude>10.805275</Longitude>
+									<Latitude>59.895262</Latitude>
 								</Location>
 							</Centroid>
 							<TransportMode>bus</TransportMode>
@@ -134,8 +133,8 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 							<Name>Holtet stasjon</Name>
 							<Centroid>
 								<Location srsName="WGS84">
-									<Longitude>00.00</Longitude>
-									<Latitude>00.00</Latitude>
+									<Longitude>10.782948</Longitude>
+									<Latitude>59.882075</Latitude>
 								</Location>
 							</Centroid>
 							<TransportMode>bus</TransportMode>
@@ -144,7 +143,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 					</stopPlaces>
 				</SiteFrame>
 
-<!-- SERVICE FRAME -->
+<!-- ===SERVICE FRAME=== -->
 				<ServiceFrame version="1" id="unibuss:sf:1">
 					<!-- ===ROUTE=== -->
 <!-- TODO: Definere hvordan vi ønsker DIRECTION ift norsk profil -->
@@ -635,7 +634,7 @@ ALTERNATIVT definere dette som pointsInSequence direkte i her ServicePattern i s
                             
                 </TimetableFrame>
 
-                <!-- ===SERVICE CALENDAR=== -->
+<!-- ===SERVICE CALENDAR FRAME=== -->
 				<ServiceCalendarFrame version="1" id="unibuss:scf:01">
 					<ServiceCalendar version="any" id="unibuss:sc:01">
 						<FromDate>2016-04-03</FromDate>

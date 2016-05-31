@@ -268,11 +268,6 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 									</noticeAssignments>
 								</StopPointInJourneyPattern>
 							</pointsInSequence>
-							<linksInSequence>
-								<ServiceLinkInJourneyPattern version="any" order="1" id="bastofosen:slijp:horten_to_moss_01">
-									<ServiceLinkRef version="any" ref="bastofosen:sl:horten_to_moss"/>
-								</ServiceLinkInJourneyPattern>
-							</linksInSequence>
 						</ServiceJourneyPattern>
 						<ServiceJourneyPattern version="any" id="bastofosen:sjp:moss_to_horten">
 							<Name>Horten til Moss - Alle POINTs</Name>
