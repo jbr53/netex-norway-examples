@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <!-- ==== Simple Stop Example ====== 
-This Example is based on official NeTEx-XML examples and provides an example of a pair of stops on a street, as a general delivery 
-    It comprises
+Eksempelet er basert på offisielle NeTEx-XML eksempler og viser et stoppested med to quays i gaten uten spesielle fasiliteter 
+    Objektet består av
        (i)   STOP PLACE		ruter:sp:1			Bryn skole (i Ole Deviks vei)
-       (ii)  QUAY					ruter:sp:1:q:1		Bryn skole northbound (from city center)
-       (iii) QUAY					ruter:sp:1:q:1		Bryn skole southbound (to city center)
+       (ii)  QUAY			ruter:sp:1:q:1		Bryn skole northbound (from city center)
+       (iii) QUAY			ruter:sp:1:q:1		Bryn skole southbound (to city center)
 
-RESPONSIBILITY SETs do not need to be declared in the file, but are included to clarify relation to TIMETABLE data
-    ruter:rs:rs66        Timetable data
-
-TOPOGRAPHIC PLACE is defined within the file, this would normally refer to externally defined place
-
-Frames and grouping:
-    RESOURCE FRAME is used to hold the RESPONSIBILITY SETs.
-	SITE FRAME is used to hold the STOP PLACEs.
-	SERVICE FRAME is used to hold the SCHEDULED STOP POINTs and STOP ASSIGNMENTs 
-	COMPOSITE FRAME is used to hold the other FRAMEs as a coherent version.
+Frames (gruppering)
+	En COMPOSITE FRAME brukes for å gruppere (og versjonere) eksempelet
+	STOP PLACE og QUAYs er definert i SITE FRAME
+	SERVICE FRAME er tatt med kun for å vise hvordan stoppestedet kan refereres
+	
+(RESOURCE FRAME med FrameDefaults og organization er utelatt for å forenkle eksempelet)
 -->
+
 <PublicationDelivery 
 	version="1.0" 
 	xmlns="http://www.netex.org.uk/netex"
@@ -25,29 +23,7 @@ Frames and grouping:
 	xmlns:siri="http://www.siri.org.uk/siri"
 	xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd">
 	<PublicationTimestamp>2016-04-29T12:30:00.0Z</PublicationTimestamp>
-	<ParticipantRef>PROVIDER_ID</ParticipantRef>
-	<!--===REQUEST===-->
-	<PublicationRequest version="1.0">
-		<RequestTimestamp>2016-04-29T12:30:00.0Z</RequestTimestamp>
-		<ParticipantRef>REQUESTOR_ID</ParticipantRef>
-		<Description>Example Stop for Norwegian NeTEx profile</Description>
-		<topics>
-			<NetworkFrameTopic>
-				<Current/>
-				<NetworkFilterByValue>
-					<objectReferences>
-						<TopographicPlaceRef ref="ruter:tp:brynhelsfyr"/>
-					</objectReferences>
-					<places>
-						<TopographicPlaceRef version="any" ref="ruter:tp:brynhelsfyr"/>
-					</places>
-				</NetworkFilterByValue>
-			</NetworkFrameTopic>
-		</topics>
-	</PublicationRequest>
-	<PublicationRefreshInterval>P15M</PublicationRefreshInterval>
-	<Description>Simple Stop with Quay pair on example street</Description>
-	<!--===RESPONSE===-->
+	<ParticipantRef>NHR</ParticipantRef>
 	<dataObjects>
 		<CompositeFrame version="1" id="ruter:cf:cf01">
 			<validityConditions>
@@ -56,7 +32,6 @@ Frames and grouping:
 					<ToDate>2016-08-31T23:59:59.0Z</ToDate>
 				</AvailabilityCondition>
 			</validityConditions>
-			<!--===CODESPACE===-->
 			<codespaces>
 				<Codespace id="ruter">
 					<Xmlns>ruter</Xmlns>
@@ -64,32 +39,17 @@ Frames and grouping:
 					<Description>Namespace for #Ruter</Description>
 				</Codespace>
 			</codespaces>
-			<!--===FRAME DEFAULTS===-->
-			<FrameDefaults>
-				<DefaultCodespaceRef ref="ruter"/>
-			</FrameDefaults>
+			
 			<frames>
 				<SiteFrame version="any" id="ruter:sf:1">
-					<FrameDefaults>
-						<DefaultResponsibilitySetRef ref="ruter:drs:01">EXTERNAL</DefaultResponsibilitySetRef>
-					</FrameDefaults>
-					<topographicPlaces>
-						<TopographicPlace version="any" id="ruter:tp:brynhelsfyr">
-							<Name lang="no-NO">Bryn_Helsfyr_Oslo</Name>
-							<Descriptor>
-								<Name lang="no-NO">Område Bryn-Helsfyr i Oslo</Name>
-								<ShortName lang="no-NO">Bryn-Helsfyr</ShortName>
-							</Descriptor>
-						</TopographicPlace>
-					</topographicPlaces>
+					<!-- ===Stoppesteder=== -->
 					<stopPlaces>
-						<!--===Stop=== Merk: Holdeplass-ID vil komme fra Holdeplassregisteret -->
+						<!-- Merk: Holdeplass-ID vil komme fra Holdeplassregisteret -->
 						<StopPlace version="01" created="2016-04-21T09:00:00.0Z" responsibilitySetRef="ruter:rs:1" id="ruter:sp:1">
-							<Name lang="no-NO">Bryn skole (i Ole Deviks vei)</Name>
-							<ShortName lang="no-NO">Bryn skole</ShortName>
 							<Centroid>
-								<Location>
-									<gml:pos srsName="WGS84" srsDimension="2">59.54503 10.49289</gml:pos>
+								<Location srsName="WGS84" id="ruter:location:NUMBER">
+									<Longitude>10.49289</Longitude>
+									<Latitude>59.54503</Latitude>
 								</Location>
 							</Centroid>
 							<AccessibilityAssessment version="any" id="ruter:aa:1">
@@ -101,9 +61,6 @@ Frames and grouping:
 									</AccessibilityLimitation>
 								</limitations>
 							</AccessibilityAssessment>
-							<TopographicPlaceView>
-								<TopographicPlaceRef version="any" ref="ruter:tp:brynhelsfyr"/>
-							</TopographicPlaceView>
 							<TransportMode>bus</TransportMode>
 							<StopPlaceType>onstreetBus</StopPlaceType>
 							<quays>
@@ -163,16 +120,16 @@ Frames and grouping:
 						</StopPlace>
 					</stopPlaces>
 				</SiteFrame>
+				
+				<!-- ############################################## -->
+				<!-- ServiceFrame added for completeness of example -->
+				<!-- ############################################## -->
 				<ServiceFrame version="any" id="ruter:sf:buss66">
-					<FrameDefaults>
-						<DefaultResponsibilitySetRef ref="ruter:rs:rs66">EXTERNAL</DefaultResponsibilitySetRef>
-					</FrameDefaults>
-					<!--===SCHEDULED STOP POINT===-->
+					<!-- ===Ruteinformasjon for å vise knytning til stoppested===-->
 					<scheduledStopPoints>
 						<ScheduledStopPoint version="001" created="2016-04-20T07:50:00.0Z"
 							changed="2016-04-20T08:45:00.0Z" id="ruter:ssp:brynskole">
 							<Name>Bryn skole</Name>
-							<Label>Bryn skole (i Ole Deviks vei)</Label>
 						</ScheduledStopPoint>
 					</scheduledStopPoints>
 					<stopAssignments>

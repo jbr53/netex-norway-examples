@@ -72,12 +72,12 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 							<StopPlaceType>busStation</StopPlaceType>
 							<quays>
 								<Quay version="any" id="unibuss:q:helsfyr_t:QUAYID">
-								<Centroid>
-									<Location srsName="WGS84">
-										<Longitude>10.800792</Longitude>
-										<Latitude>59.912494</Latitude>
-									</Location>
-								</Centroid>
+									<Centroid>
+										<Location srsName="WGS84">
+											<Longitude>10.800792</Longitude>
+											<Latitude>59.912494</Latitude>
+										</Location>
+									</Centroid>
 								</Quay>
 							</quays>
 						</StopPlace>
@@ -159,6 +159,9 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 							<DirectionType>outbound</DirectionType>
 						</Route>
 					</routes>
+
+<!-- TODO: Mangler RoutePoints -->
+
 					<!-- ===LINEs=== -->
 					<lines>
 						<Line version="any" id="unibuss:line:109">
@@ -230,6 +233,7 @@ ALTERNATIVT definere dette som pointsInSequence direkte i her ServicePattern i s
 						<ServiceJourneyPattern version="any" id="unibuss:sjp:109">
 							<RouteRef ref="unibuss:rt:109"/>
 							<DestinationDisplayRef ref="unibuss:dd:holtet"/>
+
 							<pointsInSequence>
 <!-- TODO: Legg inn riktige holdeplasskoder -->
 								<StopPointInJourneyPattern version="any" id="unibuss:spijp:CODE-1" order="1">
@@ -446,6 +450,7 @@ ALTERNATIVT definere dette som pointsInSequence direkte i her ServicePattern i s
 
 						<ServiceJourney version="any" id="unibuss:sj:109:CODE-0600">
                             <dayTypes>
+                            	<DayTypeRef ref="unibuss:dt:saturday"/>
 								<DayTypeRef ref="unibuss:dt:sunday"/>
 							</dayTypes>
 							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
@@ -501,7 +506,8 @@ ALTERNATIVT definere dette som pointsInSequence direkte i her ServicePattern i s
 						<ServiceJourney version="any" id="unibuss:sj:109:CODE-0630">
 							<DepartureTime>06:30:00</DepartureTime>
                             <dayTypes>
-								<DayTypeRef ref="unibuss:dt:weekday"/>
+								<DayTypeRef ref="unibuss:dt:saturday"/>
+                            	<DayTypeRef ref="unibuss:dt:sunday"/>
 							</dayTypes>
 							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
                             <LineRef ref="unibuss:line:109"/>
@@ -558,11 +564,65 @@ ALTERNATIVT definere dette som pointsInSequence direkte i her ServicePattern i s
                                 </Call>
                             </calls>
 						</ServiceJourney>
+                    	
+                    	<ServiceJourney version="any" id="unibuss:sj:109:CODE-0700">
+                    		<dayTypes>
+                    			<DayTypeRef ref="unibuss:dt:sunday"/>
+                    		</dayTypes>
+                    		<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
+                    		<LineRef ref="unibuss:line:109"/>
+                    		<calls>
+                    			<Call>
+                    				<ScheduledStopPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
+                    				<Arrival>
+                    					<!-- Kun påstigning -->
+                    					<ForAlighting>false</ForAlighting>
+                    				</Arrival>
+                    				<Departure>
+                    					<Time>07:00:00</Time>
+                    				</Departure>
+                    			</Call>
+                    			<Call>
+                    				<ScheduledStopPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
+                    				<Departure>
+                    					<Time>07:02:00</Time>
+                    				</Departure>
+                    			</Call>
+                    			<Call>
+                    				<ScheduledStopPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
+                    				<Departure>
+                    					<Time>07:03:00</Time>
+                    				</Departure>
+                    			</Call>
+                    			<Call>
+                    				<ScheduledStopPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
+                    				<Departure>
+                    					<Time>07:04:00</Time>
+                    				</Departure>
+                    			</Call>
+                    			<Call>
+                    				<ScheduledStopPointRef version="any" ref="unibuss:ssp:ryen_t"/>
+                    				<Departure>
+                    					<Time>07:07:00</Time>
+                    				</Departure>
+                    			</Call>
+                    			<Call>
+                    				<ScheduledStopPointRef version="any" ref="unibuss:ssp:holtet"/>
+                    				<Arrival>
+                    					<Time>07:10:00</Time>
+                    				</Arrival>
+                    				<Departure>
+                    					<!-- Kun avstigning -->                                        
+                    					<ForBoarding>false</ForBoarding>
+                    				</Departure>
+                    			</Call>
+                    		</calls>
+                    	</ServiceJourney>
 
 
-						<!-- ######################### -->
-						<!-- ALTERNATIVE DESCRIPTION -->
-						<!-- ######################### -->
+						<!-- ##################### -->
+						<!-- ALTERNATE DESCRIPTION -->
+						<!-- ##################### -->
 						<TemplateServiceJourney version="any" id="unibuss:tsj:109:saturday">
 							<!-- TODO: DepartureTime er vel strengt tatt redundant -->
                             <!--DepartureTime>04:30:00</DepartureTime-->
@@ -602,9 +662,9 @@ ALTERNATIVT definere dette som pointsInSequence direkte i her ServicePattern i s
                         </TemplateServiceJourney>
                     </vehicleJourneys>
                     
-						<!-- ######################### -->
-						<!-- ALTERNATIVE DESCRIPTION -->
-						<!-- ######################### -->
+						<!-- ##################### -->
+						<!-- ALTERNATE DESCRIPTION -->
+						<!-- ##################### -->
 						<frequencyGroups>
 							<RhythmicalJourneyGroup version="any" id="unibuss:rjg:weekdays">
 								<FirstDepartureTime>04:30:00</FirstDepartureTime>
@@ -638,9 +698,9 @@ ALTERNATIVT definere dette som pointsInSequence direkte i her ServicePattern i s
 				<ServiceCalendarFrame version="1" id="unibuss:scf:01">
 					<ServiceCalendar version="any" id="unibuss:sc:01">
 						<FromDate>2016-04-03</FromDate>
-						<!-- ######################### -->
-						<!-- ALTERNATIVE DESCRIPTION -->
-						<!-- ######################### -->
+						<!-- ####################### -->
+						<!--  DESCRIPTION -->
+						<!-- ####################### -->
 						<timebands>
 							<Timeband version="any" id="unibuss:t:fullhour">
 								<StartTime>00:00:00</StartTime>
