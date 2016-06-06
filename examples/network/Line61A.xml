@@ -122,6 +122,7 @@
                          Hvis man har flere ruter skal alle rutepunkter defineres her. For hver rute under lister man opp de som faktisk benyttes i gitt rute 
                          (eks tur/retur der mange av punktene er de samme, men ikke nødvendigvis alle -->
                     <routePoints>
+                        <!-- Tveita T -->
                         <RoutePoint version="1" id="RUT:RoutePoint:0061101A0A0061101001">
                             <projections>
                                 <PointProjection version="any" id="RUT:PointProjection:0061101A0A0061101001">
@@ -129,13 +130,9 @@
                                 </PointProjection>
                             </projections>
                         </RoutePoint>
-                        <RoutePoint version="1" id="RUT:RoutePoint:0061101A1A0061101002">
-                            <projections>
-                                <PointProjection version="any" id="RUT:PointProjection:0061101A1A0061101002">
-                                    <ProjectedPointRef version="1" ref="RUT:StopPoint:0061101002"/>
-                                </PointProjection>
-                            </projections>
-                        </RoutePoint>
+                    
+                        <!-- Solfjellet -->
+                        
                         <RoutePoint version="1" id="RUT:RoutePoint:0061101A2A0061101003">
                             <projections>
                                 <PointProjection version="any" id="RUT:PointProjection:0061101A2A0061101003">
@@ -143,6 +140,7 @@
                                 </PointProjection>
                             </projections>
                         </RoutePoint>
+                        <!-- Larsbråten -->
                         <RoutePoint version="1" id="RUT:RoutePoint:0061101A3A0061101004">
                             <projections>
                                 <PointProjection version="any" id="RUT:PointProjection:0061101A3A0061101004">
@@ -150,20 +148,9 @@
                                 </PointProjection>
                             </projections>
                         </RoutePoint>
-                        <RoutePoint version="1" id="RUT:RoutePoint:0061101A4A0061101005">
-                            <projections>
-                                <PointProjection version="any" id="RUT:PointProjection:0061101A4A0061101005">
-                                    <ProjectedPointRef version="1" ref="RUT:StopPoint:0061101005"/>
-                                </PointProjection>
-                            </projections>
-                        </RoutePoint>
-                        <RoutePoint version="1" id="RUT:RoutePoint:0061101A5A0061101006">
-                            <projections>
-                                <PointProjection version="any" id="RUT:PointProjection:0061101A5A0061101006">
-                                    <ProjectedPointRef version="1" ref="RUT:StopPoint:0061101006"/>
-                                </PointProjection>
-                            </projections>
-                        </RoutePoint>
+               
+                        
+                        <!-- Tveita T -->
                         <RoutePoint version="1" id="RUT:RoutePoint:0061101A6A0061101007">
                             <projections>
                                 <PointProjection version="any" id="RUT:PointProjection:0061101A6A0061101007">
@@ -175,28 +162,21 @@
 
                     <routes>
                         <Route version="1" id="RUT:Route:0061101">
-                            <Name>Tveita T</Name>
+                            <Name>Tveita - Solfjellet - Larsbråten - Tveita</Name>
                             <DirectionRef version="any" ref="RUT:Route:0061101:Direction"/>
                             <pointsInSequence>
-                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101001-0" order="1">
+                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101001-0">
                                     <RoutePointRef version="1" ref="RUT:RoutePoint:0061101A0A0061101001"/>
                                 </PointOnRoute>
-                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101002-1" order="2">
-                                    <RoutePointRef version="1" ref="RUT:RoutePoint:0061101A1A0061101002"/>
-                                </PointOnRoute>
-                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101003-2" order="3">
+                              
+                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101003-2">
                                     <RoutePointRef version="1" ref="RUT:RoutePoint:0061101A2A0061101003"/>
                                 </PointOnRoute>
-                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101004-3" order="4">
+                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101004-3">
                                     <RoutePointRef version="1" ref="RUT:RoutePoint:0061101A3A0061101004"/>
                                 </PointOnRoute>
-                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101005-4" order="5">
-                                    <RoutePointRef version="1" ref="RUT:RoutePoint:0061101A4A0061101005"/>
-                                </PointOnRoute>
-                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101006-5" order="6">
-                                    <RoutePointRef version="1" ref="RUT:RoutePoint:0061101A5A0061101006"/>
-                                </PointOnRoute>
-                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101007-6" order="7">
+                              
+                                <PointOnRoute version="any" id="RUT:PointOnRoute:0061101007-6">
                                     <RoutePointRef version="1" ref="RUT:RoutePoint:0061101A6A0061101007"/>
                                 </PointOnRoute>
                             </pointsInSequence>
@@ -206,7 +186,7 @@
                     <lines>
                         <!-- Kun 1 linje definert; 61A -->
                         <Line version="any" id="RUT:Line:0061">
-                            <Name>Tveita Solfjellet</Name>
+                            <Name>Tveita T</Name>
                             <TransportMode>bus</TransportMode>
                             <PublicCode>61A</PublicCode>
                             <routes>
