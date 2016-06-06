@@ -98,47 +98,63 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 						</StopPlace>
 						<StopPlace version="any" responsibilitySetRef="unibuss:drs" id="unibuss:sp:hoyenhall_t">
 							<Name>Høyenhall T</Name>
-							<Centroid>
-								<Location srsName="WGS84">
-									<Longitude>10.819156</Longitude>
-									<Latitude>59.907023</Latitude>
-								</Location>
-							</Centroid>
 							<TransportMode>bus</TransportMode>
 							<StopPlaceType>onstreetBus</StopPlaceType>
+							<quays>
+								<Quay version="any" id="unibuss:q:hoyenhall_t:QUAYID">
+									<Centroid>
+										<Location srsName="WGS84">
+											<Longitude>10.819156</Longitude>
+											<Latitude>59.907023</Latitude>
+										</Location>
+									</Centroid>
+								</Quay>
+							</quays>
 						</StopPlace>
 						<StopPlace version="any" responsibilitySetRef="unibuss:drs" id="unibuss:sp:manglerud_t">
 							<Name>Manglerud T</Name>
-							<Centroid>
-								<Location srsName="WGS84">
-									<Longitude>10.813655</Longitude>
-									<Latitude>59.898316</Latitude>
-								</Location>
-							</Centroid>
 							<TransportMode>bus</TransportMode>
 							<StopPlaceType>onstreetBus</StopPlaceType>
+							<quays>
+								<Quay version="any" id="unibuss:q:manglerud_t:QUAYID">
+									<Centroid>
+										<Location srsName="WGS84">
+											<Longitude>10.813655</Longitude>
+											<Latitude>59.898316</Latitude>
+										</Location>
+									</Centroid>
+								</Quay>
+							</quays>
 						</StopPlace>
 						<StopPlace version="any" responsibilitySetRef="unibuss:drs" id="unibuss:sp:ryen_t">
 							<Name>Ryen T</Name>
-							<Centroid>
-								<Location srsName="WGS84">
-									<Longitude>10.805275</Longitude>
-									<Latitude>59.895262</Latitude>
-								</Location>
-							</Centroid>
 							<TransportMode>bus</TransportMode>
 							<StopPlaceType>onstreetBus</StopPlaceType>
+							<quays>
+								<Quay version="any" id="unibuss:q:ryen_t:QUAYID">
+									<Centroid>
+										<Location srsName="WGS84">
+											<Longitude>10.805275</Longitude>
+											<Latitude>59.895262</Latitude>
+										</Location>
+									</Centroid>
+								</Quay>
+							</quays>
 						</StopPlace>
 						<StopPlace version="any" responsibilitySetRef="unibuss:drs" id="unibuss:sp:holtet">
 							<Name>Holtet stasjon</Name>
-							<Centroid>
-								<Location srsName="WGS84">
-									<Longitude>10.782948</Longitude>
-									<Latitude>59.882075</Latitude>
-								</Location>
-							</Centroid>
 							<TransportMode>bus</TransportMode>
 							<StopPlaceType>onstreetBus</StopPlaceType>
+							<quays>
+								<Quay version="any" id="unibuss:q:holtet:QUAYID">
+									<Centroid>
+										<Location srsName="WGS84">
+											<Longitude>10.782948</Longitude>
+											<Latitude>59.882075</Latitude>
+										</Location>
+									</Centroid>
+								</Quay>
+							</quays>
 						</StopPlace>
 					</stopPlaces>
 				</SiteFrame>
@@ -167,6 +183,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 						<Line version="any" id="unibuss:line:109">
 							<Name>109</Name>
 							<TransportMode>bus</TransportMode>
+							<OperatorRef ref="auth:unibuss"/>
 							<routes>
 								<RouteRef ref="unibuss:rt:109"/>
 							</routes>
@@ -277,7 +294,7 @@ ALTERNATIVT definere dette som pointsInSequence direkte i her ServicePattern i s
 								<DayTypeRef ref="unibuss:dt:weekday"/>
 							</dayTypes>
 							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
-                            <LineRef ref="unibuss:line:109"/>
+							<LineRef ref="unibuss:line:109"/>
                             <calls>
                                 <Call>
                                     <!-- Helsfyr T -->

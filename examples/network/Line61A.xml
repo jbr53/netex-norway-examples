@@ -189,6 +189,7 @@
                             <Name>Tveita T</Name>
                             <TransportMode>bus</TransportMode>
                             <PublicCode>61A</PublicCode>
+                            <OperatorRef ref="RUT:Company:1"/>
                             <routes>
                                 <!-- Denne linjen kjøres bare på 1 måte -->
                                 <RouteRef version="1" ref="RUT:Route:0061101"/>
