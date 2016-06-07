@@ -337,7 +337,6 @@
                             <Timeband version="any" id="RUT:Timeband:TM15">
                                 <!--Name>15 minutes past the hour</Name-->
                                 <StartTime>00:15:00</StartTime>
-                                <EndTime>00:15:00</EndTime>
                             </Timeband>
                         </timebands>
                     </ServiceCalendar>
@@ -356,9 +355,9 @@
                     <!-- Kjøres buss om ikke noe annet er spesifisert -->
                     <DefaultMode>bus</DefaultMode>
                     <vehicleJourneys>
+
                         <!-- Her defineres en TemplateServiceJourney. Den sier at avgangstidene er de samme, men i dette tilfellet med et rytmisk mønster (hvert. 15 minutt over hel) -->
                         <TemplateServiceJourney version="any" id="RUT:TemplateServiceJourney:0061">
-
 
                             <!-- Første avgang -->
                             <DepartureTime>09:15:00</DepartureTime>
@@ -376,6 +375,7 @@
                                 <Call>
                                     <!-- Tveita T -->
                                     <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101001"/>
+
                                     <Arrival>
                                         <!-- Kun påstigning -->
                                         <ForAlighting>false</ForAlighting>
