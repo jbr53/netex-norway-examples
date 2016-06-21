@@ -130,7 +130,6 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 								<Longitude>59.25491</Longitude>
 								<Latitude>10.39146</Latitude>
 							</Location>
-							<TimingPointStatus>timingPoint</TimingPointStatus>
 							<ShortName>Horten</ShortName>
 						</ScheduledStopPoint>
 						<ScheduledStopPoint version="any" id="bastofosen:ssp:horten">
@@ -139,7 +138,6 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 								<Longitude>59.24438</Longitude>
 								<Latitude>10.29211</Latitude>
 							</Location>
-							<TimingPointStatus>timingPoint</TimingPointStatus>
 							<ShortName>Horten</ShortName>
 						</ScheduledStopPoint>
 					</scheduledStopPoints>
