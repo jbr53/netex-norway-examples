@@ -55,12 +55,11 @@
 			    		<OperatingDay version="any" id="RUT:OperatingDay:default:1">
 			    			<CalendarDate>2016-05-01</CalendarDate>
 			    			<EarliestTime>10:10:00</EarliestTime>
-			    			<DayLength>PT12H45M</DayLength>
 			    		</OperatingDay>
 			    		<OperatingDay version="any" id="RUT:od:default:2">
 			    			<CalendarDate>2016-07-07</CalendarDate>
 			    			<EarliestTime>11:11:00</EarliestTime>
-			    			<DayLength>PT9H10M</DayLength>
+			    			<DayLength>PT5H10M</DayLength>
 			    		</OperatingDay>
 					</operatingDays>
 			    	<operatingPeriods>
