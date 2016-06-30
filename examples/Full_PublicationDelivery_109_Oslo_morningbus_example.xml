@@ -25,7 +25,8 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 					<XmlnsUrl>www.unibuss.no</XmlnsUrl>
 				</Codespace>
 			</codespaces>
-<!-- ===FRAME DEFAULTS=== -->
+
+			<!-- ===FRAME DEFAULTS=== -->
 			<FrameDefaults>
 				<!-- Alle elementer med id-attributt blir prefixet med dette codespacet (dvs "unibuss") -->
 				<DefaultCodespaceRef ref="unibuss"/>
@@ -35,6 +36,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 				<!-- Alle koordinater leveres i henhold til WGS84 -->
 				<DefaultLocationSystem>WGS84</DefaultLocationSystem>
 			</FrameDefaults>
+
 			<frames>
 				<ResourceFrame version="any" id="unibuss:rf:1">
 					<organisations>
@@ -58,7 +60,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 					</organisations>
 				</ResourceFrame>
 
-<!-- ===SITE FRAME=== -->
+				<!-- ===SITE FRAME=== -->
 				<SiteFrame version="any" id="unibuss:sf:1">
 					<FrameDefaults>
 						<DefaultResponsibilitySetRef ref="unibuss:drs"/>
@@ -159,9 +161,29 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 					</stopPlaces>
 				</SiteFrame>
 
-<!-- ===SERVICE FRAME=== -->
-				<ServiceFrame version="1" id="unibuss:sf:1">
+				<!-- ===SERVICE FRAME=== -->
+				<ServiceFrame version="any" id="unibuss:sf:1">
+					<routePoints>
+						<!-- Helsfyr -->
+						<RoutePoint version="any" id="unibuss:routepoint:helsfyr">
+							<projections>
+								<PointProjection version="any" id="unibuss:pointprojection:departure">
+									<ProjectedPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
+								</PointProjection>
+							</projections>
+						</RoutePoint>
+						<!-- Holtet -->
+						<RoutePoint version="any" id="unibuss:routepoint:holtet">
+							<projections>
+								<PointProjection version="any" id="RUT:PointProjection:arrival">
+									<ProjectedPointRef version="any" ref="unibuss:ssp:holtet"/>
+								</PointProjection>
+							</projections>
+						</RoutePoint>
+					</routePoints>
+
 					<!-- ===ROUTE=== -->
+
 <!-- TODO: Definere hvordan vi ønsker DIRECTION ift norsk profil -->
 					<!--directions>
 						<Direction version="any" id="unibuss:direction:outbound">
@@ -175,8 +197,6 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 							<DirectionType>outbound</DirectionType>
 						</Route>
 					</routes>
-
-<!-- TODO: Mangler RoutePoints -->
 
 					<!-- ===LINEs=== -->
 					<lines>
@@ -217,42 +237,42 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 							<Name>Holtet</Name>
 						</ScheduledStopPoint>
 					</scheduledStopPoints>
-
-					<!-- ===SERVICE PATTERNs=== -->
-					<servicePatterns>
-						<ServicePattern version="any" id="unibuss:sp:109">
-							<RouteRef version="any" ref="unibuss:rt:109"/>
-							<DestinationDisplayRef ref="unibuss:dd:holtet"/>
-<!-- TODO:
-ALTERNATIVT definere dette som pointsInSequence direkte i her ServicePattern i stedet for å referere til et JourneyPattern
--->
-							<journeyPatterns>
-								<ServiceJourneyPatternRef version="any" ref="unibuss:sjp:109"/>
-							</journeyPatterns>
-						</ServicePattern>
-					</servicePatterns>
-
 					<!-- ===STOP ASSIGNMENTs=== -->
 					<!-- Must be defined in order to assign Journey/Service Pattern stop point to actual StopPlace -->
 					<stopAssignments>
-						<PassengerStopAssignment version="any" id="unibuss:psa:helsfyr_t" order="0">
+						<PassengerStopAssignment version="any" id="unibuss:psa:helsfyr_t" order="1">
 							<ScheduledStopPointRef ref="unibuss:ssp:helfyr_t"/>
 							<QuayRef ref="unibuss:q:helsfyr_t:QUAYID"/>
 						</PassengerStopAssignment>
-						<PassengerStopAssignment version="any" id="unibuss:psa:brynseng_t" order="0">
+						<PassengerStopAssignment version="any" id="unibuss:psa:brynseng_t" order="2">
 							<ScheduledStopPointRef ref="unibuss:ssp:brynseng_t"/>
 							<QuayRef ref="unibuss:q:brynseng_t:QUAYID"/>
 						</PassengerStopAssignment>
-<!-- TODO: assign resten av stops -->
+						<PassengerStopAssignment version="any" id="unibuss:psa:hoyenhall_t" order="3">
+							<ScheduledStopPointRef ref="unibuss:ssp:hoytnehall_t"/>
+							<QuayRef ref="unibuss:q:hoyenhall_t:QUAYID"/>
+						</PassengerStopAssignment>
+						<PassengerStopAssignment version="any" id="unibuss:psa:manglerud_t" order="4">
+							<ScheduledStopPointRef ref="unibuss:ssp:manglerud_t"/>
+							<QuayRef ref="unibuss:q:manglerud_t:QUAYID"/>
+						</PassengerStopAssignment>
+						<PassengerStopAssignment version="any" id="unibuss:psa:ryen_t" order="5">
+							<ScheduledStopPointRef ref="unibuss:ssp:hoyenhall_t"/>
+							<QuayRef ref="unibuss:q:ryen_t:QUAYID"/>
+						</PassengerStopAssignment>
+						<PassengerStopAssignment version="any" id="unibuss:psa:holtet" order="6">
+							<ScheduledStopPointRef ref="unibuss:ssp:holtet"/>
+							<QuayRef ref="unibuss:q:holtet:QUAYID"/>
+						</PassengerStopAssignment>
 					</stopAssignments>
 
+					<!-- ===JOURNEY PATTERNs=== -->
 					<journeyPatterns>
 						<ServiceJourneyPattern version="any" id="unibuss:sjp:109">
 							<RouteRef ref="unibuss:rt:109"/>
 							<DestinationDisplayRef ref="unibuss:dd:holtet"/>
-
 							<pointsInSequence>
-<!-- TODO: Legg inn riktige holdeplasskoder -->
+								<!-- TODO: Legg inn korrekte holdeplasskoder -->
 								<StopPointInJourneyPattern version="any" id="unibuss:spijp:CODE-1" order="1">
 									<ScheduledStopPointRef ref="unibuss:ssp:helfyr_t"/>
 								</StopPointInJourneyPattern>
@@ -276,8 +296,8 @@ ALTERNATIVT definere dette som pointsInSequence direkte i her ServicePattern i s
 					</journeyPatterns>
 				</ServiceFrame>
 
-<!-- TIMETABLE FRAME -->
-<!-- Definert som et sett av avganger med referanse til dager (dagtyper) avgangen kjøres -->
+				<!-- TIMETABLE FRAME -->
+				<!-- Definert som et sett av avganger med referanse til dager (dagtyper) avgangen kjøres -->
                 <TimetableFrame version="any" id="unibuss:tf:1">
                     <validityConditions>
                         <AvailabilityCondition version="any" id="unibuss:ac:1">
@@ -286,8 +306,7 @@ ALTERNATIVT definere dette som pointsInSequence direkte i her ServicePattern i s
                         </AvailabilityCondition>
                     </validityConditions>
                     <vehicleJourneys>
-                    
-<!-- TODO: Replace departure time code with correct #Ruter/Unibuss service code -->
+                    	<!-- TODO: Legg inn korrekte koder for #Ruter/Unibuss service -->
 						<ServiceJourney version="any" id="unibuss:sj:109:CODE-0430">
 							<DepartureTime>04:30:00</DepartureTime>
                             <dayTypes>
@@ -637,30 +656,20 @@ ALTERNATIVT definere dette som pointsInSequence direkte i her ServicePattern i s
                     	</ServiceJourney>
 
 
-						<!-- ##################### -->
-						<!-- ALTERNATE DESCRIPTION -->
-						<!-- ##################### -->
-						<TemplateServiceJourney version="any" id="unibuss:tsj:109:saturday">
-							<!-- TODO: DepartureTime er vel strengt tatt redundant -->
-                            <!--DepartureTime>04:30:00</DepartureTime-->
-                            <dayTypes>
-								<DayTypeRef ref="unibuss:dt:saturday"/>
-							</dayTypes>
-							<RhythmicalJourneyGroupRef ref="unibuss:rjg:weekdays"/>
-						</TemplateServiceJourney>
-						
+                    	<!-- ########################### -->
+                    	<!-- ALTERNATE DESCRIPTION pt. 1 -->
+                    	<!-- ########################### -->
                         <TemplateServiceJourney version="any" id="unibuss:tsj:109:weekdays">
-<!-- TODO: DepartureTime er vel strengt tatt redundant -->
-                            <!--DepartureTime>04:30:00</DepartureTime-->
+                            <DepartureTime>04:30:00</DepartureTime>
                             <dayTypes>
 								<DayTypeRef ref="unibuss:dt:weekday"/>
 							</dayTypes>
-							<!--ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
-							<ServicePatternRef ref="unibuss:sjp:109"/>
-                            <LineRef ref="unibuss:line:109"/-->
+							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
+                        	<RhythmicalJourneyGroupRef ref="unibuss:rjg:weekdays"/>
+                        	<LineRef ref="unibuss:line:109"/>
                             <calls>
                                 <Call>
-                                    <!--ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101001"/-->
+                                	<ScheduledStopPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
                                     <Arrival>
                                         <!-- Kun påstigning -->
                                         <ForAlighting>false</ForAlighting>
@@ -670,48 +679,83 @@ ALTERNATIVT definere dette som pointsInSequence direkte i her ServicePattern i s
                                     </Departure>
                                 </Call>
                                 <Call>
-                                    <!--ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101001"/-->
+                                	<ScheduledStopPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
                                     <Departure>
                                         <Time>00:32:00</Time>
                                     </Departure>
                                 </Call>
+                            	<Call>
+                            		<ScheduledStopPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
+                            		<Departure>
+                            			<Time>00:03:00</Time>
+                            		</Departure>
+                            	</Call>
+                            	<Call>
+                            		<ScheduledStopPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
+                            		<Departure>
+                            			<Time>00:04:00</Time>
+                            		</Departure>
+                            	</Call>
+                            	<Call>
+                            		<ScheduledStopPointRef version="any" ref="unibuss:ssp:ryen_t"/>
+                            		<Departure>
+                            			<Time>00:07:00</Time>
+                            		</Departure>
+                            	</Call>
+                            	<Call>
+                            		<ScheduledStopPointRef version="any" ref="unibuss:ssp:holtet"/>
+                            		<Arrival>
+                            			<Time>00:10:00</Time>
+                            		</Arrival>
+                            		<Departure>
+                            			<!-- Kun avstigning -->                                        
+                            			<ForBoarding>false</ForBoarding>
+                            		</Departure>
+                            	</Call>
                             </calls>
                         </TemplateServiceJourney>
+                    	<!-- ########################### -->
+                    	<!-- Etc. (similarly for other departures) --> 
+                    	<!--  * 05:00 (weekdays) -->
+                    	<!--  * 05:30 (incl. Saturday) -->
+                    	<!--  * 06:00 (Sat./Sun.) -->
+                    	<!--  * 06:30 (Sat./Sun.) -->
+                    	<!--  * 07:00 (Sundays) -->
+                    	<!-- ########################### -->
                     </vehicleJourneys>
                     
-						<!-- ##################### -->
-						<!-- ALTERNATE DESCRIPTION -->
-						<!-- ##################### -->
-						<frequencyGroups>
-							<RhythmicalJourneyGroup version="any" id="unibuss:rjg:weekdays">
-								<FirstDepartureTime>04:30:00</FirstDepartureTime>
-								<LastDepartureTime>05:30:00</LastDepartureTime>
-								<timebands>
-									<TimebandRef version="any" ref="unibuss:t:halfhour"/>
-									<TimebandRef version="any" ref="unibuss:t:fullhour"/>
-								</timebands>
-							</RhythmicalJourneyGroup>
-							<RhythmicalJourneyGroup version="any" id="unibuss:rjg:saturday">
-								<FirstDepartureTime>05:30:00</FirstDepartureTime>
-								<LastDepartureTime>06:30:00</LastDepartureTime>
-								<timebands>
-									<TimebandRef version="any" ref="unibuss:t:halfhour"/>
-									<TimebandRef version="any" ref="unibuss:t:fullhour"/>
-								</timebands>
-							</RhythmicalJourneyGroup>
-							<RhythmicalJourneyGroup version="any" id="unibuss:rjg:sunday">
-								<FirstDepartureTime>06:00:00</FirstDepartureTime>
-								<LastDepartureTime>07:00:00</LastDepartureTime>
-								<timebands>
-									<TimebandRef version="any" ref="unibuss:t:halfhour"/>
-									<TimebandRef version="any" ref="unibuss:t:fullhour"/>
-								</timebands>
-							</RhythmicalJourneyGroup>
-						</frequencyGroups>
-                            
+					<!-- ########################### -->
+					<!-- ALTERNATE DESCRIPTION pt. 1 -->
+					<!-- ########################### -->
+					<frequencyGroups>
+						<RhythmicalJourneyGroup version="any" id="unibuss:rjg:weekdays">
+							<FirstDepartureTime>04:30:00</FirstDepartureTime>
+							<LastDepartureTime>05:30:00</LastDepartureTime>
+							<timebands>
+								<TimebandRef version="any" ref="unibuss:t:halfhour"/>
+								<TimebandRef version="any" ref="unibuss:t:fullhour"/>
+							</timebands>
+						</RhythmicalJourneyGroup>
+						<RhythmicalJourneyGroup version="any" id="unibuss:rjg:saturday">
+							<FirstDepartureTime>05:30:00</FirstDepartureTime>
+							<LastDepartureTime>06:30:00</LastDepartureTime>
+							<timebands>
+								<TimebandRef version="any" ref="unibuss:t:halfhour"/>
+								<TimebandRef version="any" ref="unibuss:t:fullhour"/>
+							</timebands>
+						</RhythmicalJourneyGroup>
+						<RhythmicalJourneyGroup version="any" id="unibuss:rjg:sunday">
+							<FirstDepartureTime>06:00:00</FirstDepartureTime>
+							<LastDepartureTime>07:00:00</LastDepartureTime>
+							<timebands>
+								<TimebandRef version="any" ref="unibuss:t:halfhour"/>
+								<TimebandRef version="any" ref="unibuss:t:fullhour"/>
+							</timebands>
+						</RhythmicalJourneyGroup>
+					</frequencyGroups>
                 </TimetableFrame>
 
-<!-- ===SERVICE CALENDAR FRAME=== -->
+				<!-- ===SERVICE CALENDAR FRAME=== -->
 				<ServiceCalendarFrame version="1" id="unibuss:scf:01">
 					<ServiceCalendar version="any" id="unibuss:sc:01">
 						<FromDate>2016-04-03</FromDate>
@@ -754,44 +798,6 @@ ALTERNATIVT definere dette som pointsInSequence direkte i her ServicePattern i s
 							</properties>
 						</DayType>
 					</dayTypes>
-
-<!--
-					<operatingDays>
-						<OperatingDay version="any" id="unibuss:od:109">
-							<CalendarDate>2016-04-03</CalendarDate>
-							<EarliestTime>04:30:00</EarliestTime> -->
-							<!--DayLength>PT2H10M</DayLength-->
-<!--						</OperatingDay>
-					</operatingDays> -->
-<!--
-					<operatingPeriods>
-						<OperatingPeriod version="any" id="unibuss:op:109">
-							<FromOperatingDayRef ref="unibuss:od:109"/ -->
-							<!-- REMARK: End operating day not defined due to route is scheduled until new timetable is published -->
-						<!--/OperatingPeriod>
-					</operatingPeriods-->
-
-<!-- ******* -->
-<!-- TODO -->
-<!-- ******* -->
-<!-- Definere / avgrense hvordan vi vil bruke denne konstruksjonen (hvis overhode? ... kan være hensiktsmessig for ruter med likt kjøremønster alle dager?) -->
-					<!--<dayTypeAssignments>
-						<!-\- periode -\->
-						<DayTypeAssignment version="any" order="1" id="unibuss:dta:op109">
-							<OperatingPeriodRef ref="unibuss:op:109"/>
-							<DayTypeRef version="any" ref="unibuss:dt:weekday"/>
-						</DayTypeAssignment>
-						<!-\- enkeltdag -\->
-						<DayTypeAssignment version="any" order="1" id="unibuss:dta:od109">
-							<OperatingDayRef ref="unibuss:od:109"/>
-							<DayTypeRef version="any" ref="unibuss:dt:weekday"/>
-						</DayTypeAssignment>
-						<!-\- enkeltdato -\->
-						<DayTypeAssignment version="any" order="1" id="unibuss:dta:2010-12-25">
-							<Date>2010-12-25</Date>
-							<DayTypeRef version="any" ref="unibuss:dt:weekday"/>
-						</DayTypeAssignment>
-					</dayTypeAssignments>-->
 				</ServiceCalendarFrame>
 			</frames>
 		</CompositeFrame>

@@ -52,7 +52,6 @@
                             <LegalName>RUTER AS</LegalName>
                             <OrganisationType>authority</OrganisationType>
                         </Authority>
-
                         <!-- Antar her at Unibuss er selskapet som kjører turen. Ikke nødvendigvis korrekt, men fremgår ikke av rutetabellen -->
                         <Operator version="1" id="RUT:Company:1">
                             <CompanyNumber>985615616</CompanyNumber>
@@ -130,9 +129,7 @@
                                 </PointProjection>
                             </projections>
                         </RoutePoint>
-                    
                         <!-- Solfjellet -->
-                        
                         <RoutePoint version="1" id="RUT:RoutePoint:0061101A2A0061101003">
                             <projections>
                                 <PointProjection version="any" id="RUT:PointProjection:0061101A2A0061101003">
@@ -148,8 +145,6 @@
                                 </PointProjection>
                             </projections>
                         </RoutePoint>
-               
-                        
                         <!-- Tveita T -->
                         <RoutePoint version="1" id="RUT:RoutePoint:0061101A6A0061101007">
                             <projections>
@@ -270,6 +265,7 @@
                             </pointsInSequence>
                         </ServicePattern>
                     </servicePatterns>
+
                     <!-- Kobling fra ScheduledStopPoint til StopPlace/Quay. Legg merke til at StopPlace og Quay hører til i NHR-codespace mens ScheduleStopPoint hører til i RUT-codespacet -->
                     <stopAssignments>
                         <PassengerStopAssignment version="any" order="1" id="RUT:PassengerStopAssignment:0061101001">
@@ -358,17 +354,14 @@
 
                         <!-- Her defineres en TemplateServiceJourney. Den sier at avgangstidene er de samme, men i dette tilfellet med et rytmisk mønster (hvert. 15 minutt over hel) -->
                         <TemplateServiceJourney version="any" id="RUT:TemplateServiceJourney:0061">
-
                             <!-- Første avgang -->
                             <DepartureTime>09:15:00</DepartureTime>
                             <dayTypes>
                                 <!-- Refererer til 1 daytype som inneholder alle dager mandag-lørdag. Kunne vært separate dagtyper, men da måtte alle listes her -->
                                 <DayTypeRef version="any" ref="RUT:DayType:MonSat"/>
                             </dayTypes>
-                            
                             <!-- Hvilket kjøremønster som benyttes med passasjerer ombord -->
                             <ServicePatternRef ref="RUT:JourneyPattern:0061101"/>
-
                             <!-- Hvilken linje det gjelder -->
                             <LineRef version="any" ref="RUT:Line:0061"/>
                             <passingTimes>
@@ -437,7 +430,6 @@
                                     <Name>Every hour 15 minutes past</Name>
                                     <!-- Denne grupperingen starter kl 09 på dagen -->
                                     <FirstDepartureTime>09:00:00</FirstDepartureTime>
-
                                     <!-- Kjøres til 15:00 (ikke inkludert, dvs siste avgang er kl 14:15) -->
                                     <LastDepartureTime>15:00:00</LastDepartureTime>
                                     <timebands>
