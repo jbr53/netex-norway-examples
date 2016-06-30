@@ -2,15 +2,16 @@
 <!-- ===Simple Timetable  Example=== -->
 <!-- This example show the timetable for route 109 morning express in Oslo. -->
 <PublicationDelivery
-version="1.0"
-xmlns="http://www.netex.org.uk/netex"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xmlns:gml="http://www.opengis.net/gml/3.2"
-xmlns:siri="http://www.siri.org.uk/siri"
-xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
+  version="1.0"
+  xmlns="http://www.netex.org.uk/netex"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:gml="http://www.opengis.net/gml/3.2"
+  xmlns:siri="http://www.siri.org.uk/siri"
+  xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
+
 	<PublicationTimestamp>2016-05-23T12:00:00.0Z</PublicationTimestamp>
 	<ParticipantRef>NHR</ParticipantRef>
-	<!-- ===RESULT=== -->
+
 	<dataObjects>
 		<CompositeFrame version="any" id="unibuss:cf:1">
 			<validityConditions>
@@ -18,6 +19,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 					<FromDate>2016-03-04T00:00:00.0Z</FromDate>
 				</AvailabilityCondition>
 			</validityConditions>
+
 			<!-- ===CODESPACE=== -->
 			<codespaces>
 				<Codespace id="unibuss">
@@ -40,14 +42,13 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 			<frames>
 				<ResourceFrame version="any" id="unibuss:rf:1">
 					<organisations>
-						<!-- TODO her er ting kun splittet i authority og operator. Normalt er strukturen mer kompleks, og informasjon rundt f.eks hittegods må modelleres korrekt -->
 						<Authority version="any" id="auth:ruter">
 							<CompanyNumber>991609407</CompanyNumber> <!-- Organisasjonsnummer -->
 							<Name>Ruter#</Name>
 							<LegalName>RUTER AS</LegalName>
 							<OrganisationType>authority</OrganisationType>
 						</Authority>
-						<!-- Unibuss kjører turen -->
+						<!-- Unibuss kjører ruten på vegne av Ruter# -->
 						<Operator version="any" id="auth:unibuss">
 							<CompanyNumber>985615616</CompanyNumber>
 							<Name>Unibuss</Name>
@@ -66,7 +67,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 						<DefaultResponsibilitySetRef ref="unibuss:drs"/>
 					</FrameDefaults>
 					<stopPlaces>
-						<!-- MERK: For enklere eksempel er _kun_ brukt quay definert i eksempelet -->
+						<!-- MERK: Kun definert quays i faktisk bruk for å forenkle eksempelet -->
 						<!-- TODO: Implement correct stop place and quay IDs -->
 						<StopPlace version="any" responsibilitySetRef="unibuss:drs" id="unibuss:sp:helsfyr_t">
 							<Name>Helsfyr T</Name>
@@ -89,12 +90,12 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 							<StopPlaceType>onstreetBus</StopPlaceType>
 							<quays>
 								<Quay version="any" id="unibuss:q:brynseng_t:QUAYID">
-								<Centroid>
-									<Location srsName="WGS84">
-										<Longitude>10.814013</Longitude>
-										<Latitude>59.909351</Latitude>
-									</Location>
-								</Centroid>
+									<Centroid>
+										<Location srsName="WGS84">
+											<Longitude>10.814013</Longitude>
+											<Latitude>59.909351</Latitude>
+										</Location>
+									</Centroid>
 								</Quay>
 							</quays>
 						</StopPlace>
@@ -181,23 +182,23 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 							</projections>
 						</RoutePoint>
 					</routePoints>
-
+					
 					<!-- ===ROUTE=== -->
-
-<!-- TODO: Definere hvordan vi ønsker DIRECTION ift norsk profil -->
+					
+					<!-- TODO: Definere hvordan vi ønsker DIRECTION ift norsk profil -->
 					<!--directions>
 						<Direction version="any" id="unibuss:direction:outbound">
 							<DirectionType>outbound</DirectionType>
 						</Direction>
 					</directions-->
-<!-- VS: -->
+					<!-- VS: -->
 					<routes>
 						<Route version="any" id="unibuss:rt:109">
 							<Name>Morgenbuss Helsfyr - Holtet</Name>
 							<DirectionType>outbound</DirectionType>
 						</Route>
 					</routes>
-
+					
 					<!-- ===LINEs=== -->
 					<lines>
 						<Line version="any" id="unibuss:line:109">
@@ -216,6 +217,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 							<FrontText>Holtet</FrontText>
 						</DestinationDisplay>
 					</destinationDisplays>
+
 					<!--- =========STOP POINTs============ -->
 					<scheduledStopPoints>
 						<ScheduledStopPoint version="any" id="unibuss:ssp:helfyr_t">
@@ -237,6 +239,7 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 							<Name>Holtet</Name>
 						</ScheduledStopPoint>
 					</scheduledStopPoints>
+
 					<!-- ===STOP ASSIGNMENTs=== -->
 					<!-- Must be defined in order to assign Journey/Service Pattern stop point to actual StopPlace -->
 					<stopAssignments>
@@ -298,434 +301,432 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 
 				<!-- TIMETABLE FRAME -->
 				<!-- Definert som et sett av avganger med referanse til dager (dagtyper) avgangen kjøres -->
-                <TimetableFrame version="any" id="unibuss:tf:1">
-                    <validityConditions>
-                        <AvailabilityCondition version="any" id="unibuss:ac:1">
-                            <FromDate>2016-04-03T00:00:00</FromDate>
-                            <IsAvailable>true</IsAvailable>
-                        </AvailabilityCondition>
-                    </validityConditions>
-                    <vehicleJourneys>
-                    	<!-- TODO: Legg inn korrekte koder for #Ruter/Unibuss service -->
+				<TimetableFrame version="any" id="unibuss:tf:1">
+					<validityConditions>
+						<AvailabilityCondition version="any" id="unibuss:ac:1">
+							<FromDate>2016-04-03T00:00:00</FromDate>
+							<IsAvailable>true</IsAvailable>
+						</AvailabilityCondition>
+					</validityConditions>
+					<vehicleJourneys>
+						<!-- TODO: Legg inn korrekte koder for #Ruter/Unibuss service -->
 						<ServiceJourney version="any" id="unibuss:sj:109:CODE-0430">
 							<DepartureTime>04:30:00</DepartureTime>
-                            <dayTypes>
+							<dayTypes>
 								<DayTypeRef ref="unibuss:dt:weekday"/>
 							</dayTypes>
 							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
 							<LineRef ref="unibuss:line:109"/>
-                            <calls>
-                                <Call>
-                                    <!-- Helsfyr T -->
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
-                                    <Arrival>
-                                        <!-- Kun påstigning -->
-                                        <ForAlighting>false</ForAlighting>
-                                    </Arrival>
-                                    <Departure>
-                                        <Time>04:30:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <!-- Brynseng T -->
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
-                                    <Departure>
-                                        <Time>04:32:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <!-- Høyenhall T -->
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
-                                    <Departure>
-                                        <Time>04:33:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <!-- Manglerud T -->
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
-                                    <Departure>
-                                        <Time>04:34:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <!-- Ryen T -->
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:ryen_t"/>
-                                    <Departure>
-                                        <Time>04:35:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <!-- Holtet -->
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:holtet"/>
-                                    <Arrival>
-                                        <Time>04:40:00</Time>
-                                    </Arrival>
-                                    <Departure>
-										<!-- Kun avstigning -->                                        
-                                        <ForBoarding>false</ForBoarding>
-                                    </Departure>
-                                </Call>
-                            </calls>
+							<calls>
+								<Call>
+									<!-- Helsfyr T -->
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
+									<Arrival>
+										<!-- Kun påstigning -->
+										<ForAlighting>false</ForAlighting>
+									</Arrival>
+									<Departure>
+										<Time>04:30:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<!-- Brynseng T -->
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
+									<Departure>
+										<Time>04:32:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<!-- Høyenhall T -->
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
+									<Departure>
+										<Time>04:33:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<!-- Manglerud T -->
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
+									<Departure>
+										<Time>04:34:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<!-- Ryen T -->
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:ryen_t"/>
+									<Departure>
+										<Time>04:35:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<!-- Holtet -->
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:holtet"/>
+									<Arrival>
+										<Time>04:40:00</Time>
+									</Arrival>
+									<Departure>
+										<!-- Kun avstigning -->
+										<ForBoarding>false</ForBoarding>
+									</Departure>
+								</Call>
+							</calls>
 						</ServiceJourney>
 
 						<ServiceJourney version="any" id="unibuss:sj:109:CODE-0500">
-                            <dayTypes>
+							<dayTypes>
 								<DayTypeRef ref="unibuss:dt:weekday"/>
 							</dayTypes>
 							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
-                            <LineRef ref="unibuss:line:109"/>
-                            <calls>
-                                <Call>
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
-                                    <Arrival>
-                                        <!-- Kun påstigning -->
-                                        <ForAlighting>false</ForAlighting>
-                                    </Arrival>
-                                    <Departure>
-                                        <Time>05:00:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
-                                    <Departure>
-                                        <Time>05:02:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
-                                    <Departure>
-                                        <Time>05:03:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
-                                    <Departure>
-                                        <Time>05:04:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:ryen_t"/>
-                                    <Departure>
-                                        <Time>05:05:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:holtet"/>
-                                    <Arrival>
-                                        <Time>05:10:00</Time>
-                                    </Arrival>
-                                    <Departure>
-										<!-- Kun avstigning -->                                        
-                                        <ForBoarding>false</ForBoarding>
-                                    </Departure>
-                                </Call>
-                            </calls>
+							<LineRef ref="unibuss:line:109"/>
+							<calls>
+								<Call>
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
+									<Arrival>
+										<!-- Kun påstigning -->
+										<ForAlighting>false</ForAlighting>
+									</Arrival>
+									<Departure>
+										<Time>05:00:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
+									<Departure>
+										<Time>05:02:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
+									<Departure>
+										<Time>05:03:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
+									<Departure>
+										<Time>05:04:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:ryen_t"/>
+									<Departure>
+										<Time>05:05:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:holtet"/>
+									<Arrival>
+										<Time>05:10:00</Time>
+									</Arrival>
+									<Departure>
+										<!-- Kun avstigning -->
+										<ForBoarding>false</ForBoarding>
+									</Departure>
+								</Call>
+							</calls>
 						</ServiceJourney>
 
 						<ServiceJourney version="any" id="unibuss:sj:109:CODE-0530">
 							<DepartureTime>05:30:00</DepartureTime>
-                            <dayTypes>
+							<dayTypes>
 								<DayTypeRef ref="unibuss:dt:weekday"/>
 								<DayTypeRef ref="unibuss:dt:saturday"/>
 							</dayTypes>
 							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
-                            <LineRef ref="unibuss:line:109"/>
-                            <calls>
-                                <Call>
-                                    <!-- Helsfyr T -->
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
-                                    <Arrival>
-                                        <!-- Kun påstigning -->
-                                        <ForAlighting>false</ForAlighting>
-                                    </Arrival>
-                                    <Departure>
-                                        <Time>05:30:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <!-- Brynseng T -->
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
-                                    <Departure>
-                                        <Time>05:32:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <!-- Høyenhall T -->
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
-                                    <Departure>
-                                        <Time>05:33:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <!-- Manglerud T -->
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
-                                    <Departure>
-                                        <Time>05:34:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <!-- Ryen T -->
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:ryen_t"/>
-                                    <Departure>
-                                        <Time>05:35:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <!-- Holtet -->
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:holtet"/>
-                                    <Arrival>
-                                        <Time>05:40:00</Time>
-                                    </Arrival>
-                                    <Departure>
-										<!-- Kun avstigning -->                                        
-                                        <ForBoarding>false</ForBoarding>
-                                    </Departure>
-                                </Call>
-                            </calls>
+							<LineRef ref="unibuss:line:109"/>
+							<calls>
+								<Call>
+									<!-- Helsfyr T -->
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
+									<Arrival>
+										<!-- Kun påstigning -->
+										<ForAlighting>false</ForAlighting>
+									</Arrival>
+									<Departure>
+										<Time>05:30:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<!-- Brynseng T -->
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
+									<Departure>
+										<Time>05:32:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<!-- Høyenhall T -->
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
+									<Departure>
+										<Time>05:33:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<!-- Manglerud T -->
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
+									<Departure>
+										<Time>05:34:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<!-- Ryen T -->
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:ryen_t"/>
+									<Departure>
+										<Time>05:35:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<!-- Holtet -->
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:holtet"/>
+									<Arrival>
+										<Time>05:40:00</Time>
+									</Arrival>
+									<Departure>
+										<!-- Kun avstigning -->
+										<ForBoarding>false</ForBoarding>
+									</Departure>
+								</Call>
+							</calls>
 						</ServiceJourney>
 
 						<ServiceJourney version="any" id="unibuss:sj:109:CODE-0600">
-                            <dayTypes>
-                            	<DayTypeRef ref="unibuss:dt:saturday"/>
+							<dayTypes>
+								<DayTypeRef ref="unibuss:dt:saturday"/>
 								<DayTypeRef ref="unibuss:dt:sunday"/>
 							</dayTypes>
 							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
-                            <LineRef ref="unibuss:line:109"/>
-                            <calls>
-                                <Call>
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
-                                    <Arrival>
-                                        <!-- Kun påstigning -->
-                                        <ForAlighting>false</ForAlighting>
-                                    </Arrival>
-                                    <Departure>
-                                        <Time>06:00:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
-                                    <Departure>
-                                        <Time>06:02:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
-                                    <Departure>
-                                        <Time>06:03:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
-                                    <Departure>
-                                        <Time>06:04:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:ryen_t"/>
-                                    <Departure>
-                                        <Time>06:06:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:holtet"/>
-                                    <Arrival>
-                                        <Time>06:10:00</Time>
-                                    </Arrival>
-                                    <Departure>
-										<!-- Kun avstigning -->                                        
-                                        <ForBoarding>false</ForBoarding>
-                                    </Departure>
-                                </Call>
-                            </calls>
+							<LineRef ref="unibuss:line:109"/>
+							<calls>
+								<Call>
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
+									<Arrival>
+										<!-- Kun påstigning -->
+										<ForAlighting>false</ForAlighting>
+									</Arrival>
+									<Departure>
+										<Time>06:00:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
+									<Departure>
+										<Time>06:02:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
+									<Departure>
+										<Time>06:03:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
+									<Departure>
+										<Time>06:04:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:ryen_t"/>
+									<Departure>
+										<Time>06:06:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:holtet"/>
+									<Arrival>
+										<Time>06:10:00</Time>
+									</Arrival>
+									<Departure>
+										<!-- Kun avstigning -->
+										<ForBoarding>false</ForBoarding>
+									</Departure>
+								</Call>
+							</calls>
 						</ServiceJourney>
 
 						<ServiceJourney version="any" id="unibuss:sj:109:CODE-0630">
 							<DepartureTime>06:30:00</DepartureTime>
-                            <dayTypes>
+							<dayTypes>
 								<DayTypeRef ref="unibuss:dt:saturday"/>
-                            	<DayTypeRef ref="unibuss:dt:sunday"/>
+								<DayTypeRef ref="unibuss:dt:sunday"/>
 							</dayTypes>
 							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
-                            <LineRef ref="unibuss:line:109"/>
-                            <calls>
-                                <Call>
-                                    <!-- Helsfyr T -->
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
-                                    <Arrival>
-                                        <!-- Kun påstigning -->
-                                        <ForAlighting>false</ForAlighting>
-                                    </Arrival>
-                                    <Departure>
-                                        <Time>06:30:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <!-- Brynseng T -->
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
-                                    <Departure>
-                                        <Time>06:32:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <!-- Høyenhall T -->
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
-                                    <Departure>
-                                        <Time>06:33:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <!-- Manglerud T -->
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
-                                    <Departure>
-                                        <Time>06:34:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <!-- Ryen T -->
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:ryen_t"/>
-                                    <Departure>
-                                        <Time>06:35:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <!-- Holtet -->
-                                    <ScheduledStopPointRef version="any" ref="unibuss:ssp:holtet"/>
-                                    <Arrival>
-                                        <Time>06:40:00</Time>
-                                    </Arrival>
-                                    <Departure>
-										<!-- Kun avstigning -->                                        
-                                        <ForBoarding>false</ForBoarding>
-                                    </Departure>
-                                </Call>
-                            </calls>
+							<LineRef ref="unibuss:line:109"/>
+							<calls>
+								<Call>
+									<!-- Helsfyr T -->
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
+									<Arrival>
+										<!-- Kun påstigning -->
+										<ForAlighting>false</ForAlighting>
+									</Arrival>
+									<Departure>
+										<Time>06:30:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<!-- Brynseng T -->
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
+									<Departure>
+										<Time>06:32:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<!-- Høyenhall T -->
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
+									<Departure>
+										<Time>06:33:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<!-- Manglerud T -->
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
+									<Departure>
+										<Time>06:34:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<!-- Ryen T -->
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:ryen_t"/>
+									<Departure>
+										<Time>06:35:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<!-- Holtet -->
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:holtet"/>
+									<Arrival>
+										<Time>06:40:00</Time>
+									</Arrival>
+									<Departure>
+										<!-- Kun avstigning -->
+										<ForBoarding>false</ForBoarding>
+									</Departure>
+								</Call>
+							</calls>
 						</ServiceJourney>
-                    	
-                    	<ServiceJourney version="any" id="unibuss:sj:109:CODE-0700">
-                    		<dayTypes>
-                    			<DayTypeRef ref="unibuss:dt:sunday"/>
-                    		</dayTypes>
-                    		<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
-                    		<LineRef ref="unibuss:line:109"/>
-                    		<calls>
-                    			<Call>
-                    				<ScheduledStopPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
-                    				<Arrival>
-                    					<!-- Kun påstigning -->
-                    					<ForAlighting>false</ForAlighting>
-                    				</Arrival>
-                    				<Departure>
-                    					<Time>07:00:00</Time>
-                    				</Departure>
-                    			</Call>
-                    			<Call>
-                    				<ScheduledStopPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
-                    				<Departure>
-                    					<Time>07:02:00</Time>
-                    				</Departure>
-                    			</Call>
-                    			<Call>
-                    				<ScheduledStopPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
-                    				<Departure>
-                    					<Time>07:03:00</Time>
-                    				</Departure>
-                    			</Call>
-                    			<Call>
-                    				<ScheduledStopPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
-                    				<Departure>
-                    					<Time>07:04:00</Time>
-                    				</Departure>
-                    			</Call>
-                    			<Call>
-                    				<ScheduledStopPointRef version="any" ref="unibuss:ssp:ryen_t"/>
-                    				<Departure>
-                    					<Time>07:07:00</Time>
-                    				</Departure>
-                    			</Call>
-                    			<Call>
-                    				<ScheduledStopPointRef version="any" ref="unibuss:ssp:holtet"/>
-                    				<Arrival>
-                    					<Time>07:10:00</Time>
-                    				</Arrival>
-                    				<Departure>
-                    					<!-- Kun avstigning -->                                        
-                    					<ForBoarding>false</ForBoarding>
-                    				</Departure>
-                    			</Call>
-                    		</calls>
-                    	</ServiceJourney>
 
+						<ServiceJourney version="any" id="unibuss:sj:109:CODE-0700">
+							<dayTypes>
+								<DayTypeRef ref="unibuss:dt:sunday"/>
+							</dayTypes>
+							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
+							<LineRef ref="unibuss:line:109"/>
+							<calls>
+								<Call>
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
+									<Arrival>
+										<!-- Kun påstigning -->
+										<ForAlighting>false</ForAlighting>
+									</Arrival>
+									<Departure>
+										<Time>07:00:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
+									<Departure>
+										<Time>07:02:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
+									<Departure>
+										<Time>07:03:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
+									<Departure>
+										<Time>07:04:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:ryen_t"/>
+									<Departure>
+										<Time>07:07:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:holtet"/>
+									<Arrival>
+										<Time>07:10:00</Time>
+									</Arrival>
+									<Departure>
+										<!-- Kun avstigning -->
+										<ForBoarding>false</ForBoarding>
+									</Departure>
+								</Call>
+							</calls>
+						</ServiceJourney>
 
-                    	<!-- ########################### -->
-                    	<!-- ALTERNATE DESCRIPTION pt. 1 -->
-                    	<!-- ########################### -->
-                        <TemplateServiceJourney version="any" id="unibuss:tsj:109:weekdays">
-                            <DepartureTime>04:30:00</DepartureTime>
-                            <dayTypes>
+						<!-- ########################### -->
+						<!-- ALTERNATE DESCRIPTION pt. 1 -->
+						<!-- ########################### -->
+						<TemplateServiceJourney version="any" id="unibuss:tsj:109:weekdays">
+							<DepartureTime>04:30:00</DepartureTime>
+							<dayTypes>
 								<DayTypeRef ref="unibuss:dt:weekday"/>
 							</dayTypes>
 							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
-                        	<RhythmicalJourneyGroupRef ref="unibuss:rjg:weekdays"/>
-                        	<LineRef ref="unibuss:line:109"/>
-                            <calls>
-                                <Call>
-                                	<ScheduledStopPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
-                                    <Arrival>
-                                        <!-- Kun påstigning -->
-                                        <ForAlighting>false</ForAlighting>
-                                    </Arrival>
-                                    <Departure>
-                                        <Time>00:30:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                	<ScheduledStopPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
-                                    <Departure>
-                                        <Time>00:32:00</Time>
-                                    </Departure>
-                                </Call>
-                            	<Call>
-                            		<ScheduledStopPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
-                            		<Departure>
-                            			<Time>00:03:00</Time>
-                            		</Departure>
-                            	</Call>
-                            	<Call>
-                            		<ScheduledStopPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
-                            		<Departure>
-                            			<Time>00:04:00</Time>
-                            		</Departure>
-                            	</Call>
-                            	<Call>
-                            		<ScheduledStopPointRef version="any" ref="unibuss:ssp:ryen_t"/>
-                            		<Departure>
-                            			<Time>00:07:00</Time>
-                            		</Departure>
-                            	</Call>
-                            	<Call>
-                            		<ScheduledStopPointRef version="any" ref="unibuss:ssp:holtet"/>
-                            		<Arrival>
-                            			<Time>00:10:00</Time>
-                            		</Arrival>
-                            		<Departure>
-                            			<!-- Kun avstigning -->                                        
-                            			<ForBoarding>false</ForBoarding>
-                            		</Departure>
-                            	</Call>
-                            </calls>
-                        </TemplateServiceJourney>
-                    	<!-- ########################### -->
-                    	<!-- Etc. (similarly for other departures) --> 
-                    	<!--  * 05:00 (weekdays) -->
-                    	<!--  * 05:30 (incl. Saturday) -->
-                    	<!--  * 06:00 (Sat./Sun.) -->
-                    	<!--  * 06:30 (Sat./Sun.) -->
-                    	<!--  * 07:00 (Sundays) -->
-                    	<!-- ########################### -->
-                    </vehicleJourneys>
-                    
+							<RhythmicalJourneyGroupRef ref="unibuss:rjg:weekdays"/>
+							<LineRef ref="unibuss:line:109"/>
+							<calls>
+								<Call>
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
+									<Arrival>
+										<!-- Kun påstigning -->
+										<ForAlighting>false</ForAlighting>
+									</Arrival>
+									<Departure>
+										<Time>00:30:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
+									<Departure>
+										<Time>00:32:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
+									<Departure>
+										<Time>00:03:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
+									<Departure>
+										<Time>00:04:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:ryen_t"/>
+									<Departure>
+										<Time>00:07:00</Time>
+									</Departure>
+								</Call>
+								<Call>
+									<ScheduledStopPointRef version="any" ref="unibuss:ssp:holtet"/>
+									<Arrival>
+										<Time>00:10:00</Time>
+									</Arrival>
+									<Departure>
+										<!-- Kun avstigning -->
+										<ForBoarding>false</ForBoarding>
+									</Departure>
+								</Call>
+							</calls>
+						</TemplateServiceJourney>
+						<!-- ########################### -->
+						<!-- Etc. (similarly for other departures) -->
+						<!--  * 05:00 (weekdays) -->
+						<!--  * 05:30 (incl. Saturday) -->
+						<!--  * 06:00 (Sat./Sun.) -->
+						<!--  * 06:30 (Sat./Sun.) -->
+						<!--  * 07:00 (Sundays) -->
+						<!-- ########################### -->
+					</vehicleJourneys>
 					<!-- ########################### -->
-					<!-- ALTERNATE DESCRIPTION pt. 1 -->
+					<!-- ALTERNATE DESCRIPTION pt. 2 -->
 					<!-- ########################### -->
 					<frequencyGroups>
 						<RhythmicalJourneyGroup version="any" id="unibuss:rjg:weekdays">
@@ -753,15 +754,16 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 							</timebands>
 						</RhythmicalJourneyGroup>
 					</frequencyGroups>
-                </TimetableFrame>
+				</TimetableFrame>
 
 				<!-- ===SERVICE CALENDAR FRAME=== -->
 				<ServiceCalendarFrame version="1" id="unibuss:scf:01">
 					<ServiceCalendar version="any" id="unibuss:sc:01">
 						<FromDate>2016-04-03</FromDate>
-						<!-- ####################### -->
-						<!--  DESCRIPTION -->
-						<!-- ####################### -->
+						
+						<!-- ############################# -->
+						<!-- (for alternative description) -->
+						<!-- ############################# -->
 						<timebands>
 							<Timeband version="any" id="unibuss:t:fullhour">
 								<StartTime>00:00:00</StartTime>
@@ -769,7 +771,8 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../xsd/NeTEx_publication.xsd">
 							<Timeband version="any" id="unibuss:t:halfhour">
 								<StartTime>00:30:00</StartTime>
 							</Timeband>
-						</timebands>						
+						</timebands>
+						
 					</ServiceCalendar>
 					
 					<dayTypes>
