@@ -239,6 +239,7 @@
                                 <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101001" order="1">
                                     <!-- Referanse til hvilket ScheduledStopPoint -->
                                     <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101001"/>
+                                    <ForAlighting>false</ForAlighting>
                                     <!-- Destinasjonstekst som vises på bussen -->
                                     <DestinationDisplayRef ref="RUT:DestinationDisplay:DST_Solfjellet"/>
                                 </StopPointInJourneyPattern>
@@ -261,6 +262,7 @@
                                 </StopPointInJourneyPattern>
                                 <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101007" order="7">
                                     <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101007"/>
+                                    <ForBoarding>false</ForBoarding>
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
                         </ServicePattern>
@@ -401,30 +403,6 @@
                                     <DepartureTime>00:31:00</DepartureTime>
                                 </TimetabledPassingTime>
                             </passingTimes>
-                            <calls>
-                                <Call>
-                                    <!-- Tveita T (turstart) -->
-                                    <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101001"/>
-                                    <Arrival>
-                                        <!-- Kun påstigning -->
-                                        <ForAlighting>false</ForAlighting>
-                                    </Arrival>
-                                    <Departure>
-                                        <Time>00:15:00</Time>
-                                    </Departure>
-                                </Call>
-                                <Call>
-                                    <!-- Tveita T (turslutt) -->
-                                    <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101007"/>
-                                    <Arrival>
-                                        <Time>00:31:00</Time>
-                                    </Arrival>
-                                    <Departure>
-                                        <!-- Kun avstigning -->
-                                        <ForBoarding>false</ForBoarding>
-                                    </Departure>
-                                </Call>
-                            </calls>
                             <frequencyGroups>
                                 <RhythmicalJourneyGroup version="any" id="RUT:RhythmicalJourneyGroup:1">
                                     <Name>Every hour 15 minutes past</Name>
