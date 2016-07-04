@@ -7,6 +7,7 @@
     xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd">
     <PublicationTimestamp>2016-05-20T15:03:03Z</PublicationTimestamp>
     <ParticipantRef>RUT</ParticipantRef>
+    
 
     <!-- Description er frivillig -->
     <Description>Ruter linje 61A: Tveita Solfjellet</Description>
@@ -14,6 +15,7 @@
     <dataObjects>
         <!-- =========================================== -->
         <CompositeFrame version="1" created="2015-12-13T00:00:00Z" id="RUT:Norway:CompositeFrame:0061">
+            <ValidBetween></ValidBetween>
 
             <codespaces>
                 <!-- Codespace for Ruter -->
@@ -267,6 +269,7 @@
                             </pointsInSequence>
                         </ServicePattern>
                     </servicePatterns>
+                    
 
                     <!-- Kobling fra ScheduledStopPoint til StopPlace/Quay. Legg merke til at StopPlace og Quay hører til i NHR-codespace mens ScheduleStopPoint hører til i RUT-codespacet -->
                     <stopAssignments>
@@ -315,6 +318,12 @@
                             <Text>I boligveiene kan buss 61A ogs&#229; stoppe utenom de faste holdeplassene. Husk &#229; gi stoppsignal!</Text>
                         </Notice>
                     </notices>
+                    <noticeAssignments>
+                        <NoticeAssignment version="any" id="RUT:NoticeAssignment:1" order="1">
+                            <NoticeRef ref="RUT:Notice:1"/>
+                            <RouteRef ref="RUT:Route:0061101"/>
+                        </NoticeAssignment>
+                    </noticeAssignments>
                 </ServiceFrame>
 
                 <ServiceCalendarFrame version="any" id="RUT:ServiceCalendarFrame:SCF01">
