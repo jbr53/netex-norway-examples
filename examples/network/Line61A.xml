@@ -413,11 +413,11 @@
                             </passingTimes>
                             <frequencyGroups>
                                 <RhythmicalJourneyGroup version="any" id="RUT:RhythmicalJourneyGroup:1">
-                                    <Name>Every hour 15 minutes past</Name>
-                                    <!-- Denne grupperingen starter kl 09 på dagen -->
-                                    <FirstDepartureTime>09:00:00</FirstDepartureTime>
-                                    <!-- Kjøres til 15:00 (ikke inkludert, dvs siste avgang er kl 14:15) -->
-                                    <LastDepartureTime>15:00:00</LastDepartureTime>
+                                    <Name>Every hour, 15 minutes past the hour</Name>
+                                    <!-- Første avgang er kl 09:15 -->
+                                    <FirstDepartureTime>09:15:00</FirstDepartureTime>
+                                    <!-- Siste avgang er kl 14:15 -->
+                                    <LastDepartureTime>14:15:00</LastDepartureTime>
                                     <timebands>
                                         <!-- Hvert 15 minutt over -->
                                         <TimebandRef version="any" ref="RUT:Timeband:TM15"/>
