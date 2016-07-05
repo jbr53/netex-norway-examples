@@ -54,9 +54,13 @@
                     </organisations>
                 </ResourceFrame>
                 <SiteFrame id="NHR:SiteFrame:1" version="any">
+                    
+                    
+                    
                     <stopPlaces>
                         <!-- Monomodal stop place for bus in front of Oslo S -->
                         <StopPlace id="NHR:StopPlace:1" version="any">
+                            
                             <Name>Jernbanetorget</Name>
                             <Description>Foran Oslo S</Description>
                             <Centroid>
@@ -65,7 +69,7 @@
                                     <Latitude>10.749849</Latitude>
                                 </Location>
                             </Centroid>
-                            
+
                             <!-- What kind of accessibility limitations are present -->
                             <AccessibilityAssessment id="NHR:AccessibilityAssessment:1" version="any">
                                 <MobilityImpairedAccess>true</MobilityImpairedAccess>
@@ -77,14 +81,14 @@
                             <facilities>
                                 <SiteFacilitySetRef ref="sfs:1"/>
                             </facilities>
-                            
-                          
+
+
                             <ParentSiteRef ref="NHR:StopPlace:3"/>
-                            
+
                             <TransportMode>bus</TransportMode>
                             <BusSubmode>localBus</BusSubmode>
                             <StopPlaceType>onstreetBus</StopPlaceType>
-                            
+
                             <quays>
                                 <Quay id="NHR:Quay:1" version="any">
                                     <Description>Strandgata retning nord</Description>
@@ -124,7 +128,7 @@
                                     <Latitude>10.749849</Latitude>
                                 </Location>
                             </Centroid>
-                            
+
                             <!-- What kind of accessibility limitations are present -->
                             <AccessibilityAssessment id="NHR:AccessibilityAssessment:2" version="any">
                                 <MobilityImpairedAccess>true</MobilityImpairedAccess>
@@ -136,13 +140,13 @@
                             <facilities>
                                 <SiteFacilitySetRef ref="sfs:1"/>
                             </facilities>
-                            
+
                             <ParentSiteRef ref="NHR:StopPlace:3"/>
-                            
+
                             <TransportMode>tram</TransportMode>
                             <TramSubmode>cityTram</TramSubmode>
                             <StopPlaceType>onstreetTram</StopPlaceType>
-                            
+
                             <quays>
                                 <Quay id="NHR:Quay:3" version="any">
                                     <Description>Strandgata retning nord</Description>
@@ -170,13 +174,13 @@
                                 </Quay>
                             </quays>
                         </StopPlace>
-                        
+
 
                         <!-- Multimodal stop place for bus/tram in front of Oslo S -->
                         <StopPlace id="NHR:StopPlace:3" version="any">
                             <Name>Jernbanetorget</Name>
                             <Description>Foran Oslo S</Description>
-                            
+
                             <Centroid>
                                 <Location>
                                     <!-- Koordinater ikke korrekt -->
@@ -198,7 +202,7 @@
                             </tariffZones>
                             <StopPlaceType>other</StopPlaceType>
                         </StopPlace>
-                        
+
                         <!-- Monomodal stop place for bus between Oslo S and Oslo City -->
                         <StopPlace id="sp:osl:4" version="any">
                             <Name lang="no-NO">Jernbanetorget</Name>
@@ -263,7 +267,7 @@
                                 </Quay>
                             </quays>
                         </StopPlace>
-                        
+
                         <!-- Monomodal stop place for tram near TGI Fridays -->
                         <StopPlace id="NHR:StopPlace:6" version="any">
                             <Name lang="no-NO">Jernbanetorget</Name>
@@ -275,7 +279,7 @@
                                     <Latitude>10.749849</Latitude>
                                 </Location>
                             </Centroid>
-                            
+
                             <!-- TODO -->
                             <placeTypes>
                                 <TypeOfPlaceRef ref="monomodalStopPlace"/>
@@ -296,10 +300,10 @@
                             <facilities>
                                 <SiteFacilitySetRef ref="sfs:1"/>
                             </facilities>
-                          
+
                             <TransportMode>tram</TransportMode>
                             <TramSubmode>localTram</TramSubmode>
-                          
+
                             <StopPlaceType>onstreetTram</StopPlaceType>
                             <quays>
                                 <Quay id="NHR:Quay:7" version="any">
@@ -328,10 +332,10 @@
                                 </Quay>
                             </quays>
                         </StopPlace>
-                        
+
                         <!-- Monomodal stop place for TBane -->
-                        <StopPlace id="sp:osl:6" version="any">
-                            <Name >Jernbanetorget</Name>
+                        <StopPlace id="NHR:StopPlace:7" version="any">
+                            <Name>Jernbanetorget</Name>
                             <Description>T-Bane Oslo S</Description>
                             <Centroid>
                                 <Location>
@@ -359,13 +363,13 @@
                             <facilities>
                                 <SiteFacilitySetRef ref="sfs:1"/>
                             </facilities>
-                            
+
                             <!-- TODO -->
                             <ParentSiteRef ref="sp:osl:3"/>
-                            
+
                             <TransportMode>metro</TransportMode>
                             <MetroSubmode>metro</MetroSubmode>
-                          
+
                             <StopPlaceType>metroStation</StopPlaceType>
                             <quays>
                                 <Quay id="NHR:Quay:9" version="any">
@@ -378,7 +382,7 @@
                                             <Latitude>10.749849</Latitude>
                                         </Location>
                                     </Centroid>
-                                    
+
                                     <QuayType>metroPlatform</QuayType>
                                 </Quay>
                                 <Quay id="NHR:Quay:10" version="any">
@@ -391,33 +395,33 @@
                                             <Latitude>10.749849</Latitude>
                                         </Location>
                                     </Centroid>
-                                    
+
                                     <QuayType>metroPlatform</QuayType>
                                 </Quay>
                             </quays>
                         </StopPlace>
                         <!-- Monomodal stop place for train -->
-                        
-                        
+
+
                         <!-- FORTSETT HERFRA OG NED -->
-                        
-                        
-                        
-                        <StopPlace id="sp:osl:7" version="any">
-                            <Name lang="no-NO">Jernbanetorget</Name>
-                            <Description>Train stop at Oslo S</Description>
+
+
+
+                        <StopPlace id="NHR:StopPlace:8" version="any">
+                            <Name lang="no-NO">Oslo S</Name>
+
                             <Centroid>
                                 <Location>
-                                    <Longitude>20</Longitude>
-                                    <Latitude>10</Latitude>
-                                    <Altitude>0</Altitude>
+                                    <!-- Koordinater ikke korrekt -->
+                                    <Longitude>59.9117492</Longitude>
+                                    <Latitude>10.749849</Latitude>
                                 </Location>
                             </Centroid>
                             <placeTypes>
                                 <TypeOfPlaceRef ref="monomodalStopPlace"/>
                             </placeTypes>
                             <!-- What kind of accessibility limitations are present -->
-                            <AccessibilityAssessment id="aa:bp:ruter:6" version="any">
+                            <AccessibilityAssessment id="NHR:AccessibilityAssessment:6" version="any">
                                 <MobilityImpairedAccess>true</MobilityImpairedAccess>
                                 <limitations>
                                     <AccessibilityLimitation>
@@ -427,203 +431,123 @@
                                     </AccessibilityLimitation>
                                 </limitations>
                             </AccessibilityAssessment>
-                            <Covered>outdoors</Covered>
+                            <Covered>indoors</Covered>
                             <Gated>openArea</Gated>
                             <!-- What kind of facilities are available -->
                             <facilities>
                                 <SiteFacilitySetRef ref="sfs:1"/>
                             </facilities>
-                            <OrganisationRef ref="org:oper:nsb"/>
-                            <levels>
-                                <Level id="sp:osl:7:lvl1" version="any">
-                                    <AccessibilityAssessment id="aa:bp:ruter:7" version="any">
-                                        <MobilityImpairedAccess>false</MobilityImpairedAccess>
-                                        <limitations>
-                                            <AccessibilityLimitation>
-                                                <WheelchairAccess>false</WheelchairAccess>
-                                                <EscalatorFreeAccess>false</EscalatorFreeAccess>
-                                            </AccessibilityLimitation>
-                                        </limitations>
-                                    </AccessibilityAssessment>
-                                    <AllAreasWheelchairAccessible>false</AllAreasWheelchairAccessible>
-                                </Level>
-                                <Level id="sp:osl:7:lvl2" version="any">
-                                    <AccessibilityAssessment id="aa:bp:ruter:8" version="any">
-                                        <MobilityImpairedAccess>unknown</MobilityImpairedAccess>
-                                        <limitations>
-                                            <AccessibilityLimitation>
-                                                <WheelchairAccess>true</WheelchairAccess>
-                                                <AudibleSignalsAvailable>true</AudibleSignalsAvailable>
-                                                <VisualSignsAvailable>partial</VisualSignsAvailable>
-                                            </AccessibilityLimitation>
-                                        </limitations>
-                                    </AccessibilityAssessment>
-                                </Level>
-                            </levels>
+
+
                             <entrances>
-                                <StopPlaceEntrance id="sp:osl:7:entr:1" version="any">
-                                    <Label>HKfVklqhN</Label>
+                                <!-- Hovedinngang mot Jernbanetorget -->
+                                <StopPlaceEntrance id="NHR:Entrance:1" version="any">
                                     <EntranceType>automaticDoor</EntranceType>
-                                    <IsExternal>true</IsExternal>
-                                    <IsEntry>true</IsEntry>
-                                    <IsExit>true</IsExit>
-                                    <Width>562513008.517</Width>
-                                    <Height>-381927382.844</Height>
-                                    <DroppedKerbOutside>0</DroppedKerbOutside>
-                                    <DropOffPointClose>1</DropOffPointClose>
+                                    <Width>1.5</Width>
+                                    <Height>2.2</Height>
                                 </StopPlaceEntrance>
                             </entrances>
-                            <PublicCode>Jernbanetorget</PublicCode>
-                            <TransportMode>tram</TransportMode>
-                            <TramSubmode>localTram</TramSubmode>
-                            <tariffZones>
-                                <TariffZoneRef ref="tz:osl:1"/>
-                            </tariffZones>
-                            <StopPlaceType>onstreetTram</StopPlaceType>
-                            <unlocalisedEquipments>
-                                <PlaceLighting id="pl:osl:1" version="any">
-                                    <Lighting>wellLit</Lighting>
-                                    <AlwaysLit>true</AlwaysLit>
-                                </PlaceLighting>
-                                <RoughSurface id="rs:osl:1" version="any">
-                                    <SurfaceType>pavingStones</SurfaceType>
-                                    <SuitableForCycles>true</SuitableForCycles>
-                                </RoughSurface>
-                            </unlocalisedEquipments>
+
+                            <TransportMode>rail</TransportMode>
+                            <StopPlaceType>railStation</StopPlaceType>
+
+
+<!-- Example must be updated from here on, still on old dummy values -->
+
                             <quays>
-                                <Quay id="q:sp:osl:7:spor1" version="any">
+                                <!-- Spor 1 -->
+                                
+                               
+                                <Quay id="NHR:Quay:100" version="any">
                                     <Centroid>
                                         <Location>
-                                            <Longitude>21</Longitude>
-                                            <Latitude>11</Latitude>
-                                            <Altitude>0</Altitude>
+                                            <!-- Koordinater ikke korrekt -->
+                                            <Longitude>59.9117492</Longitude>
+                                            <Latitude>10.749849</Latitude>
                                         </Location>
                                     </Centroid>
-                                    <PublicCode>Spor 1</PublicCode>
-                                    <PlateCode>Spor 1</PlateCode>
-                                    <CompassBearing>120.0</CompassBearing>
+                                    <Covered>covered</Covered>
+
+                                    <PublicCode>1</PublicCode>
+
                                     <QuayType>railPlatform</QuayType>
                                     <boardingPositions>
-                                        <BoardingPosition id="aa:bp:ruter:9" version="any">
-                                            <AccessibilityAssessment id="aa:bp:ruter:9" version="any">
-                                                <MobilityImpairedAccess>true</MobilityImpairedAccess>
-                                                <suitabilities>
-                                                    <Suitability>
-                                                        <MobilityNeed>wheelchair</MobilityNeed>
-                                                        <Suitable>suitable</Suitable>
-                                                    </Suitability>
-                                                </suitabilities>
-                                            </AccessibilityAssessment>
+                                        <BoardingPosition id="NHR:BoardingPosition:1" version="any">
                                             <PublicCode>A</PublicCode>
                                             <BoardingPositionType>positionOnRailPlatform</BoardingPositionType>
                                         </BoardingPosition>
-                                        <BoardingPosition id="aa:bp:ruter:10" version="any">
-                                            <AccessibilityAssessment id="aa:bp:ruter:10" version="any">
-                                                <MobilityImpairedAccess>true</MobilityImpairedAccess>
-                                                <suitabilities>
-                                                    <Suitability>
-                                                        <MobilityNeed>wheelchair</MobilityNeed>
-                                                        <Suitable>notSuitable</Suitable>
-                                                    </Suitability>
-                                                </suitabilities>
-                                            </AccessibilityAssessment>
+                                        <BoardingPosition id="NHR:BoardingPosition:2" version="any">
                                             <PublicCode>B</PublicCode>
+                                            <BoardingPositionType>positionOnRailPlatform</BoardingPositionType>
+                                        </BoardingPosition>
+                                        <BoardingPosition id="NHR:BoardingPosition:3" version="any">
+                                            <PublicCode>C</PublicCode>
+                                            <BoardingPositionType>positionOnRailPlatform</BoardingPositionType>
+                                        </BoardingPosition>
+                                        <BoardingPosition id="NHR:BoardingPosition:4" version="any">
+                                            <PublicCode>D</PublicCode>
+                                            <BoardingPositionType>positionOnRailPlatform</BoardingPositionType>
+                                        </BoardingPosition>
+                                        <BoardingPosition id="NHR:BoardingPosition:5" version="any">
+                                            <PublicCode>E</PublicCode>
+                                            <BoardingPositionType>positionOnRailPlatform</BoardingPositionType>
+                                        </BoardingPosition>
+                                        <BoardingPosition id="NHR:BoardingPosition:6" version="any">
+                                            <PublicCode>F</PublicCode>
                                             <BoardingPositionType>positionOnRailPlatform</BoardingPositionType>
                                         </BoardingPosition>
                                     </boardingPositions>
                                 </Quay>
-                                <Quay id="q:sp:osl:7:spor2" version="any">
-                                    <Centroid>
-                                        <Location>
-                                            <Longitude>21</Longitude>
-                                            <Latitude>11</Latitude>
-                                            <Altitude>0</Altitude>
-                                        </Location>
-                                    </Centroid>
-                                    <PublicCode>Spor 1</PublicCode>
-                                    <PlateCode>Spor 1</PlateCode>
-                                    <CompassBearing>120.0</CompassBearing>
-                                    <QuayType>railPlatform</QuayType>
-                                    <boardingPositions>
-                                        <BoardingPosition id="aa:bp:ruter:11" version="any">
-                                            <AccessibilityAssessment id="aa:bp:ruter:11" version="any">
-                                                <MobilityImpairedAccess>true</MobilityImpairedAccess>
-                                                <suitabilities>
-                                                    <Suitability>
-                                                        <MobilityNeed>wheelchair</MobilityNeed>
-                                                        <Suitable>suitable</Suitable>
-                                                    </Suitability>
-                                                </suitabilities>
-                                            </AccessibilityAssessment>
-                                            <PublicCode>A</PublicCode>
-                                            <BoardingPositionType>positionOnRailPlatform</BoardingPositionType>
-                                        </BoardingPosition>
-                                        <BoardingPosition id="aa:bp:ruter:12" version="any">
-                                            <AccessibilityAssessment id="aa:bp:ruter:12" version="any">
-                                                <MobilityImpairedAccess>true</MobilityImpairedAccess>
-                                                <suitabilities>
-                                                    <Suitability>
-                                                        <MobilityNeed>wheelchair</MobilityNeed>
-                                                        <Suitable>notSuitable</Suitable>
-                                                    </Suitability>
-                                                </suitabilities>
-                                            </AccessibilityAssessment>
-                                            <!-- This boarding position is used by Flytog (airport express train) -->
-                                            <TransportMode>rail</TransportMode>
-                                            <RailSubmode>highSpeedRail</RailSubmode>
-                                            <PublicCode>B</PublicCode>
-                                            <BoardingPositionType>positionOnRailPlatform</BoardingPositionType>
-                                        </BoardingPosition>
-                                    </boardingPositions>
-                                </Quay>
+
+
+                                <!-- Alle andre spor anses å være identiske bortsett fra PublicCode (1-21?), derfor ikke tatt med her -->
                             </quays>
                             <accessSpaces>
-                                <AccessSpace id="as:osl:7" version="any">
+                                <!-- Hovedhallen på Oslo S. Etasjer er ikke modellert opp her, men kan gjøres på sikt. Østbanehallen er også utelatt. -->
+                                <AccessSpace id="NHR:AccessSpace:1" version="any">
+  
+                                    <gml:Polygon gml:id="OsloS">
+                                        <!-- Omriss av innsiden på Oslo S hovedbanehallen -->
+                                        <gml:interior>
+                                            <gml:LinearRing>
+                                                <gml:pos>10.12 59.383</gml:pos>
+                                                <gml:pos>10.11 59.373</gml:pos>
+                                                <gml:pos>10.10 59.363</gml:pos>
+                                                <gml:pos>10.12 59.343</gml:pos>
+                                            </gml:LinearRing>
+                                        </gml:interior>
+                                    </gml:Polygon>
                                     <PublicUse>all</PublicUse>
                                     <Covered>indoors</Covered>
-                                    <Gated>unknown</Gated>
+  
                                     <Lighting>wellLit</Lighting>
                                     <AllAreasWheelchairAccessible>true</AllAreasWheelchairAccessible>
-                                    <LevelRef ref="sp:osl:7:lvl1"/>
+                                    
                                     <equipmentPlaces>
-                                        <EquipmentPlace id="eq:osl:7" version="any">
+                                        <EquipmentPlace id="NHR:EquipmentPlace:1" version="any">
                                             <Centroid>
                                                 <Location>
-                                                    <Longitude>-113.148</Longitude>
-                                                    <Latitude>48.875</Latitude>
-                                                    <Altitude>2361.791</Altitude>
+                                                    <!-- Koordinater ikke korrekt -->
+                                                    <Longitude>59.9117492</Longitude>
+                                                    <Latitude>10.749849</Latitude>
                                                 </Location>
                                             </Centroid>
                                             <placeEquipments>
-                                                <TicketingEquipment id="pe:te:osl:7" version="any">
+                                                <TicketingEquipment id="NHR:TicketingEquipment:1" version="any">
                                                     <VehicleModes>rail bus</VehicleModes>
-                                                    <TicketMachines>true</TicketMachines>
                                                     <NumberOfMachines>4</NumberOfMachines>
-                                                    <HeightOfMachineInterface>204835368.789</HeightOfMachineInterface>
                                                     <TicketingFacilityList>ticketOffice mobileTicketing
                                                         ticketMachines</TicketingFacilityList>
                                                     <TicketingServiceFacilityList>reservations purchase</TicketingServiceFacilityList>
-                                                    <TicketOffice>false</TicketOffice>
-                                                    <TicketCounter>true</TicketCounter>
-                                                    <NumberOfTills>1</NumberOfTills>
-                                                    <QueueManagement>none</QueueManagement>
-                                                    <PaymentMethods>debitCard cashAndCard contactlessPaymentCard
-                                                        mobilePhone</PaymentMethods>
-                                                    <TicketTypesAvailable>standard</TicketTypesAvailable>
-                                                    <LowCounterAccess>false</LowCounterAccess>
                                                 </TicketingEquipment>
                                             </placeEquipments>
                                         </EquipmentPlace>
                                     </equipmentPlaces>
-                                    <localServices>
-                                        <MeetingPointService id="mps:osl:7" version="any">
-                                            <MeetingPointServiceType>meetingPoint</MeetingPointServiceType>
-                                        </MeetingPointService>
-                                    </localServices>
+
                                     <entrances>
-                                        <StopPlaceEntranceRef ref="sp:osl:7:entr:1"/>
+                                        <StopPlaceEntranceRef ref="NHR:Entrance:1"/>
                                     </entrances>
-                                    <AccessSpaceType>passage</AccessSpaceType>
+                                    <AccessSpaceType>concourse</AccessSpaceType>
                                 </AccessSpace>
                             </accessSpaces>
                             <navigationPaths>
@@ -633,36 +557,8 @@
                             </navigationPaths>
                         </StopPlace>
                     </stopPlaces>
-                    <parkings>
-                        <Parking id="par:osl:1" version="any">
-                            <Name>Oslo S P-hus</Name>
-                            <Centroid>
-                                <Location>
-                                    <Longitude>-113.148</Longitude>
-                                    <Latitude>48.875</Latitude>
-                                    <Altitude>2361.791</Altitude>
-                                </Location>
-                            </Centroid>
-                            <Covered>indoors</Covered>
-                            <ParentSiteRef ref="sp:osl:7"/>
-                            <navigationPaths>
-                                <NavigationPathRef ref="np:2"/>
-                            </navigationPaths>
-                            <ParkingType>trainStationParking</ParkingType>
-                            <ParkingLayout>multistorey</ParkingLayout>
-                            <PrincipalCapacity>100</PrincipalCapacity>
-                            <TotalCapacity>120</TotalCapacity>
-                            <OvernightParkingPermitted>true</OvernightParkingPermitted>
-                            <RechargingAvailable>true</RechargingAvailable>
-                            <ParkingReservation>reservationAllowed</ParkingReservation>
-                            <parkingProperties>
-                                <ParkingProperties>
-                                    <ParkingUserTypes>visitors</ParkingUserTypes>
-                                    <MaximumStay>P7D</MaximumStay>
-                                </ParkingProperties>
-                            </parkingProperties>
-                        </Parking>
-                    </parkings>
+                    
+                    
                     <navigationPaths>
                         <!-- Path between Entrance to Oslo S and platform 1 (spor 1) -->
                         <NavigationPath id="np:1" version="any">
@@ -705,6 +601,7 @@
                             <NavigationType>streetToHall</NavigationType>
                         </NavigationPath>
                     </navigationPaths>
+                    
                     <siteFacilitySets>
                         <SiteFacilitySet id="sfs:1" version="any">
                             <AccessibilityInfoFacilityList>largePrintTimetables audioForHearingImpaired audioInformation
@@ -715,7 +612,7 @@
                         </SiteFacilitySet>
                     </siteFacilitySets>
                 </SiteFrame>
-             
+
             </frames>
         </CompositeFrame>
     </dataObjects>
