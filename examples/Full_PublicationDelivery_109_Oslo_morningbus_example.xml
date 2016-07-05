@@ -759,7 +759,6 @@
 				<!-- ===SERVICE CALENDAR FRAME=== -->
 				<ServiceCalendarFrame version="1" id="unibuss:scf:01">
 					<ServiceCalendar version="any" id="unibuss:sc:01">
-						<FromDate>2016-04-03</FromDate>
 						
 						<!-- ############################# -->
 						<!-- (for alternative description) -->
