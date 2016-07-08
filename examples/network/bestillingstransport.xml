@@ -72,6 +72,17 @@ Passing times may be defined for each zone (entry and exit time), or for each st
 
 				<!-- Referanser til stoppestedregisteret -->
 				<SiteFrame version="any" id="RUT:SiteFrame:1">
+<!-- 
+Hanaborg
+59.938586, 10.966605
+
+Lørenskog sentrum
+59.927963, 10.954812
+
+Triaden
+(Gamleveien 88C, 1476 Rasta)
+59.919880, 10.953399 
+-->					
 					<stopPlaces>
 						<!-- Codespace NHR pga data fra sentralt stoppestedregister -->
 						<StopPlace version="any" id="NHR:StopArea:CODE-HANABORGST">
