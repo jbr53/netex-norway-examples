@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- === Basic Service Calendar datatype exaple === -->
+<!-- === Basic Service Calendar datatype example === -->
 <PublicationDelivery
   version="1.0"
   xmlns="http://www.netex.org.uk/netex"
@@ -12,82 +12,102 @@
 	<dataObjects>
 		<CompositeFrame version="any" id="RUT:cf:1">
 			<frames>
-				
-			    <ServiceCalendarFrame version="any" id="RUT:ServiceCalendarFrame:1">
-			        <ServiceCalendar version="any" id="RUT:ServiceCalendar">
-			            <Name>Ukedager</Name>
-			            <FromDate>2016-04-01</FromDate>
-			            <ToDate>2016-08-31</ToDate>
-			        </ServiceCalendar>
-			        <dayTypes>
-			            <DayType version="any" id="RUT:DayType:weekdays">
-			                <Name>Ukedager</Name>
-			                <properties>
-			                    <PropertyOfDay>
-			                        <DaysOfWeek>Monday Tuesday Wednesday Thursday Friday</DaysOfWeek>
-			                    </PropertyOfDay>
-			                </properties>
-			            </DayType>
-			            <DayType version="any" id="RUT:DayType:Saturday">
-			                <Name>Lordag</Name>
-			                <properties>
-			                    <PropertyOfDay>
-			                        <DaysOfWeek>Saturday</DaysOfWeek>
-			                    </PropertyOfDay>
-			                </properties>
-			            </DayType>
-			            <DayType version="any" id="RUT:DayType:Sunday">
-			                <Name>Sondag</Name>
-			                <properties>
-			                    <PropertyOfDay>
-			                        <DaysOfWeek>Sunday</DaysOfWeek>
-			                    </PropertyOfDay>
-			                </properties>
-			            </DayType>
-			        </dayTypes>
-			        <timebands>
-			            <Timeband version="any" id="RUT:Timeband:TM15">
-			                <!--Name>15 minutes past the hour</Name-->
-			                <StartTime>00:15:00</StartTime>
-			            </Timeband>
-			        </timebands>
-			    	<operatingDays>
-			    		<OperatingDay version="any" id="RUT:OperatingDay:default:1">
-			    			<CalendarDate>2016-05-01</CalendarDate>
-			    			<EarliestTime>10:10:00</EarliestTime>
-			    		</OperatingDay>
-			    		<OperatingDay version="any" id="RUT:od:default:2">
-			    			<CalendarDate>2016-07-07</CalendarDate>
-			    			<EarliestTime>11:11:00</EarliestTime>
-			    			<DayLength>PT5H10M</DayLength>
-			    		</OperatingDay>
+
+				<ServiceCalendarFrame version="any" id="RUT:ServiceCalendarFrame:1">
+					<ServiceCalendar version="any" id="RUT:ServiceCalendar">
+						<Name>Ukedager</Name>
+						<FromDate>2016-04-01</FromDate>
+						<ToDate>2016-08-31</ToDate>
+					</ServiceCalendar>
+					<dayTypes>
+						<DayType version="any" id="RUT:DayType:weekdays">
+							<Name>Ukedager</Name>
+							<properties>
+								<PropertyOfDay>
+									<DaysOfWeek>Monday Tuesday Wednesday Thursday Friday</DaysOfWeek>
+								</PropertyOfDay>
+							</properties>
+						</DayType>
+						<DayType version="any" id="RUT:DayType:Saturday">
+							<Name>Lordag</Name>
+							<properties>
+								<PropertyOfDay>
+									<DaysOfWeek>Saturday</DaysOfWeek>
+								</PropertyOfDay>
+							</properties>
+						</DayType>
+						<DayType version="any" id="RUT:DayType:Sunday">
+							<Name>Sondag</Name>
+							<properties>
+								<PropertyOfDay>
+									<DaysOfWeek>Sunday</DaysOfWeek>
+								</PropertyOfDay>
+							</properties>
+						</DayType>
+						<!-- Irregular examples: -->
+						<DayType version="any" id="RUT:DayType:SpringMarketDay">
+							<Name>Market day</Name>
+							<properties>
+								<PropertyOfDay>
+									<DaysOfWeek>Sunday</DaysOfWeek>
+									<WeeksOfMonth>3 4</WeeksOfMonth>
+									<MonthOfYear>--04</MonthOfYear>									
+								</PropertyOfDay>
+							</properties>
+						</DayType>
+						<DayType version="any" id="RUT:DayType:ConstitutionDay">
+							<Name>National constitution day 17. may</Name>
+							<properties>
+								<PropertyOfDay>
+									<DayOfYear>--05-17</DayOfYear>							
+								</PropertyOfDay>
+							</properties>
+						</DayType>
+					</dayTypes>
+					<timebands>
+						<Timeband version="any" id="RUT:Timeband:TM15">
+							<!--Name>15 minutes past the hour</Name-->
+							<StartTime>00:15:00</StartTime>
+						</Timeband>
+					</timebands>
+					<operatingDays>
+						<OperatingDay version="any" id="RUT:OperatingDay:default:1">
+							<CalendarDate>2016-05-01</CalendarDate>
+							<EarliestTime>10:10:00</EarliestTime>
+						</OperatingDay>
+						<OperatingDay version="any" id="RUT:od:default:2">
+							<CalendarDate>2016-07-07</CalendarDate>
+							<EarliestTime>11:11:00</EarliestTime>
+							<DayLength>PT5H10M</DayLength>
+						</OperatingDay>
 					</operatingDays>
-			    	<operatingPeriods>
-			    		<OperatingPeriod version="any" id="RUT:op:default">
-			    			<FromOperatingDayRef ref="RUT:OperatingDay:default:1"/>
-			    			<ToOperatingDayRef ref="RUT:od:default:2"/>
-			    		</OperatingPeriod>
-			    	</operatingPeriods>
-			    	<dayTypeAssignments>
-			    		<!-- enkeltdato -->
-			    		<DayTypeAssignment version="any" order="1" id="RUT:DayTypeAssignment:date">
-			    			<Date>2016-05-17</Date> <!-- nasjonaldag, annet ruteplan -->
-			    			<DayTypeRef version="any" ref="RUT:DayType:Sunday"/>
-			    		</DayTypeAssignment>
-			    		<!-- enkeltdag -->
-			    		<DayTypeAssignment version="any" order="1" id="RUT:DayTypeAssignment:day">
-			    			<OperatingDayRef ref="RUT:OperatingDay:default:1"/>
-			    			<DayTypeRef version="any" ref="RUT:DayType:Sunday"/>
-			    		</DayTypeAssignment>
+					<operatingPeriods>
+						<OperatingPeriod version="any" id="RUT:op:default">
+							<FromOperatingDayRef ref="RUT:OperatingDay:default:1"/>
+							<ToOperatingDayRef ref="RUT:od:default:2"/>
+						</OperatingPeriod>
+					</operatingPeriods>
+					<dayTypeAssignments>
+						<!-- enkeltdato -->
+						<DayTypeAssignment version="any" order="1" id="RUT:DayTypeAssignment:date">
+							<Date>2016-05-17</Date>
+							<!-- nasjonaldag, annet ruteplan -->
+							<DayTypeRef version="any" ref="RUT:DayType:Sunday"/>
+						</DayTypeAssignment>
+						<!-- enkeltdag -->
+						<DayTypeAssignment version="any" order="1" id="RUT:DayTypeAssignment:day">
+							<OperatingDayRef ref="RUT:OperatingDay:default:1"/>
+							<DayTypeRef version="any" ref="RUT:DayType:Sunday"/>
+						</DayTypeAssignment>
 						<!-- periode -->
 						<DayTypeAssignment version="any" order="1" id="RUT:DayTypeAssignment:period">
 							<OperatingPeriodRef ref="RUT:OperatingPeriod:default"/>
 							<DayTypeRef version="any" ref="RUT:DayType:weekdays"/>
 						</DayTypeAssignment>
 					</dayTypeAssignments>
-			    </ServiceCalendarFrame>
+				</ServiceCalendarFrame>
 
-				<!-- Dummy Service and Timetable frames (for reference) --> 
+				<!-- Dummy Service and Timetable frames (for reference) -->
 				<ServiceFrame version="1" id="RUT:sf:1">
 					<routes>
 						<Route version="any" id="RUT:rt:default"/>
@@ -105,20 +125,20 @@
 					</journeyPatterns>
 				</ServiceFrame>
 
-                <TimetableFrame version="any" id="RUT:tf:1">
-                    <vehicleJourneys>
+				<TimetableFrame version="any" id="RUT:tf:1">
+					<vehicleJourneys>
 						<ServiceJourney version="any" id="RUT:ServiceJourney:default">
-                            <dayTypes>
+							<dayTypes>
 								<DayTypeRef ref="RUT:DayType:weekdays"/>
-                            	<DayTypeRef ref="RUT:DayType:Saturday"/>
-                            	<DayTypeRef ref="RUT:DayType:Sunday"/>
+								<DayTypeRef ref="RUT:DayType:Saturday"/>
+								<DayTypeRef ref="RUT:DayType:Sunday"/>
 							</dayTypes>
 							<JourneyPatternRef ref="RUT:JourneyPattern:default"/>
-                            <LineRef ref="RUT:line:default"/>
-						    <!-- ...(stops etc)... -->
+							<LineRef ref="RUT:line:default"/>
+							<!-- ...(stops etc)... -->
 						</ServiceJourney>
-                    </vehicleJourneys>
-                </TimetableFrame>
+					</vehicleJourneys>
+				</TimetableFrame>
 			</frames>
 		</CompositeFrame>
 	</dataObjects>
