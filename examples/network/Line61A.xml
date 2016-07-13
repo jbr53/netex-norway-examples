@@ -166,14 +166,12 @@
                                 <PointOnRoute version="any" id="RUT:PointOnRoute:0061101001-0">
                                     <RoutePointRef version="1" ref="RUT:RoutePoint:0061101A0A0061101001"/>
                                 </PointOnRoute>
-                              
                                 <PointOnRoute version="any" id="RUT:PointOnRoute:0061101003-2">
                                     <RoutePointRef version="1" ref="RUT:RoutePoint:0061101A2A0061101003"/>
                                 </PointOnRoute>
                                 <PointOnRoute version="any" id="RUT:PointOnRoute:0061101004-3">
                                     <RoutePointRef version="1" ref="RUT:RoutePoint:0061101A3A0061101004"/>
                                 </PointOnRoute>
-                              
                                 <PointOnRoute version="any" id="RUT:PointOnRoute:0061101007-6">
                                     <RoutePointRef version="1" ref="RUT:RoutePoint:0061101A6A0061101007"/>
                                 </PointOnRoute>
@@ -364,8 +362,6 @@
                     <vehicleJourneys>
                         <!-- Her defineres en TemplateServiceJourney. Den sier at avgangstidene er de samme, men i dette tilfellet med et rytmisk mønster (hvert. 15 minutt over hel) -->
                         <TemplateServiceJourney version="any" id="RUT:TemplateServiceJourney:0061">
-                            <!-- Første avgang -->
-                            <!--DepartureTime>00:15:00</DepartureTime-->
                             <dayTypes>
                                 <!-- Refererer til 1 daytype som inneholder alle dager mandag-lørdag. Kunne vært separate dagtyper, men da måtte alle listes her -->
                                 <DayTypeRef version="any" ref="RUT:DayType:MonSat"/>
