@@ -10,8 +10,6 @@
   xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd">
     <PublicationTimestamp>2016-05-20T15:03:03Z</PublicationTimestamp>
     <ParticipantRef>RUT</ParticipantRef>
-    
-
     <!-- Description er frivillig -->
     <Description>Ruter linje 61A: Tveita Solfjellet</Description>
 
@@ -272,7 +270,6 @@
                             </pointsInSequence>
                         </ServicePattern>
                     </servicePatterns>
-                    
 
                     <!-- Kobling fra ScheduledStopPoint til StopPlace/Quay. Legg merke til at StopPlace og Quay hører til i NHR-codespace mens ScheduleStopPoint hører til i RUT-codespacet -->
                     <stopAssignments>
@@ -365,7 +362,6 @@
                     <!-- Kjøres buss om ikke noe annet er spesifisert -->
                     <DefaultMode>bus</DefaultMode>
                     <vehicleJourneys>
-
                         <!-- Her defineres en TemplateServiceJourney. Den sier at avgangstidene er de samme, men i dette tilfellet med et rytmisk mønster (hvert. 15 minutt over hel) -->
                         <TemplateServiceJourney version="any" id="RUT:TemplateServiceJourney:0061">
                             <!-- Første avgang -->
@@ -412,7 +408,7 @@
                                 <TimetabledPassingTime>
                                     <!-- Tveita -->
                                     <StopPointInJourneyPatternRef ref="RUT:StopPointInJourneyPattern:0061101007"/>
-                                    <DepartureTime>00:31:00</DepartureTime>
+                                    <ArrivalTime>00:31:00</ArrivalTime>
                                 </TimetabledPassingTime>
                             </passingTimes>
                             <frequencyGroups>

@@ -276,23 +276,25 @@
 							<DestinationDisplayRef ref="unibuss:dd:holtet"/>
 							<pointsInSequence>
 								<!-- TODO: Legg inn korrekte holdeplasskoder -->
-								<StopPointInJourneyPattern version="any" id="unibuss:spijp:CODE-1" order="1">
+								<StopPointInJourneyPattern version="any" id="unibuss:spijp:helfyr_t" order="1">
 									<ScheduledStopPointRef ref="unibuss:ssp:helfyr_t"/>
+									<ForAlighting>false</ForAlighting>
 								</StopPointInJourneyPattern>
-								<StopPointInJourneyPattern version="any" id="unibuss:spijp:CODE-2" order="2">
+								<StopPointInJourneyPattern version="any" id="unibuss:spijp:brynseng_t" order="2">
 									<ScheduledStopPointRef ref="unibuss:ssp:brynseng_t"/>
 								</StopPointInJourneyPattern>
-								<StopPointInJourneyPattern version="any" id="unibuss:spijp:CODE-3" order="3">
+								<StopPointInJourneyPattern version="any" id="unibuss:spijp:hoyenhall_t" order="3">
 									<ScheduledStopPointRef ref="unibuss:ssp:hoyenhall_t"/>
 								</StopPointInJourneyPattern>
-								<StopPointInJourneyPattern version="any" id="unibuss:spijp:CODE-4" order="4">
+								<StopPointInJourneyPattern version="any" id="unibuss:spijp:manglerud_t" order="4">
 									<ScheduledStopPointRef ref="unibuss:ssp:manglerud_t"/>
 								</StopPointInJourneyPattern>
-								<StopPointInJourneyPattern version="any" id="unibuss:spijp:CODE-5" order="5">
+								<StopPointInJourneyPattern version="any" id="unibuss:spijp:ryen_t" order="5">
 									<ScheduledStopPointRef ref="unibuss:ssp:ryen_t"/>
 								</StopPointInJourneyPattern>
-								<StopPointInJourneyPattern version="any" id="unibuss:spijp:CODE-6" order="6">
+								<StopPointInJourneyPattern version="any" id="unibuss:spijp:holtet" order="6">
 									<ScheduledStopPointRef ref="unibuss:ssp:holtet"/>
+									<ForBoarding>false</ForBoarding>
 								</StopPointInJourneyPattern>
 							</pointsInSequence>
 						</ServiceJourneyPattern>
@@ -317,58 +319,38 @@
 							</dayTypes>
 							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
 							<LineRef ref="unibuss:line:109"/>
-							<calls>
-								<Call>
+							<passingTimes>
+								<TimetabledPassingTime>
 									<!-- Helsfyr T -->
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
-									<Arrival>
-										<!-- Kun påstigning -->
-										<ForAlighting>false</ForAlighting>
-									</Arrival>
-									<Departure>
-										<Time>04:30:00</Time>
-									</Departure>
-								</Call>
-								<Call>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:helfyr_t"/>
+									<DepartureTime>04:30:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
 									<!-- Brynseng T -->
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
-									<Departure>
-										<Time>04:32:00</Time>
-									</Departure>
-								</Call>
-								<Call>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:brynseng_t"/>
+									<DepartureTime>04:32:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
 									<!-- Høyenhall T -->
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
-									<Departure>
-										<Time>04:33:00</Time>
-									</Departure>
-								</Call>
-								<Call>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:hoyenhall_t"/>
+									<DepartureTime>04:33:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
 									<!-- Manglerud T -->
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
-									<Departure>
-										<Time>04:34:00</Time>
-									</Departure>
-								</Call>
-								<Call>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:manglerud_t"/>
+									<DepartureTime>04:34:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
 									<!-- Ryen T -->
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:ryen_t"/>
-									<Departure>
-										<Time>04:35:00</Time>
-									</Departure>
-								</Call>
-								<Call>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:ryen_t"/>
+									<DepartureTime>04:35:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
 									<!-- Holtet -->
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:holtet"/>
-									<Arrival>
-										<Time>04:40:00</Time>
-									</Arrival>
-									<Departure>
-										<!-- Kun avstigning -->
-										<ForBoarding>false</ForBoarding>
-									</Departure>
-								</Call>
-							</calls>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:holtet"/>
+									<ArrivalTime>04:40:00</ArrivalTime>
+								</TimetabledPassingTime>
+							</passingTimes>
 						</ServiceJourney>
 
 						<ServiceJourney version="any" id="unibuss:sj:109:CODE-0500">
@@ -377,52 +359,32 @@
 							</dayTypes>
 							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
 							<LineRef ref="unibuss:line:109"/>
-							<calls>
-								<Call>
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
-									<Arrival>
-										<!-- Kun påstigning -->
-										<ForAlighting>false</ForAlighting>
-									</Arrival>
-									<Departure>
-										<Time>05:00:00</Time>
-									</Departure>
-								</Call>
-								<Call>
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
-									<Departure>
-										<Time>05:02:00</Time>
-									</Departure>
-								</Call>
-								<Call>
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
-									<Departure>
-										<Time>05:03:00</Time>
-									</Departure>
-								</Call>
-								<Call>
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
-									<Departure>
-										<Time>05:04:00</Time>
-									</Departure>
-								</Call>
-								<Call>
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:ryen_t"/>
-									<Departure>
-										<Time>05:05:00</Time>
-									</Departure>
-								</Call>
-								<Call>
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:holtet"/>
-									<Arrival>
-										<Time>05:10:00</Time>
-									</Arrival>
-									<Departure>
-										<!-- Kun avstigning -->
-										<ForBoarding>false</ForBoarding>
-									</Departure>
-								</Call>
-							</calls>
+							<passingTimes>
+								<TimetabledPassingTime>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:helfyr_t"/>
+									<DepartureTime>05:00:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:brynseng_t"/>
+									<DepartureTime>05:02:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:hoyenhall_t"/>
+									<DepartureTime>05:03:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:manglerud_t"/>
+									<DepartureTime>05:04:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:ryen_t"/>
+									<DepartureTime>05:05:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:holtet"/>
+									<ArrivalTime>05:10:00</ArrivalTime>
+								</TimetabledPassingTime>
+							</passingTimes>
 						</ServiceJourney>
 
 						<ServiceJourney version="any" id="unibuss:sj:109:CODE-0530">
@@ -433,58 +395,38 @@
 							</dayTypes>
 							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
 							<LineRef ref="unibuss:line:109"/>
-							<calls>
-								<Call>
+							<passingTimes>
+								<TimetabledPassingTime>
 									<!-- Helsfyr T -->
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
-									<Arrival>
-										<!-- Kun påstigning -->
-										<ForAlighting>false</ForAlighting>
-									</Arrival>
-									<Departure>
-										<Time>05:30:00</Time>
-									</Departure>
-								</Call>
-								<Call>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:helfyr_t"/>
+									<DepartureTime>05:30:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
 									<!-- Brynseng T -->
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
-									<Departure>
-										<Time>05:32:00</Time>
-									</Departure>
-								</Call>
-								<Call>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:brynseng_t"/>
+									<DepartureTime>05:32:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
 									<!-- Høyenhall T -->
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
-									<Departure>
-										<Time>05:33:00</Time>
-									</Departure>
-								</Call>
-								<Call>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:hoyenhall_t"/>
+									<DepartureTime>05:33:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
 									<!-- Manglerud T -->
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
-									<Departure>
-										<Time>05:34:00</Time>
-									</Departure>
-								</Call>
-								<Call>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:manglerud_t"/>
+									<DepartureTime>05:34:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
 									<!-- Ryen T -->
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:ryen_t"/>
-									<Departure>
-										<Time>05:35:00</Time>
-									</Departure>
-								</Call>
-								<Call>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:ryen_t"/>
+									<DepartureTime>05:35:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
 									<!-- Holtet -->
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:holtet"/>
-									<Arrival>
-										<Time>05:40:00</Time>
-									</Arrival>
-									<Departure>
-										<!-- Kun avstigning -->
-										<ForBoarding>false</ForBoarding>
-									</Departure>
-								</Call>
-							</calls>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:holtet"/>
+									<ArrivalTime>05:40:00</ArrivalTime>
+								</TimetabledPassingTime>
+							</passingTimes>
 						</ServiceJourney>
 
 						<ServiceJourney version="any" id="unibuss:sj:109:CODE-0600">
@@ -494,52 +436,32 @@
 							</dayTypes>
 							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
 							<LineRef ref="unibuss:line:109"/>
-							<calls>
-								<Call>
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
-									<Arrival>
-										<!-- Kun påstigning -->
-										<ForAlighting>false</ForAlighting>
-									</Arrival>
-									<Departure>
-										<Time>06:00:00</Time>
-									</Departure>
-								</Call>
-								<Call>
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
-									<Departure>
-										<Time>06:02:00</Time>
-									</Departure>
-								</Call>
-								<Call>
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
-									<Departure>
-										<Time>06:03:00</Time>
-									</Departure>
-								</Call>
-								<Call>
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
-									<Departure>
-										<Time>06:04:00</Time>
-									</Departure>
-								</Call>
-								<Call>
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:ryen_t"/>
-									<Departure>
-										<Time>06:06:00</Time>
-									</Departure>
-								</Call>
-								<Call>
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:holtet"/>
-									<Arrival>
-										<Time>06:10:00</Time>
-									</Arrival>
-									<Departure>
-										<!-- Kun avstigning -->
-										<ForBoarding>false</ForBoarding>
-									</Departure>
-								</Call>
-							</calls>
+							<passingTimes>
+								<TimetabledPassingTime>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:helfyr_t"/>
+									<DepartureTime>06:00:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:brynseng_t"/>
+									<DepartureTime>06:02:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:hoyenhall_t"/>
+									<DepartureTime>06:03:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:manglerud_t"/>
+									<DepartureTime>06:04:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:ryen_t"/>
+									<DepartureTime>06:06:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:holtet"/>
+									<ArrivalTime>06:10:00</ArrivalTime>
+								</TimetabledPassingTime>
+							</passingTimes>
 						</ServiceJourney>
 
 						<ServiceJourney version="any" id="unibuss:sj:109:CODE-0630">
@@ -550,58 +472,38 @@
 							</dayTypes>
 							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
 							<LineRef ref="unibuss:line:109"/>
-							<calls>
-								<Call>
+							<passingTimes>
+								<TimetabledPassingTime>
 									<!-- Helsfyr T -->
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
-									<Arrival>
-										<!-- Kun påstigning -->
-										<ForAlighting>false</ForAlighting>
-									</Arrival>
-									<Departure>
-										<Time>06:30:00</Time>
-									</Departure>
-								</Call>
-								<Call>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:helfyr_t"/>
+									<DepartureTime>06:30:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
 									<!-- Brynseng T -->
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
-									<Departure>
-										<Time>06:32:00</Time>
-									</Departure>
-								</Call>
-								<Call>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:brynseng_t"/>
+									<DepartureTime>06:32:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
 									<!-- Høyenhall T -->
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
-									<Departure>
-										<Time>06:33:00</Time>
-									</Departure>
-								</Call>
-								<Call>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:hoyenhall_t"/>
+									<DepartureTime>06:33:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
 									<!-- Manglerud T -->
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
-									<Departure>
-										<Time>06:34:00</Time>
-									</Departure>
-								</Call>
-								<Call>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:manglerud_t"/>
+									<DepartureTime>06:34:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
 									<!-- Ryen T -->
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:ryen_t"/>
-									<Departure>
-										<Time>06:35:00</Time>
-									</Departure>
-								</Call>
-								<Call>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:ryen_t"/>
+									<DepartureTime>06:35:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
 									<!-- Holtet -->
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:holtet"/>
-									<Arrival>
-										<Time>06:40:00</Time>
-									</Arrival>
-									<Departure>
-										<!-- Kun avstigning -->
-										<ForBoarding>false</ForBoarding>
-									</Departure>
-								</Call>
-							</calls>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:holtet"/>
+									<ArrivalTime>06:40:00</ArrivalTime>
+								</TimetabledPassingTime>
+							</passingTimes>
 						</ServiceJourney>
 
 						<ServiceJourney version="any" id="unibuss:sj:109:CODE-0700">
@@ -610,52 +512,32 @@
 							</dayTypes>
 							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
 							<LineRef ref="unibuss:line:109"/>
-							<calls>
-								<Call>
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
-									<Arrival>
-										<!-- Kun påstigning -->
-										<ForAlighting>false</ForAlighting>
-									</Arrival>
-									<Departure>
-										<Time>07:00:00</Time>
-									</Departure>
-								</Call>
-								<Call>
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
-									<Departure>
-										<Time>07:02:00</Time>
-									</Departure>
-								</Call>
-								<Call>
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
-									<Departure>
-										<Time>07:03:00</Time>
-									</Departure>
-								</Call>
-								<Call>
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
-									<Departure>
-										<Time>07:04:00</Time>
-									</Departure>
-								</Call>
-								<Call>
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:ryen_t"/>
-									<Departure>
-										<Time>07:07:00</Time>
-									</Departure>
-								</Call>
-								<Call>
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:holtet"/>
-									<Arrival>
-										<Time>07:10:00</Time>
-									</Arrival>
-									<Departure>
-										<!-- Kun avstigning -->
-										<ForBoarding>false</ForBoarding>
-									</Departure>
-								</Call>
-							</calls>
+							<passingTimes>
+								<TimetabledPassingTime>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:helfyr_t"/>
+									<DepartureTime>07:00:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:brynseng_t"/>
+									<DepartureTime>07:02:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:hoyenhall_t"/>
+									<DepartureTime>07:03:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:manglerud_t"/>
+									<DepartureTime>07:04:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:ryen_t"/>
+									<DepartureTime>07:07:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:holtet"/>
+									<ArrivalTime>07:10:00</ArrivalTime>
+								</TimetabledPassingTime>
+							</passingTimes>
 						</ServiceJourney>
 
 						<!-- ########################### -->
@@ -669,52 +551,32 @@
 							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
 							<RhythmicalJourneyGroupRef ref="unibuss:rjg:weekdays"/>
 							<LineRef ref="unibuss:line:109"/>
-							<calls>
-								<Call>
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
-									<Arrival>
-										<!-- Kun påstigning -->
-										<ForAlighting>false</ForAlighting>
-									</Arrival>
-									<Departure>
-										<Time>00:30:00</Time>
-									</Departure>
-								</Call>
-								<Call>
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
-									<Departure>
-										<Time>00:32:00</Time>
-									</Departure>
-								</Call>
-								<Call>
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
-									<Departure>
-										<Time>00:03:00</Time>
-									</Departure>
-								</Call>
-								<Call>
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
-									<Departure>
-										<Time>00:04:00</Time>
-									</Departure>
-								</Call>
-								<Call>
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:ryen_t"/>
-									<Departure>
-										<Time>00:07:00</Time>
-									</Departure>
-								</Call>
-								<Call>
-									<ScheduledStopPointRef version="any" ref="unibuss:ssp:holtet"/>
-									<Arrival>
-										<Time>00:10:00</Time>
-									</Arrival>
-									<Departure>
-										<!-- Kun avstigning -->
-										<ForBoarding>false</ForBoarding>
-									</Departure>
-								</Call>
-							</calls>
+							<passingTimes>
+								<TimetabledPassingTime>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:helfyr_t"/>
+									<DepartureTime>00:30:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:brynseng_t"/>
+									<DepartureTime>00:32:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:hoyenhall_t"/>
+									<DepartureTime>00:03:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:manglerud_t"/>
+									<DepartureTime>00:04:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:ryen_t"/>
+									<DepartureTime>00:07:00</DepartureTime>
+								</TimetabledPassingTime>
+								<TimetabledPassingTime>
+									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:holtet"/>
+									<ArrivalTime>00:10:00</ArrivalTime>
+								</TimetabledPassingTime>
+							</passingTimes>
 						</TemplateServiceJourney>
 						<!-- ########################### -->
 						<!-- Etc. (similarly for other departures) -->
@@ -771,7 +633,6 @@
 								<StartTime>00:30:00</StartTime>
 							</Timeband>
 						</timebands>
-						
 					</ServiceCalendar>
 					
 					<dayTypes>
