@@ -544,7 +544,6 @@
 						<!-- ALTERNATE DESCRIPTION pt. 1 -->
 						<!-- ########################### -->
 						<TemplateServiceJourney version="any" id="unibuss:tsj:109:weekdays">
-							<DepartureTime>04:30:00</DepartureTime>
 							<dayTypes>
 								<DayTypeRef ref="unibuss:dt:weekday"/>
 							</dayTypes>
@@ -562,19 +561,19 @@
 								</TimetabledPassingTime>
 								<TimetabledPassingTime>
 									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:hoyenhall_t"/>
-									<DepartureTime>00:03:00</DepartureTime>
+									<DepartureTime>00:33:00</DepartureTime>
 								</TimetabledPassingTime>
 								<TimetabledPassingTime>
 									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:manglerud_t"/>
-									<DepartureTime>00:04:00</DepartureTime>
+									<DepartureTime>00:34:00</DepartureTime>
 								</TimetabledPassingTime>
 								<TimetabledPassingTime>
 									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:ryen_t"/>
-									<DepartureTime>00:07:00</DepartureTime>
+									<DepartureTime>00:37:00</DepartureTime>
 								</TimetabledPassingTime>
 								<TimetabledPassingTime>
 									<StopPointInJourneyPatternRef version="any" ref="unibuss:spijp:holtet"/>
-									<ArrivalTime>00:10:00</ArrivalTime>
+									<ArrivalTime>00:40:00</ArrivalTime>
 								</TimetabledPassingTime>
 							</passingTimes>
 						</TemplateServiceJourney>
@@ -628,9 +627,11 @@
 						<timebands>
 							<Timeband version="any" id="unibuss:t:fullhour">
 								<StartTime>00:00:00</StartTime>
+								<EndTime>00:00:00</EndTime>
 							</Timeband>
 							<Timeband version="any" id="unibuss:t:halfhour">
 								<StartTime>00:30:00</StartTime>
+								<EndTime>00:30:00</EndTime>
 							</Timeband>
 						</timebands>
 					</ServiceCalendar>
