@@ -8,6 +8,12 @@ Ref. NetexStandardPart1 s 584:
 A stop can occur anywhere in each Zone. 
 Stops served, and stop order will be defined four each vehicle journey according to the reservations. 
 Passing times may be defined for each zone (entry and exit time), or for each stop."
+
+Se eksempel:
+example/functions/timetable/Netex_07.2_Bus_FlexibleTimetable_WithPattern.xml
+
+flexiblearea er modellert som et stop i journeypattern 
+(stoppointinjourneypattern har scheduledstoppoint som er assigned til flexiblestopplace vha. flexiblestopassignment) 
 -->
 <PublicationDelivery 
   version="1.0" 

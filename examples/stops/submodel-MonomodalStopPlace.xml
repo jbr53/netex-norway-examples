@@ -50,7 +50,6 @@ This example desceribes a simple on-street stop place with quays, but without sp
             <PassengerInformationFacilityList>passengerInformationDisplay realTimeConnections</PassengerInformationFacilityList>
         </SiteFacilitySet>
     </facilities>
-    <PublicCode>PublicCode4</PublicCode>
     <!-- Details about available transport types -->
     <TransportMode>bus</TransportMode>
     <BusSubmode>localBus</BusSubmode>
@@ -86,7 +85,6 @@ This example desceribes a simple on-street stop place with quays, but without sp
             <Lighting>wellLit</Lighting>
             <AlightingUse>true</AlightingUse>
             <Label lang="en-US">Label1</Label>
-            <PublicCode>PublicCode7</PublicCode>
             <CompassOctant>SW</CompassOctant>
             <QuayType>busStop</QuayType>
         </Quay>

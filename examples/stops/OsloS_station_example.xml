@@ -39,7 +39,6 @@
                     </dataSources>
                     <organisations>
                         <Authority id="Authority:0" version="any">
-                            <PublicCode>Rutebanken</PublicCode>
                             <CompanyNumber>000000000</CompanyNumber>
                             <Name>Rutebanken</Name>
                             <LegalName>RUTEBANKEN AS</LegalName>
@@ -194,7 +193,6 @@
                             <Covered>outdoors</Covered>
                             <Gated>openArea</Gated>
                             <OrganisationRef ref="org:auth:ruter"/>
-                            <PublicCode>Jernbanetorget</PublicCode>
                             <TransportMode>bus</TransportMode>
                             <OtherTransportModes>tram</OtherTransportModes>
                             <tariffZones>
@@ -467,40 +465,37 @@
                                         </Location>
                                     </Centroid>
                                     <Covered>covered</Covered>
-
-                                    <PublicCode>1</PublicCode>
-
                                     <QuayType>railPlatform</QuayType>
                                     <boardingPositions>
                                         <BoardingPosition id="NHR:BoardingPosition:1" version="any">
-                                            <PublicCode>A</PublicCode>
+                                            <Label>A</Label>
                                             <BoardingPositionType>positionOnRailPlatform</BoardingPositionType>
                                         </BoardingPosition>
                                         <BoardingPosition id="NHR:BoardingPosition:2" version="any">
-                                            <PublicCode>B</PublicCode>
+                                            <Label>B</Label>
                                             <BoardingPositionType>positionOnRailPlatform</BoardingPositionType>
                                         </BoardingPosition>
                                         <BoardingPosition id="NHR:BoardingPosition:3" version="any">
-                                            <PublicCode>C</PublicCode>
+                                            <Label>C</Label>
                                             <BoardingPositionType>positionOnRailPlatform</BoardingPositionType>
                                         </BoardingPosition>
                                         <BoardingPosition id="NHR:BoardingPosition:4" version="any">
-                                            <PublicCode>D</PublicCode>
+                                            <Label>D</Label>
                                             <BoardingPositionType>positionOnRailPlatform</BoardingPositionType>
                                         </BoardingPosition>
                                         <BoardingPosition id="NHR:BoardingPosition:5" version="any">
-                                            <PublicCode>E</PublicCode>
+                                            <Label>E</Label>
                                             <BoardingPositionType>positionOnRailPlatform</BoardingPositionType>
                                         </BoardingPosition>
                                         <BoardingPosition id="NHR:BoardingPosition:6" version="any">
-                                            <PublicCode>F</PublicCode>
+                                            <Label>F</Label>
                                             <BoardingPositionType>positionOnRailPlatform</BoardingPositionType>
                                         </BoardingPosition>
                                     </boardingPositions>
                                 </Quay>
 
 
-                                <!-- Alle andre spor anses å være identiske bortsett fra PublicCode (1-21?), derfor ikke tatt med her -->
+                                <!-- Alle andre spor anses å være identiske (bortsett fra 1-21?), derfor ikke tatt med her -->
                             </quays>
                             <accessSpaces>
                                 <!-- Hovedhallen på Oslo S. Etasjer er ikke modellert opp her, men kan gjøres på sikt. Østbanehallen er også utelatt. -->

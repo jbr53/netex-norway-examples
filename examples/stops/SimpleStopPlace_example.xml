@@ -86,7 +86,6 @@ Frames (gruppering)
 										</PassengerInformationEquipment>
 									</placeEquipments>
 									<Label lang="no-NO">A</Label>
-									<PublicCode>XX</PublicCode>
 									<CompassOctant>NE</CompassOctant>
 									<QuayType>busStop</QuayType>
 								</Quay>
@@ -112,7 +111,6 @@ Frames (gruppering)
 										</PassengerInformationEquipment>
 									</placeEquipments>
 									<Label lang="no-NO">B</Label>
-									<PublicCode>XY</PublicCode>
 									<CompassOctant>SW</CompassOctant>
 									<QuayType>busStop</QuayType>
 								</Quay>
