@@ -19,7 +19,9 @@ flexiblearea er modellert som et stop i journeypattern
   version="1.0" 
   xmlns="http://www.netex.org.uk/netex" 
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:gml="http://www.opengis.net/gml/3.2"
   xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd">
+	
 	<PublicationTimestamp>2016-07-07T16:07:07Z</PublicationTimestamp>
 	<ParticipantRef>RUT</ParticipantRef>
 	<Description>Bestillingslinje 863</Description>
@@ -78,30 +80,6 @@ flexiblearea er modellert som et stop i journeypattern
 
 				<!-- Referanser til stoppestedregisteret -->
 				<SiteFrame version="any" id="RUT:SiteFrame:1">
-<!-- 
-Hanaborg
-59.938586, 10.966605
-
-Lørenskog sentrum
-59.927963, 10.954812
-
-Triaden
-(Gamleveien 88C, 1476 Rasta)
-59.919880, 10.953399 
--->					
-					
-<!-- 
-Bestillingslinjen kjøres i områdene nord for toglinjen i Lørenskog; 
-Øvre Grønlia, Hanaborglia, Fridjof Nansens vei og Steinbekkveien 
-men har ikke fast trasé.
--->					
-					<!-- foreløpig kun modellert de faste stoppene -->
-					<!--flexibleStopPlaces>
-						<FlexibleStopPlace>
-							...
-						</FlexibleStopPlace>
-					</flexibleStopPlaces-->
-					
 					<stopPlaces>
 						<StopPlace version="any" id="testing" derivedFromObjectRef="fdkahfdsajfhdlksajhljeal"></StopPlace>
 						<!-- Codespace NHR pga data fra sentralt stoppestedregister -->
@@ -125,6 +103,65 @@ men har ikke fast trasé.
 							</quays>
 						</StopPlace>
 					</stopPlaces>
+<!-- 
+Hanaborg
+59.938586, 10.966605
+
+Lørenskog sentrum
+59.927963, 10.954812
+
+Triaden
+(Gamleveien 88C, 1476 Rasta)
+59.919880, 10.953399 
+-->					
+					
+			<flexibleStopPlaces>
+						<FlexibleStopPlace version="any" id="mybus:FlexibleStopPlace:fsp_Tau">
+							<Name>Fleksisone 863</Name>
+							<ShortName>863</ShortName>
+							<Description>Area around Beta ville</Description>
+							<Centroid>
+								<Location>
+									<Longitude>53.0000</Longitude>
+									<Latitude>0.1000</Latitude>
+								</Location>
+							</Centroid>
+							<areas>
+								<!-- 
+								Bestillingslinjen kjøres i områdene nord for toglinjen i Lørenskog; 
+								Øvre Grønlia, Hanaborglia, Fridjof Nansens vei og Steinbekkveien 
+								men har ikke fast trasé.
+								-->
+								<FlexibleArea version="any" id="mybus:FlexibleArea:fa_Tau_01">
+									<Name>ZONE Tau    Area 1 -   </Name>
+									<ShortName>Sigma 1</ShortName>
+									<Centroid>
+										<Location>
+											<gml:pos>12345.76</gml:pos>
+											<Precision>12</Precision>
+										</Location>
+									</Centroid>
+									<gml:Polygon srsName="wgs84" gml:id="b1234">
+										<gml:exterior>
+											<gml:LinearRing>
+												<gml:pos>59.938831 10.966611</gml:pos>
+												<gml:pos>59.943369 10.952606</gml:pos>
+												<gml:pos>59.944642 10.962742</gml:pos>
+												<gml:pos>59.950631 10.984097</gml:pos>
+												<gml:pos>59.945957 10.989036</gml:pos>
+												<gml:pos>59.940764 10.981718</gml:pos>
+											</gml:LinearRing>
+										</gml:exterior>
+									</gml:Polygon>
+									<TransportMode> bus</TransportMode>
+									<BoardingUse>true</BoardingUse>
+									<AlightingUse>true</AlightingUse>
+								</FlexibleArea>
+							</areas>
+						</FlexibleStopPlace>
+					</flexibleStopPlaces>
+					
+
 				</SiteFrame>
 
 
