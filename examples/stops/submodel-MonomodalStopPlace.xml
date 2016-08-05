@@ -8,10 +8,9 @@ This example desceribes a simple on-street stop place with quays, but without sp
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/netex_part_1/part1_ifopt/netex_ifopt_stopPlace_version-v1.0.xsd"
     id="id0" created="2006-05-04T18:13:51.0" version="any" status="active" >
-    <Name lang="en-US">Name0</Name>
-    <ShortName lang="en-US">ShortName0</ShortName>
-    <Description lang="en-US">Description0</Description>
-    <PrivateCode>PrivateCode0</PrivateCode>
+    <Name lang="en-US">Name</Name>
+    <Description lang="en-US">Description</Description>
+    <PrivateCode>PrivateCode</PrivateCode>
     <!-- Point where the stop should be placed on the map -->
     <Centroid>
         <Location>
@@ -38,8 +37,8 @@ This example desceribes a simple on-street stop place with quays, but without sp
         <AlternativeName>
             <Lang>no-NO</Lang>
             <NameType>alias</NameType>
-            <TypeOfName>TypeOfName0</TypeOfName>
-            <Name lang="no-NO">Name9</Name>
+            <TypeOfName>TypeOfName</TypeOfName>
+            <Name lang="no-NO">Name</Name>
         </AlternativeName>
     </alternativeNames>
     <!-- What kind of facilities are available -->
@@ -65,8 +64,8 @@ This example desceribes a simple on-street stop place with quays, but without sp
     <quays>
         <QuayRef ref="ref195" version="any"/>
         <Quay id="id201" version="any">
-            <Name lang="en-US">Name27</Name>
-            <Description lang="en-US">Description14</Description>
+            <Name lang="en-US">Name</Name>
+            <Description lang="en-US">Description</Description>
             <Centroid>
                 <Location>
                     <Longitude>0</Longitude>
@@ -77,8 +76,8 @@ This example desceribes a simple on-street stop place with quays, but without sp
                 </Location>
             </Centroid>
             <RoadAddress>
-                <RoadNumber>RoadNumber2</RoadNumber>
-                <RoadName lang="en-US">RoadName2</RoadName>
+                <RoadNumber>RoadNumber</RoadNumber>
+                <RoadName lang="en-US">RoadName</RoadName>
             </RoadAddress>
             <Covered>indoors</Covered>
             <Gated>gatedArea</Gated>

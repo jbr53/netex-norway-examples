@@ -58,7 +58,6 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 					<stopPlaces>
 						<StopPlace version="any" responsibilitySetRef="bastofosen:drs" id="bastofosen:sp:horten">
 							<Name>Horten kai</Name>
-							<ShortName>Horten</ShortName>
 							<Centroid>
 								<Location>
 									<gml:pos srsName="WGS84" srsDimension="2">59.24438 10.29211</gml:pos>
@@ -69,12 +68,9 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 						</StopPlace>
 						<StopPlace version="any" responsibilitySetRef="bastofosen:drs" id="bastofosen:sp:moss">
 							<Name>Moss kai</Name>
-							<ShortName>Moss</ShortName>
-							<Centroid>
 								<Location>
 									<gml:pos srsName="WGS84" srsDimension="2">59.25491 10.39146</gml:pos>
 								</Location>
-							</Centroid>
 							<TransportMode>water</TransportMode>
 							<StopPlaceType>ferryStop</StopPlaceType>
 						</StopPlace>
@@ -97,7 +93,6 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 					<lines>
 						<Line version="any" id="bastofosen:line">
 							<Name>Ferje Horten Moss</Name>
-							<ShortName>Mosseferjen</ShortName>
 							<TransportMode>water</TransportMode>
 							<PublicCode/>
 							<routes>
@@ -113,12 +108,10 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 					<destinationDisplays>
 						<DestinationDisplay version="any" id="bastofosen:dd:moss">
 							<Name>Moss ferjekai</Name>
-							<ShortName>Moss</ShortName>
 							<PublicCode>Moss kai</PublicCode>
 						</DestinationDisplay>
 						<DestinationDisplay version="any" id="bastofosen:dd:horten">
 							<Name>Horten ferjekai</Name>
-							<ShortName>Horten</ShortName>
 							<PublicCode>Horten kai</PublicCode>
 						</DestinationDisplay>
 					</destinationDisplays>
@@ -130,7 +123,6 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 								<Longitude>59.25491</Longitude>
 								<Latitude>10.39146</Latitude>
 							</Location>
-							<ShortName>Horten</ShortName>
 						</ScheduledStopPoint>
 						<ScheduledStopPoint version="any" id="bastofosen:ssp:horten">
 							<Name>Hortenkaia</Name>
@@ -138,7 +130,6 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 								<Longitude>59.24438</Longitude>
 								<Latitude>10.29211</Latitude>
 							</Location>
-							<ShortName>Horten</ShortName>
 						</ScheduledStopPoint>
 					</scheduledStopPoints>
 					<!--- =========SERVICE LINKs=========== -->

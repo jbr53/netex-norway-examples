@@ -117,31 +117,18 @@ Triaden
 					
 			<flexibleStopPlaces>
 						<FlexibleStopPlace version="any" id="mybus:FlexibleStopPlace:fsp_Tau">
-							<Name>Fleksisone 863</Name>
-							<ShortName>863</ShortName>
-							<Description>Area around Beta ville</Description>
-							<Centroid>
-								<Location>
-									<Longitude>53.0000</Longitude>
-									<Latitude>0.1000</Latitude>
-								</Location>
-							</Centroid>
-							<areas>
-								<!-- 
+							<Name>Fleksisone for linje 863</Name>
+							<Description>
 								Bestillingslinjen kjøres i områdene nord for toglinjen i Lørenskog; 
 								Øvre Grønlia, Hanaborglia, Fridjof Nansens vei og Steinbekkveien 
 								men har ikke fast trasé.
-								-->
+							</Description>
+							<TransportMode>bus</TransportMode>
+							<areas>
 								<FlexibleArea version="any" id="mybus:FlexibleArea:fa_Tau_01">
-									<Name>ZONE Tau    Area 1 -   </Name>
-									<ShortName>Sigma 1</ShortName>
-									<Centroid>
-										<Location>
-											<gml:pos>12345.76</gml:pos>
-											<Precision>12</Precision>
-										</Location>
-									</Centroid>
-									<gml:Polygon srsName="wgs84" gml:id="b1234">
+									<Name></Name>
+									<Description></Description>
+									<gml:Polygon srsName="wgs84" gml:id="hanaborg">
 										<gml:exterior>
 											<gml:LinearRing>
 												<gml:pos>59.938831 10.966611</gml:pos>
@@ -153,9 +140,6 @@ Triaden
 											</gml:LinearRing>
 										</gml:exterior>
 									</gml:Polygon>
-									<TransportMode> bus</TransportMode>
-									<BoardingUse>true</BoardingUse>
-									<AlightingUse>true</AlightingUse>
 								</FlexibleArea>
 							</areas>
 						</FlexibleStopPlace>

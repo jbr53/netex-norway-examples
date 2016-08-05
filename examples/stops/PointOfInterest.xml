@@ -126,7 +126,6 @@ The example  comprises
 				<!--- =====POINT OF INTEREST=========== -->
 				<PointOfInterest version="any" responsibilitySetRef="tbd:ResponsibilitySet:LRS_01" id="tbd:PointOfInterest:POI_23">
 					<Name>Frampton Football Stadium</Name>
-					<ShortName>Frampton FC</ShortName>
 					<Description>Frampton FC Football Stadium</Description>
 					<Centroid>
 						<Location>
@@ -165,11 +164,9 @@ The example  comprises
 					<levels>
 						<Level version="any" id="tbd:Level:POI_23_Lvl_01_lower">
 							<Name>Ground</Name>
-							<ShortName>Ground</ShortName>
 						</Level>
 						<Level version="any" id="tbd:Level:POI_23_Lvl_02_upper">
 							<Name>Upper Terrace</Name>
-							<ShortName>Upper</ShortName>
 						</Level>
 					</levels>
 					<entrances>
