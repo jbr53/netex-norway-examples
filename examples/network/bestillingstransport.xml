@@ -81,42 +81,32 @@ flexiblearea er modellert som et stop i journeypattern
 				<!-- Referanser til stoppestedregisteret -->
 				<SiteFrame version="any" id="RUT:SiteFrame:1">
 					<stopPlaces>
-						<StopPlace version="any" id="testing" derivedFromObjectRef="fdkahfdsajfhdlksajhljeal"></StopPlace>
 						<!-- Codespace NHR pga data fra sentralt stoppestedregister -->
-						<StopPlace version="any" id="NHR:StopArea:CODE-HANABORGST">
+						<StopPlace version="any" id="NHR:StopPlace:CODE-HANABORGST">
+							<!-- Hanaborg stasjon (59.938586, 10.966605) -->
 							<Name lang="NO-NB">Hanaborg stasjon</Name>
 							<quays>
 								<Quay version="any" id="NHR:Quay:CODE-HANABORGST-QUAY"/>
 							</quays>
 						</StopPlace>
-						<StopPlace version="any" id="NHR:StopArea:CODE-LORENSKOGSENTRUM">
+						<StopPlace version="any" id="NHR:StopPlace:CODE-LORENSKOGSENTRUM">
+							<!-- Lørenskog sentrum (59.927963, 10.954812) -->
 							<Name>Lørenskog sentrum</Name>
 							<quays>
 								<Quay version="any" id="NHR:Quay:CODE-LORENSKOGSENTRUM-QUAY"/>
 							</quays>
 						</StopPlace>
-						<StopPlace version="any" id="NHR:StopArea:CODE-TRIADEN-ENTRANCE">
+						<StopPlace version="any" id="NHR:StopPlace:CODE-TRIADEN-ENTRANCE">
 							<Name>Triaden</Name>
-							<!-- Gamleveien 88C, 1476 Rasta (utenfor hovdeinngang Triaden) -->
+							<!-- Gamleveien 88C, 1476 Rasta (utenfor hovdeinngang Triaden: 59.919880, 10.953399) -->
 							<quays>
 								<Quay version="any" id="NHR:Quay:CODE-TRIADEN-ENTRANCE-QUAY"/>
 							</quays>
 						</StopPlace>
-					</stopPlaces>
-<!-- 
-Hanaborg
-59.938586, 10.966605
-
-Lørenskog sentrum
-59.927963, 10.954812
-
-Triaden
-(Gamleveien 88C, 1476 Rasta)
-59.919880, 10.953399 
--->					
+					</stopPlaces>				
 					
-			<flexibleStopPlaces>
-						<FlexibleStopPlace version="any" id="mybus:FlexibleStopPlace:fsp_Tau">
+					<flexibleStopPlaces>
+						<FlexibleStopPlace version="any" id="NHR:FlexibleStopPlace:CODE-HANABORG-NORD">
 							<Name>Fleksisone for linje 863</Name>
 							<Description>
 								Bestillingslinjen kjøres i områdene nord for toglinjen i Lørenskog; 
@@ -125,9 +115,7 @@ Triaden
 							</Description>
 							<TransportMode>bus</TransportMode>
 							<areas>
-								<FlexibleArea version="any" id="mybus:FlexibleArea:fa_Tau_01">
-									<Name></Name>
-									<Description></Description>
+								<FlexibleArea version="any" id="NHR:FlexibleArea:CODE-HANABORG-NORD-AREA">
 									<gml:Polygon srsName="wgs84" gml:id="hanaborg">
 										<gml:exterior>
 											<gml:LinearRing>
@@ -144,10 +132,7 @@ Triaden
 							</areas>
 						</FlexibleStopPlace>
 					</flexibleStopPlaces>
-					
-
 				</SiteFrame>
-
 
 
 				<ServiceFrame version="any" id="RUT:ServiceFrame:863">
@@ -155,11 +140,19 @@ Triaden
 						<Name>Ruter# bestillingslinjer</Name>
 					</Network>
 					<routePoints>
+						<!-- Flexi-sone Hanaborg Nord -->
+						<RoutePoint version="any" id="NHR:FlexibleStopPlace:CODE-HANABORG-NORD">
+							<projections>
+								<ZoneProjection version="any" id="NHR:ZoneProjection:CODE-HANABORG-NORD-ZONE">
+									<ProjectedZoneRef ref="NHR:FlexibleArea:CODE-HANABORG-NORD-AREA"/>
+								</ZoneProjection>
+							</projections>
+						</RoutePoint>
 						<!-- Hanaborg stasjon -->
 						<RoutePoint version="any" id="RUT:RoutePoint:ID-HANABORG">
 							<projections>
 								<PointProjection version="any" id="RUT:PointProjection:ID-HANABORG">
-									<ProjectedPointRef version="any" ref="NHR:StopArea:CODE-HANABORGST"/>
+									<ProjectedPointRef version="any" ref="NHR:StopPlace:CODE-HANABORGST"/>
 								</PointProjection>
 							</projections>
 						</RoutePoint>
@@ -167,7 +160,7 @@ Triaden
 						<RoutePoint version="any" id="RUT:RoutePoint:ID-LORENSKOGSENTRUM">
 							<projections>
 								<PointProjection version="any" id="RUT:PointProjection:ID-LORENSKOGSENTRUM">
-									<ProjectedPointRef version="any" ref="NHR:StopArea:CODE-LORENSKOGSENTRUM"/>
+									<ProjectedPointRef version="any" ref="NHR:StopPlace:CODE-LORENSKOGSENTRUM"/>
 								</PointProjection>
 							</projections>
 						</RoutePoint>
@@ -175,13 +168,37 @@ Triaden
 						<RoutePoint version="any" id="RUT:RoutePoint:ID-TRIADEN">
 							<projections>
 								<PointProjection version="any" id="RUT:PointProjection:ID-TRIADEN">
-									<ProjectedPointRef version="any" ref="NHR:StopArea:CODE-TRIADEN"/>
+									<ProjectedPointRef version="any" ref="NHR:StopPlace:CODE-TRIADEN"/>
 								</PointProjection>
 							</projections>
 						</RoutePoint>
 					</routePoints>
 
 					<routes>
+						
+						<Route version="any" id="mybus:Route:RT_24o">
+							<!--
+							<Name>Line 24 Alpha to Charley   </Name>
+							<DirectionType>outbound</DirectionType>
+							<DirectionRef version="any" ref="mybus:Direction:DR_Westbound"/>
+							-->
+							<!--
+							<pointsInSequence>
+								<PointOnRoute version="any" id="mybus:PointOnRoute:RT_24o_01" order="1">
+									<RoutePointRef version="any" ref="mybus:RoutePoint:RP_001"/>
+								</PointOnRoute>
+								<PointOnRoute version="any" id="mybus:PointOnRoute:RT_24o_02" order="2">
+									<RoutePointRef version="any" ref="mybus:RoutePoint:RP_002"/>
+								</PointOnRoute>
+								<PointOnRoute version="any" id="mybus:PointOnRoute:RT_24o_03" order="3">
+									<RoutePointRef version="any" ref="mybus:RoutePoint:RP_077"/>
+								</PointOnRoute>
+							</pointsInSequence>
+							-->
+						</Route>
+						
+						
+<!--
 						<FlexibleRoute version="any" id="RUT:FlexibleRoute:863:TUR">
 							<Name>Hanaborg St - Lørenskog - Triaden</Name>
 							<LineRef ref="RUT:FlexibleLine:863"/>
@@ -195,7 +212,6 @@ Triaden
 								<PointOnRoute version="any" id="RUT:PointOnRoute:ID-TRIADEN:TUR">
 									<RoutePointRef version="any" ref="RUT:RoutePoint:ID-TRIADEN"/>
 								</PointOnRoute>
-								<!-- TODO: FlexibleArea -->
 							</pointsInSequence>
 							<InverseRouteRef ref="RUT:FlexibleRoute:863:RETUR"/>
 							<FlexibleRouteType>flexibleAreasOnly</FlexibleRouteType>
@@ -213,11 +229,11 @@ Triaden
 								<PointOnRoute version="any" id="RUT:PointOnRoute:ID-TRIADEN:RETUR">
 									<RoutePointRef version="any" ref="RUT:RoutePoint:ID-TRIADEN"/>
 								</PointOnRoute>
-								<!-- TODO: FlexibleArea -->
 							</pointsInSequence>
 							<InverseRouteRef ref="RUT:FlexibleRoute:863:TUR"/>
 							<FlexibleRouteType>flexibleAreasOnly</FlexibleRouteType>
 						</FlexibleRoute>
+-->
 					</routes>
 
 					<lines>
@@ -323,12 +339,12 @@ F.eks. Ruters bestillingslinjer er derimot vanligvis
 						</PassengerStopAssignment>
 						<PassengerStopAssignment version="any" order="1" id="RUT:PassengerStopAssignment:CODE-LORENSKOG">
 							<ScheduledStopPointRef ref="RUT:ScheduledStopPoint:ID-LORENSKOG"/>
-							<StopPlaceRef version="any" ref="NHR:StopArea:CODE-LORENSKOGSENTRUM"/>
+							<StopPlaceRef version="any" ref="NHR:StopPlace:CODE-LORENSKOGSENTRUM"/>
 							<QuayRef version="any" ref="NHR:Quay:CODE-LORENSKOGSENTRUM-QUAY"/>
 						</PassengerStopAssignment>
 						<PassengerStopAssignment version="any" order="1" id="RUT:PassengerStopAssignment:CODE-TRIADEN">
 							<ScheduledStopPointRef version="any" ref="RUT:ScheduledStopPoint:ID-TRIADEN"/>
-							<StopPlaceRef version="any" ref="NHR:StopArea:CODE-TRIADEN-ENTRANCE"/>
+							<StopPlaceRef version="any" ref="NHR:StopPlace:CODE-TRIADEN-ENTRANCE"/>
 							<QuayRef version="any" ref="NHR:Quay:CODE-TRIADEN-ENTRANCE-QUAY"/>
 						</PassengerStopAssignment>
 					</stopAssignments>
