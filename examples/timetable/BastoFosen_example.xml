@@ -68,9 +68,11 @@ xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xs
 						</StopPlace>
 						<StopPlace version="any" responsibilitySetRef="bastofosen:drs" id="bastofosen:sp:moss">
 							<Name>Moss kai</Name>
+							<Centroid>
 								<Location>
 									<gml:pos srsName="WGS84" srsDimension="2">59.25491 10.39146</gml:pos>
 								</Location>
+							</Centroid>
 							<TransportMode>water</TransportMode>
 							<StopPlaceType>ferryStop</StopPlaceType>
 						</StopPlace>
