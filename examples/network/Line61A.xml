@@ -319,7 +319,7 @@
                     <noticeAssignments>
                         <NoticeAssignment version="any" id="RUT:NoticeAssignment:1" order="1">
                             <NoticeRef ref="RUT:Notice:1"/>
-                            <RouteRef ref="RUT:Route:0061101"/>
+                            <NoticedObjectRef ref="RUT:Route:0061101"/>
                         </NoticeAssignment>
                     </noticeAssignments>
                 </ServiceFrame>
