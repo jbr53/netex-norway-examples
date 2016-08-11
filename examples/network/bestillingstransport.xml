@@ -151,7 +151,7 @@ example/functions/timetable/Netex_07.2_Bus_FlexibleTimetable_WithPattern.xml
 					
 					<routePoints>
 						<!-- Flexi-sone Hanaborg Nord -->
-						<RoutePoint version="any" id="NHR:FlexibleStopPlace:CODE-HANABORG-NORD">
+						<RoutePoint version="any" id="RUT:RoutePoint:ID-HANABORG-NORD">
 							<projections>
 								<ZoneProjection version="any" id="NHR:ZoneProjection:CODE-HANABORG-NORD-ZONE">
 									<ProjectedZoneRef ref="NHR:FlexibleArea:CODE-HANABORG-NORD-AREA"/>
@@ -189,16 +189,16 @@ example/functions/timetable/Netex_07.2_Bus_FlexibleTimetable_WithPattern.xml
 							<Name>863 til Lørenskog sentrum</Name>
 							<DirectionRef version="any" ref="NHR:Direction:TilLorenskog"/>
 							<pointsInSequence>
-								<PointOnRoute version="any" id="NHR:PointOnRoute:ID-HANABORG-NORD-HENTING" order="1">
-									<RoutePointRef version="any" ref="NHR:FlexibleStopPlace:CODE-HANABORG-NORD"/>
+								<PointOnRoute version="any" id="RUT:PointOnRoute:ID-HANABORG-NORD-HENTING" order="1">
+									<RoutePointRef version="any" ref="RUT:RoutePoint:ID-HANABORG-NORD"/>
 								</PointOnRoute>
-								<PointOnRoute version="any" id="NHR:PointOnRoute:ID-HANABORG-TIL" order="2">
+								<PointOnRoute version="any" id="RUT:PointOnRoute:ID-HANABORG-TIL" order="2">
 									<RoutePointRef version="any" ref="RUT:RoutePoint:ID-HANABORG"/>
 								</PointOnRoute>
-								<PointOnRoute version="any" id="NHR:PointOnRoute:ID-LORENSKOGSENTRUM-TIL" order="3">
+								<PointOnRoute version="any" id="RUT:PointOnRoute:ID-LORENSKOGSENTRUM-TIL" order="3">
 									<RoutePointRef version="any" ref="RUT:RoutePoint:ID-LORENSKOGSENTRUM"/>
 								</PointOnRoute>
-								<PointOnRoute version="any" id="NHR:PointOnRoute:ID-TRIADEN-TIL" order="4">
+								<PointOnRoute version="any" id="RUT:PointOnRoute:ID-TRIADEN-TIL" order="4">
 									<RoutePointRef version="any" ref="RUT:RoutePoint:ID-TRIADEN"/>
 								</PointOnRoute>
 							</pointsInSequence>
@@ -209,17 +209,17 @@ example/functions/timetable/Netex_07.2_Bus_FlexibleTimetable_WithPattern.xml
 							<Name>863 til Lørenskog sentrum</Name>
 							<DirectionRef version="any" ref="NHR:Direction:FraLorenskog"/>
 							<pointsInSequence>
-								<PointOnRoute version="any" id="NHR:PointOnRoute:ID-TRIADEN-FRA" order="1">
+								<PointOnRoute version="any" id="RUT:PointOnRoute:ID-TRIADEN-FRA" order="1">
 									<RoutePointRef version="any" ref="RUT:RoutePoint:ID-TRIADEN"/>
 								</PointOnRoute>
-								<PointOnRoute version="any" id="NHR:PointOnRoute:ID-LORENSKOGSENTRUM-FRA" order="2">
+								<PointOnRoute version="any" id="RUT:PointOnRoute:ID-LORENSKOGSENTRUM-FRA" order="2">
 									<RoutePointRef version="any" ref="RUT:RoutePoint:ID-LORENSKOGSENTRUM"/>
 								</PointOnRoute>
-								<PointOnRoute version="any" id="NHR:PointOnRoute:ID-HANABORG-FRA" order="3">
+								<PointOnRoute version="any" id="RUT:PointOnRoute:ID-HANABORG-FRA" order="3">
 									<RoutePointRef version="any" ref="RUT:RoutePoint:ID-HANABORG"/>
 								</PointOnRoute>								
-								<PointOnRoute version="any" id="NHR:PointOnRoute:ID-HANABORG-NORD-LEVERING" order="4">
-									<RoutePointRef version="any" ref="NHR:FlexibleStopPlace:CODE-HANABORG-NORD"/>
+								<PointOnRoute version="any" id="RUT:PointOnRoute:ID-HANABORG-NORD-LEVERING" order="4">
+									<RoutePointRef version="any" ref="RUT:RoutePoint:ID-HANABORG-NORD"/>
 								</PointOnRoute>
 							</pointsInSequence>
 							<InverseRouteRef ref="RUT:Route:863:TilLorenskog"/>
