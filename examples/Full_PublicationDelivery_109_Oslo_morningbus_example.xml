@@ -53,9 +53,14 @@
 							<CompanyNumber>985615616</CompanyNumber>
 							<Name>Unibuss</Name>
 							<LegalName>UNIBUSS AS</LegalName>
+							<ContactDetails>
+								<Email>post@unibuss.no </Email>
+								<Phone>22 08 43 00</Phone>
+								<Url>www.unibuss.no</Url>
+							</ContactDetails>
 							<CustomerServiceContactDetails>
 								<Phone>0047 177</Phone>
-								<Url>www.unibuss.no</Url>
+								<Url>www.unibuss.no</Url>								
 							</CustomerServiceContactDetails>
 						</Operator>
 					</organisations>
@@ -184,18 +189,18 @@
 					</routePoints>
 					
 					<!-- ===ROUTE=== -->
-					
-					<!-- TODO: Definere hvordan vi ønsker DIRECTION ift norsk profil -->
-					<!--directions>
-						<Direction version="any" id="unibuss:direction:outbound">
-							<DirectionType>outbound</DirectionType>
-						</Direction>
-					</directions-->
-					<!-- VS: -->
 					<routes>
 						<Route version="any" id="unibuss:rt:109">
 							<Name>Morgenbuss Helsfyr - Holtet</Name>
 							<DirectionType>outbound</DirectionType>
+							<pointsInSequence>
+								<PointOnRoute version="any" id="unibuss:por:109:start">
+									<RoutePointRef version="any" ref="unibuss:routepoint:helsfyr"/>
+								</PointOnRoute>
+								<PointOnRoute version="any" id="unibuss:por:109:end">
+									<RoutePointRef version="any" ref="unibuss:routepoint:holtet"/>
+								</PointOnRoute>
+							</pointsInSequence>
 						</Route>
 					</routes>
 					
@@ -271,7 +276,7 @@
 
 					<!-- ===JOURNEY PATTERNs=== -->
 					<journeyPatterns>
-						<ServiceJourneyPattern version="any" id="unibuss:sjp:109">
+						<JourneyPattern version="any" id="unibuss:jp:109">
 							<RouteRef ref="unibuss:rt:109"/>
 							<DestinationDisplayRef ref="unibuss:dd:holtet"/>
 							<pointsInSequence>
@@ -297,7 +302,7 @@
 									<ForBoarding>false</ForBoarding>
 								</StopPointInJourneyPattern>
 							</pointsInSequence>
-						</ServiceJourneyPattern>
+						</JourneyPattern>
 					</journeyPatterns>
 				</ServiceFrame>
 
@@ -317,7 +322,7 @@
 							<dayTypes>
 								<DayTypeRef ref="unibuss:dt:weekday"/>
 							</dayTypes>
-							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
+							<JourneyPatternRef ref="unibuss:jp:109"/>
 							<LineRef ref="unibuss:line:109"/>
 							<passingTimes>
 								<TimetabledPassingTime>
@@ -357,7 +362,7 @@
 							<dayTypes>
 								<DayTypeRef ref="unibuss:dt:weekday"/>
 							</dayTypes>
-							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
+							<JourneyPatternRef ref="unibuss:jp:109"/>
 							<LineRef ref="unibuss:line:109"/>
 							<passingTimes>
 								<TimetabledPassingTime>
@@ -393,7 +398,7 @@
 								<DayTypeRef ref="unibuss:dt:weekday"/>
 								<DayTypeRef ref="unibuss:dt:saturday"/>
 							</dayTypes>
-							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
+							<JourneyPatternRef ref="unibuss:jp:109"/>
 							<LineRef ref="unibuss:line:109"/>
 							<passingTimes>
 								<TimetabledPassingTime>
@@ -434,7 +439,7 @@
 								<DayTypeRef ref="unibuss:dt:saturday"/>
 								<DayTypeRef ref="unibuss:dt:sunday"/>
 							</dayTypes>
-							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
+							<JourneyPatternRef ref="unibuss:jp:109"/>
 							<LineRef ref="unibuss:line:109"/>
 							<passingTimes>
 								<TimetabledPassingTime>
@@ -470,7 +475,7 @@
 								<DayTypeRef ref="unibuss:dt:saturday"/>
 								<DayTypeRef ref="unibuss:dt:sunday"/>
 							</dayTypes>
-							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
+							<JourneyPatternRef ref="unibuss:jp:109"/>
 							<LineRef ref="unibuss:line:109"/>
 							<passingTimes>
 								<TimetabledPassingTime>
@@ -510,7 +515,7 @@
 							<dayTypes>
 								<DayTypeRef ref="unibuss:dt:sunday"/>
 							</dayTypes>
-							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
+							<JourneyPatternRef ref="unibuss:jp:109"/>
 							<LineRef ref="unibuss:line:109"/>
 							<passingTimes>
 								<TimetabledPassingTime>
@@ -547,7 +552,7 @@
 							<dayTypes>
 								<DayTypeRef ref="unibuss:dt:weekday"/>
 							</dayTypes>
-							<ServiceJourneyPatternRef ref="unibuss:sjp:109"/>
+							<JourneyPatternRef ref="unibuss:jp:109"/>
 							<RhythmicalJourneyGroupRef ref="unibuss:rjg:weekdays"/>
 							<LineRef ref="unibuss:line:109"/>
 							<passingTimes>

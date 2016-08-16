@@ -13,6 +13,7 @@
     <!-- Description er frivillig -->
     <Description>Ruter linje 61A: Tveita Solfjellet</Description>
 
+
     <dataObjects>
         <!-- =========================================== -->
         <CompositeFrame version="1" created="2015-12-13T00:00:00Z" id="RUT:Norway:CompositeFrame:0061">
@@ -60,14 +61,15 @@
                             <CompanyNumber>985615616</CompanyNumber>
                             <Name>Unibuss</Name>
                             <LegalName>UNIBUSS AS</LegalName>
-                            <CustomerServiceContactDetails>
+                            <ContactDetails>
                                 <Phone>0047 177</Phone>
                                 <Url>http://www.ruter.no</Url>
                                 <FurtherDetails>Kontaktskjema på websider</FurtherDetails>
-                            </CustomerServiceContactDetails>
+                            </ContactDetails>
                         </Operator>
                     </organisations>
                 </ResourceFrame>
+
 
                 <!-- Alt her vil verifiseres mot det som ligger i holdeplassregisteret. Finnes det ikke der blir hele denne filen avvist -->
                 <SiteFrame version="any" id="RUT:SiteFrame:SF01">
@@ -107,6 +109,7 @@
                         </StopPlace>
                     </stopPlaces>
                 </SiteFrame>
+
 
                 <ServiceFrame version="any" id="RUT:ServiceFrame:0061">
                     <!-- Nettverk er bare en gruppering av Lines under en felles "paraply". En Line igjen er en gruppe av ruter under samme markedsføringsnavn, eks Rute 2 -->
@@ -204,7 +207,6 @@
                             <FrontText>Tveita T</FrontText>
                         </DestinationDisplay>
                     </destinationDisplays>
-
                     <!-- Dette er alle stoppene Linje 61A stopper på -->
                     <scheduledStopPoints>
                         <ScheduledStopPoint version="1" id="RUT:StopPoint:0061101001">
@@ -229,45 +231,6 @@
                             <Name>Tveita T</Name>
                         </ScheduledStopPoint>
                     </scheduledStopPoints>
-
-                    <!-- Dette er alle ServicePatterns linje 61A kjører. Akkurat for denne linjen finnes det bare ett slikt "kjøremønster" -->
-                    <servicePatterns>
-                        <ServicePattern version="1" id="RUT:JourneyPattern:0061101">
-                            <Name>Tveita T</Name>
-                            <RouteRef version="1" ref="RUT:Route:0061101"/>
-                            <!-- Rekkefølge på stopp -->
-                            <pointsInSequence>
-                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101001" order="1">
-                                    <!-- Referanse til hvilket ScheduledStopPoint -->
-                                    <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101001"/>
-                                    <ForAlighting>false</ForAlighting>
-                                    <!-- Destinasjonstekst som vises på bussen -->
-                                    <DestinationDisplayRef ref="RUT:DestinationDisplay:DST_Solfjellet"/>
-                                </StopPointInJourneyPattern>
-                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101002" order="2">
-                                    <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101002"/>
-                                </StopPointInJourneyPattern>
-                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101003" order="3">
-                                    <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101003"/>
-                                    <!-- Her endrer teksten på bussen seg fra Solfjellet til Tveita T -->
-                                    <DestinationDisplayRef ref="RUT:DestinationDisplay:DST_TveitaT"/>
-                                </StopPointInJourneyPattern>
-                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101004" order="4">
-                                    <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101004"/>
-                                </StopPointInJourneyPattern>
-                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101005" order="5">
-                                    <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101005"/>
-                                </StopPointInJourneyPattern>
-                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101006" order="6">
-                                    <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101006"/>
-                                </StopPointInJourneyPattern>
-                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101007" order="7">
-                                    <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101007"/>
-                                    <ForBoarding>false</ForBoarding>
-                                </StopPointInJourneyPattern>
-                            </pointsInSequence>
-                        </ServicePattern>
-                    </servicePatterns>
 
                     <!-- Kobling fra ScheduledStopPoint til StopPlace/Quay. Legg merke til at StopPlace og Quay hører til i NHR-codespace mens ScheduleStopPoint hører til i RUT-codespacet -->
                     <stopAssignments>
@@ -310,6 +273,46 @@
                             <QuayRef version="1" ref="NHR:StopArea:0301152102"/>
                         </PassengerStopAssignment>
                     </stopAssignments>
+
+                    <!-- Dette er alle JourneyPatterns linje 61A kjører. Akkurat for denne linjen finnes det bare ett slikt "kjøremønster" -->
+                    <journeyPatterns>
+                        <JourneyPattern version="1" id="RUT:JourneyPattern:0061101">
+                            <Name>Tveita T</Name>
+                            <RouteRef version="1" ref="RUT:Route:0061101"/>
+                            <!-- Rekkefølge på stopp -->
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101001" order="1">
+                                    <!-- Referanse til hvilket ScheduledStopPoint -->
+                                    <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101001"/>
+                                    <ForAlighting>false</ForAlighting>
+                                    <!-- Destinasjonstekst som vises på bussen -->
+                                    <DestinationDisplayRef ref="RUT:DestinationDisplay:DST_Solfjellet"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101002" order="2">
+                                    <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101002"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101003" order="3">
+                                    <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101003"/>
+                                    <!-- Her endrer teksten på bussen seg fra Solfjellet til Tveita T -->
+                                    <DestinationDisplayRef ref="RUT:DestinationDisplay:DST_TveitaT"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101004" order="4">
+                                    <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101004"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101005" order="5">
+                                    <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101005"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101006" order="6">
+                                    <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101006"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="RUT:StopPointInJourneyPattern:0061101007" order="7">
+                                    <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101007"/>
+                                    <ForBoarding>false</ForBoarding>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </JourneyPattern>
+                    </journeyPatterns>
+
                     <notices>
                         <!-- Denne fotnoten er modellert for hele linjen, ikke relatert spesifikt til noe stopp eller turer -->
                         <Notice version="any" id="RUT:Notice:1">
@@ -323,6 +326,7 @@
                         </NoticeAssignment>
                     </noticeAssignments>
                 </ServiceFrame>
+
 
                 <ServiceCalendarFrame version="any" id="RUT:ServiceCalendarFrame:SCF01">
                     <ServiceCalendar version="any" id="RUT:ServiceCalendar:1">
@@ -347,7 +351,8 @@
                         </timebands>
                     </ServiceCalendar>
                 </ServiceCalendarFrame>
-                
+
+
                 <!-- Tidtabellen, dvs avgangstider -->
                 <TimetableFrame version="any" id="RUT:TimetableFrame:TF02">
                     <validityConditions>
@@ -367,7 +372,7 @@
                                 <DayTypeRef version="any" ref="RUT:DayType:MonSat"/>
                             </dayTypes>
                             <!-- Hvilket kjøremønster som benyttes med passasjerer ombord -->
-                            <ServicePatternRef version="1" ref="RUT:JourneyPattern:0061101"/>
+                            <JourneyPatternRef version="1" ref="RUT:JourneyPattern:0061101"/>
                             <!-- Hvilken linje det gjelder -->
                             <LineRef version="any" ref="RUT:Line:0061"/>
                             <passingTimes>
