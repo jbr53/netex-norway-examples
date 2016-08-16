@@ -41,6 +41,16 @@
 
 			<frames>
 				<ResourceFrame version="any" id="unibuss:rf:1">
+					<responsibilitySets>
+						<ResponsibilitySet version="any" id="unibuss:rs">
+							<roles>
+								<ResponsibilityRoleAssignment version="any" id="unibuss:rra">
+									<StakeholderRoleType>Planning</StakeholderRoleType>
+									<ResponsibleOrganisationRef version="any" ref="auth:ruter"/>
+								</ResponsibilityRoleAssignment>
+							</roles>
+						</ResponsibilitySet>
+					</responsibilitySets>
 					<organisations>
 						<Authority version="any" id="auth:ruter">
 							<CompanyNumber>991609407</CompanyNumber> <!-- Organisasjonsnummer -->
@@ -69,7 +79,7 @@
 				<!-- ===SITE FRAME=== -->
 				<SiteFrame version="any" id="unibuss:sf:1">
 					<FrameDefaults>
-						<DefaultResponsibilitySetRef ref="unibuss:drs"/>
+						<DefaultResponsibilitySetRef ref="unibuss:rs"/>
 					</FrameDefaults>
 					<stopPlaces>
 						<!-- MERK: Kun definert quays i faktisk bruk for å forenkle eksempelet -->
@@ -591,6 +601,7 @@
 						<!--  * 07:00 (Sundays) -->
 						<!-- ########################### -->
 					</vehicleJourneys>
+
 					<!-- ########################### -->
 					<!-- ALTERNATE DESCRIPTION pt. 2 -->
 					<!-- ########################### -->
@@ -625,7 +636,6 @@
 				<!-- ===SERVICE CALENDAR FRAME=== -->
 				<ServiceCalendarFrame version="1" id="unibuss:scf:01">
 					<ServiceCalendar version="any" id="unibuss:sc:01">
-						
 						<!-- ############################# -->
 						<!-- (for alternative description) -->
 						<!-- ############################# -->
