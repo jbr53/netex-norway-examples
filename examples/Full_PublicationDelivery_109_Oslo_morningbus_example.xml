@@ -152,8 +152,8 @@
 								<Quay version="any" id="unibuss:q:ryen_t:QUAYID">
 									<Centroid>
 										<Location srsName="WGS84">
-											<Longitude>10.805275</Longitude>
-											<Latitude>59.895262</Latitude>
+											<Longitude>10.805572</Longitude>
+											<Latitude>59.895407</Latitude>
 										</Location>
 									</Centroid>
 								</Quay>
@@ -254,6 +254,77 @@
 							<Name>Holtet</Name>
 						</ScheduledStopPoint>
 					</scheduledStopPoints>
+					
+					<serviceLinks>
+						<ServiceLink version="any" id="unibuss:sl:helsfyr_to_brynseng">
+							<projections>
+								<LinkSequenceProjection version="any" id="unibuss:lsp:109:helsfyr_to_brynseng">
+									<gml:LineString srsName="WGS84" gml:id="helsfyr_to_brynseng">
+										<gml:pos>59.911925 10.807198</gml:pos>
+										<gml:pos>59.910395 10.813012</gml:pos>
+									</gml:LineString>
+								</LinkSequenceProjection>
+							</projections>
+							<FromPointRef version="any" ref="unibuss:ssp:helfyr_t"/>
+							<ToPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
+						</ServiceLink>
+						<ServiceLink version="any" id="unibuss:sl:brynseng_to_hoyenhall">
+							<projections>
+								<LinkSequenceProjection version="any" id="unibuss:lsp:109:brynseng_to_hoyenhall">
+									<gml:LineString srsName="WGS84" gml:id="brynseng_to_hoyenhall">
+										<gml:pos>59.908251 10.816363</gml:pos>
+										<gml:pos>59.907908 10.816819</gml:pos>
+									</gml:LineString>
+								</LinkSequenceProjection>
+							</projections>
+							<FromPointRef version="any" ref="unibuss:ssp:brynseng_t"/>
+							<ToPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
+						</ServiceLink>							
+						<ServiceLink version="any" id="unibuss:sl:hoyenhall_to_manglerud">
+							<projections>
+								<LinkSequenceProjection version="any" id="unibuss:lsp:109:hoyenhall_to_manglerud">
+									<gml:LineString srsName="WGS84" gml:id="hoyenhall_to_manglerud">
+										<gml:pos>59.904645 10.820626</gml:pos>
+										<gml:pos>59.899678 10.815965</gml:pos>
+									</gml:LineString>
+								</LinkSequenceProjection>
+							</projections>
+							<FromPointRef version="any" ref="unibuss:ssp:hoyenhall_t"/>
+							<ToPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
+						</ServiceLink>
+						<ServiceLink version="any" id="unibuss:sl:manglerud_to_ryen">
+							<projections>
+								<LinkSequenceProjection version="any" id="unibuss:lsp:109:manglerud_to_ryen">
+									<gml:LineString srsName="WGS84" gml:id="manglerud_to_ryen">
+										<gml:pos>59.896709 10.810350</gml:pos>
+										<gml:pos>59.895940 10.807332</gml:pos>
+									</gml:LineString>
+								</LinkSequenceProjection>
+							</projections>
+							<FromPointRef version="any" ref="unibuss:ssp:manglerud_t"/>
+							<ToPointRef version="any" ref="unibuss:ssp:ryen_t"/>
+						</ServiceLink>	
+						<ServiceLink version="any" id="unibuss:sl:ryen_to_holtet">
+							<projections>
+								<LinkSequenceProjection version="any" id="unibuss:lsp:109:ryen_to_holtet">
+									<gml:LineString srsName="WGS84" gml:id="ryen_to_holtet">
+										<gml:pos>59.894780 10.804309</gml:pos>
+										<gml:pos>59.892531 10.804000</gml:pos>
+										<gml:pos>59.888996 10.805961</gml:pos>
+										<gml:pos>59.887608 10.806368</gml:pos>
+										<gml:pos>59.886410 10.800586</gml:pos>
+										<gml:pos>59.885832 10.792943</gml:pos>
+										<gml:pos>59.885392 10.788938</gml:pos>
+										<gml:pos>59.885630 10.784435</gml:pos>
+										<gml:pos>59.883864 10.783759</gml:pos>
+										<gml:pos>59.881872 10.783770</gml:pos>
+									</gml:LineString>
+								</LinkSequenceProjection>
+							</projections>
+							<FromPointRef version="any" ref="unibuss:ssp:ryen_t"/>
+							<ToPointRef version="any" ref="unibuss:ssp:holtet"/>
+						</ServiceLink>
+					</serviceLinks>
 
 					<!-- ===STOP ASSIGNMENTs=== -->
 					<!-- Must be defined in order to assign Journey/Service Pattern stop point to actual StopPlace -->
@@ -312,6 +383,23 @@
 									<ForBoarding>false</ForBoarding>
 								</StopPointInJourneyPattern>
 							</pointsInSequence>
+							<linksInSequence>
+								<ServiceLinkInJourneyPattern version="any" id="unibuss:slijp:helsfyr_to_brynseng" order="1">
+									<ServiceLinkRef version="any" ref="unibuss:sl:helsfyr_to_brynseng"/>
+								</ServiceLinkInJourneyPattern>
+								<ServiceLinkInJourneyPattern version="any" id="unibuss:slijp:brynseng_to_hoyenhall" order="2">
+									<ServiceLinkRef version="any" ref="unibuss:sl:brynseng_to_hoyenhall"/>
+								</ServiceLinkInJourneyPattern>
+								<ServiceLinkInJourneyPattern version="any" id="unibuss:slijp:hoyenhall_to_manglerud" order="3">
+									<ServiceLinkRef version="any" ref="unibuss:sl:hoyenhall_to_manglerud"/>
+								</ServiceLinkInJourneyPattern>
+								<ServiceLinkInJourneyPattern version="any" id="unibuss:slijp:manglerud_to_ryen" order="4">
+									<ServiceLinkRef version="any" ref="unibuss:sl:manglerud_to_ryen"/>
+								</ServiceLinkInJourneyPattern>
+								<ServiceLinkInJourneyPattern version="any" id="unibuss:slijp:ryen_to_holtet" order="5">
+									<ServiceLinkRef version="any" ref="unibuss:sl:ryen_to_holtet"/>
+								</ServiceLinkInJourneyPattern>
+							</linksInSequence>
 						</JourneyPattern>
 					</journeyPatterns>
 				</ServiceFrame>
