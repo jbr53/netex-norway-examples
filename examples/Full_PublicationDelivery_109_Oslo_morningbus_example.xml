@@ -22,6 +22,10 @@
 			
 			<!-- ===CODESPACE=== -->
 			<codespaces>
+				<Codespace id="nsr">
+					<Xmlns>NSR</Xmlns>
+					<XmlnsUrl>http://www.rutebanken.no/nasjonltstoppestedregister</XmlnsUrl>
+				</Codespace>
 				<Codespace id="unibuss">
 					<Xmlns>UNI</Xmlns>
 					<XmlnsUrl>www.unibuss.no</XmlnsUrl>

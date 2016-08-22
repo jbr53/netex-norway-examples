@@ -26,7 +26,7 @@
                     <XmlnsUrl>http://www.ruter.no/</XmlnsUrl>
                 </Codespace>
                 <!-- Codespace for nasjonalt holdeplassregister -->
-                <Codespace id="nhr">
+                <Codespace id="nsr">
                     <Xmlns>NSR</Xmlns>
                     <XmlnsUrl>http://www.rutebanken.no/nasjonltstoppestedregister</XmlnsUrl>
                 </Codespace>
