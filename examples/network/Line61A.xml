@@ -27,26 +27,28 @@
                 </Codespace>
                 <!-- Codespace for nasjonalt holdeplassregister -->
                 <Codespace id="nhr">
-                    <Xmlns>NHR</Xmlns>
-                    <XmlnsUrl>http://www.rutebanken.no/nasjonltholdeplassregister</XmlnsUrl>
+                    <Xmlns>NSR</Xmlns>
+                    <XmlnsUrl>http://www.rutebanken.no/nasjonltstoppestedregister</XmlnsUrl>
                 </Codespace>
             </codespaces>
+
+            <FrameDefaults>
+                <!-- Alle elementer med id-attributt blir prefixet med dette codespacet (dvs RUT:) -->
+                <DefaultCodespaceRef ref="ruter"/>
+                <DefaultLocale>
+                    <TimeZone>CET</TimeZone>
+                    <SummerTimeZone>CEST</SummerTimeZone>
+                    <!-- Alle tekster er på norsk om ikke eksplisitt spesifisert -->
+                    <DefaultLanguage>no</DefaultLanguage>
+                </DefaultLocale>
+                <!-- Alle koordinater leveres i henhold til WGS84 -->
+                <!-- TODO: rett opp, skal kanskje ikke med i det hele tatt gitt implisitt krav WGS84 --> 
+                <!--DefaultLocationSystem>EPSG:4326</DefaultLocationSystem-->
+            </FrameDefaults>
+
             <frames>
                 <!-- =========================================== -->
                 <ResourceFrame version="any" id="RUT:ResourceFrame:RF1">
-                    <FrameDefaults>
-                        <!-- Alle elementer med id-attributt blir prefixet med dette codespacet (dvs RUT:) -->
-                        <DefaultCodespaceRef ref="ruter"/>
-                        <DefaultLocale>
-                            <TimeZone>CET</TimeZone>
-                            <SummerTimeZone>CEST</SummerTimeZone>
-                            <!-- Alle tekster er på norsk om ikke eksplisitt spesifisert -->
-                            <DefaultLanguage>no</DefaultLanguage>
-                        </DefaultLocale>
-                        <!-- Alle koordinater leveres i henhold til WGS84 -->
-                        <!-- TODO: rett opp, skal kanskje ikke med i det hele tatt gitt implisitt krav WGS84 --> 
-                        <!--DefaultLocationSystem>EPSG:4326</DefaultLocationSystem-->
-                    </FrameDefaults>
                     <organisations>
                         <!-- TODO her er ting kun splittet i authority og operator. Normalt er strukturen mer kompleks, og informasjon rundt f.eks hittegods må modelleres korrekt -->
                         <Authority version="1" id="RUT:Company:0">
@@ -74,37 +76,37 @@
                 <!-- Alt her vil verifiseres mot det som ligger i holdeplassregisteret. Finnes det ikke der blir hele denne filen avvist -->
                 <SiteFrame version="any" id="RUT:SiteFrame:SF01">
                     <stopPlaces>
-                        <!-- Merk at her brukes det codespace NHR som viser at disse elementene eies av NasjonaltHoldeplassRegister -->
-                        <StopPlace version="1" id="NHR:StopArea:03011537">
+                        <!-- Merk at her brukes det codespace NSR som viser at disse elementene eies av NasjonaltHoldeplassRegister -->
+                        <StopPlace version="1" id="NSR:StopArea:03011537">
                             <Name>Larsbr&#229;ten</Name>
                             <quays>
-                                <Quay version="1" id="NHR:StopArea:0301153701"/>
+                                <Quay version="1" id="NSR:StopArea:0301153701"/>
                             </quays>
                         </StopPlace>
-                        <StopPlace version="1" id="NHR:StopArea:03011525">
+                        <StopPlace version="1" id="NSR:StopArea:03011525">
                             <Name>Tveita bedriftsomr&#229;de</Name>
                             <quays>
-                                <Quay version="1" id="NHR:StopArea:0301152501"/>
-                                <Quay version="1" id="NHR:StopArea:0301152502"/>
+                                <Quay version="1" id="NSR:StopArea:0301152501"/>
+                                <Quay version="1" id="NSR:StopArea:0301152502"/>
                             </quays>
                         </StopPlace>
-                        <StopPlace version="1" id="NHR:StopArea:03011536">
+                        <StopPlace version="1" id="NSR:StopArea:03011536">
                             <Name>Solfjellet</Name>
                             <quays>
-                                <Quay version="1" id="NHR:StopArea:0301153601"/>
+                                <Quay version="1" id="NSR:StopArea:0301153601"/>
                             </quays>
                         </StopPlace>
-                        <StopPlace version="1" id="NHR:StopArea:03011522">
+                        <StopPlace version="1" id="NSR:StopArea:03011522">
                             <Name>Tveita</Name>
                             <quays>
-                                <Quay version="1" id="NHR:StopArea:0301152202"/>
+                                <Quay version="1" id="NSR:StopArea:0301152202"/>
                             </quays>
                         </StopPlace>
-                        <StopPlace version="1" id="NHR:StopArea:03011521">
+                        <StopPlace version="1" id="NSR:StopArea:03011521">
                             <Name>Tveita T</Name>
                             <quays>
-                                <Quay version="1" id="NHR:StopArea:0301152101"/>
-                                <Quay version="1" id="NHR:StopArea:0301152102"/>
+                                <Quay version="1" id="NSR:StopArea:0301152101"/>
+                                <Quay version="1" id="NSR:StopArea:0301152102"/>
                             </quays>
                         </StopPlace>
                     </stopPlaces>
@@ -232,52 +234,51 @@
                         </ScheduledStopPoint>
                     </scheduledStopPoints>
 
-                    <!-- Kobling fra ScheduledStopPoint til StopPlace/Quay. Legg merke til at StopPlace og Quay hører til i NHR-codespace mens ScheduleStopPoint hører til i RUT-codespacet -->
+                    <!-- Kobling fra ScheduledStopPoint til StopPlace/Quay. Legg merke til at StopPlace og Quay hører til i NSR-codespace mens ScheduleStopPoint hører til i RUT-codespacet -->
                     <stopAssignments>
                         <PassengerStopAssignment version="any" order="1" id="RUT:PassengerStopAssignment:0061101001">
                             <!-- Hvilket ScheduledStopPoint som mappes til ... -->
                             <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101001"/>
                             <!-- .. hvilket stopPlace ... og hvis mulig -->
-                            <StopPlaceRef version="1" ref="NHR:StopArea:03011521"/>
+                            <StopPlaceRef version="1" ref="NSR:StopArea:03011521"/>
                             <!-- hvilken quay kjøretøyet stopper ved -->
-                            <QuayRef version="1" ref="NHR:StopArea:0301152101"/>
+                            <QuayRef version="1" ref="NSR:StopArea:0301152101"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment version="any" order="2" id="RUT:PassengerStopAssignment:0061101002">
                             <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101002"/>
-                            <StopPlaceRef version="1" ref="NHR:StopArea:03011525"/>
-                            <QuayRef version="1" ref="NHR:StopArea:0301152501"/>
+                            <StopPlaceRef version="1" ref="NSR:StopArea:03011525"/>
+                            <QuayRef version="1" ref="NSR:StopArea:0301152501"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment version="any" order="3" id="RUT:PassengerStopAssignment:0061101003">
                             <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101003"/>
-                            <StopPlaceRef version="1" ref="NHR:StopArea:03011536"/>
-                            <QuayRef version="1" ref="NHR:StopArea:0301153601"/>
+                            <StopPlaceRef version="1" ref="NSR:StopArea:03011536"/>
+                            <QuayRef version="1" ref="NSR:StopArea:0301153601"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment version="any" order="4" id="RUT:PassengerStopAssignment:0061101004">
                             <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101004"/>
-                            <StopPlaceRef version="1" ref="NHR:StopArea:03011537"/>
-                            <QuayRef version="1" ref="NHR:StopArea:0301153701"/>
+                            <StopPlaceRef version="1" ref="NSR:StopArea:03011537"/>
+                            <QuayRef version="1" ref="NSR:StopArea:0301153701"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment version="any" order="5" id="RUT:PassengerStopAssignment:0061101005">
                             <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101005"/>
-                            <StopPlaceRef version="1" ref="NHR:StopArea:03011525"/>
-                            <QuayRef version="1" ref="NHR:StopArea:0301152502"/>
+                            <StopPlaceRef version="1" ref="NSR:StopArea:03011525"/>
+                            <QuayRef version="1" ref="NSR:StopArea:0301152502"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment version="any" order="6" id="RUT:PassengerStopAssignment:0061101006">
                             <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101006"/>
-                            <StopPlaceRef version="1" ref="NHR:StopArea:03011522"/>
-                            <QuayRef version="1" ref="NHR:StopArea:0301152202"/>
+                            <StopPlaceRef version="1" ref="NSR:StopArea:03011522"/>
+                            <QuayRef version="1" ref="NSR:StopArea:0301152202"/>
                         </PassengerStopAssignment>
                         <PassengerStopAssignment version="any" order="7" id="RUT:PassengerStopAssignment:0061101007">
                             <ScheduledStopPointRef version="1" ref="RUT:StopPoint:0061101007"/>
-                            <StopPlaceRef version="1" ref="NHR:StopArea:03011521"/>
-                            <QuayRef version="1" ref="NHR:StopArea:0301152102"/>
+                            <StopPlaceRef version="1" ref="NSR:StopArea:03011521"/>
+                            <QuayRef version="1" ref="NSR:StopArea:0301152102"/>
                         </PassengerStopAssignment>
                     </stopAssignments>
 
                     <!-- Dette er alle JourneyPatterns linje 61A kjører. Akkurat for denne linjen finnes det bare ett slikt "kjøremønster" -->
                     <journeyPatterns>
                         <JourneyPattern version="1" id="RUT:JourneyPattern:0061101">
-                            <Name>Tveita T</Name>
                             <RouteRef version="1" ref="RUT:Route:0061101"/>
                             <!-- Rekkefølge på stopp -->
                             <pointsInSequence>
@@ -361,9 +362,7 @@
                             <ToDate>2016-12-20T00:00:00</ToDate>
                         </ValidBetween>
                     </validityConditions>
-                    <Name>Rute for 2016</Name>
                     <!-- Kjøres buss om ikke noe annet er spesifisert -->
-                    <DefaultMode>bus</DefaultMode>
                     <vehicleJourneys>
                         <!-- Her defineres en TemplateServiceJourney. Den sier at avgangstidene er de samme, men i dette tilfellet med et rytmisk mønster (hvert. 15 minutt over hel) -->
                         <TemplateServiceJourney version="any" id="RUT:TemplateServiceJourney:0061">
