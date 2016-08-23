@@ -108,7 +108,7 @@
 				</ServiceCalendarFrame>
 
 				<!-- Dummy Service and Timetable frames (for reference) -->
-				<ServiceFrame version="1" id="RUT:sf:1">
+				<ServiceFrame version="any" id="RUT:sf:1">
 					<routes>
 						<Route version="any" id="RUT:rt:default"/>
 					</routes>

@@ -25,7 +25,7 @@ Frames (gruppering)
 	<PublicationTimestamp>2016-04-29T12:30:00.0Z</PublicationTimestamp>
 	<ParticipantRef>NHR</ParticipantRef>
 	<dataObjects>
-		<CompositeFrame version="1" id="ruter:cf:cf01">
+		<CompositeFrame version="any" id="ruter:cf:cf01">
 			<validityConditions>
 				<AvailabilityCondition version="any" id="ruter:ac:cf01">
 					<FromDate>2016-04-29T12:12:00.0Z</FromDate>
@@ -45,7 +45,7 @@ Frames (gruppering)
 					<!-- ===Stoppesteder=== -->
 					<stopPlaces>
 						<!-- Merk: Holdeplass-ID vil komme fra Holdeplassregisteret -->
-						<StopPlace version="01" created="2016-04-21T09:00:00.0Z" responsibilitySetRef="ruter:rs:1" id="ruter:sp:1">
+						<StopPlace version="any" created="2016-04-21T09:00:00.0Z" responsibilitySetRef="ruter:rs:1" id="ruter:sp:1">
 							<Centroid>
 								<Location srsName="WGS84" id="ruter:location:NUMBER">
 									<Longitude>10.49289</Longitude>
@@ -64,7 +64,7 @@ Frames (gruppering)
 							<TransportMode>bus</TransportMode>
 							<StopPlaceType>onstreetBus</StopPlaceType>
 							<quays>
-								<Quay version="01" created="2016-04-21T09:01:00.0Z" id="ruter:sp:1:q:1">
+								<Quay version="any" created="2016-04-21T09:01:00.0Z" id="ruter:sp:1:q:1">
 									<Name lang="no-NO">Bryn skole nord</Name>
 									<Description lang="no-NO">Bryn skole (i Ole Deviks vei) retning nord (fra sentrum).</Description>
 									<Centroid>
@@ -89,7 +89,7 @@ Frames (gruppering)
 									<CompassOctant>NE</CompassOctant>
 									<QuayType>busStop</QuayType>
 								</Quay>
-								<Quay version="01" created="2016-04-21T09:02:00.0Z" id="ruter:sp:1:q:2">
+								<Quay version="any" created="2016-04-21T09:02:00.0Z" id="ruter:sp:1:q:2">
 									<Name lang="no-NO">Bryn skole syd</Name>
 									<Description lang="no-NO">Bryn skole (i Ole Deviks vei) retning syd (mot sentrum).</Description>
 									<Centroid>
@@ -125,7 +125,7 @@ Frames (gruppering)
 				<ServiceFrame version="any" id="ruter:sf:buss66">
 					<!-- ===Ruteinformasjon for å vise knytning til stoppested===-->
 					<scheduledStopPoints>
-						<ScheduledStopPoint version="001" created="2016-04-20T07:50:00.0Z"
+						<ScheduledStopPoint version="any" created="2016-04-20T07:50:00.0Z"
 							changed="2016-04-20T08:45:00.0Z" id="ruter:ssp:brynskole">
 							<Name>Bryn skole</Name>
 						</ScheduledStopPoint>
@@ -133,20 +133,20 @@ Frames (gruppering)
 					<stopAssignments>
 						<PassengerStopAssignment order="1" version="any" id="ruter:psa:brynskole:01">
 							<Description lang="no-NO">Bryn skole rutetabell uavhengig av Quay</Description>
-							<ScheduledStopPointRef version="001" ref="ruter:ssp:brynskole"/>
-							<StopPlaceRef version="01" ref="ruter:sp:1"/>
+							<ScheduledStopPointRef version="any" ref="ruter:ssp:brynskole"/>
+							<StopPlaceRef version="any" ref="ruter:sp:1"/>
 						</PassengerStopAssignment>
 						<PassengerStopAssignment order="2" version="any" id="ruter:psa:brynskole:01">
 							<Description lang="en">Bryn skole rutetabell nordgående Quay</Description>
-							<ScheduledStopPointRef version="001" ref="ruter:ssp:brynskole"/>
-							<StopPlaceRef version="01" ref="ruter:sp:1"/>
-							<QuayRef version="01" ref="ruter:sp:1:q:1"/>
+							<ScheduledStopPointRef version="any" ref="ruter:ssp:brynskole"/>
+							<StopPlaceRef version="any" ref="ruter:sp:1"/>
+							<QuayRef version="any" ref="ruter:sp:1:q:1"/>
 						</PassengerStopAssignment>
 						<PassengerStopAssignment order="3" version="any" id="ruter:psa:brynskole:01">
 							<Description lang="en">Bryn skole rutetabell sørgående Quay</Description>
-							<ScheduledStopPointRef version="001" ref="ruter:ssp:brynskole"/>
-							<StopPlaceRef version="01" ref="ruter:sp:1"/>
-							<QuayRef version="01" ref="ruter:sp:1:q:2"/>
+							<ScheduledStopPointRef version="any" ref="ruter:ssp:brynskole"/>
+							<StopPlaceRef version="any" ref="ruter:sp:1"/>
+							<QuayRef version="any" ref="ruter:sp:1:q:2"/>
 						</PassengerStopAssignment>
 					</stopAssignments>
 				</ServiceFrame>

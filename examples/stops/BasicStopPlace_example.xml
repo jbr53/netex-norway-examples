@@ -16,11 +16,11 @@ Eksempelet tar utgangspunkt i offisielle NeTEx-XML eksempler og viser et enklest
 	<PublicationTimestamp>2016-05-18T15:00:00.0Z</PublicationTimestamp>
 	<ParticipantRef>NHR</ParticipantRef>
 	<dataObjects>
-		<SiteFrame version="01" id="nhr:sf:1">
+		<SiteFrame version="any" id="nhr:sf:1">
 			<stopPlaces>
 				<!--===Stop=== -->
 				<!-- Merk: Holdeplass-ID vil komme fra Holdeplassregisteret -->
-				<StopPlace version="01" created="2016-04-21T09:00:00.0Z" id="nhr:sp:1">
+				<StopPlace version="any" created="2016-04-21T09:00:00.0Z" id="nhr:sp:1">
 					<Name lang="no-NO">Krokstien</Name>
 					<!-- Generelt tilgjengelig med rullestol -->
 					<AccessibilityAssessment version="any" id="nhr:aa:1">
@@ -28,7 +28,7 @@ Eksempelet tar utgangspunkt i offisielle NeTEx-XML eksempler og viser et enklest
 					</AccessibilityAssessment>
 					<!-- Comment: Foreløpig uavklart på hvilket detaljnivå dette skal modelleres i Holdeplassregisteret. -->
 					<facilities>
-						<SiteFacilitySet version="01" id="nhr:sfs:1">
+						<SiteFacilitySet version="any" id="nhr:sfs:1">
 							<!-- Tidtabell publisert på holdeplass -->
 							<PassengerInformationEquipmentList>stopTimetable</PassengerInformationEquipmentList>
 						</SiteFacilitySet>
@@ -36,7 +36,7 @@ Eksempelet tar utgangspunkt i offisielle NeTEx-XML eksempler og viser et enklest
 					<TransportMode>bus</TransportMode>
 					<StopPlaceType>onstreetBus</StopPlaceType>
 					<quays>
-						<Quay version="01" created="2016-04-21T09:01:00.0Z" id="nhr:sp:1:q:1">
+						<Quay version="any" created="2016-04-21T09:01:00.0Z" id="nhr:sp:1:q:1">
 							<Centroid>
 								<!-- Vil alltid være WGS84 -->
 								<Location srsName="WGS84">

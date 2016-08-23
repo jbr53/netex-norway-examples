@@ -15,7 +15,7 @@
     <dataObjects>
         
         <!-- CompositeFrame brukes å samle ulike frames inn i objekt -->
-        <CompositeFrame version="1" created="2016-05-30T12:00:00Z" id="NHR:cf:NUMBER">
+        <CompositeFrame version="any" created="2016-05-30T12:00:00Z" id="NHR:cf:NUMBER">
             <codespaces>
                 <!-- Codespace, f.eks. for Nasjonalt Holdeplassregister -->
                 <Codespace id="nhr">

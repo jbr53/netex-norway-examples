@@ -16,7 +16,7 @@
 
 
     <dataObjects>
-        <CompositeFrame id="NHR:CompositeFrame:nhr" created="2015-11-21T11:50:51" dataSourceRef="NHR:DataSource:nhr" version="1.0">
+        <CompositeFrame id="NHR:CompositeFrame:nhr" created="2015-11-21T11:50:51" dataSourceRef="NHR:DataSource:nhr" version="any">
             <Description>Composite frame that unites ResourceFrame and SiteFrame in order to spesify some shared values like version, creation date and codespaces</Description>
 
             <codespaces>

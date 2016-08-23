@@ -195,7 +195,7 @@
 				
 				<!-- ===SERVICE FRAME=== -->
 				<ServiceFrame version="any" id="UNI:SiteFrame:1">
-					<Network version="1" id="RUT:GroupOfLine:RuterBuss">
+					<Network version="any" id="RUT:GroupOfLine:RuterBuss">
 						<Name>Ruter#</Name>
 					</Network>
 					
@@ -743,7 +743,7 @@
 				</TimetableFrame>
 				
 				<!-- ===SERVICE CALENDAR FRAME=== -->
-				<ServiceCalendarFrame version="1" id="UNI:ServiceCalendarFrame:01">
+				<ServiceCalendarFrame version="any" id="UNI:ServiceCalendarFrame:01">
 					<ServiceCalendar version="any" id="UNI:ServiceCalendar:01">
 						<!-- ############################# -->
 						<!-- (for alternative description) -->
