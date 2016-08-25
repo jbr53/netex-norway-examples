@@ -115,18 +115,18 @@ example/functions/timetable/Netex_07.2_Bus_FlexibleTimetable_WithPattern.xml
 							<TransportMode>bus</TransportMode>
 							<areas>
 								<FlexibleArea version="any" id="NHR:FlexibleArea:CODE-HANABORG-NORD-AREA">
-									<gml:Polygon srsName="wgs84" gml:id="hanaborg">
-										<gml:exterior>
-											<gml:LinearRing>
-												<gml:pos>59.938831 10.966611</gml:pos>
-												<gml:pos>59.943369 10.952606</gml:pos>
-												<gml:pos>59.944642 10.962742</gml:pos>
-												<gml:pos>59.950631 10.984097</gml:pos>
-												<gml:pos>59.945957 10.989036</gml:pos>
-												<gml:pos>59.940764 10.981718</gml:pos>
-											</gml:LinearRing>
-										</gml:exterior>
-									</gml:Polygon>
+									<Polygon srsName="wgs84" gml:id="hanaborg" xmlns="http://www.opengis.net/gml/3.2">
+										<exterior>
+											<LinearRing>
+												<pos>59.938831 10.966611</pos>
+												<pos>59.943369 10.952606</pos>
+												<pos>59.944642 10.962742</pos>
+												<pos>59.950631 10.984097</pos>
+												<pos>59.945957 10.989036</pos>
+												<pos>59.940764 10.981718</pos>
+											</LinearRing>
+										</exterior>
+									</Polygon>
 								</FlexibleArea>
 							</areas>
 						</FlexibleStopPlace>
@@ -469,7 +469,8 @@ example/functions/timetable/Netex_07.2_Bus_FlexibleTimetable_WithPattern.xml
 					<noticeAssignments>
 						<NoticeAssignment version="any" id="RUT:NoticeAssignment:863" order="0">
 							<NoticeRef ref="RUT:Notice:863"/>
-							<NoticedObjectRef ref="RUT:FlexibleLine:863"/>
+							<NoticedObjectRef version="any" ref="RUT:StopPointInJourneyPattern:ID-TRIADEN:FraLorenskog"/>
+							<!--NoticedObjectRef ref="RUT:FlexibleLine:863"/-->
 						</NoticeAssignment>
 						<NoticeAssignment version="any" id="RUT:NoticeAssignment:863:TilLorenskog" order="0">
 							<NoticeRef ref="RUT:Notice:863:Henting"/>
@@ -506,6 +507,21 @@ example/functions/timetable/Netex_07.2_Bus_FlexibleTimetable_WithPattern.xml
 					</validityConditions>
 					<Name>Rute for 2016</Name>
 					<DefaultMode>bus</DefaultMode>
+					<bookingTimes>
+						<AvailabilityCondition version="any" id="RUT:AvailabilityCondition:bookingTimes">
+							<Description>Åpningstider for bookingkontor</Description>
+							<IsAvailable>true</IsAvailable>
+							<dayTypes>
+								<DayTypeRef version="any" ref="RUT:DayType:weekdays"/>
+							</dayTypes>
+							<timebands>
+								<Timeband version="any" id="RUT:Timeband:0700-1700">
+									<StartTime>07:00:00</StartTime>
+									<EndTime>17:00:00</EndTime>
+								</Timeband>
+							</timebands>
+						</AvailabilityCondition>
+					</bookingTimes>
 					<vehicleJourneys>
 						<ServiceJourney version="any" id="RUT:ServiceJourney:0863:TilLorenskog">
 							<dayTypes>

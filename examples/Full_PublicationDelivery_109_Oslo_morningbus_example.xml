@@ -405,7 +405,7 @@
 								</StopPointInJourneyPattern>
 							</pointsInSequence>
 							<linksInSequence>
-								<ServiceLinkInJourneyPattern version="any" id="UNI:ServiceLinkInJourneyPattern:helsfyr_to_brynseng" order="1">
+								<ServiceLinkInJourneyPattern version="any" id="UNI:ServiceLinkInJourneyPattern:helsfyr_to_brynseng" order="1">	
 									<ServiceLinkRef version="any" ref="UNI:ServiceLink:helsfyr_to_brynseng"/>
 								</ServiceLinkInJourneyPattern>
 								<ServiceLinkInJourneyPattern version="any" id="UNI:ServiceLinkInJourneyPattern:brynseng_to_hoyenhall" order="2">
