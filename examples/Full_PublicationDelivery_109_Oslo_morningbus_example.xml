@@ -222,6 +222,7 @@
 					<routes>
 						<Route version="any" id="UNI:Route:109">
 							<Name>Morgenbuss Helsfyr - Holtet</Name>
+							<LineRef ref="UNI:line:109"/>
 							<DirectionType>outbound</DirectionType>
 							<pointsInSequence>
 								<PointOnRoute version="any" id="UNI:PointOnRoute:109:start">
@@ -241,6 +242,7 @@
 							<TransportMode>bus</TransportMode>
 							<PublicCode>109</PublicCode>
 							<OperatorRef ref="operator:unibuss"/>
+							<!-- Optional: -->
 							<routes>
 								<RouteRef ref="UNI:Route:109"/>
 							</routes>
@@ -442,6 +444,7 @@
 								<DayTypeRef ref="UNI:DayType:weekday"/>
 							</dayTypes>
 							<JourneyPatternRef ref="UNI:JourneyPattern:109"/>
+							<!-- Optional: -->
 							<LineRef ref="UNI:line:109"/>
 							<passingTimes>
 								<TimetabledPassingTime>
@@ -482,6 +485,7 @@
 								<DayTypeRef ref="UNI:DayType:weekday"/>
 							</dayTypes>
 							<JourneyPatternRef ref="UNI:JourneyPattern:109"/>
+							<!-- Optional: -->
 							<LineRef ref="UNI:line:109"/>
 							<passingTimes>
 								<TimetabledPassingTime>
@@ -518,6 +522,7 @@
 								<DayTypeRef ref="UNI:DayType:saturday"/>
 							</dayTypes>
 							<JourneyPatternRef ref="UNI:JourneyPattern:109"/>
+							<!-- Optional: -->
 							<LineRef ref="UNI:line:109"/>
 							<passingTimes>
 								<TimetabledPassingTime>
@@ -559,6 +564,7 @@
 								<DayTypeRef ref="UNI:DayType:sunday"/>
 							</dayTypes>
 							<JourneyPatternRef ref="UNI:JourneyPattern:109"/>
+							<!-- Optional: -->
 							<LineRef ref="UNI:line:109"/>
 							<passingTimes>
 								<TimetabledPassingTime>
@@ -595,6 +601,7 @@
 								<DayTypeRef ref="UNI:DayType:sunday"/>
 							</dayTypes>
 							<JourneyPatternRef ref="UNI:JourneyPattern:109"/>
+							<!-- Optional: -->
 							<LineRef ref="UNI:line:109"/>
 							<passingTimes>
 								<TimetabledPassingTime>
@@ -635,6 +642,7 @@
 								<DayTypeRef ref="UNI:DayType:sunday"/>
 							</dayTypes>
 							<JourneyPatternRef ref="UNI:JourneyPattern:109"/>
+							<!-- Optional: -->
 							<LineRef ref="UNI:line:109"/>
 							<passingTimes>
 								<TimetabledPassingTime>
@@ -673,6 +681,7 @@
 							</dayTypes>
 							<JourneyPatternRef ref="UNI:JourneyPattern:109"/>
 							<RhythmicalJourneyGroupRef ref="UNI:RhythmicalJourneyGroup:weekdays"/>
+							<!-- Optional: -->
 							<LineRef ref="UNI:line:109"/>
 							<passingTimes>
 								<TimetabledPassingTime>
