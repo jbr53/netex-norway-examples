@@ -372,9 +372,8 @@
                                 <DayTypeRef version="any" ref="RUT:DayType:MonSat"/>
                             </dayTypes>
                             <!-- Hvilket kjøremønster som benyttes med passasjerer ombord -->
-                            <RouteRef ref=""></RouteRef>
                             <JourneyPatternRef version="any" ref="RUT:JourneyPattern:0061101"/>
-                            <!-- Hvilken linje det gjelder -->
+                            <!-- Hvilken linje det gjelder (optional) -->
                             <LineRef version="any" ref="RUT:Line:0061"/>
                             <passingTimes>
                                 <TimetabledPassingTime>
