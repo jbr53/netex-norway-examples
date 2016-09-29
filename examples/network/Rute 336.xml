@@ -17,6 +17,7 @@
 
             <codespaces>
                 <!-- Codespace for Brakar -->
+                <!-- Test -->
                 <Codespace id="brakar">
                     <Xmlns>BRA</Xmlns>
                     <XmlnsUrl>http://www.brakar.no/</XmlnsUrl>
