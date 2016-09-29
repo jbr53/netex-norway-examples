@@ -1,0 +1,1756 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Dette eksempelet er basert på linje 61A Tveita Solfjellet funnet her: 
+    https://ruter.no/globalassets/rutetabeller/oslo/oslo_syd_web_april2016.pdf
+-->
+<PublicationDelivery version="1.0" xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd">
+    <PublicationTimestamp>2016-05-20T15:03:03Z</PublicationTimestamp>
+    <ParticipantRef>RUT</ParticipantRef>
+
+    <!-- Description er frivillig -->
+    <Description>Ruter linje 336: Ål-Vats-Bergsjø</Description>
+
+    <dataObjects>
+        <!-- =========================================== -->
+        <CompositeFrame version="1" created="2015-12-13T00:00:00Z" id="RUT:Norway:CompositeFrame:0336">
+
+            <codespaces>
+                <!-- Codespace for Brakar -->
+                <Codespace id="brakar">
+                    <Xmlns>BRA</Xmlns>
+                    <XmlnsUrl>http://www.brakar.no/</XmlnsUrl>
+                </Codespace>
+                <!-- Codespace for nasjonalt holdeplassregister -->
+                <Codespace id="nhr">
+                    <Xmlns>NHR</Xmlns>
+                    <XmlnsUrl>http://www.rutebanken.no/nasjonltholdeplassregister</XmlnsUrl>
+                </Codespace>
+            </codespaces>
+            <frames>
+                <!-- =========================================== -->
+                <ResourceFrame version="any" id="BRA:ResourceFrame:RF1">
+                    <FrameDefaults>
+                        <!-- Alle elementer med id-attributt blir prefixet med dette codespacet (dvs BRA:) -->
+                        <DefaultCodespaceRef ref="brakar"/>
+                        <DefaultLocale>
+                            <TimeZone>CET</TimeZone>
+                            <SummerTimeZone>CEST</SummerTimeZone>
+                            <!-- Alle tekster er på norsk om ikke eksplisitt spesifisert -->
+                            <DefaultLanguage>no</DefaultLanguage>
+                        </DefaultLocale>
+                        <!-- Alle koordinater leveres i henhold til WGS84 -->
+                        <DefaultLocationSystem>EPSG:4326</DefaultLocationSystem>
+                    </FrameDefaults>
+                    <organisations>
+                        <!-- TODO her er ting kun splittet i authority og operator. Normalt er strukturen mer kompleks, og informasjon rundt f.eks hittegods må modelleres korrekt -->
+                        <Authority version="1" id="BRA:Company:0">
+                            <CompanyNumber>995082454</CompanyNumber>
+                            <!-- Organisasjonsnummer -->
+                            <Name>Brakar</Name>
+                            <LegalName>BRAKAR AS</LegalName>
+                            <OrganisationType>authority</OrganisationType>
+                        </Authority>
+
+                        <!-- Antar her at Unibuss er selskapet som kjører turen. Ikke nødvendigvis korrekt, men fremgår ikke av rutetabellen -->
+                        <Operator version="1" id="RUT:Company:1">
+                            <CompanyNumber>985615616</CompanyNumber>
+                            <Name>Unibuss</Name>
+                            <LegalName>UNIBUSS AS</LegalName>
+                            <CustomerServiceContactDetails>
+                                <Phone>0047 177</Phone>
+                                <Url>http://www.ruter.no</Url>
+                                <FurtherDetails>Kontaktskjema på websider</FurtherDetails>
+                            </CustomerServiceContactDetails>
+                        </Operator>
+                    </organisations>
+                </ResourceFrame>
+
+                <!-- Alt her vil verifiseres mot det som ligger i holdeplassregisteret. Finnes det ikke der blir hele denne filen avvist -->
+                <SiteFrame version="any" id="RUT:SiteFrame:SF01">
+                    <stopPlaces>
+                        <!-- Merk at her brukes det codespace NHR som viser at disse elementene eies av NasjonaltHoldeplassRegister -->
+                        <StopPlace version="1" id="NHR:StopArea:761027044">
+                            <Name>Ål stasjon</Name>
+                            <quays>
+                                <Quay version="1" id="NHR:StopArea:762027045"/>
+                                <Quay version="1" id="NHR:StopArea:762027046"/>
+                            </quays>
+                        </StopPlace>
+                        <StopPlace version="1" id="NHR:StopArea:761027030">
+                            <Name>Ål idrettshall</Name>
+                            <quays>
+                                <Quay version="1" id="NHR:StopArea:762027031"/>
+                                <Quay version="1" id="NHR:StopArea:762027032"/>
+                            </quays>
+                        </StopPlace>
+                        <StopPlace version="1" id="NHR:StopArea:761027033">
+                            <Name>Ål sentrum</Name>
+                            <quays>
+                                <Quay version="1" id="NHR:StopArea:762027034"/>
+                                <Quay version="1" id="NHR:StopArea:762027035"/>
+                            </quays>
+                        </StopPlace>
+                        <StopPlace version="1" id="NHR:StopArea:761027021">
+                            <Name>Sundrehallsplassen</Name>
+                            <quays>
+                                <Quay version="1" id="NHR:StopArea:762027022"/>
+                                <Quay version="1" id="NHR:StopArea:762027023"/>
+                            </quays>
+                        </StopPlace>
+                        <StopPlace version="1" id="NHR:StopArea:761027284">
+                            <Name>Holo snekkerverksted</Name>
+                            <quays>
+                                <Quay version="1" id="NHR:StopArea:762027285"/>
+                                <Quay version="1" id="NHR:StopArea:762027286"/>
+                            </quays>
+                        </StopPlace>
+                        <StopPlace version="1" id="NHR:StopArea:761027102">
+                            <Name>Leveld posthus</Name>
+                            <quays>
+                                <Quay version="1" id="NHR:StopArea:762027103"/>
+                                <Quay version="1" id="NHR:StopArea:762027104"/>
+                            </quays>
+                        </StopPlace>
+                        <StopPlace version="1" id="NHR:StopArea:761027061">
+                            <Name>Vats turistheim</Name>
+                            <quays>
+                                <Quay version="1" id="NHR:StopArea:762027062"/>
+                                <Quay version="1" id="NHR:StopArea:762027063"/>
+                            </quays>
+                        </StopPlace>
+                        <StopPlace version="1" id="NHR:StopArea:761027236">
+                            <Name>Arnegardkrysset</Name>
+                            <quays>
+                                <Quay version="1" id="NHR:StopArea:762027237"/>
+                                <Quay version="1" id="NHR:StopArea:762027238"/>
+                            </quays>
+                        </StopPlace>
+                        <StopPlace version="1" id="NHR:StopArea:761026965">
+                            <Name>Rødungstølen</Name>
+                            <quays>
+                                <Quay version="1" id="NHR:StopArea:762026966"/>
+                                <Quay version="1" id="NHR:StopArea:762026967"/> 
+                            </quays>
+                        </StopPlace>
+                        <StopPlace version="1" id="NHR:StopArea:761026956">
+                            <Name>Bergsjøtoppen</Name>
+                            <quays>
+                                <Quay version="1" id="NHR:StopArea:762026957"/>
+                                <Quay version="1" id="NHR:StopArea:762026958"/> 
+                            </quays>
+                        </StopPlace>
+                        <StopPlace version="1" id="NHR:StopArea:761026959">
+                            <Name>Bergsjøstølen</Name>
+                            <quays>
+                                <Quay version="1" id="NHR:StopArea:762026961"/>
+                            </quays>
+                        </StopPlace>
+                    </stopPlaces>
+                </SiteFrame>
+                             
+                <ServiceFrame version="any" id="BRA:ServiceFrame:0336">
+                    <!-- Nettverk er bare en gruppering av Lines under en felles "paraply". En Line igjen er en gruppe av ruter under samme markedsføringsnavn, eks Rute 2 -->
+                    <Network version="1" changed="2015-12-13T00:00:00Z" id="BRA:GroupOfLine:Hallingdal">
+                        <Name>Brakar#</Name>
+                    </Network>
+                    <!-- Definisjon av hvilken retning dette er. Her brukt en rundtur som kjører med klokken -->
+                    <directions>
+                        <Direction version="any" id="BRA:Route:0033601:Direction">
+                            <Name>Tur</Name>
+                            <DirectionType>outbound</DirectionType>
+                        </Direction>
+                        <Direction version="any" id="BRA:Route:0033602:Direction">
+                            <Name>Retur</Name>
+                            <DirectionType>inbound</DirectionType>
+                        </Direction>
+                    </directions>
+                    <!-- Her listes alle rutepunktene. I eksemplet under er det kun referanser til StopPoints, men det kan også være andre typer punkter, eks TimingPoint.
+                         Hvis man har flere ruter skal alle rutepunkter defineres her. For hver rute under lister man opp de som faktisk benyttes i gitt rute 
+                         (eks tur/retur der mange av punktene er de samme, men ikke nødvendigvis alle 
+
+                         NB! Har kuttet ut projections da de vel bare er en slags intern mapping i leverandørens system . Ser ikke noe behov for det.-->
+                    
+                    <routePoints>
+                        <RoutePoint version="1" id="BRA:RoutePoint:0619121101"></RoutePoint>
+                        <RoutePoint version="1" id="BRA:RoutePoint:0619121102"></RoutePoint>
+                        <RoutePoint version="1" id="BRA:RoutePoint:0619679901"></RoutePoint>
+                        <RoutePoint version="1" id="BRA:RoutePoint:0619679902"></RoutePoint>
+                        <RoutePoint version="1" id="BRA:RoutePoint:0619123001"></RoutePoint>
+                        <RoutePoint version="1" id="BRA:RoutePoint:0619123002"></RoutePoint>
+                        <RoutePoint version="1" id="BRA:RoutePoint:0619572801"></RoutePoint>
+                        <RoutePoint version="1" id="BRA:RoutePoint:0619572802"></RoutePoint>
+                        <RoutePoint version="1" id="BRA:RoutePoint:0619579601"></RoutePoint>
+                        <RoutePoint version="1" id="BRA:RoutePoint:0619579602"></RoutePoint>
+                        <RoutePoint version="1" id="BRA:RoutePoint:0619144501"></RoutePoint>
+                        <RoutePoint version="1" id="BRA:RoutePoint:0619144502"></RoutePoint>
+                        <RoutePoint version="1" id="BRA:RoutePoint:0619147001"></RoutePoint>
+                        <RoutePoint version="1" id="BRA:RoutePoint:0619147002"></RoutePoint>
+                        <RoutePoint version="1" id="BRA:RoutePoint:0619151001"></RoutePoint>
+                        <RoutePoint version="1" id="BRA:RoutePoint:0619151002"></RoutePoint>
+                        <RoutePoint version="1" id="BRA:RoutePoint:0619152001"></RoutePoint>
+                        <RoutePoint version="1" id="BRA:RoutePoint:0619152002"></RoutePoint>
+                        <RoutePoint version="1" id="BRA:RoutePoint:0619582401"></RoutePoint>
+                        <RoutePoint version="1" id="BRA:RoutePoint:0619582402"></RoutePoint>
+                        <RoutePoint version="1" id="BRA:RoutePoint:0619527402"></RoutePoint>
+                    </routePoints>
+                                                           
+<!--     --> 
+                    <routes>
+                        <Route version="1" id="BRA:Route:0033601">
+                            <Name>Ål-Vats-Bergsjø</Name>
+                            <DirectionRef version="any" ref="BRA:Route:0033601:Direction"/>
+                            <pointsInSequence>
+                                <PointOnRoute version="any" id="BRA:PointOnRoute:0619121102-0" order="1">
+                                    <RoutePointRef version="1" ref="BRA:RoutePoint:0619121102"/>
+                                </PointOnRoute>
+                                <PointOnRoute version="any" id="BRA:PointOnRoute:0619679902-1" order="2">
+                                    <RoutePointRef version="1" ref="BRA:RoutePoint:0619679902"/>
+                                </PointOnRoute>
+                                <PointOnRoute version="any" id="BRA:PointOnRoute:0619123002-2" order="3">
+                                    <RoutePointRef version="1" ref="BRA:RoutePoint:0619123002"/>
+                                </PointOnRoute>
+                                <PointOnRoute version="any" id="BRA:PointOnRoute:0619572802-3" order="4">
+                                    <RoutePointRef version="1" ref="BRA:RoutePoint:0619572802"/>                                    
+                                </PointOnRoute>
+                                <PointOnRoute version="any" id="BRA:PointOnRoute:0619579601-4" order="5">
+                                    <RoutePointRef version="1" ref="BRA:RoutePoint:0619579601"/>                                    
+                                </PointOnRoute>
+                                <PointOnRoute version="any" id="BRA:PointOnRoute:0619144501-5" order="6">
+                                    <RoutePointRef version="1" ref="BRA:RoutePoint:0619144501"/>                                    
+                                </PointOnRoute>
+                                <PointOnRoute version="any" id="BRA:PointOnRoute:0619147001-6" order="7">
+                                    <RoutePointRef version="1" ref="BRA:RoutePoint:0619147001"/>                                    
+                                </PointOnRoute>
+                                <PointOnRoute version="any" id="BRA:PointOnRoute:0619151001-7" order="8">
+                                    <RoutePointRef version="1" ref="BRA:RoutePoint:0619151001"/>                                                                        
+                                </PointOnRoute>
+                                <PointOnRoute version="any" id="BRA:PointOnRoute:0619152002-8" order="9">
+                                    <RoutePointRef version="1" ref="BRA:RoutePoint:0619152002"/>                                                                        
+                                </PointOnRoute>
+                                <PointOnRoute version="any" id="BRA:PointOnRoute:0619582401-9" order="10">
+                                    <RoutePointRef version="1" ref="BRA:RoutePoint:0619582401"/>                                                                        
+                                </PointOnRoute>
+                                <PointOnRoute version="any" id="BRA:PointOnRoute:0619152702-10" order="11">
+                                    <RoutePointRef version="1" ref="BRA:RoutePoint:0619152702"/>                                                                        
+                                </PointOnRoute>
+                            </pointsInSequence>
+                        </Route>
+                        <Route version="1" id="BRA:Route:0033602">
+                            <Name>Bergsjø-Vats-Ål</Name>
+                            <DirectionRef version="any" ref="BRA:Route:0033602:Direction"/>
+                            <pointsInSequence>
+                                <PointOnRoute version="any" id="BRA:PointOnRoute:0619152702-0" order="1">
+                                    <RoutePointRef version="1" ref="BRA:RoutePoint:0336619582702"/>                                                                        
+                                </PointOnRoute>
+                                <PointOnRoute version="any" id="BRA:PointOnRoute:0619582402-1" order="2">
+                                    <RoutePointRef version="1" ref="BRA:RoutePoint:0336619582402"/>                                                                        
+                                </PointOnRoute>
+                                <PointOnRoute version="any" id="BRA:PointOnRoute:0619152002-2" order="3">
+                                    <RoutePointRef version="1" ref="BRA:RoutePoint:0336619152002"/>                                                                        
+                                </PointOnRoute>
+                                <PointOnRoute version="any" id="BRA:PointOnRoute:0619151002-3" order="4">
+                                    <RoutePointRef version="1" ref="BRA:RoutePoint:0336619151002"/>                                                                        
+                                </PointOnRoute>
+                                <PointOnRoute version="any" id="BRA:PointOnRoute:0619147002-4" order="5">
+                                    <RoutePointRef version="1" ref="BRA:RoutePoint:0336619147002"/>                                                                        
+                                </PointOnRoute>
+                                <PointOnRoute version="any" id="BRA:PointOnRoute:0619144502-5" order="6">
+                                    <RoutePointRef version="1" ref="BRA:RoutePoint:0336619144002"/>                                                                        
+                                </PointOnRoute>
+                                <PointOnRoute version="any" id="BRA:PointOnRoute:0619579602-6" order="7">
+                                    <RoutePointRef version="1" ref="BRA:RoutePoint:0336619579602"/>                                                                        
+                                </PointOnRoute>
+                                <PointOnRoute version="any" id="BRA:PointOnRoute:0619572801-7" order="8">
+                                    <RoutePointRef version="1" ref="BRA:RoutePoint:0336619572801"/>                                                                        
+                                </PointOnRoute>
+                                <PointOnRoute version="any" id="BRA:PointOnRoute:0619123001-8" order="9">
+                                    <RoutePointRef version="1" ref="BRA:RoutePoint:0336619123001"/>                                                                        
+                                </PointOnRoute>
+                                <PointOnRoute version="any" id="BRA:PointOnRoute:0619121101-9" order="10">
+                                    <RoutePointRef version="1" ref="BRA:RoutePoint:0336619121101"/>                                                                        
+                                </PointOnRoute>
+                                <PointOnRoute version="any" id="BRA:PointOnRoute:0619679901-10" order="11">
+                                    <RoutePointRef version="1" ref="BRA:RoutePoint:0336619129901"/>                                                                        
+                                </PointOnRoute>
+                            </pointsInSequence>
+                        </Route>
+                    </routes>
+                    
+                    <lines>
+                        <!-- Kun 1 linje definert; 336 -->
+                        <Line version="any" id="BRA:Line:0336">
+                            <Name>Ål-Vats-Bergsjø</Name>
+                            <TransportMode>bus</TransportMode>
+                            <PublicCode>336</PublicCode>
+                            <routes>
+                                <!-- Denne linjen kjøres på 2 måter -->
+                                <RouteRef version="1" ref="BRA:Route:0033601"/>
+                                <RouteRef version="1" ref="BRA:Route:0033602"/>
+                            </routes>
+                        </Line>
+                    </lines>
+
+                    <!-- Det antas her at det er fem ulike tekster som vises på bussen, alt etter hvilket endepunkt turen har.
+                    Disse tekstene er referert til i Calls-seksjonen lenger nede
+                    -->
+                    <destinationDisplays>
+                        <DestinationDisplay version="any" id="BRA:DestinationDisplay:DST_Bergsjoe">
+                            <Name>Bergsjoe</Name>
+                            <FrontText>Vats-Bergsjø</FrontText>
+                        </DestinationDisplay>
+                        <DestinationDisplay version="any" id="BRA:DestinationDisplay:DST_Arnegardkrysset">
+                            <Name>Arnegardkrysset</Name>
+                            <FrontText>Vats-Arnegardkrysset</FrontText>
+                        </DestinationDisplay>
+                        <DestinationDisplay version="any" id="BRA:DestinationDisplay:DST_Bergsjoetoppen">
+                            <Name>Bergsjoetoppen</Name>
+                            <FrontText>Vats-Bergsjøtoppen</FrontText>
+                        </DestinationDisplay>
+                        <DestinationDisplay version="any" id="BRA:DestinationDisplay:DST_Bergsjoestoelen">
+                            <Name>Bergsjoestoelen</Name>
+                            <FrontText>Vats-Bergsjøstølen</FrontText>
+                        </DestinationDisplay>
+                        <DestinationDisplay version="any" id="BRA:DestinationDisplay:DST_Aal">
+                            <Name>AAL</Name>
+                            <FrontText>Vats-Ål</FrontText>
+                        </DestinationDisplay>
+                    </destinationDisplays>
+
+                    <!-- Dette er alle stoppene Linje 336 stopper på -->
+                    <scheduledStopPoints>
+                        <ScheduledStopPoint version="1" id="BRA:StopPoint:0619121101">
+                            <Name>Ål stasjon</Name>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint version="1" id="BRA:StopPoint:0619121102">
+                            <Name>Ål stasjon</Name>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint version="1" id="BRA:StopPoint:0619679901">
+                            <Name>Ål idrettshall</Name>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint version="1" id="BRA:StopPoint:0619679902">
+                            <Name>Ål idrettshall</Name>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint version="1" id="BRA:StopPoint:0619123001">
+                            <Name>Ål sentrum</Name>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint version="1" id="BRA:StopPoint:0619123002">
+                            <Name>Ål sentrum</Name>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint version="1" id="BRA:StopPoint:0619572801">
+                            <Name>Sundrehallplassen</Name>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint version="1" id="BRA:StopPoint:0619572802">
+                            <Name>Sundrehallplassen</Name>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint version="1" id="BRA:StopPoint:0619579601">
+                            <Name>Holo Snekkerverksted</Name>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint version="1" id="BRA:StopPoint:0619579602">
+                            <Name>Holo Snekkerverksted</Name>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint version="1" id="BRA:StopPoint:0619144501">
+                            <Name>Leveld posthus</Name>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint version="1" id="BRA:StopPoint:0619144502">
+                            <Name>Leveld posthus</Name>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint version="1" id="BRA:StopPoint:0619147001">
+                            <Name>Vats Turistheim</Name>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint version="1" id="BRA:StopPoint:0619147002">
+                            <Name>Vats Turistheim</Name>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint version="1" id="BRA:StopPoint:0619151001">
+                            <Name>Arnegardkrysset</Name>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint version="1" id="BRA:StopPoint:0619151002">
+                            <Name>Arnegardkrysset</Name>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint version="1" id="BRA:StopPoint:0619152002">
+                            <Name>Rødungstølen</Name>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint version="1" id="BRA:StopPoint:0619152001">
+                            <Name>Bergsjøtoppen</Name>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint version="1" id="BRA:StopPoint:0619582402">
+                            <Name>Bergsjøtoppen</Name>
+                        </ScheduledStopPoint>
+                        <ScheduledStopPoint version="1" id="BRA:StopPoint:0619152702">
+                            <Name>Bergsjøstølen</Name>
+                        </ScheduledStopPoint>
+                    </scheduledStopPoints>
+                    
+                    <!-- Dette er alle ServicePatterns linje 336 kjører. -->
+                    <servicePatterns>
+                        <ServicePattern version="1" id="BRA:JourneyPattern:0336101">
+                            <Name>Ål-Arnegardkrysset</Name>
+                            <RouteRef version="1" ref="BRA:Route:033601"/>
+                            <!-- Rekkefølge på stopp -->
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619123002-1" order="1">
+                                    <!-- Referanse til hvilket ScheduledStopPoint -->
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619123002"/>
+                                    <!-- Destinasjonstekst som vises på bussen -->
+                                    <DestinationDisplayRef ref="BRA:DestinationDisplay:DST_Arnegardkrysset"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619572802-1" order="2">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619572802"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619579601-1" order="3">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619579601"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619144501-1" order="4">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619144501"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619147001-1" order="5">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619147001"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619151001-1" order="6">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619151001"/>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServicePattern>
+                        <ServicePattern version="1" id="BRA:JourneyPattern:0336102">
+                            <Name>Ål-Arnegardkrysset-Bergsjøtoppen</Name>
+                            <RouteRef version="1" ref="BRA:Route:033601"/>
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619123002-2" order="1">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619123002"/>
+                                    <DestinationDisplayRef ref="BRA:DestinationDisplay:DST_Bergsjoetoppen"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619572802-2" order="2">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619572802"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619579601-2" order="3">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619579601"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619144501-2" order="4">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619144501"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619147001-2" order="5">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619147001"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619151001-2" order="6">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619151001"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619582401-2" order="7">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619582401"/>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServicePattern>
+                        <ServicePattern version="1" id="BRA:JourneyPattern:0336103">
+                            <Name>Ål-Arnegardkrysset-Bergsjøstølen</Name>
+                            <RouteRef version="1" ref="BRA:Route:033601"/>
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619121102-3" order="1">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619121102"/>
+                                    <DestinationDisplayRef ref="BRA:DestinationDisplay:DST_Bergsjoestoelen"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619123002-3" order="2">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619123002"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619572802-3" order="3">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619572802"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619579601-3" order="4">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619579601"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619144501-3" order="5">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619144501"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619147001-3" order="6">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619147001"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619151001-3" order="7">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619151001"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619582401-3" order="8">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619582401"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619152702-3" order="9">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619152702"/>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServicePattern>
+                        <ServicePattern version="1" id="BRA:JourneyPattern:0336104">
+                            <Name>Ål-Arnegardkrysset-Rødungstølen-Bergsjøstølen</Name>
+                            <RouteRef version="1" ref="BRA:Route:033601"/>
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619121102-4" order="1">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619121102"/>
+                                    <DestinationDisplayRef ref="BRA:DestinationDisplay:DST_Bergsjoestoelen"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619679902-4" order="2">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619679902"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619123002-4" order="3">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619123002"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619572802-4" order="4">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619572802"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619579601-4" order="5">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619579601"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619144501-4" order="6">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619144501"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619147001-4" order="7">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619147001"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619151001-4" order="8">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619151001"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619152002-4" order="9">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619152002"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619582401-4" order="10">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619582401"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619152702-4" order="11">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619152702"/>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServicePattern>
+                        <ServicePattern version="1" id="BRA:JourneyPattern:0336105">
+                            <Name>Ål-Arnegardkrysset-Rødungstølen-Bergsjøstølen</Name>
+                            <RouteRef version="1" ref="BRA:Route:033601"/>
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619121102-5" order="1">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619121102"/>
+                                    <DestinationDisplayRef ref="BRA:DestinationDisplay:DST_Bergsjoestoelen"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619123002-5" order="2">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619123002"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619572802-5" order="3">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619572802"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619579601-5" order="4">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619579601"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619144501-5" order="5">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619144501"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619147001-5" order="6">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619147001"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619151001-5" order="7">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619151001"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619152002-5" order="8">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619152002"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619582401-5" order="9">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619582401"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619152702-5" order="10">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619152702"/>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServicePattern>
+                        <ServicePattern version="1" id="BRA:JourneyPattern:0336106">
+                            <Name>Rødungstølen-Arnegardkrysset-Ål</Name>
+                            <RouteRef version="1" ref="BRA:Route:033602"/>
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619152002-6" order="1">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619152002"/>
+                                    <DestinationDisplayRef ref="BRA:DestinationDisplay:DST_Aal"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619151002-6" order="2">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619151002"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619147002-6" order="3">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619147002"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619144502-6" order="4">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619144502"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619579602-6" order="5">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619579602"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619572801-6" order="6">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619572801"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619123001-6" order="7">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619123001"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619679901-6" order="8">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619679901"/>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServicePattern>
+                        <ServicePattern version="1" id="BRA:JourneyPattern:0336107">
+                            <Name>Bergsjøtoppen-Arnegardkrysset-Ål</Name>
+                            <RouteRef version="1" ref="BRA:Route:033602"/>
+                            <pointsInSequence>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619582402-8" order="1">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619582402"/>
+                                    <DestinationDisplayRef ref="BRA:DestinationDisplay:DST_Aal"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619152002-8" order="2">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619152002"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619151002-8" order="3">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619151002"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619147002-8" order="4">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619147002"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619144502-8" order="5">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619144502"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619579602-8" order="6">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619579602"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619572801-8" order="7">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619572801"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619123001-8" order="8">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619123001"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619121101-8" order="9">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619121101"/>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServicePattern>
+                        <ServicePattern version="1" id="BRA:JourneyPattern:0336108">
+                            <Name>Bergsjøstølen-Arnegardkrysset-Ål</Name>
+                            <RouteRef version="1" ref="BRA:Route:033602"/>
+                            <pointsInSequence>
+                                
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619152702-9" order="1">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619152702"/>
+                                    <DestinationDisplayRef ref="BRA:DestinationDisplay:DST_Aal"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619582402-9" order="2">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619582402"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619152002-9" order="3">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619152002"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619151002-9" order="4">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619151002"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619147002-9" order="5">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619147002"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619144502-9" order="6">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619144502"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619579602-9" order="7">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619579602"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619572801-9" order="8">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619572801"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619123001-9" order="9">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619123001"/>
+                                </StopPointInJourneyPattern>
+                                <StopPointInJourneyPattern version="1" id="BRA:StopPointInJourneyPattern:0619121101-9" order="10">
+                                    <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619121101"/>
+                                </StopPointInJourneyPattern>
+                            </pointsInSequence>
+                        </ServicePattern>
+                    </servicePatterns>
+                    <!-- Kobling fra ScheduledStopPoint til StopPlace/Quay. Legg merke til at StopPlace og Quay hører til i NHR-codespace mens ScheduleStopPoint hører til i RUT-codespacet -->
+                    <stopAssignments>
+                        <PassengerStopAssignment version="any" order="1" id="BRA:PassengerStopAssignment:0619121101">
+                            <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619121101"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:761027044"/>
+                            <QuayRef version="1" ref="NHR:StopArea:762027045"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment version="any" order="2" id="BRA:PassengerStopAssignment:0619121102">
+                            <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619121102"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:761027044"/>
+                            <QuayRef version="1" ref="NHR:StopArea:762027046"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment version="any" order="3" id="BRA:PassengerStopAssignment:0619679901">
+                            <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619679901"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:761027030"/>
+                            <QuayRef version="1" ref="NHR:StopArea:762027031"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment version="any" order="4" id="BRA:PassengerStopAssignment:0619679902">
+                            <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619679902"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:761027030"/>
+                            <QuayRef version="1" ref="NHR:StopArea:762027032"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment version="any" order="5" id="BRA:PassengerStopAssignment:0619123001">
+                            <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619123001"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:761027033"/>
+                            <QuayRef version="1" ref="NHR:StopArea:762027034"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment version="any" order="6" id="BRA:PassengerStopAssignment:0619123002">
+                            <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619123002"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:761027033"/>
+                            <QuayRef version="1" ref="NHR:StopArea:762027035"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment version="any" order="7" id="BRA:PassengerStopAssignment:0619572801">
+                            <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619572801"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:761027021"/>
+                            <QuayRef version="1" ref="NHR:StopArea:762027022"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment version="any" order="8" id="BRA:PassengerStopAssignment:0619572802">
+                            <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619572802"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:761027021"/>
+                            <QuayRef version="1" ref="NHR:StopArea:762027023"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment version="any" order="9" id="BRA:PassengerStopAssignment:0619579601">
+                            <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619579601"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:761027284"/>
+                            <QuayRef version="1" ref="NHR:StopArea:762027285"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment version="any" order="10" id="BRA:PassengerStopAssignment:0619579602">
+                            <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619579602"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:761027284"/>
+                            <QuayRef version="1" ref="NHR:StopArea:762027286"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment version="any" order="11" id="BRA:PassengerStopAssignment:0619144501">
+                            <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619144501"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:761027102"/>
+                            <QuayRef version="1" ref="NHR:StopArea:762027103"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment version="any" order="12" id="BRA:PassengerStopAssignment:0619144502">
+                            <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619144502"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:761027102"/>
+                            <QuayRef version="1" ref="NHR:StopArea:762027104"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment version="any" order="13" id="BRA:PassengerStopAssignment:0619147001">
+                            <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619147001"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:761027061"/>
+                            <QuayRef version="1" ref="NHR:StopArea:762027062"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment version="any" order="14" id="BRA:PassengerStopAssignment:0619147002">
+                            <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619147002"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:761027061"/>
+                            <QuayRef version="1" ref="NHR:StopArea:762027063"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment version="any" order="15" id="BRA:PassengerStopAssignment:0619151001">
+                            <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619151001"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:761027236"/>
+                            <QuayRef version="1" ref="NHR:StopArea:762027237"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment version="any" order="16" id="BRA:PassengerStopAssignment:0619151002">
+                            <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619151002"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:761027236"/>
+                            <QuayRef version="1" ref="NHR:StopArea:762027238"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment version="any" order="17" id="BRA:PassengerStopAssignment:0619152001">
+                            <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619152001"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:761026965"/>
+                            <QuayRef version="1" ref="NHR:StopArea:762026966"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment version="any" order="18" id="BRA:PassengerStopAssignment:0619152002">
+                            <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619152002"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:761026965"/>
+                            <QuayRef version="1" ref="NHR:StopArea:762026967"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment version="any" order="19" id="BRA:PassengerStopAssignment:0619582401">
+                            <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619582401"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:761026956"/>
+                            <QuayRef version="1" ref="NHR:StopArea:762026957"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment version="any" order="20" id="BRA:PassengerStopAssignment:0619582402">
+                            <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619582402"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:761026956"/>
+                            <QuayRef version="1" ref="NHR:StopArea:762026958"/>
+                        </PassengerStopAssignment>
+                        <PassengerStopAssignment version="any" order="21" id="BRA:PassengerStopAssignment:0619152702">
+                            <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619152702"/>
+                            <StopPlaceRef version="1" ref="NHR:StopArea:761026959"/>
+                            <QuayRef version="1" ref="NHR:StopArea:762026961"/>
+                        </PassengerStopAssignment>
+                    </stopAssignments>
+                    
+                    <notices>
+                        <!-- Fotnoter relatert spesifikt til turer -->
+                        <Notice version="any" id="BRA:Notice:Tur 3:1">
+                            <Text>Kjører til Bergsjøstølen når hotellet er åpent.</Text>
+                        </Notice>
+                        <Notice version="any" id="BRA:Notice:Tur 4:1">
+                            <Text>Kjører til Bergsjøstølen når hotellet er åpent.</Text>
+                        </Notice>
+                        <Notice version="any" id="BRA:Notice:Tur 5:1">
+                            <Text>Køyrer så langt det er reisande.</Text>
+                        </Notice>
+                        <Notice version="any" id="BRA:Notice:Tur 7:1">
+                            <Text>Kjører til Bergsjøstølen når hotellet er åpent.</Text>
+                        </Notice>
+                        <Notice version="any" id="BRA:Notice:Tur 8:1">
+                            <Text>Kjører til Bergsjøstølen når hotellet er åpent.</Text>
+                        </Notice>
+                    </notices>
+                </ServiceFrame>
+<!-- HIT!!! -->
+                <ServiceCalendarFrame version="any" id="BRA:ServiceCalendarFrame:SCF01">
+                    <ServiceCalendar version="any" id="BRA:ServiceCalendar:1">
+                        <Name>Høsten 2017</Name>
+                        <dayTypes>
+                            <!-- Denne kalenderen gjelder Mandag-Fredag -->
+                            <DayType version="any" id="BRA:DayType:1">
+                                <Name>DX67</Name>
+                                <properties>
+                                    <PropertyOfDay>
+                                        <DaysOfWeek>Monday Tuesday Wednesday Thursday Friday</DaysOfWeek>
+                                    </PropertyOfDay>
+                                </properties>
+                            </DayType>
+                            <!-- Denne kalenderen gjelder Lørdag -->
+                            <DayType version="any" id="BRA:DayType:2">
+                                <Name>6</Name>
+                                <properties>
+                                    <PropertyOfDay>
+                                        <DaysOfWeek>Saturday</DaysOfWeek>
+                                    </PropertyOfDay>
+                                </properties>
+                            </DayType>
+                        </dayTypes>
+                    </ServiceCalendar>
+                </ServiceCalendarFrame>
+                <!-- Tidtabellen, dvs avgangstider -->
+                <TimetableFrame version="any" id="BRA:TimetableFrame:1">
+                    <validityConditions>
+                        <ValidBetween>
+                            <FromDate>2016-09-19T00:00:00</FromDate>
+                            <ToDate>2016-12-23T00:00:00</ToDate>
+                        </ValidBetween>
+                    </validityConditions>
+                    <Name>Rute for 2016</Name>
+                    <!-- Kjøres buss om ikke noe annet er spesifisert -->
+                    <DefaultMode>bus</DefaultMode>
+                    <vehicleJourneys>
+                        <!-- 1. avgang tur-->
+                        <ServiceJourney version="any" id="BRA:ServiceJourney:1">
+                            <dayTypes>
+                                <!-- Refererer til 1 daytype som inneholder alle dager mandag-lørdag. Kunne vært separate dagtyper, men da måtte alle listes her -->
+                                <DayTypeRef version="any" ref="BRA:DayType:1"/>
+                            </dayTypes>
+                            <!-- Hvilket kjøremønster som benyttes med passasjerer ombord -->
+                            <JourneyPatternRef version="any" ref="BRA:JourneyPattern:0336101"/>
+                            <!-- Hvilken linje det gjelder -->
+                            <LineRef version="any" ref="BRA:Line:336"/>
+                            <passingTimes>
+                                <!-- Regner med det er krav om at alle stop points i gjeldende journey pattern må listes opp? -->
+                                <!-- Regner med at order ikke trengs her, fordi det er definert i JourneyPatterns -->
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:1">
+                                    <!-- Ål sentrum -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619123002-1"/>
+                                    <DepartureTime>07:25:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:2">
+                                    <!-- Sundrehallplassen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619572802-1"/>
+                                    <DepartureTime>07:25:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:3">
+                                    <!-- Holo Snekkerverksted -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619579601-1"/>
+                                    <DepartureTime>07:31:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:4">
+                                    <!-- Leveld posthus -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619144501-1"/>
+                                    <DepartureTime>07:36:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:5">
+                                    <!-- Vats Turistheim -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619147001-1"/>
+                                    <DepartureTime>07:40:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:6">
+                                    <!-- Arnegardkrysset -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619151001-1"/>
+                                    <DepartureTime>07:45:00</DepartureTime>
+                                </TimetabledPassingTime>
+                            </passingTimes>
+                        </ServiceJourney>
+                        <!-- 2. avgang tur-->
+                        <ServiceJourney version="any" id="BRA:ServiceJourney:2">
+                            <dayTypes>
+                                <!-- Refererer til 1 daytype som inneholder alle dager mandag-lørdag. Kunne vært separate dagtyper, men da måtte alle listes her -->
+                                <DayTypeRef version="any" ref="BRA:DayType:1"/>
+                            </dayTypes>
+                            <!-- Hvilket kjøremønster som benyttes med passasjerer ombord -->
+                            <JourneyPatternRef version="any" ref="BRA:JourneyPattern:0336102"/>
+                            <!-- Hvilken linje det gjelder -->
+                            <LineRef version="any" ref="BRA:Line:336"/>
+                            <passingTimes>
+                                <!-- Regner med det er krav om at alle stop points i gjeldende journey pattern må listes opp? -->
+                                <!-- Regner med at order ikke trengs her, fordi det er definert i JourneyPatterns -->
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:1">
+                                    <!-- Ål sentrum -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619123002-2"/>
+                                    <DepartureTime>08:40:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:2">
+                                    <!-- Sundrehallplassen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619572802-2"/>
+                                    <DepartureTime>08:40:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:3">
+                                    <!-- Holo Snekkerverksted -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619579601-2"/>
+                                    <DepartureTime>08:49:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:4">
+                                    <!-- Leveld posthus -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619144501-2"/>
+                                    <DepartureTime>08:57:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:5">
+                                    <!-- Vats Turistheim -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619147001-2"/>
+                                    <DepartureTime>09:05:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:6">
+                                    <!-- Arnegardkrysset -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619151001-2"/>
+                                    <DepartureTime>09:10:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:7">
+                                    <!-- Bergsjøtoppen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619582401-2"/>
+                                    <DepartureTime>09:20:00</DepartureTime>
+                                </TimetabledPassingTime>
+                            </passingTimes>
+                        </ServiceJourney>
+                        <!-- 3. avgang tur-->
+                        <ServiceJourney version="any" id="BRA:ServiceJourney:3">
+                            <dayTypes>
+                                <!-- Refererer til 1 daytype som inneholder alle dager mandag-lørdag. Kunne vært separate dagtyper, men da måtte alle listes her -->
+                                <DayTypeRef version="any" ref="BRA:DayType:1"/>
+                            </dayTypes>
+                            <!-- Hvilket kjøremønster som benyttes med passasjerer ombord -->
+                            <JourneyPatternRef version="any" ref="BRA:JourneyPattern:0336103"/>
+                            <!-- Hvilken linje det gjelder -->
+                            <LineRef version="any" ref="BRA:Line:336"/>
+                            <passingTimes>
+                                <!-- Regner med det er krav om at alle stop points i gjeldende journey pattern må listes opp? -->
+                                <!-- Regner med at order ikke trengs her, fordi det er definert i JourneyPatterns -->
+                            <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:1">
+                                <!-- Ål stasjon -->
+                                <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619121102-3"/>
+                                <DepartureTime>11:40:00</DepartureTime>
+                            </TimetabledPassingTime>
+                            <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:2">
+                                <!-- Ål sentrum -->
+                                <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619123002-3"/>
+                                <DepartureTime>11:45:00</DepartureTime>
+                            </TimetabledPassingTime>
+                            <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:3">
+                                <!-- Sundrehallplassen -->
+                                <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619572802-3"/>
+                                <DepartureTime>11:45:00</DepartureTime>
+                            </TimetabledPassingTime>
+                            <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:4">
+                                <!-- Holo Snekkerverksted -->
+                                <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619579601-3"/>
+                                <DepartureTime>11:54:00</DepartureTime>
+                            </TimetabledPassingTime>
+                            <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:5">
+                                <!-- Leveld posthus -->
+                                <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619144501-3"/>
+                                <DepartureTime>12:02:00</DepartureTime>
+                            </TimetabledPassingTime>
+                            <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:6">
+                                <!-- Vats Turistheim -->
+                                <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619147001-3"/>
+                                <DepartureTime>12:10:00</DepartureTime>
+                            </TimetabledPassingTime>
+                            <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:7">
+                                <!-- Arnegardkrysset -->
+                                <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619151001-3"/>
+                                <DepartureTime>12:15:00</DepartureTime>
+                            </TimetabledPassingTime>
+                            <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:8">
+                                <!-- Bergsjøtoppen -->
+                                <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619582401-3"/>
+                                <DepartureTime>12:35:00</DepartureTime>
+                            </TimetabledPassingTime>
+                            <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:9">
+                                <!-- Bergsjøstølen -->
+                                <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619152702-3"/>
+                                <DepartureTime>12:40:00</DepartureTime>
+                            </TimetabledPassingTime>
+                            </passingTimes>
+                        </ServiceJourney>
+                        <!-- 4. avgang tur-->
+                        <ServiceJourney version="any" id="BRA:ServiceJourney:4">
+                            <dayTypes>
+                                <!-- Refererer til 1 daytype som inneholder alle dager mandag-lørdag. Kunne vært separate dagtyper, men da måtte alle listes her -->
+                                <DayTypeRef version="any" ref="BRA:DayType:1"/>
+                            </dayTypes>
+                            <!-- Hvilket kjøremønster som benyttes med passasjerer ombord -->
+                            <JourneyPatternRef version="any" ref="BRA:JourneyPattern:0336104"/>
+                            <!-- Hvilken linje det gjelder -->
+                            <LineRef version="any" ref="BRA:Line:336"/>
+                            <passingTimes>
+                                <!-- Regner med det er krav om at alle stop points i gjeldende journey pattern må listes opp? -->
+                                <!-- Regner med at order ikke trengs her, fordi det er definert i JourneyPatterns -->
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:1">
+                                    <!-- Ål stasjon -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619121102-4"/>
+                                    <DepartureTime>14:40:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:2">
+                                    <!-- Ål idrettshall -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619679902-4"/>
+                                    <DepartureTime>14:50:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:3">
+                                    <!-- Ål sentrum -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619123002-4"/>
+                                    <DepartureTime>14:55:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:4">
+                                    <!-- Sundrehallplassen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619572802-4"/>
+                                    <DepartureTime>14:55:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:5">
+                                    <!-- Holo Snekkerverksted -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619579601-4"/>
+                                    <DepartureTime>15:04:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:6">
+                                    <!-- Leveld posthus -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619144501-4"/>
+                                    <DepartureTime>15:12:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:7">
+                                    <!-- Vats Turistheim -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619147001-4"/>
+                                    <DepartureTime>15:20:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:8">
+                                    <!-- Arnegardkrysset -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619151001-4"/>
+                                    <DepartureTime>15:25:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:9">
+                                    <!-- Rødungstølen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619152002-4"/>
+                                    <DepartureTime>15:35:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:10">
+                                    <!-- Bergsjøtoppen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619582401-4"/>
+                                    <DepartureTime>15:45:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:11">
+                                    <!-- Bergsjøstølen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619152702-4"/>
+                                    <DepartureTime>15:50:00</DepartureTime>
+                                </TimetabledPassingTime>
+                            </passingTimes>
+                        </ServiceJourney>
+                        <!-- 5. avgang tur-->
+                        <ServiceJourney version="any" id="BRA:ServiceJourney:5">
+                            <dayTypes>
+                                <!-- Refererer til 1 daytype som inneholder alle dager mandag-lørdag. Kunne vært separate dagtyper, men da måtte alle listes her -->
+                                <DayTypeRef version="any" ref="BRA:DayType:1"/>
+                            </dayTypes>
+                            <!-- Hvilket kjøremønster som benyttes med passasjerer ombord -->
+                            <JourneyPatternRef version="any" ref="BRA:JourneyPattern:0336101"/>
+                            <!-- Hvilken linje det gjelder -->
+                            <LineRef version="any" ref="BRA:Line:336"/>
+                            <passingTimes>
+                                <!-- Regner med det er krav om at alle stop points i gjeldende journey pattern må listes opp? -->
+                                <!-- Regner med at order ikke trengs her, fordi det er definert i JourneyPatterns -->
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:1">
+                                    <!-- Ål sentrum -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619123002-5"/>
+                                    <DepartureTime>15:45:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:2">
+                                    <!-- Sundrehallplassen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619572802-5"/>
+                                    <DepartureTime>15:45:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:3">
+                                    <!-- Holo Snekkerverksted -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619579601-5"/>
+                                    <DepartureTime>15:51:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:4">
+                                    <!-- Leveld posthus -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619144501-5"/>
+                                    <DepartureTime>15:56:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:5">
+                                    <!-- Vats Turistheim -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619147001-5"/>
+                                    <DepartureTime>16:00:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:6">
+                                    <!-- Arnegardkrysset -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619151001-5"/>
+                                    <DepartureTime>16:05:00</DepartureTime>
+                                </TimetabledPassingTime>
+                            </passingTimes>
+                        </ServiceJourney>
+                        <!-- 6. avgang tur-->
+                        <ServiceJourney version="any" id="BRA:ServiceJourney:6">
+                            <dayTypes>
+                                <!-- Refererer til 1 daytype som inneholder alle dager mandag-lørdag. Kunne vært separate dagtyper, men da måtte alle listes her -->
+                                <DayTypeRef version="any" ref="BRA:DayType:2"/>
+                            </dayTypes>
+                            <!-- Hvilket kjøremønster som benyttes med passasjerer ombord -->
+                            <JourneyPatternRef version="any" ref="BRA:JourneyPattern:0336102"/>
+                            <!-- Hvilken linje det gjelder -->
+                            <LineRef version="any" ref="BRA:Line:336"/>
+                            <passingTimes>
+                                <!-- Regner med det er krav om at alle stop points i gjeldende journey pattern må listes opp? -->
+                                <!-- Regner med at order ikke trengs her, fordi det er definert i JourneyPatterns -->
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:1">
+                                    <!-- Ål sentrum -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619123002-6"/>
+                                    <DepartureTime>08:40:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:2">
+                                    <!-- Sundrehallplassen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619572802-6"/>
+                                    <DepartureTime>08:40:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:3">
+                                    <!-- Holo Snekkerverksted -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619579601-6"/>
+                                    <DepartureTime>08:49:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:4">
+                                    <!-- Leveld posthus -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619144501-6"/>
+                                    <DepartureTime>08:57:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:5">
+                                    <!-- Vats Turistheim -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619147001-6"/>
+                                    <DepartureTime>09:05:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:6">
+                                    <!-- Arnegardkrysset -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619151001-6"/>
+                                    <DepartureTime>09:10:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:7">
+                                    <!-- Bergsjøtoppen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619582401-6"/>
+                                    <DepartureTime>09:20:00</DepartureTime>
+                                </TimetabledPassingTime>
+                            </passingTimes>
+                        </ServiceJourney>
+                        <!-- 7. avgang tur-->
+                        <ServiceJourney version="any" id="BRA:ServiceJourney:7">
+                            <dayTypes>
+                                <!-- Refererer til 1 daytype som inneholder alle dager mandag-lørdag. Kunne vært separate dagtyper, men da måtte alle listes her -->
+                                <DayTypeRef version="any" ref="BRA:DayType:2"/>
+                            </dayTypes>
+                            <!-- Hvilket kjøremønster som benyttes med passasjerer ombord -->
+                            <JourneyPatternRef version="any" ref="BRA:JourneyPattern:0336103"/>
+                            <!-- Hvilken linje det gjelder -->
+                            <LineRef version="any" ref="BRA:Line:336"/>
+                            <passingTimes>
+                                <!-- Regner med det er krav om at alle stop points i gjeldende journey pattern må listes opp? -->
+                                <!-- Regner med at order ikke trengs her, fordi det er definert i JourneyPatterns -->
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:1">
+                                    <!-- Ål stasjon -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619121102-7"/>
+                                    <DepartureTime>11:40:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:2">
+                                    <!-- Ål sentrum -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619123002-7"/>
+                                    <DepartureTime>11:45:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:3">
+                                    <!-- Sundrehallplassen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619572802-7"/>
+                                    <DepartureTime>11:45:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:4">
+                                    <!-- Holo Snekkerverksted -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619579601-7"/>
+                                    <DepartureTime>11:54:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:5">
+                                    <!-- Leveld posthus -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619144501-7"/>
+                                    <DepartureTime>12:02:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:6">
+                                    <!-- Vats Turistheim -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619147001-7"/>
+                                    <DepartureTime>12:10:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:7">
+                                    <!-- Arnegardkrysset -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619151001-7"/>
+                                    <DepartureTime>12:15:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:8">
+                                    <!-- Bergsjøtoppen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619582401-7"/>
+                                    <DepartureTime>12:35:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:9">
+                                    <!-- Bergsjøstølen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619152702-7"/>
+                                    <DepartureTime>12:40:00</DepartureTime>
+                                </TimetabledPassingTime>
+                            </passingTimes>
+                        </ServiceJourney>
+                        <!-- 8. avgang tur-->
+                        <ServiceJourney version="any" id="BRA:ServiceJourney:8">
+                            <dayTypes>
+                                <!-- Refererer til 1 daytype som inneholder alle dager mandag-lørdag. Kunne vært separate dagtyper, men da måtte alle listes her -->
+                                <DayTypeRef version="any" ref="BRA:DayType:2"/>
+                            </dayTypes>
+                            <!-- Hvilket kjøremønster som benyttes med passasjerer ombord -->
+                            <JourneyPatternRef version="any" ref="BRA:JourneyPattern:0336105"/>
+                            <!-- Hvilken linje det gjelder -->
+                            <LineRef version="any" ref="BRA:Line:336"/>
+                            <passingTimes>
+                                <!-- Regner med det er krav om at alle stop points i gjeldende journey pattern må listes opp? -->
+                                <!-- Regner med at order ikke trengs her, fordi det er definert i JourneyPatterns -->
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:1">
+                                    <!-- Ål stasjon -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619121102-8"/>
+                                    <DepartureTime>14:40:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:2">
+                                    <!-- Ål sentrum -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619123002-8"/>
+                                    <DepartureTime>14:55:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:3">
+                                    <!-- Sundrehallplassen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619572802-8"/>
+                                    <DepartureTime>14:55:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:4">
+                                    <!-- Holo Snekkerverksted -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619579601-8"/>
+                                    <DepartureTime>15:04:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:5">
+                                    <!-- Leveld posthus -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619144501-8"/>
+                                    <DepartureTime>15:12:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:6">
+                                    <!-- Vats Turistheim -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619147001-8"/>
+                                    <DepartureTime>15:20:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:7">
+                                    <!-- Arnegardkrysset -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619151001-8"/>
+                                    <DepartureTime>15:25:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:8">
+                                    <!-- Rødungstølen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619152002-8"/>
+                                    <DepartureTime>15:35:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:8">
+                                    <!-- Bergsjøtoppen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619582401-8"/>
+                                    <DepartureTime>12:35:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:9">
+                                    <!-- Bergsjøstølen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619152702-8"/>
+                                    <DepartureTime>12:40:00</DepartureTime>
+                                </TimetabledPassingTime>
+                            </passingTimes>
+                        </ServiceJourney>
+                        <!-- 1. avgang retur-->
+                        <ServiceJourney version="any" id="BRA:ServiceJourney:9">
+                            <dayTypes>
+                                <!-- Refererer til 1 daytype som inneholder alle dager mandag-lørdag. Kunne vært separate dagtyper, men da måtte alle listes her -->
+                                <DayTypeRef version="any" ref="BRA:DayType:1"/>
+                            </dayTypes>
+                            <!-- Hvilket kjøremønster som benyttes med passasjerer ombord -->
+                            <JourneyPatternRef version="any" ref="BRA:JourneyPattern:0336106"/>
+                            <!-- Hvilken linje det gjelder -->
+                            <LineRef version="any" ref="BRA:Line:336"/>
+                            <passingTimes>
+                                <!-- Regner med det er krav om at alle stop points i gjeldende journey pattern må listes opp? -->
+                                <!-- Regner med at order ikke trengs her, fordi det er definert i JourneyPatterns -->
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:1">
+                                    <!-- Arnegardkrysset -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619151002-9"/>
+                                    <DepartureTime>06:55:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:2">
+                                    <!-- Vats Turistheim -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619147002-9"/>
+                                    <DepartureTime>07:00:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:3">
+                                    <!-- Leveld posthus -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619144502-9"/>
+                                    <DepartureTime>07:07:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:4">
+                                    <!-- Holo Snekkerverksted -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619579602-9"/>
+                                    <DepartureTime>07:14:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:5">
+                                    <!-- Sundrehallplassen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619572801-9"/>
+                                    <DepartureTime>07:29:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:6">
+                                    <!-- Ål sentrum -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619123001-9"/>
+                                    <DepartureTime>07:30:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:7">
+                                    <!-- Ål idrettshall -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619679901-9"/>
+                                    <DepartureTime>07:30:00</DepartureTime>
+                                </TimetabledPassingTime>
+                            </passingTimes>
+                        </ServiceJourney>
+                        <!-- 2. avgang retur-->
+                        <ServiceJourney version="any" id="BRA:ServiceJourney:10">
+                            <dayTypes>
+                                <!-- Refererer til 1 daytype som inneholder alle dager mandag-lørdag. Kunne vært separate dagtyper, men da måtte alle listes her -->
+                                <DayTypeRef version="any" ref="BRA:DayType:1"/>
+                            </dayTypes>
+                            <!-- Hvilket kjøremønster som benyttes med passasjerer ombord -->
+                            <JourneyPatternRef version="any" ref="BRA:JourneyPattern:0336106"/>
+                            <!-- Hvilken linje det gjelder -->
+                            <LineRef version="any" ref="BRA:Line:336"/>
+                            <passingTimes>
+                                <!-- Regner med det er krav om at alle stop points i gjeldende journey pattern må listes opp? -->
+                                <!-- Regner med at order ikke trengs her, fordi det er definert i JourneyPatterns -->
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:1">
+                                    <!-- Arnegardkrysset -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619151002-10"/>
+                                    <DepartureTime>07:55:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:2">
+                                    <!-- Vats Turistheim -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619147002-10"/>
+                                    <DepartureTime>08:00:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:3">
+                                    <!-- Leveld posthus -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619144502-10"/>
+                                    <DepartureTime>08:07:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:4">
+                                    <!-- Holo Snekkerverksted -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619579602-10"/>
+                                    <DepartureTime>08:14:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:5">
+                                    <!-- Sundrehallplassen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619572801-10"/>
+                                    <DepartureTime>08:29:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:6">
+                                    <!-- Ål sentrum -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619123001-10"/>
+                                    <DepartureTime>08:30:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:7">
+                                    <!-- Ål idrettshall -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619679901-10"/>
+                                    <DepartureTime>08:30:00</DepartureTime>
+                                </TimetabledPassingTime>
+                            </passingTimes>
+                        </ServiceJourney>
+                        <!-- 3. avgang retur-->
+                        <ServiceJourney version="any" id="BRA:ServiceJourney:11">
+                            <dayTypes>
+                                <!-- Refererer til 1 daytype som inneholder alle dager mandag-lørdag. Kunne vært separate dagtyper, men da måtte alle listes her -->
+                                <DayTypeRef version="any" ref="BRA:DayType:1"/>
+                            </dayTypes>
+                            <!-- Hvilket kjøremønster som benyttes med passasjerer ombord -->
+                            <JourneyPatternRef version="any" ref="BRA:JourneyPattern:0336107"/>
+                            <!-- Hvilken linje det gjelder -->
+                            <LineRef version="any" ref="BRA:Line:336"/>
+                            <passingTimes>
+                                <!-- Regner med det er krav om at alle stop points i gjeldende journey pattern må listes opp? -->
+                                <!-- Regner med at order ikke trengs her, fordi det er definert i JourneyPatterns -->
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:1">
+                                    <!-- Bergsjøtoppen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619582402-11"/>
+                                    <DepartureTime>09:20:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:2">
+                                    <!-- Rødungstølen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619152002-11"/>
+                                    <DepartureTime>09:20:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:3">
+                                    <!-- Arnegardkrysset -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619151002-11"/>
+                                    <DepartureTime>09:35:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:4">
+                                    <!-- Vats Turistheim -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619147002-11"/>
+                                    <DepartureTime>09:40:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:5">
+                                    <!-- Leveld posthus -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619144502-11"/>
+                                    <DepartureTime>09:47:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:6">
+                                    <!-- Holo Snekkerverksted -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619579602-11"/>
+                                    <DepartureTime>09:53:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:7">
+                                    <!-- Sundrehallplassen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619572801-11"/>
+                                    <DepartureTime>10:04:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:8">
+                                    <!-- Ål sentrum -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619123001-11"/>
+                                    <DepartureTime>10:05:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:9">
+                                    <!-- Ål stasjon -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619121101-11"/>
+                                    <DepartureTime>10:10:00</DepartureTime>
+                                </TimetabledPassingTime>
+                            </passingTimes>
+                        </ServiceJourney>
+                        <!-- 4. avgang retur-->
+                        <ServiceJourney version="any" id="BRA:ServiceJourney:12">
+                            <dayTypes>
+                                <!-- Refererer til 1 daytype som inneholder alle dager mandag-lørdag. Kunne vært separate dagtyper, men da måtte alle listes her -->
+                                <DayTypeRef version="any" ref="BRA:DayType:1"/>
+                            </dayTypes>
+                            <!-- Hvilket kjøremønster som benyttes med passasjerer ombord -->
+                            <JourneyPatternRef version="any" ref="BRA:JourneyPattern:0336108"/>
+                            <!-- Hvilken linje det gjelder -->
+                            <LineRef version="any" ref="BRA:Line:336"/>
+                            <passingTimes>
+                                <!-- Regner med det er krav om at alle stop points i gjeldende journey pattern må listes opp? -->
+                                <!-- Regner med at order ikke trengs her, fordi det er definert i JourneyPatterns -->
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:1">
+                                    <!-- Bergsjøstølen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619152702-12"/>
+                                    <DepartureTime>12:45:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:2">
+                                    <!-- Bergsjøtoppen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619582402-12"/>
+                                    <DepartureTime>12:50:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:3">
+                                    <!-- Rødungstølen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619152002-12"/>
+                                    <DepartureTime>12:50:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:4">
+                                    <!-- Arnegardkrysset -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619151002-12"/>
+                                    <DepartureTime>13:05:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:5">
+                                    <!-- Vats Turistheim -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619147002-12"/>
+                                    <DepartureTime>13:10:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:6">
+                                    <!-- Leveld posthus -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619144502-12"/>
+                                    <DepartureTime>13:17:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:7">
+                                    <!-- Holo Snekkerverksted -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619579602-12"/>
+                                    <DepartureTime>13:23:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:8">
+                                    <!-- Sundrehallplassen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619572801-12"/>
+                                    <DepartureTime>13:34:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:9">
+                                    <!-- Ål sentrum -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619123001-12"/>
+                                    <DepartureTime>13:35:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:10">
+                                    <!-- Ål stasjon -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619121101-12"/>
+                                    <DepartureTime>13:40:00</DepartureTime>
+                                </TimetabledPassingTime>
+                            </passingTimes>
+                        </ServiceJourney>
+                        <!-- 5. avgang retur-->
+                        <ServiceJourney version="any" id="BRA:ServiceJourney:13">
+                            <dayTypes>
+                                <!-- Refererer til 1 daytype som inneholder alle dager mandag-lørdag. Kunne vært separate dagtyper, men da måtte alle listes her -->
+                                <DayTypeRef version="any" ref="BRA:DayType:1"/>
+                            </dayTypes>
+                            <!-- Hvilket kjøremønster som benyttes med passasjerer ombord -->
+                            <JourneyPatternRef version="any" ref="BRA:JourneyPattern:0336108"/>
+                            <!-- Hvilken linje det gjelder -->
+                            <LineRef version="any" ref="BRA:Line:336"/>
+                            <passingTimes>
+                                <!-- Regner med det er krav om at alle stop points i gjeldende journey pattern må listes opp? -->
+                                <!-- Regner med at order ikke trengs her, fordi det er definert i JourneyPatterns -->
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:1">
+                                    <!-- Bergsjøstølen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619152702-13"/>
+                                    <DepartureTime>16:10:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:2">
+                                    <!-- Bergsjøtoppen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619582402-13"/>
+                                    <DepartureTime>16:15:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:3">
+                                    <!-- Rødungstølen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619152002-13"/>
+                                    <DepartureTime>16:15:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:4">
+                                    <!-- Arnegardkrysset -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619151002-13"/>
+                                    <DepartureTime>16:30:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:5">
+                                    <!-- Vats Turistheim -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619147002-13"/>
+                                    <DepartureTime>16:35:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:6">
+                                    <!-- Leveld posthus -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619144502-13"/>
+                                    <DepartureTime>16:42:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:7">
+                                    <!-- Holo Snekkerverksted -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619579602-13"/>
+                                    <DepartureTime>16:48:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:8">
+                                    <!-- Sundrehallplassen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619572801-13"/>
+                                    <DepartureTime>16:59:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:9">
+                                    <!-- Ål sentrum -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619123001-13"/>
+                                    <DepartureTime>17:00:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:10">
+                                    <!-- Ål stasjon -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619121101-13"/>
+                                    <DepartureTime>17:05:00</DepartureTime>
+                                </TimetabledPassingTime>
+                            </passingTimes>
+                        </ServiceJourney>
+                        <!-- 6. avgang retur-->
+                        <ServiceJourney version="any" id="BRA:ServiceJourney:14">
+                            <dayTypes>
+                                <!-- Refererer til 1 daytype som inneholder alle dager mandag-lørdag. Kunne vært separate dagtyper, men da måtte alle listes her -->
+                                <DayTypeRef version="any" ref="BRA:DayType:2"/>
+                            </dayTypes>
+                            <!-- Hvilket kjøremønster som benyttes med passasjerer ombord -->
+                            <JourneyPatternRef version="any" ref="BRA:JourneyPattern:0336107"/>
+                            <!-- Hvilken linje det gjelder -->
+                            <LineRef version="any" ref="BRA:Line:336"/>
+                            <passingTimes>
+                                <!-- Regner med det er krav om at alle stop points i gjeldende journey pattern må listes opp? -->
+                                <!-- Regner med at order ikke trengs her, fordi det er definert i JourneyPatterns -->
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:1">
+                                    <!-- Bergsjøtoppen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619582402-14"/>
+                                    <DepartureTime>09:20:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:2">
+                                    <!-- Rødungstølen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619152002-14"/>
+                                    <DepartureTime>09:20:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:3">
+                                    <!-- Arnegardkrysset -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619151002-14"/>
+                                    <DepartureTime>09:35:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:4">
+                                    <!-- Vats Turistheim -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619147002-14"/>
+                                    <DepartureTime>09:40:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:5">
+                                    <!-- Leveld posthus -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619144502-14"/>
+                                    <DepartureTime>09:47:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:6">
+                                    <!-- Holo Snekkerverksted -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619579602-14"/>
+                                    <DepartureTime>09:53:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:7">
+                                    <!-- Sundrehallplassen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619572801-14"/>
+                                    <DepartureTime>10:04:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:8">
+                                    <!-- Ål sentrum -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619123001-14"/>
+                                    <DepartureTime>10:05:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:9">
+                                    <!-- Ål stasjon -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619121101-14"/>
+                                    <DepartureTime>10:10:00</DepartureTime>
+                                </TimetabledPassingTime>
+                            </passingTimes>
+                        </ServiceJourney>
+                        <!-- 7. avgang retur-->
+                        <ServiceJourney version="any" id="BRA:ServiceJourney:15">
+                            <dayTypes>
+                                <!-- Refererer til 1 daytype som inneholder alle dager mandag-lørdag. Kunne vært separate dagtyper, men da måtte alle listes her -->
+                                <DayTypeRef version="any" ref="BRA:DayType:2"/>
+                            </dayTypes>
+                            <!-- Hvilket kjøremønster som benyttes med passasjerer ombord -->
+                            <JourneyPatternRef version="any" ref="BRA:JourneyPattern:0336108"/>
+                            <!-- Hvilken linje det gjelder -->
+                            <LineRef version="any" ref="BRA:Line:336"/>
+                            <passingTimes>
+                                <!-- Regner med det er krav om at alle stop points i gjeldende journey pattern må listes opp? -->
+                                <!-- Regner med at order ikke trengs her, fordi det er definert i JourneyPatterns -->
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:1">
+                                    <!-- Bergsjøstølen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619152702-15"/>
+                                    <DepartureTime>12:45:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:2">
+                                    <!-- Bergsjøtoppen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619582402-15"/>
+                                    <DepartureTime>12:50:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:3">
+                                    <!-- Rødungstølen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619152002-15"/>
+                                    <DepartureTime>12:50:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:4">
+                                    <!-- Arnegardkrysset -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619151002-15"/>
+                                    <DepartureTime>13:05:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:5">
+                                    <!-- Vats Turistheim -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619147002-15"/>
+                                    <DepartureTime>13:10:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:6">
+                                    <!-- Leveld posthus -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619144502-15"/>
+                                    <DepartureTime>13:17:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:7">
+                                    <!-- Holo Snekkerverksted -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619579602-15"/>
+                                    <DepartureTime>13:23:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:8">
+                                    <!-- Sundrehallplassen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619572801-15"/>
+                                    <DepartureTime>13:34:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:9">
+                                    <!-- Ål sentrum -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619123001-15"/>
+                                    <DepartureTime>13:35:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:10">
+                                    <!-- Ål stasjon -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619121101-15"/>
+                                    <DepartureTime>13:40:00</DepartureTime>
+                                </TimetabledPassingTime>
+                            </passingTimes>
+                        </ServiceJourney>
+                        <!-- 8. avgang retur-->
+                        <ServiceJourney version="any" id="BRA:ServiceJourney:16">
+                            <dayTypes>
+                                <!-- Refererer til 1 daytype som inneholder alle dager mandag-lørdag. Kunne vært separate dagtyper, men da måtte alle listes her -->
+                                <DayTypeRef version="any" ref="BRA:DayType:2"/>
+                            </dayTypes>
+                            <!-- Hvilket kjøremønster som benyttes med passasjerer ombord -->
+                            <JourneyPatternRef version="any" ref="BRA:JourneyPattern:0336108"/>
+                            <!-- Hvilken linje det gjelder -->
+                            <LineRef version="any" ref="BRA:Line:336"/>
+                            <passingTimes>
+                                <!-- Regner med det er krav om at alle stop points i gjeldende journey pattern må listes opp? -->
+                                <!-- Regner med at order ikke trengs her, fordi det er definert i JourneyPatterns -->
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:1">
+                                    <!-- Bergsjøstølen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619152702-16"/>
+                                    <DepartureTime>16:10:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:2">
+                                    <!-- Bergsjøtoppen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619582402-16"/>
+                                    <DepartureTime>16:15:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:3">
+                                    <!-- Rødungstølen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619152002-16"/>
+                                    <DepartureTime>16:15:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:4">
+                                    <!-- Arnegardkrysset -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619151002-16"/>
+                                    <DepartureTime>16:30:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:5">
+                                    <!-- Vats Turistheim -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619147002-16"/>
+                                    <DepartureTime>16:35:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:6">
+                                    <!-- Leveld posthus -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619144502-16"/>
+                                    <DepartureTime>16:42:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:7">
+                                    <!-- Holo Snekkerverksted -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619579602-16"/>
+                                    <DepartureTime>16:48:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:8">
+                                    <!-- Sundrehallplassen -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619572801-16"/>
+                                    <DepartureTime>16:59:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:9">
+                                    <!-- Ål sentrum -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619123001-16"/>
+                                    <DepartureTime>17:00:00</DepartureTime>
+                                </TimetabledPassingTime>
+                                <TimetabledPassingTime version="any" id="BRA:TimetabledPassingTime:10">
+                                    <!-- Ål stasjon -->
+                                    <StopPointInJourneyPatternRef ref="BRA:StopPointInJourneyPattern:0619121101-16"/>
+                                    <DepartureTime>17:05:00</DepartureTime>
+                                </TimetabledPassingTime>
+                            </passingTimes>
+                        </ServiceJourney>
+                        
+                    </vehicleJourneys>
+                </TimetableFrame>
+            </frames>
+        </CompositeFrame>
+    </dataObjects>
+</PublicationDelivery>
+
+
