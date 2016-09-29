@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
-    Dette eksempelet er basert på linje 61A Tveita Solfjellet funnet her: 
-    https://ruter.no/globalassets/rutetabeller/oslo/oslo_syd_web_april2016.pdf
+    Dette eksempelet er basert på linje 336 Ål-Vats-Bergsjø funnet her: 
+   http://www.rutebok.no/NRIIISStaticTables/Tables/ruter/t/06-336.htm
 -->
 <PublicationDelivery version="1.0" xmlns="http://www.netex.org.uk/netex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.netex.org.uk/netex ../../xsd/NeTEx_publication.xsd">
@@ -17,7 +17,6 @@
 
             <codespaces>
                 <!-- Codespace for Brakar -->
-                <!-- Test -->
                 <Codespace id="brakar">
                     <Xmlns>BRA</Xmlns>
                     <XmlnsUrl>http://www.brakar.no/</XmlnsUrl>
@@ -53,14 +52,14 @@
                             <OrganisationType>authority</OrganisationType>
                         </Authority>
 
-                        <!-- Antar her at Unibuss er selskapet som kjører turen. Ikke nødvendigvis korrekt, men fremgår ikke av rutetabellen -->
-                        <Operator version="1" id="RUT:Company:1">
-                            <CompanyNumber>985615616</CompanyNumber>
-                            <Name>Unibuss</Name>
-                            <LegalName>UNIBUSS AS</LegalName>
+                        <!-- Brakar er angitt her som selskapet som kjører turen. Framgår ikke av rutedata hvem som er operatør -->
+                        <Operator version="1" id="BRA:Company:1">
+                            <CompanyNumber>995082454</CompanyNumber>
+                            <Name>Brakar</Name>
+                            <LegalName>BRAKAR AS</LegalName>
                             <CustomerServiceContactDetails>
                                 <Phone>0047 177</Phone>
-                                <Url>http://www.ruter.no</Url>
+                                <Url>http://www.brakar.no</Url>
                                 <FurtherDetails>Kontaktskjema på websider</FurtherDetails>
                             </CustomerServiceContactDetails>
                         </Operator>
@@ -155,7 +154,7 @@
                     <Network version="1" changed="2015-12-13T00:00:00Z" id="BRA:GroupOfLine:Hallingdal">
                         <Name>Brakar#</Name>
                     </Network>
-                    <!-- Definisjon av hvilken retning dette er. Her brukt en rundtur som kjører med klokken -->
+                    <!-- Definisjon av hvilken retning dette er. Her brukt en vanlig tur/retur-rute -->
                     <directions>
                         <Direction version="any" id="BRA:Route:0033601:Direction">
                             <Name>Tur</Name>
@@ -293,7 +292,7 @@
                     </lines>
 
                     <!-- Det antas her at det er fem ulike tekster som vises på bussen, alt etter hvilket endepunkt turen har.
-                    Disse tekstene er referert til i Calls-seksjonen lenger nede
+                    Disse tekstene er referert til i Service pattern-seksjonen lenger nede
                     -->
                     <destinationDisplays>
                         <DestinationDisplay version="any" id="BRA:DestinationDisplay:DST_Bergsjoe">
@@ -383,8 +382,8 @@
                     </scheduledStopPoints>
                     
                     <!-- Dette er alle ServicePatterns linje 336 kjører. -->
-                    <servicePatterns>
-                        <ServicePattern version="1" id="BRA:JourneyPattern:0336101">
+                    <journeyPatterns>
+                        <JourneyPattern version="1" id="BRA:JourneyPattern:0336101">
                             <Name>Ål-Arnegardkrysset</Name>
                             <RouteRef version="1" ref="BRA:Route:033601"/>
                             <!-- Rekkefølge på stopp -->
@@ -411,8 +410,8 @@
                                     <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619151001"/>
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
-                        </ServicePattern>
-                        <ServicePattern version="1" id="BRA:JourneyPattern:0336102">
+                        </JourneyPattern>
+                        <JourneyPattern version="1" id="BRA:JourneyPattern:0336102">
                             <Name>Ål-Arnegardkrysset-Bergsjøtoppen</Name>
                             <RouteRef version="1" ref="BRA:Route:033601"/>
                             <pointsInSequence>
@@ -439,8 +438,8 @@
                                     <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619582401"/>
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
-                        </ServicePattern>
-                        <ServicePattern version="1" id="BRA:JourneyPattern:0336103">
+                        </JourneyPattern>
+                        <JourneyPattern version="1" id="BRA:JourneyPattern:0336103">
                             <Name>Ål-Arnegardkrysset-Bergsjøstølen</Name>
                             <RouteRef version="1" ref="BRA:Route:033601"/>
                             <pointsInSequence>
@@ -473,8 +472,8 @@
                                     <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619152702"/>
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
-                        </ServicePattern>
-                        <ServicePattern version="1" id="BRA:JourneyPattern:0336104">
+                        </JourneyPattern>
+                        <JourneyPattern version="1" id="BRA:JourneyPattern:0336104">
                             <Name>Ål-Arnegardkrysset-Rødungstølen-Bergsjøstølen</Name>
                             <RouteRef version="1" ref="BRA:Route:033601"/>
                             <pointsInSequence>
@@ -513,8 +512,8 @@
                                     <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619152702"/>
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
-                        </ServicePattern>
-                        <ServicePattern version="1" id="BRA:JourneyPattern:0336105">
+                        </JourneyPattern>
+                        <JourneyPattern version="1" id="BRA:JourneyPattern:0336105">
                             <Name>Ål-Arnegardkrysset-Rødungstølen-Bergsjøstølen</Name>
                             <RouteRef version="1" ref="BRA:Route:033601"/>
                             <pointsInSequence>
@@ -550,8 +549,8 @@
                                     <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619152702"/>
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
-                        </ServicePattern>
-                        <ServicePattern version="1" id="BRA:JourneyPattern:0336106">
+                        </JourneyPattern>
+                        <JourneyPattern version="1" id="BRA:JourneyPattern:0336106">
                             <Name>Rødungstølen-Arnegardkrysset-Ål</Name>
                             <RouteRef version="1" ref="BRA:Route:033602"/>
                             <pointsInSequence>
@@ -581,8 +580,8 @@
                                     <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619679901"/>
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
-                        </ServicePattern>
-                        <ServicePattern version="1" id="BRA:JourneyPattern:0336107">
+                        </JourneyPattern>
+                        <JourneyPattern version="1" id="BRA:JourneyPattern:0336107">
                             <Name>Bergsjøtoppen-Arnegardkrysset-Ål</Name>
                             <RouteRef version="1" ref="BRA:Route:033602"/>
                             <pointsInSequence>
@@ -615,8 +614,8 @@
                                     <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619121101"/>
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
-                        </ServicePattern>
-                        <ServicePattern version="1" id="BRA:JourneyPattern:0336108">
+                        </JourneyPattern>
+                        <JourneyPattern version="1" id="BRA:JourneyPattern:0336108">
                             <Name>Bergsjøstølen-Arnegardkrysset-Ål</Name>
                             <RouteRef version="1" ref="BRA:Route:033602"/>
                             <pointsInSequence>
@@ -653,8 +652,8 @@
                                     <ScheduledStopPointRef version="1" ref="BRA:StopPoint:0619121101"/>
                                 </StopPointInJourneyPattern>
                             </pointsInSequence>
-                        </ServicePattern>
-                    </servicePatterns>
+                        </JourneyPattern>
+                    </journeyPatterns>
                     <!-- Kobling fra ScheduledStopPoint til StopPlace/Quay. Legg merke til at StopPlace og Quay hører til i NHR-codespace mens ScheduleStopPoint hører til i RUT-codespacet -->
                     <stopAssignments>
                         <PassengerStopAssignment version="any" order="1" id="BRA:PassengerStopAssignment:0619121101">
@@ -766,24 +765,56 @@
                     
                     <notices>
                         <!-- Fotnoter relatert spesifikt til turer -->
-                        <Notice version="any" id="BRA:Notice:Tur 3:1">
+                        <Notice version="any" id="BRA:Notice:1">
                             <Text>Kjører til Bergsjøstølen når hotellet er åpent.</Text>
                         </Notice>
-                        <Notice version="any" id="BRA:Notice:Tur 4:1">
-                            <Text>Kjører til Bergsjøstølen når hotellet er åpent.</Text>
-                        </Notice>
-                        <Notice version="any" id="BRA:Notice:Tur 5:1">
+                         <Notice version="any" id="BRA:Notice:2">
                             <Text>Køyrer så langt det er reisande.</Text>
                         </Notice>
-                        <Notice version="any" id="BRA:Notice:Tur 7:1">
-                            <Text>Kjører til Bergsjøstølen når hotellet er åpent.</Text>
-                        </Notice>
-                        <Notice version="any" id="BRA:Notice:Tur 8:1">
-                            <Text>Kjører til Bergsjøstølen når hotellet er åpent.</Text>
+                        <Notice version="any" id="BRA:Notice:3">
+                            <Text>Kjører fra Bergsjøstølen når det er åpent.</Text>
                         </Notice>
                     </notices>
+                    <noticeAssignments> 
+                        <NoticeAssignment version="any" id="BRA:NoticeAssignment:1" order="1"> 
+                            <NoticeRef ref="BRA:Notice:1"/> 
+                            <NoticedObjectRef ref="BRA:ServiceJourney:3"/> 
+                        </NoticeAssignment> 
+                        <NoticeAssignment version="any" id="BRA:NoticeAssignment:2" order="1"> 
+                            <NoticeRef ref="BRA:Notice:1"/> 
+                            <NoticedObjectRef ref="BRA:ServiceJourney:4"/> 
+                        </NoticeAssignment> 
+                        <NoticeAssignment version="any" id="BRA:NoticeAssignment:3" order="1"> 
+                            <NoticeRef ref="BRA:Notice:2"/> 
+                            <NoticedObjectRef ref="BRA:ServiceJourney:5"/> 
+                        </NoticeAssignment> 
+                        <NoticeAssignment version="any" id="BRA:NoticeAssignment:4" order="1"> 
+                            <NoticeRef ref="BRA:Notice:1"/> 
+                            <NoticedObjectRef ref="BRA:ServiceJourney:7"/> 
+                        </NoticeAssignment> 
+                        <NoticeAssignment version="any" id="BRA:NoticeAssignment:5" order="1"> 
+                            <NoticeRef ref="BRA:Notice:1"/> 
+                            <NoticedObjectRef ref="BRA:ServiceJourney:8"/> 
+                        </NoticeAssignment> 
+                        <NoticeAssignment version="any" id="BRA:NoticeAssignment:6" order="1"> 
+                            <NoticeRef ref="BRA:Notice:3"/> 
+                            <NoticedObjectRef ref="BRA:ServiceJourney:12"/> 
+                        </NoticeAssignment> 
+                        <NoticeAssignment version="any" id="BRA:NoticeAssignment:7" order="1"> 
+                            <NoticeRef ref="BRA:Notice:3"/> 
+                            <NoticedObjectRef ref="BRA:ServiceJourney:13"/> 
+                        </NoticeAssignment> 
+                        <NoticeAssignment version="any" id="BRA:NoticeAssignment:8" order="1"> 
+                            <NoticeRef ref="BRA:Notice:3"/> 
+                            <NoticedObjectRef ref="BRA:ServiceJourney:15"/> 
+                        </NoticeAssignment> 
+                        <NoticeAssignment version="any" id="BRA:NoticeAssignment:9" order="1"> 
+                            <NoticeRef ref="BRA:Notice:3"/> 
+                            <NoticedObjectRef ref="BRA:ServiceJourney:16"/> 
+                        </NoticeAssignment> 
+                    </noticeAssignments> 
                 </ServiceFrame>
-<!-- HIT!!! -->
+
                 <ServiceCalendarFrame version="any" id="BRA:ServiceCalendarFrame:SCF01">
                     <ServiceCalendar version="any" id="BRA:ServiceCalendar:1">
                         <Name>Høsten 2017</Name>
